@@ -14,6 +14,7 @@
 		460EB0162557F76B00027376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0152557F76B00027376 /* Assets.xcassets */; };
 		460EB0192557F76B00027376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0172557F76B00027376 /* LaunchScreen.storyboard */; };
 		460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */; };
+		460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02825582EEF00027376 /* UIViewController+alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		460EB0182557F76B00027376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		460EB01A2557F76B00027376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dateFormatter.swift"; sourceTree = "<group>"; };
+		460EB02825582EEF00027376 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				460EB0172557F76B00027376 /* LaunchScreen.storyboard */,
 				460EB01A2557F76B00027376 /* Info.plist */,
 				460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */,
+				460EB02825582EEF00027376 /* UIViewController+alert.swift */,
 			);
 			path = MungMungLog;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
+				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
