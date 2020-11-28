@@ -60,18 +60,51 @@
         <!--기록-->
         <scene sceneID="3u0-SP-zcN">
             <objects>
-                <viewController id="gVC-LS-XyK" sceneMemberID="viewController">
+                <viewController id="gVC-LS-XyK" customClass="RecordViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bzu-dq-5Rm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-9v-Fah">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기록 시작" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Boj-C1-aq1">
+                                        <rect key="frame" x="26.5" y="76" width="147" height="48"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="StartLabel"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RaA-h8-DsV">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="StartButtonContainerView"/>
+                                <constraints>
+                                    <constraint firstItem="Boj-C1-aq1" firstAttribute="centerX" secondItem="KbU-9v-Fah" secondAttribute="centerX" id="2c9-zl-f4m"/>
+                                    <constraint firstItem="RaA-h8-DsV" firstAttribute="top" secondItem="KbU-9v-Fah" secondAttribute="top" id="5KT-ze-zrd"/>
+                                    <constraint firstAttribute="width" constant="200" id="Aeu-zx-aby"/>
+                                    <constraint firstAttribute="trailing" secondItem="RaA-h8-DsV" secondAttribute="trailing" id="EUz-Wf-hRI"/>
+                                    <constraint firstAttribute="bottom" secondItem="RaA-h8-DsV" secondAttribute="bottom" id="Q9U-EJ-tCw"/>
+                                    <constraint firstItem="Boj-C1-aq1" firstAttribute="centerY" secondItem="KbU-9v-Fah" secondAttribute="centerY" id="bbK-Bs-6x4"/>
+                                    <constraint firstItem="RaA-h8-DsV" firstAttribute="leading" secondItem="KbU-9v-Fah" secondAttribute="leading" id="mv8-fc-GJX"/>
+                                    <constraint firstAttribute="height" constant="200" id="xus-tw-zQW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KRl-1M-foa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KbU-9v-Fah" firstAttribute="centerY" secondItem="Bzu-dq-5Rm" secondAttribute="centerY" id="SHC-gg-AL1"/>
+                            <constraint firstItem="KbU-9v-Fah" firstAttribute="centerX" secondItem="Bzu-dq-5Rm" secondAttribute="centerX" id="qqr-dG-PCq"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="기록" image="clock.fill" catalog="system" id="Meh-Lc-6me"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ip8-9B-3Ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="524"/>
+            <point key="canvasLocation" x="1153.6231884057972" y="522.99107142857144"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="72s-P6-kZt">
