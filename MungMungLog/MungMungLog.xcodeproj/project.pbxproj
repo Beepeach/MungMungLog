@@ -15,6 +15,7 @@
 		460EB0192557F76B00027376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0172557F76B00027376 /* LaunchScreen.storyboard */; };
 		460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */; };
 		460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02825582EEF00027376 /* UIViewController+alert.swift */; };
+		467BF53725748F8900511451 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* RoundedView.swift */; };
 		46A574A025729B6200B7ADF5 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		460EB01A2557F76B00027376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dateFormatter.swift"; sourceTree = "<group>"; };
 		460EB02825582EEF00027376 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
+		467BF53625748F8900511451 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		46A5749F25729B6200B7ADF5 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				460EB01A2557F76B00027376 /* Info.plist */,
 				460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */,
 				460EB02825582EEF00027376 /* UIViewController+alert.swift */,
+				467BF53625748F8900511451 /* RoundedView.swift */,
 			);
 			path = MungMungLog;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				460EB0112557F76B00027376 /* ViewController.swift in Sources */,
 				460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */,
+				467BF53725748F8900511451 /* RoundedView.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				46A574A025729B6200B7ADF5 /* RecordViewController.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,

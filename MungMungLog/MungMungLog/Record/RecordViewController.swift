@@ -14,12 +14,12 @@ class RecordViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        guard let startButtonContainerView = view.subviews.first else { return }
-        startButtonContainerView.layer.cornerRadius = startButtonContainerView.frame.height / 2
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        
+//        guard let startButtonContainerView = view.subviews.first else { return }
+//        startButtonContainerView.layer.cornerRadius = startButtonContainerView.frame.height / 2
+//    }
     
     
 
