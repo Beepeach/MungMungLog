@@ -68,7 +68,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-9v-Fah" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
                                 <rect key="frame" x="107" y="348" width="200" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기록 시작" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Boj-C1-aq1">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책 시작" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Boj-C1-aq1">
                                         <rect key="frame" x="26.5" y="76" width="147" height="48"/>
                                         <accessibility key="accessibilityConfiguration" identifier="startLabel"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
@@ -133,7 +133,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-iA-6gH" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
                                 <rect key="frame" x="107" y="614" width="200" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기록 중지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zse-TB-unM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책 완료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zse-TB-unM">
                                         <rect key="frame" x="26.5" y="76" width="147" height="48"/>
                                         <accessibility key="accessibilityConfiguration" identifier="endLabel"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
