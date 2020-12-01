@@ -79,7 +79,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <accessibility key="accessibilityConfiguration" identifier="startButton"/>
                                         <connections>
-                                            <segue destination="f5o-b3-XmS" kind="presentation" modalPresentationStyle="fullScreen" id="cFE-xT-dpb"/>
+                                            <segue destination="ztx-uR-1Kk" kind="presentation" modalPresentationStyle="fullScreen" id="SyK-Tl-BIu"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -119,19 +119,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lg7-A0-kGP">
-                                <rect key="frame" x="0.0" y="88" width="414" height="400"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="4gv-zh-ZUm"/>
                                 </constraints>
                             </mapView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khE-V8-dRC">
-                                <rect key="frame" x="0.0" y="488" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="444" width="414" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Eux-15-AOa"/>
                                 </constraints>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-iA-6gH" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
-                                <rect key="frame" x="107" y="658" width="200" height="200"/>
+                                <rect key="frame" x="107" y="614" width="200" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기록 중지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zse-TB-unM">
                                         <rect key="frame" x="26.5" y="76" width="147" height="48"/>
@@ -143,6 +143,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMC-b4-zHo">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <accessibility key="accessibilityConfiguration" identifier="endButton"/>
+                                        <connections>
+                                            <action selector="stopRecord:" destination="ztx-uR-1Kk" eventType="touchUpInside" id="4Ml-U1-s8X"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
@@ -172,15 +175,11 @@
                             <constraint firstItem="khE-V8-dRC" firstAttribute="leading" secondItem="vwG-m1-zbd" secondAttribute="leading" id="xmf-lp-ulM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RCC-Vo-bSv">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="G7Q-g1-cmS">
-                            <color key="tintColor" systemColor="systemTealColor"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="RCC-Vo-bSv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9K-Dh-dQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3472.4637681159425" y="522.99107142857144"/>
+            <point key="canvasLocation" x="2246" y="523"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="72s-P6-kZt">
@@ -221,29 +220,9 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="125.89285714285714"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="NiF-Mc-gG6">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f5o-b3-XmS" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="4xq-96-Sh8"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bEb-4a-YRn">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ztx-uR-1Kk" kind="relationship" relationship="rootViewController" id="kHa-sg-bwy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jwy-bW-cvj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2563.768115942029" y="522.99107142857144"/>
-        </scene>
     </scenes>
     <resources>
         <image name="book.fill" catalog="system" width="128" height="102"/>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
