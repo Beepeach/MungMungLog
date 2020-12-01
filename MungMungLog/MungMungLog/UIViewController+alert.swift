@@ -2,12 +2,24 @@ import UIKit
 
 
 extension UIViewController {
-    func presentAlert(message: String) {
-        let alert = UIAlertController(title: "경고", message: message, preferredStyle: .alert)
-        let alertAction = UIAlertAction(title: "확인", style: .cancel, handler: nil)
+    func presentOneButtonAlert(alertTitle: String, message: String, actionTitle: String) {
+        let oneButtonAlert = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: actionTitle, style: .cancel, handler: nil)
         
-        alert.addAction(alertAction)
-        present(alert, animated: true, completion: nil)
+        oneButtonAlert.addAction(alertAction)
+        
+        present(oneButtonAlert, animated: true, completion: nil)
+    }
+    
+    func presentTwoButtonAlert(alertTitle: String, message: String, confirmActionTitle: String, cancelActionTitle: String) {
+        let twoButtonAlert = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
+        let confirmAlertAction = UIAlertAction(title: confirmActionTitle, style: .default, handler: nil)
+        let cancelAlertAction = UIAlertAction(title: cancelActionTitle, style: .cancel, handler: nil)
+        
+        twoButtonAlert.addAction(confirmAlertAction)
+        twoButtonAlert.addAction(cancelAlertAction)
+        
+        present(twoButtonAlert, animated: true, completion: nil)
     }
 }
 
