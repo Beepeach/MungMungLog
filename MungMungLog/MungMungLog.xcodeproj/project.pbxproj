@@ -15,8 +15,9 @@
 		460EB0192557F76B00027376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0172557F76B00027376 /* LaunchScreen.storyboard */; };
 		460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */; };
 		460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02825582EEF00027376 /* UIViewController+alert.swift */; };
-		467BF53725748F8900511451 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* RoundedView.swift */; };
-		46A574A025729B6200B7ADF5 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* RecordViewController.swift */; };
+		4656860D25766DCE00088513 /* RecordEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656860C25766DCE00088513 /* RecordEndingViewController.swift */; };
+		467BF53725748F8900511451 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* CircleView.swift */; };
+		46A574A025729B6200B7ADF5 /* RecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* RecordStartingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +31,9 @@
 		460EB01A2557F76B00027376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dateFormatter.swift"; sourceTree = "<group>"; };
 		460EB02825582EEF00027376 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
-		467BF53625748F8900511451 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
-		46A5749F25729B6200B7ADF5 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
+		4656860C25766DCE00088513 /* RecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEndingViewController.swift; sourceTree = "<group>"; };
+		467BF53625748F8900511451 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		46A5749F25729B6200B7ADF5 /* RecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordStartingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		460EB00B2557F76B00027376 /* MungMungLog */ = {
 			isa = PBXGroup;
 			children = (
+				4656860925766C8900088513 /* ViewShapeClass */,
 				46A5749E25729B3D00B7ADF5 /* Record */,
 				460EB00C2557F76B00027376 /* AppDelegate.swift */,
 				460EB00E2557F76B00027376 /* SceneDelegate.swift */,
@@ -74,15 +77,23 @@
 				460EB01A2557F76B00027376 /* Info.plist */,
 				460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */,
 				460EB02825582EEF00027376 /* UIViewController+alert.swift */,
-				467BF53625748F8900511451 /* RoundedView.swift */,
 			);
 			path = MungMungLog;
+			sourceTree = "<group>";
+		};
+		4656860925766C8900088513 /* ViewShapeClass */ = {
+			isa = PBXGroup;
+			children = (
+				467BF53625748F8900511451 /* CircleView.swift */,
+			);
+			path = ViewShapeClass;
 			sourceTree = "<group>";
 		};
 		46A5749E25729B3D00B7ADF5 /* Record */ = {
 			isa = PBXGroup;
 			children = (
-				46A5749F25729B6200B7ADF5 /* RecordViewController.swift */,
+				46A5749F25729B6200B7ADF5 /* RecordStartingViewController.swift */,
+				4656860C25766DCE00088513 /* RecordEndingViewController.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -159,9 +170,10 @@
 			files = (
 				460EB0112557F76B00027376 /* ViewController.swift in Sources */,
 				460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */,
-				467BF53725748F8900511451 /* RoundedView.swift in Sources */,
+				467BF53725748F8900511451 /* CircleView.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
-				46A574A025729B6200B7ADF5 /* RecordViewController.swift in Sources */,
+				4656860D25766DCE00088513 /* RecordEndingViewController.swift in Sources */,
+				46A574A025729B6200B7ADF5 /* RecordStartingViewController.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 			);
