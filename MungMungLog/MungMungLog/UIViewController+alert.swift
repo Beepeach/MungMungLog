@@ -13,12 +13,12 @@ extension UIViewController {
     
     func presentTwoButtonAlert(alertTitle: String, message: String, confirmActionTitle: String, cancelActionTitle: String) {
         let twoButtonAlert = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
-        let confirmAlertAction = UIAlertAction(title: confirmActionTitle, style: .default, handler: nil)
-        let cancelAlertAction = UIAlertAction(title: cancelActionTitle, style: .cancel, handler: nil)
-        
+        let confirmAlertAction = UIAlertAction(title: confirmActionTitle, style: .destructive, handler: nil)
+        let cancelAlertAction = UIAlertAction(title: cancelActionTitle, style: .default, handler: nil)
+    
         twoButtonAlert.addAction(confirmAlertAction)
         twoButtonAlert.addAction(cancelAlertAction)
-        
+    
         present(twoButtonAlert, animated: true, completion: nil)
     }
 }
