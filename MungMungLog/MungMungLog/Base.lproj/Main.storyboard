@@ -4,26 +4,126 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--홈-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q4q-Kz-T63">
+                                <rect key="frame" x="20" y="412.5" width="374" height="390.5"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="temporaryCalendarView"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLE-Ec-1Sq">
+                                <rect key="frame" x="20" y="44" width="374" height="358.5"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2pD-wx-W2T">
+                                        <rect key="frame" x="0.0" y="10" width="374" height="143.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hhW-79-P31">
+                                            <size key="itemSize" width="150" height="107.5"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="18" minY="18" maxX="18" maxY="18"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCell" id="KEW-Lh-frL">
+                                                <rect key="frame" x="18" y="18" width="150" height="107.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HWc-qw-gAL">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="107.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test" translatesAutoresizingMaskIntoConstraints="NO" id="9oH-ih-3ry" customClass="CircleImageView" customModule="MungMungLog" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="107.5"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="homeProfileImageView"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="9oH-ih-3ry" secondAttribute="bottom" id="5sa-jm-xBO"/>
+                                                        <constraint firstItem="9oH-ih-3ry" firstAttribute="top" secondItem="HWc-qw-gAL" secondAttribute="top" id="PV2-j4-gId"/>
+                                                        <constraint firstItem="9oH-ih-3ry" firstAttribute="leading" secondItem="HWc-qw-gAL" secondAttribute="leading" id="SPk-xF-qPp"/>
+                                                        <constraint firstAttribute="trailing" secondItem="9oH-ih-3ry" secondAttribute="trailing" id="Xhf-6I-zr1"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                                <size key="customSize" width="150" height="107.5"/>
+                                            </collectionViewCell>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="emptyProfileCell" id="JfR-Sf-aQw">
+                                                <rect key="frame" x="178" y="18" width="150" height="107.5"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bEJ-Jj-QKM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="107.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77A-dd-Lhk">
+                                                            <rect key="frame" x="64" y="43" width="22.5" height="22"/>
+                                                            <accessibility key="accessibilityConfiguration" identifier="profileAddButton"/>
+                                                            <color key="tintColor" systemColor="systemTealColor"/>
+                                                            <state key="normal">
+                                                                <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="77A-dd-Lhk" firstAttribute="centerX" secondItem="bEJ-Jj-QKM" secondAttribute="centerX" id="q98-Z4-83A"/>
+                                                        <constraint firstItem="77A-dd-Lhk" firstAttribute="centerY" secondItem="bEJ-Jj-QKM" secondAttribute="centerY" id="qu4-zb-7sW"/>
+                                                    </constraints>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="ZlT-vd-fLQ"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="hcp-SO-9Cz"/>
+                                        </connections>
+                                    </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykk-jV-ZHU" customClass="RoundedView" customModule="MungMungLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="163.5" width="374" height="195"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="profileDataContainerView"/>
+                                    </view>
+                                </subviews>
+                                <accessibility key="accessibilityConfiguration" identifier="profileContainerView"/>
+                                <constraints>
+                                    <constraint firstItem="2pD-wx-W2T" firstAttribute="height" secondItem="HLE-Ec-1Sq" secondAttribute="height" multiplier="0.4" id="0jo-dc-mMH"/>
+                                    <constraint firstAttribute="trailing" secondItem="2pD-wx-W2T" secondAttribute="trailing" id="CbZ-Wq-f6K"/>
+                                    <constraint firstItem="Ykk-jV-ZHU" firstAttribute="leading" secondItem="HLE-Ec-1Sq" secondAttribute="leading" id="Nug-jb-mYx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ykk-jV-ZHU" secondAttribute="trailing" id="QVP-c0-62Z"/>
+                                    <constraint firstItem="2pD-wx-W2T" firstAttribute="top" secondItem="HLE-Ec-1Sq" secondAttribute="top" constant="10" id="iLQ-En-cjH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ykk-jV-ZHU" secondAttribute="bottom" id="n7L-kP-NTS"/>
+                                    <constraint firstItem="2pD-wx-W2T" firstAttribute="leading" secondItem="HLE-Ec-1Sq" secondAttribute="leading" id="uBf-ye-hfn"/>
+                                    <constraint firstItem="Ykk-jV-ZHU" firstAttribute="top" secondItem="2pD-wx-W2T" secondAttribute="bottom" constant="10" id="wcm-2F-uE7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HLE-Ec-1Sq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="Qiw-Wg-ZTU"/>
+                            <constraint firstItem="Q4q-Kz-T63" firstAttribute="top" secondItem="HLE-Ec-1Sq" secondAttribute="bottom" constant="10" id="Ukg-sg-D76"/>
+                            <constraint firstItem="Q4q-Kz-T63" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ac5-G7-oAp"/>
+                            <constraint firstItem="HLE-Ec-1Sq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fiC-hh-JcK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q4q-Kz-T63" secondAttribute="trailing" constant="20" id="frA-Vy-ouR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HLE-Ec-1Sq" secondAttribute="trailing" constant="20" id="si6-Bd-qpZ"/>
+                            <constraint firstItem="HLE-Ec-1Sq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tfi-Od-mMF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q4q-Kz-T63" secondAttribute="bottom" constant="10" id="yuM-5e-S34"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="홈" image="house.fill" catalog="system" id="Aat-se-JSQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="-1254"/>
+            <point key="canvasLocation" x="1153.6231884057972" y="-1254.2410714285713"/>
         </scene>
         <!--산책-->
         <scene sceneID="3o5-zd-TJq">
@@ -222,13 +322,18 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Test" width="1411" height="1411"/>
         <image name="book.fill" catalog="system" width="128" height="102"/>
         <image name="clock.fill" catalog="system" width="128" height="121"/>
         <image name="figure.walk" catalog="system" width="95" height="128"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -17,6 +17,9 @@
 		460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02825582EEF00027376 /* UIViewController+alert.swift */; };
 		4656860D25766DCE00088513 /* RecordEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656860C25766DCE00088513 /* RecordEndingViewController.swift */; };
 		467BF53725748F8900511451 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* CircleView.swift */; };
+		46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
+		46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
+		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
 		46A574A025729B6200B7ADF5 /* RecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* RecordStartingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,9 @@
 		460EB02825582EEF00027376 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		4656860C25766DCE00088513 /* RecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEndingViewController.swift; sourceTree = "<group>"; };
 		467BF53625748F8900511451 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		46A025AA2577D17D0022BDBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		46A025AE2577D7BB0022BDBF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		46A5749F25729B6200B7ADF5 /* RecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordStartingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				4656860925766C8900088513 /* ViewShapeClass */,
+				46A025A92577D1530022BDBF /* Home */,
 				46A5749E25729B3D00B7ADF5 /* Record */,
 				460EB00C2557F76B00027376 /* AppDelegate.swift */,
 				460EB00E2557F76B00027376 /* SceneDelegate.swift */,
@@ -85,8 +92,18 @@
 			isa = PBXGroup;
 			children = (
 				467BF53625748F8900511451 /* CircleView.swift */,
+				46A025AE2577D7BB0022BDBF /* CircleImageView.swift */,
+				46A025B12577D9760022BDBF /* RoundedView.swift */,
 			);
 			path = ViewShapeClass;
+			sourceTree = "<group>";
+		};
+		46A025A92577D1530022BDBF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				46A025AA2577D17D0022BDBF /* HomeViewController.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		46A5749E25729B3D00B7ADF5 /* Record */ = {
@@ -173,8 +190,11 @@
 				467BF53725748F8900511451 /* CircleView.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				4656860D25766DCE00088513 /* RecordEndingViewController.swift in Sources */,
+				46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */,
 				46A574A025729B6200B7ADF5 /* RecordStartingViewController.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
+				46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */,
+				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
