@@ -37,7 +37,7 @@
                                             <inset key="sectionInset" minX="18" minY="18" maxX="18" maxY="18"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCell" id="KEW-Lh-frL">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCell" id="KEW-Lh-frL" customClass="VaildProfileCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="18" y="18" width="150" height="107.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HWc-qw-gAL">
@@ -57,8 +57,11 @@
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="150" height="107.5"/>
+                                                <connections>
+                                                    <outlet property="profileImageView" destination="9oH-ih-3ry" id="X3l-AA-UKx"/>
+                                                </connections>
                                             </collectionViewCell>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="emptyProfileCell" id="JfR-Sf-aQw">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="emptyProfileCell" id="JfR-Sf-aQw" customClass="EmptyProfileCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="178" y="18" width="150" height="107.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bEJ-Jj-QKM">
