@@ -22,6 +22,7 @@ class HomeViewController: UIViewController {
     
     let list: [ProfileCell] = [
         ProfileCell.vaild(image: Profile.Item.init(imageName: "Test")),
+        ProfileCell.vaild(image: Profile.Item.init(imageName: "Test")),
         ProfileCell.empty
     ]
 

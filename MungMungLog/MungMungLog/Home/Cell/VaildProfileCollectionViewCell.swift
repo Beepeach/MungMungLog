@@ -11,4 +11,10 @@ class VaildProfileCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var profileImageView: CircleImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.layer.cornerRadius = 10
+        clipsToBounds = true
+    }
 }
