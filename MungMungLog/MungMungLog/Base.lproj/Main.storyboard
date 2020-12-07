@@ -223,19 +223,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lg7-A0-kGP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="358.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="313.5"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgb-AC-6nP">
-                                <rect key="frame" x="0.0" y="402.5" width="414" height="459.5"/>
+                                <rect key="frame" x="0.0" y="357.5" width="414" height="504.5"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khE-V8-dRC">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="183.5"/>
+                                        <rect key="frame" x="20" y="0.0" width="374" height="202"/>
                                     </datePicker>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D29-Ix-vf6">
-                                        <rect key="frame" x="0.0" y="183.5" width="414" height="276"/>
+                                        <rect key="frame" x="0.0" y="202" width="414" height="302.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-iA-6gH" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
-                                                <rect key="frame" x="134.5" y="65.5" width="145" height="145"/>
+                                                <rect key="frame" x="134.5" y="78.5" width="145" height="145"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="산책 완료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zse-TB-unM">
                                                         <rect key="frame" x="10" y="52" width="125" height="41"/>
@@ -294,7 +294,7 @@
                         <constraints>
                             <constraint firstItem="lg7-A0-kGP" firstAttribute="trailing" secondItem="vwG-m1-zbd" secondAttribute="trailing" id="35U-6Z-TQy"/>
                             <constraint firstItem="vwG-m1-zbd" firstAttribute="trailing" secondItem="bgb-AC-6nP" secondAttribute="trailing" id="3rH-JS-rZP"/>
-                            <constraint firstItem="lg7-A0-kGP" firstAttribute="height" secondItem="JbP-HY-krx" secondAttribute="height" multiplier="0.4" id="CGW-Vz-OBS"/>
+                            <constraint firstItem="lg7-A0-kGP" firstAttribute="height" secondItem="JbP-HY-krx" secondAttribute="height" multiplier="0.35" id="CGW-Vz-OBS"/>
                             <constraint firstItem="bgb-AC-6nP" firstAttribute="leading" secondItem="vwG-m1-zbd" secondAttribute="leading" id="ECw-ur-bv3"/>
                             <constraint firstItem="vwG-m1-zbd" firstAttribute="bottom" secondItem="bgb-AC-6nP" secondAttribute="bottom" id="Re6-hy-pPp"/>
                             <constraint firstItem="lg7-A0-kGP" firstAttribute="leading" secondItem="vwG-m1-zbd" secondAttribute="leading" id="Uaa-yK-gxk"/>
