@@ -171,8 +171,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-9v-Fah" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
                                 <rect key="frame" x="107" y="348" width="200" height="200"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책 시작" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Boj-C1-aq1">
-                                        <rect key="frame" x="37.5" y="79.5" width="125" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="산책 시작" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Boj-C1-aq1">
+                                        <rect key="frame" x="10" y="79.5" width="180" height="41"/>
                                         <accessibility key="accessibilityConfiguration" identifier="startLabel"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -189,14 +189,15 @@
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="startButtonContainerView"/>
                                 <constraints>
-                                    <constraint firstItem="Boj-C1-aq1" firstAttribute="centerX" secondItem="KbU-9v-Fah" secondAttribute="centerX" id="2c9-zl-f4m"/>
                                     <constraint firstItem="RaA-h8-DsV" firstAttribute="top" secondItem="KbU-9v-Fah" secondAttribute="top" id="5KT-ze-zrd"/>
-                                    <constraint firstAttribute="width" constant="200" id="Aeu-zx-aby"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="Aeu-zx-aby"/>
                                     <constraint firstAttribute="trailing" secondItem="RaA-h8-DsV" secondAttribute="trailing" id="EUz-Wf-hRI"/>
                                     <constraint firstAttribute="bottom" secondItem="RaA-h8-DsV" secondAttribute="bottom" id="Q9U-EJ-tCw"/>
+                                    <constraint firstItem="Boj-C1-aq1" firstAttribute="leading" secondItem="KbU-9v-Fah" secondAttribute="leading" constant="10" id="ZyB-fx-CAk"/>
+                                    <constraint firstAttribute="width" secondItem="KbU-9v-Fah" secondAttribute="height" id="ah5-Ig-sCQ"/>
                                     <constraint firstItem="Boj-C1-aq1" firstAttribute="centerY" secondItem="KbU-9v-Fah" secondAttribute="centerY" id="bbK-Bs-6x4"/>
                                     <constraint firstItem="RaA-h8-DsV" firstAttribute="leading" secondItem="KbU-9v-Fah" secondAttribute="leading" id="mv8-fc-GJX"/>
-                                    <constraint firstAttribute="height" constant="200" id="xus-tw-zQW"/>
+                                    <constraint firstAttribute="trailing" secondItem="Boj-C1-aq1" secondAttribute="trailing" constant="10" id="n4e-zm-WQx"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -230,47 +231,61 @@
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khE-V8-dRC">
                                         <rect key="frame" x="20" y="0.0" width="374" height="183.5"/>
                                     </datePicker>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-iA-6gH" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
-                                        <rect key="frame" x="139.5" y="203.5" width="135" height="135"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D29-Ix-vf6">
+                                        <rect key="frame" x="0.0" y="183.5" width="414" height="276"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책 완료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zse-TB-unM">
-                                                <rect key="frame" x="5" y="47" width="125" height="41"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="endLabel"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMC-b4-zHo">
-                                                <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
-                                                <accessibility key="accessibilityConfiguration" identifier="endButton"/>
-                                                <connections>
-                                                    <action selector="stopRecord:" destination="ztx-uR-1Kk" eventType="touchUpInside" id="4Ml-U1-s8X"/>
-                                                </connections>
-                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-iA-6gH" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
+                                                <rect key="frame" x="134.5" y="65.5" width="145" height="145"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="산책 완료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zse-TB-unM">
+                                                        <rect key="frame" x="10" y="52" width="125" height="41"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="endLabel"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMC-b4-zHo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="endButton"/>
+                                                        <connections>
+                                                            <action selector="stopRecord:" destination="ztx-uR-1Kk" eventType="touchUpInside" id="4Ml-U1-s8X"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="endButtonContainerView" label="endButtonContainerView"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="gMC-b4-zHo" secondAttribute="trailing" id="7vK-YT-n0B"/>
+                                                    <constraint firstAttribute="bottom" secondItem="gMC-b4-zHo" secondAttribute="bottom" id="8Vk-3A-aOs"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="145" id="VBp-O5-Shx"/>
+                                                    <constraint firstItem="zse-TB-unM" firstAttribute="leading" secondItem="9ra-iA-6gH" secondAttribute="leading" constant="10" id="aNo-JF-A24"/>
+                                                    <constraint firstItem="zse-TB-unM" firstAttribute="centerY" secondItem="9ra-iA-6gH" secondAttribute="centerY" id="o0e-Va-peN"/>
+                                                    <constraint firstItem="gMC-b4-zHo" firstAttribute="top" secondItem="9ra-iA-6gH" secondAttribute="top" id="qrk-e9-zdA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zse-TB-unM" secondAttribute="trailing" constant="10" id="tkQ-4U-9CQ"/>
+                                                    <constraint firstAttribute="width" secondItem="9ra-iA-6gH" secondAttribute="height" multiplier="1:1" id="u8y-qB-VN1"/>
+                                                    <constraint firstItem="gMC-b4-zHo" firstAttribute="leading" secondItem="9ra-iA-6gH" secondAttribute="leading" id="y5n-0g-4hE"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemRedColor"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="endButtonContainerView" label="endButtonContainerView"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="zse-TB-unM" firstAttribute="leading" secondItem="9ra-iA-6gH" secondAttribute="leading" constant="5" id="Add-IM-Bbf"/>
-                                            <constraint firstAttribute="width" secondItem="9ra-iA-6gH" secondAttribute="height" id="Euj-NE-APs"/>
-                                            <constraint firstItem="gMC-b4-zHo" firstAttribute="top" secondItem="9ra-iA-6gH" secondAttribute="top" id="FTQ-Z3-YT0"/>
-                                            <constraint firstItem="zse-TB-unM" firstAttribute="centerY" secondItem="9ra-iA-6gH" secondAttribute="centerY" id="TdV-bl-BNa"/>
-                                            <constraint firstAttribute="trailing" secondItem="zse-TB-unM" secondAttribute="trailing" constant="5" id="Vlo-CJ-qGY"/>
-                                            <constraint firstItem="gMC-b4-zHo" firstAttribute="leading" secondItem="9ra-iA-6gH" secondAttribute="leading" id="pzb-8b-0XU"/>
-                                            <constraint firstAttribute="trailing" secondItem="gMC-b4-zHo" secondAttribute="trailing" id="wdC-ah-LQa"/>
-                                            <constraint firstAttribute="bottom" secondItem="gMC-b4-zHo" secondAttribute="bottom" id="xZf-2h-kGA"/>
+                                            <constraint firstItem="9ra-iA-6gH" firstAttribute="centerX" secondItem="D29-Ix-vf6" secondAttribute="centerX" id="OcJ-Ek-pnU"/>
+                                            <constraint firstItem="9ra-iA-6gH" firstAttribute="centerY" secondItem="D29-Ix-vf6" secondAttribute="centerY" id="b3F-fz-EEx"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration" identifier="clockAndEndButtonContainerView"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="D29-Ix-vf6" secondAttribute="bottom" id="B7V-UK-trE"/>
                                     <constraint firstItem="khE-V8-dRC" firstAttribute="leading" secondItem="bgb-AC-6nP" secondAttribute="leading" constant="20" id="HYI-Cz-4VX"/>
                                     <constraint firstAttribute="trailing" secondItem="khE-V8-dRC" secondAttribute="trailing" constant="20" id="V1G-u5-GQB"/>
                                     <constraint firstItem="khE-V8-dRC" firstAttribute="top" secondItem="bgb-AC-6nP" secondAttribute="top" id="ZZ3-UW-WfE"/>
+                                    <constraint firstItem="D29-Ix-vf6" firstAttribute="top" secondItem="khE-V8-dRC" secondAttribute="bottom" id="bbB-pz-N0b"/>
                                     <constraint firstItem="khE-V8-dRC" firstAttribute="centerX" secondItem="bgb-AC-6nP" secondAttribute="centerX" id="giV-9c-oHd"/>
-                                    <constraint firstItem="9ra-iA-6gH" firstAttribute="centerX" secondItem="bgb-AC-6nP" secondAttribute="centerX" id="o0q-z6-Sps"/>
+                                    <constraint firstAttribute="trailing" secondItem="D29-Ix-vf6" secondAttribute="trailing" id="q5a-iy-wAw"/>
                                     <constraint firstItem="khE-V8-dRC" firstAttribute="height" secondItem="bgb-AC-6nP" secondAttribute="height" multiplier="0.4" id="rCQ-l0-tcj"/>
-                                    <constraint firstItem="9ra-iA-6gH" firstAttribute="top" secondItem="khE-V8-dRC" secondAttribute="bottom" constant="20" id="tOZ-Fy-CUE"/>
+                                    <constraint firstItem="D29-Ix-vf6" firstAttribute="leading" secondItem="bgb-AC-6nP" secondAttribute="leading" id="sVr-fl-S6I"/>
                                 </constraints>
                             </view>
                         </subviews>
