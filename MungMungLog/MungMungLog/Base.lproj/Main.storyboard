@@ -222,67 +222,73 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lg7-A0-kGP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="4gv-zh-ZUm"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="44" width="414" height="358.5"/>
                             </mapView>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khE-V8-dRC">
-                                <rect key="frame" x="0.0" y="444" width="414" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Eux-15-AOa"/>
-                                </constraints>
-                            </datePicker>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-iA-6gH" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
-                                <rect key="frame" x="107" y="614" width="200" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgb-AC-6nP">
+                                <rect key="frame" x="0.0" y="402.5" width="414" height="459.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책 완료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zse-TB-unM">
-                                        <rect key="frame" x="26.5" y="76" width="147" height="48"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="endLabel"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMC-b4-zHo">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                        <accessibility key="accessibilityConfiguration" identifier="endButton"/>
-                                        <connections>
-                                            <action selector="stopRecord:" destination="ztx-uR-1Kk" eventType="touchUpInside" id="4Ml-U1-s8X"/>
-                                        </connections>
-                                    </button>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khE-V8-dRC">
+                                        <rect key="frame" x="20" y="0.0" width="374" height="183.5"/>
+                                    </datePicker>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-iA-6gH" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
+                                        <rect key="frame" x="128.5" y="203.5" width="157" height="157"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책 완료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zse-TB-unM">
+                                                <rect key="frame" x="5" y="54.5" width="147" height="48"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="endLabel"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMC-b4-zHo">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="endButton"/>
+                                                <connections>
+                                                    <action selector="stopRecord:" destination="ztx-uR-1Kk" eventType="touchUpInside" id="4Ml-U1-s8X"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="endButtonContainerView" label="endButtonContainerView"/>
+                                        <constraints>
+                                            <constraint firstItem="zse-TB-unM" firstAttribute="leading" secondItem="9ra-iA-6gH" secondAttribute="leading" constant="5" id="Add-IM-Bbf"/>
+                                            <constraint firstAttribute="width" secondItem="9ra-iA-6gH" secondAttribute="height" id="Euj-NE-APs"/>
+                                            <constraint firstItem="zse-TB-unM" firstAttribute="centerY" secondItem="9ra-iA-6gH" secondAttribute="centerY" id="TdV-bl-BNa"/>
+                                            <constraint firstAttribute="trailing" secondItem="zse-TB-unM" secondAttribute="trailing" constant="5" id="Vlo-CJ-qGY"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                <accessibility key="accessibilityConfiguration" identifier="endButtonContainerView" label="endButtonContainerView"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="gMC-b4-zHo" secondAttribute="bottom" id="2cs-ma-Qs4"/>
-                                    <constraint firstAttribute="height" constant="200" id="CnP-ik-tjy"/>
-                                    <constraint firstAttribute="width" constant="200" id="GhS-eZ-Lvr"/>
-                                    <constraint firstItem="zse-TB-unM" firstAttribute="centerX" secondItem="9ra-iA-6gH" secondAttribute="centerX" id="PDO-0F-f66"/>
-                                    <constraint firstItem="zse-TB-unM" firstAttribute="centerY" secondItem="9ra-iA-6gH" secondAttribute="centerY" id="VKb-82-zXP"/>
-                                    <constraint firstAttribute="trailing" secondItem="gMC-b4-zHo" secondAttribute="trailing" id="aqL-L9-pZa"/>
-                                    <constraint firstItem="gMC-b4-zHo" firstAttribute="top" secondItem="9ra-iA-6gH" secondAttribute="top" id="hdz-3b-P4T"/>
-                                    <constraint firstItem="gMC-b4-zHo" firstAttribute="leading" secondItem="9ra-iA-6gH" secondAttribute="leading" id="qPx-nH-n8N"/>
+                                    <constraint firstItem="khE-V8-dRC" firstAttribute="leading" secondItem="bgb-AC-6nP" secondAttribute="leading" constant="20" id="HYI-Cz-4VX"/>
+                                    <constraint firstAttribute="trailing" secondItem="khE-V8-dRC" secondAttribute="trailing" constant="20" id="V1G-u5-GQB"/>
+                                    <constraint firstItem="khE-V8-dRC" firstAttribute="top" secondItem="bgb-AC-6nP" secondAttribute="top" id="ZZ3-UW-WfE"/>
+                                    <constraint firstItem="khE-V8-dRC" firstAttribute="centerX" secondItem="bgb-AC-6nP" secondAttribute="centerX" id="giV-9c-oHd"/>
+                                    <constraint firstItem="9ra-iA-6gH" firstAttribute="centerX" secondItem="bgb-AC-6nP" secondAttribute="centerX" id="o0q-z6-Sps"/>
+                                    <constraint firstItem="khE-V8-dRC" firstAttribute="height" secondItem="bgb-AC-6nP" secondAttribute="height" multiplier="0.4" id="rCQ-l0-tcj"/>
+                                    <constraint firstItem="9ra-iA-6gH" firstAttribute="top" secondItem="khE-V8-dRC" secondAttribute="bottom" constant="20" id="tOZ-Fy-CUE"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vwG-m1-zbd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="khE-V8-dRC" firstAttribute="top" secondItem="lg7-A0-kGP" secondAttribute="bottom" id="2DU-6L-sfY"/>
                             <constraint firstItem="lg7-A0-kGP" firstAttribute="trailing" secondItem="vwG-m1-zbd" secondAttribute="trailing" id="35U-6Z-TQy"/>
-                            <constraint firstItem="khE-V8-dRC" firstAttribute="trailing" secondItem="vwG-m1-zbd" secondAttribute="trailing" id="6re-vp-ZMD"/>
-                            <constraint firstItem="9ra-iA-6gH" firstAttribute="centerX" secondItem="JbP-HY-krx" secondAttribute="centerX" id="H5W-8u-Ny7"/>
+                            <constraint firstItem="vwG-m1-zbd" firstAttribute="trailing" secondItem="bgb-AC-6nP" secondAttribute="trailing" id="3rH-JS-rZP"/>
+                            <constraint firstItem="lg7-A0-kGP" firstAttribute="height" secondItem="JbP-HY-krx" secondAttribute="height" multiplier="0.4" id="CGW-Vz-OBS"/>
+                            <constraint firstItem="bgb-AC-6nP" firstAttribute="leading" secondItem="vwG-m1-zbd" secondAttribute="leading" id="ECw-ur-bv3"/>
+                            <constraint firstItem="vwG-m1-zbd" firstAttribute="bottom" secondItem="bgb-AC-6nP" secondAttribute="bottom" id="Re6-hy-pPp"/>
                             <constraint firstItem="lg7-A0-kGP" firstAttribute="leading" secondItem="vwG-m1-zbd" secondAttribute="leading" id="Uaa-yK-gxk"/>
                             <constraint firstItem="lg7-A0-kGP" firstAttribute="top" secondItem="vwG-m1-zbd" secondAttribute="top" id="aj0-4K-Jll"/>
-                            <constraint firstItem="9ra-iA-6gH" firstAttribute="top" secondItem="khE-V8-dRC" secondAttribute="bottom" constant="70" id="bfi-rS-gz3"/>
-                            <constraint firstItem="khE-V8-dRC" firstAttribute="leading" secondItem="vwG-m1-zbd" secondAttribute="leading" id="xmf-lp-ulM"/>
+                            <constraint firstItem="bgb-AC-6nP" firstAttribute="top" secondItem="lg7-A0-kGP" secondAttribute="bottom" id="op5-DD-r0J"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RCC-Vo-bSv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9K-Dh-dQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2246" y="523"/>
+            <point key="canvasLocation" x="2243.4782608695655" y="522.99107142857144"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="72s-P6-kZt">
