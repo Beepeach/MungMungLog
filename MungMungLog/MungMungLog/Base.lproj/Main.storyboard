@@ -138,22 +138,6 @@
             </objects>
             <point key="canvasLocation" x="1153.6231884057972" y="-1254.2410714285713"/>
         </scene>
-        <!--산책-->
-        <scene sceneID="3o5-zd-TJq">
-            <objects>
-                <viewController id="Y0u-CH-ftw" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rFu-RM-8g2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="bg2-lf-jCA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="산책" image="figure.walk" catalog="system" id="6NS-rb-PIN"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qsm-iJ-Zm1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1154" y="-374"/>
-        </scene>
         <!--다이어리-->
         <scene sceneID="v6Y-zS-beT">
             <objects>
@@ -170,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="1303" y="1550"/>
         </scene>
-        <!--기록-->
+        <!--산책-->
         <scene sceneID="3u0-SP-zcN">
             <objects>
-                <viewController id="gVC-LS-XyK" customClass="RecordStartingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gVC-LS-XyK" customClass="WalkRecordStartingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bzu-dq-5Rm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -218,16 +202,16 @@
                             <constraint firstItem="KbU-9v-Fah" firstAttribute="centerX" secondItem="Bzu-dq-5Rm" secondAttribute="centerX" id="qqr-dG-PCq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="기록" image="clock.fill" catalog="system" id="Meh-Lc-6me"/>
+                    <tabBarItem key="tabBarItem" title="산책" image="figure.walk" catalog="system" id="Meh-Lc-6me"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ip8-9B-3Ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153.6231884057972" y="522.99107142857144"/>
+            <point key="canvasLocation" x="2394" y="-374"/>
         </scene>
-        <!--Record Ending View Controller-->
+        <!--Walk Record Ending View Controller-->
         <scene sceneID="oZu-ej-9LS">
             <objects>
-                <viewController id="ztx-uR-1Kk" customClass="RecordEndingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ztx-uR-1Kk" customClass="WalkRecordEndingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JbP-HY-krx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -316,12 +300,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9K-Dh-dQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2243.4782608695655" y="522.99107142857144"/>
+            <point key="canvasLocation" x="3484" y="-374"/>
         </scene>
-        <!--Record Editing View Controller-->
+        <!--Walk Record Editing View Controller-->
         <scene sceneID="9lW-Yi-N9P">
             <objects>
-                <viewController id="KRU-YD-Xzh" customClass="RecordEditingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KRU-YD-Xzh" customClass="WalkRecordEditingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yrl-1g-QDb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -379,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3357.971014492754" y="522.99107142857144"/>
+            <point key="canvasLocation" x="4599" y="-374"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="72s-P6-kZt">
@@ -410,8 +394,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Q6I-0w-FLS"/>
-                        <segue destination="Y0u-CH-ftw" kind="relationship" relationship="viewControllers" id="xyk-AU-7hT"/>
                         <segue destination="gVC-LS-XyK" kind="relationship" relationship="viewControllers" id="sT9-E8-9d9"/>
+                        <segue destination="Vdx-Uy-zj7" kind="relationship" relationship="viewControllers" id="RfV-uX-ZcF"/>
                         <segue destination="s0x-rX-LNG" kind="relationship" relationship="viewControllers" id="A45-vf-rpp"/>
                         <segue destination="CFr-HF-ErC" kind="relationship" relationship="viewControllers" id="Myc-8I-HKI"/>
                     </connections>
@@ -419,6 +403,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAj-uv-x2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="125.89285714285714"/>
+        </scene>
+        <!--기록-->
+        <scene sceneID="xny-1A-kFi">
+            <objects>
+                <viewController id="Vdx-Uy-zj7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TWh-rV-fwA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="gke-Ag-jrH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="기록" image="clock.fill" catalog="system" id="c6L-j7-gi1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ErT-bg-p27" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756" y="429"/>
         </scene>
     </scenes>
     <resources>

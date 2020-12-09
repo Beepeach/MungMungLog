@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecordEditingViewController: UIViewController {
+class WalkRecordEditingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

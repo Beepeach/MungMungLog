@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RecordStartingViewController: UIViewController {
+class WalkRecordStartingViewController: UIViewController {
 
 
     override func viewDidLoad() {
