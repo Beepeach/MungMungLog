@@ -23,6 +23,7 @@
 		46A574A025729B6200B7ADF5 /* RecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* RecordStartingViewController.swift */; };
 		46DFB30725792782008800AC /* EmptyProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */; };
 		46DFB30B25792938008800AC /* VaildProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */; };
+		46E69AC9258069FB00019FD9 /* RecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* RecordEditingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		46A5749F25729B6200B7ADF5 /* RecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordStartingViewController.swift; sourceTree = "<group>"; };
 		46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaildProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		46E69AC8258069FB00019FD9 /* RecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordEditingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				46A5749F25729B6200B7ADF5 /* RecordStartingViewController.swift */,
 				4656860C25766DCE00088513 /* RecordEndingViewController.swift */,
+				46E69AC8258069FB00019FD9 /* RecordEditingViewController.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				467BF53725748F8900511451 /* CircleView.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				4656860D25766DCE00088513 /* RecordEndingViewController.swift in Sources */,
+				46E69AC9258069FB00019FD9 /* RecordEditingViewController.swift in Sources */,
 				46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */,
 				46A574A025729B6200B7ADF5 /* RecordStartingViewController.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
