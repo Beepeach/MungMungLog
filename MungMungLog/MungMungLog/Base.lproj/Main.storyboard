@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDg-gl-8Cr">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -16,19 +16,19 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q4q-Kz-T63">
-                                <rect key="frame" x="20" y="412.5" width="374" height="390.5"/>
+                                <rect key="frame" x="12" y="391.66666666666674" width="366" height="359.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="temporaryCalendarView"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLE-Ec-1Sq">
-                                <rect key="frame" x="20" y="44" width="374" height="358.5"/>
+                                <rect key="frame" x="12" y="44" width="366" height="337.66666666666669"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2pD-wx-W2T">
-                                        <rect key="frame" x="0.0" y="10" width="374" height="143.5"/>
+                                        <rect key="frame" x="0.0" y="10" width="366" height="135"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hhW-79-P31">
                                             <size key="itemSize" width="150" height="107.5"/>
@@ -38,18 +38,18 @@
                                         </collectionViewFlowLayout>
                                         <cells>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCell" id="KEW-Lh-frL" customClass="VaildProfileCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="18" width="150" height="107.5"/>
+                                                <rect key="frame" x="0.0" y="13.666666666666666" width="150" height="107.5"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HWc-qw-gAL">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="107.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Test" translatesAutoresizingMaskIntoConstraints="NO" id="9oH-ih-3ry">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="107.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="107.66666666666667"/>
                                                             <accessibility key="accessibilityConfiguration" identifier="homeProfileImageView"/>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gd7-4n-Phs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="107.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="107.66666666666667"/>
                                                             <accessibility key="accessibilityConfiguration" identifier="homeProfileChangeButton"/>
                                                         </button>
                                                     </subviews>
@@ -70,14 +70,14 @@
                                                 </connections>
                                             </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="emptyProfileCell" id="JfR-Sf-aQw" customClass="EmptyProfileCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
-                                                <rect key="frame" x="160" y="18" width="150" height="107.5"/>
+                                                <rect key="frame" x="160" y="13.666666666666666" width="150" height="107.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bEJ-Jj-QKM">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="107.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77A-dd-Lhk">
-                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="107.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="150" height="107.66666666666667"/>
                                                             <accessibility key="accessibilityConfiguration" identifier="profileAddButton"/>
                                                             <color key="tintColor" systemColor="systemTealColor"/>
                                                             <state key="normal">
@@ -101,7 +101,7 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ykk-jV-ZHU" customClass="RoundedView" customModule="MungMungLog" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="163.5" width="374" height="195"/>
+                                        <rect key="frame" x="0.0" y="155" width="366" height="182.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                         <accessibility key="accessibilityConfiguration" identifier="profileDataContainerView"/>
                                     </view>
@@ -124,10 +124,10 @@
                         <constraints>
                             <constraint firstItem="HLE-Ec-1Sq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="Qiw-Wg-ZTU"/>
                             <constraint firstItem="Q4q-Kz-T63" firstAttribute="top" secondItem="HLE-Ec-1Sq" secondAttribute="bottom" constant="10" id="Ukg-sg-D76"/>
-                            <constraint firstItem="Q4q-Kz-T63" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ac5-G7-oAp"/>
-                            <constraint firstItem="HLE-Ec-1Sq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fiC-hh-JcK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q4q-Kz-T63" secondAttribute="trailing" constant="20" id="frA-Vy-ouR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HLE-Ec-1Sq" secondAttribute="trailing" constant="20" id="si6-Bd-qpZ"/>
+                            <constraint firstItem="Q4q-Kz-T63" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="ac5-G7-oAp"/>
+                            <constraint firstItem="HLE-Ec-1Sq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="fiC-hh-JcK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q4q-Kz-T63" secondAttribute="trailing" constant="12" id="frA-Vy-ouR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HLE-Ec-1Sq" secondAttribute="trailing" constant="12" id="si6-Bd-qpZ"/>
                             <constraint firstItem="HLE-Ec-1Sq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tfi-Od-mMF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q4q-Kz-T63" secondAttribute="bottom" constant="10" id="yuM-5e-S34"/>
                         </constraints>
@@ -143,7 +143,7 @@
             <objects>
                 <viewController id="s0x-rX-LNG" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TmK-0q-59S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="jwO-mC-1bp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -159,14 +159,14 @@
             <objects>
                 <viewController id="gVC-LS-XyK" customClass="WalkRecordStartingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bzu-dq-5Rm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-9v-Fah" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
-                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <rect key="frame" x="95" y="322" width="200" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="산책 시작" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Boj-C1-aq1">
-                                        <rect key="frame" x="10" y="79.5" width="180" height="41"/>
+                                        <rect key="frame" x="10" y="79.666666666666686" width="180" height="40.666666666666657"/>
                                         <accessibility key="accessibilityConfiguration" identifier="startLabel"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -213,26 +213,26 @@
             <objects>
                 <viewController id="ztx-uR-1Kk" customClass="WalkRecordEndingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JbP-HY-krx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lg7-A0-kGP">
-                                <rect key="frame" x="0.0" y="44" width="414" height="313.5"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="295.33333333333331"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgb-AC-6nP">
-                                <rect key="frame" x="0.0" y="357.5" width="414" height="504.5"/>
+                                <rect key="frame" x="0.0" y="339.33333333333326" width="390" height="470.66666666666674"/>
                                 <subviews>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khE-V8-dRC">
-                                        <rect key="frame" x="20" y="0.0" width="374" height="202"/>
+                                        <rect key="frame" x="20" y="0.0" width="350" height="188.33333333333334"/>
                                     </datePicker>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D29-Ix-vf6">
-                                        <rect key="frame" x="0.0" y="202" width="414" height="302.5"/>
+                                        <rect key="frame" x="0.0" y="188.33333333333334" width="390" height="282.33333333333326"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ra-iA-6gH" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
-                                                <rect key="frame" x="134.5" y="78.5" width="145" height="145"/>
+                                                <rect key="frame" x="122.66666666666669" y="68.666666666666742" width="145" height="145"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="산책 완료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zse-TB-unM">
-                                                        <rect key="frame" x="10" y="52" width="125" height="41"/>
+                                                        <rect key="frame" x="9.9999999999999858" y="52" width="125.00000000000001" height="40.666666666666657"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="endLabel"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -307,31 +307,90 @@
             <objects>
                 <viewController id="KRU-YD-Xzh" customClass="WalkRecordEditingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yrl-1g-QDb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Prr-Hb-SxZ">
-                                <rect key="frame" x="40" y="44" width="336" height="171"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bv-JY-p4c">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0p7-p7-dAt">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="1500"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lj1-r7-KdD">
+                                    <size key="itemSize" width="388" height="372"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoSelectCollectionViewCell" id="Jg1-Mc-U7t" customClass="PhotoSelectCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="0.0" width="388" height="372"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXT-JL-5MM">
-                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
-                            </view>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mla-UE-4Sv">
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="372"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3bv-JY-p4c">
+                                                    <rect key="frame" x="12" y="12" width="364" height="348"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="WalkRecordPhotoImageView"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXT-JL-5MM">
+                                                    <rect key="frame" x="12" y="12" width="364" height="348"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="WaklRecordPhotoSelectButton"/>
+                                                    <state key="normal">
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3bv-JY-p4c" firstAttribute="top" secondItem="mla-UE-4Sv" secondAttribute="top" constant="12" id="1tZ-MN-gX3"/>
+                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="bottom" secondItem="3bv-JY-p4c" secondAttribute="bottom" id="50o-rw-wyf"/>
+                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="top" secondItem="3bv-JY-p4c" secondAttribute="top" id="68r-hn-kSX"/>
+                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="trailing" secondItem="3bv-JY-p4c" secondAttribute="trailing" id="8Np-YH-reV"/>
+                                                <constraint firstAttribute="trailing" secondItem="3bv-JY-p4c" secondAttribute="trailing" constant="12" id="SfL-WT-04P"/>
+                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="leading" secondItem="3bv-JY-p4c" secondAttribute="leading" id="d2o-XP-XqY"/>
+                                                <constraint firstItem="3bv-JY-p4c" firstAttribute="leading" secondItem="mla-UE-4Sv" secondAttribute="leading" constant="12" id="nOu-dv-5Jm"/>
+                                                <constraint firstAttribute="bottom" secondItem="3bv-JY-p4c" secondAttribute="bottom" constant="12" id="uFk-w7-MbV"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="388" height="372"/>
+                                        <connections>
+                                            <outlet property="walkRecordPhotoImageView" destination="3bv-JY-p4c" id="IQF-uV-C4I"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="KRU-YD-Xzh" id="CRV-VZ-4vN"/>
+                                    <outlet property="delegate" destination="KRU-YD-Xzh" id="LBT-A7-Ceg"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bzi-HK-7yr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0p7-p7-dAt" firstAttribute="top" secondItem="Yrl-1g-QDb" secondAttribute="top" id="Q1X-Nr-m7r"/>
+                            <constraint firstItem="0p7-p7-dAt" firstAttribute="trailing" secondItem="Bzi-HK-7yr" secondAttribute="trailing" id="UV0-bf-e62"/>
+                            <constraint firstItem="0p7-p7-dAt" firstAttribute="leading" secondItem="Bzi-HK-7yr" secondAttribute="leading" id="hpX-AM-Kl4"/>
+                            <constraint firstAttribute="bottom" secondItem="0p7-p7-dAt" secondAttribute="bottom" id="jth-GF-brW"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="390" height="1500"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4598.4615384615381" y="-374.64454976303318"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Swa-7g-YbB">
+            <objects>
+                <viewController id="i1d-nw-ygg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iru-0o-h88">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="xa3-ej-63l">
-                                <rect key="frame" x="0.0" y="236" width="414" height="162"/>
+                                <rect key="frame" x="-16" y="246" width="390" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </datePicker>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TNe-En-aCc">
-                                <rect key="frame" x="40" y="406" width="336" height="164"/>
+                                <rect key="frame" x="24" y="416" width="336" height="164"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omf-ss-i0E">
@@ -352,25 +411,25 @@
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="681-c4-N0R">
-                                <rect key="frame" x="40" y="599" width="336" height="235"/>
+                                <rect key="frame" x="24" y="609" width="336" height="235"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor"/>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="Bzi-HK-7yr"/>
+                        <viewLayoutGuide key="safeArea" id="2m6-Be-gnR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SlX-sM-aNH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4599" y="-374"/>
+            <point key="canvasLocation" x="5520" y="-383.17535545023696"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="72s-P6-kZt">
             <objects>
                 <viewController id="CFr-HF-ErC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5l7-Me-k5J">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="q0v-w5-Vzy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -409,7 +468,7 @@
             <objects>
                 <viewController id="Vdx-Uy-zj7" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TWh-rV-fwA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="gke-Ag-jrH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

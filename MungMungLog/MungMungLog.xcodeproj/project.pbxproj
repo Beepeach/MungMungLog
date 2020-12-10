@@ -21,6 +21,7 @@
 		46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
 		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
 		46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
+		46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */; };
 		46DFB30725792782008800AC /* EmptyProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */; };
 		46DFB30B25792938008800AC /* VaildProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */; };
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
@@ -43,6 +44,7 @@
 		46A025AE2577D7BB0022BDBF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingViewController.swift; sourceTree = "<group>"; };
+		46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaildProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 			path = Record;
 			sourceTree = "<group>";
 		};
+		46D1AF5A258205D300DF7B2A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		46DFB305257926EF008800AC /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 		46E69ACC25806FC200019FD9 /* Walk */ = {
 			isa = PBXGroup;
 			children = (
+				46D1AF5A258205D300DF7B2A /* Cell */,
 				46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */,
 				4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */,
 				46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */,
@@ -222,6 +233,7 @@
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
 				46DFB30B25792938008800AC /* VaildProfileCollectionViewCell.swift in Sources */,
 				46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */,
+				46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 			);
