@@ -11,7 +11,7 @@ class EmptyProfileCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = self.frame.height / 2
         clipsToBounds = true
         
         if #available(iOS 13.0, *) {
