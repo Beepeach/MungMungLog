@@ -30,7 +30,7 @@
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2pD-wx-W2T">
                                         <rect key="frame" x="0.0" y="10" width="366" height="135"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hhW-79-P31">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="40" minimumInteritemSpacing="40" id="hhW-79-P31">
                                             <size key="itemSize" width="150" height="107.5"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -70,7 +70,7 @@
                                                 </connections>
                                             </collectionViewCell>
                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="emptyProfileCell" id="JfR-Sf-aQw" customClass="EmptyProfileCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
-                                                <rect key="frame" x="160" y="13.666666666666666" width="150" height="107.5"/>
+                                                <rect key="frame" x="190" y="13.666666666666666" width="150" height="107.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bEJ-Jj-QKM">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="107.5"/>
