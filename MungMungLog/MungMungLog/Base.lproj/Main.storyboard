@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDg-gl-8Cr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KRU-YD-Xzh">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -307,11 +307,11 @@
             <objects>
                 <viewController id="KRU-YD-Xzh" customClass="WalkRecordEditingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yrl-1g-QDb">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="1700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0p7-p7-dAt">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="1500"/>
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="1700"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lj1-r7-KdD">
                                     <size key="itemSize" width="388" height="372"/>
@@ -320,7 +320,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoSelectCollectionViewCell" id="Jg1-Mc-U7t" customClass="PhotoSelectCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoSelectCell" id="Jg1-Mc-U7t" customClass="PhotoSelectCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
                                         <rect key="frame" x="1" y="0.0" width="388" height="372"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="mla-UE-4Sv">
@@ -328,32 +328,95 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3bv-JY-p4c">
-                                                    <rect key="frame" x="12" y="12" width="364" height="348"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="388" height="372"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="WalkRecordPhotoImageView"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXT-JL-5MM">
-                                                    <rect key="frame" x="12" y="12" width="364" height="348"/>
+                                                    <rect key="frame" x="135.66666666666666" y="130.33333333333334" width="116.66666666666666" height="111.33333333333334"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="WaklRecordPhotoSelectButton"/>
                                                     <state key="normal">
+                                                        <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                                     </state>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3bv-JY-p4c" firstAttribute="top" secondItem="mla-UE-4Sv" secondAttribute="top" constant="12" id="1tZ-MN-gX3"/>
-                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="bottom" secondItem="3bv-JY-p4c" secondAttribute="bottom" id="50o-rw-wyf"/>
-                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="top" secondItem="3bv-JY-p4c" secondAttribute="top" id="68r-hn-kSX"/>
-                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="trailing" secondItem="3bv-JY-p4c" secondAttribute="trailing" id="8Np-YH-reV"/>
-                                                <constraint firstAttribute="trailing" secondItem="3bv-JY-p4c" secondAttribute="trailing" constant="12" id="SfL-WT-04P"/>
-                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="leading" secondItem="3bv-JY-p4c" secondAttribute="leading" id="d2o-XP-XqY"/>
-                                                <constraint firstItem="3bv-JY-p4c" firstAttribute="leading" secondItem="mla-UE-4Sv" secondAttribute="leading" constant="12" id="nOu-dv-5Jm"/>
-                                                <constraint firstAttribute="bottom" secondItem="3bv-JY-p4c" secondAttribute="bottom" constant="12" id="uFk-w7-MbV"/>
+                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="centerX" secondItem="3bv-JY-p4c" secondAttribute="centerX" id="80X-0a-XiL"/>
+                                                <constraint firstAttribute="trailing" secondItem="3bv-JY-p4c" secondAttribute="trailing" id="SFA-HC-4Ey"/>
+                                                <constraint firstItem="3bv-JY-p4c" firstAttribute="top" secondItem="mla-UE-4Sv" secondAttribute="top" id="Ug2-rp-AIr"/>
+                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="height" secondItem="3bv-JY-p4c" secondAttribute="height" multiplier="0.3" id="ZaS-O5-IGV"/>
+                                                <constraint firstAttribute="bottom" secondItem="3bv-JY-p4c" secondAttribute="bottom" id="dE8-Km-Su1"/>
+                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="width" secondItem="3bv-JY-p4c" secondAttribute="width" multiplier="0.3" id="eLn-qy-Ng4"/>
+                                                <constraint firstItem="3bv-JY-p4c" firstAttribute="leading" secondItem="mla-UE-4Sv" secondAttribute="leading" id="iQ7-uz-FC5"/>
+                                                <constraint firstItem="GXT-JL-5MM" firstAttribute="centerY" secondItem="3bv-JY-p4c" secondAttribute="centerY" id="mBV-d2-kPI"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="388" height="372"/>
                                         <connections>
                                             <outlet property="walkRecordPhotoImageView" destination="3bv-JY-p4c" id="IQF-uV-C4I"/>
                                         </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dataSelectCell" id="ghR-K6-D8h" customClass="DateSelectCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="382" width="388" height="465"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TvP-QS-WvF">
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="465"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CG8-rm-Rwp">
+                                                    <rect key="frame" x="12" y="12" width="364" height="441"/>
+                                                    <subviews>
+                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-bY-1KE">
+                                                            <rect key="frame" x="0.0" y="0.0" width="364" height="220.66666666666666"/>
+                                                            <locale key="locale" localeIdentifier="ko"/>
+                                                        </datePicker>
+                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="dfb-co-5Sd">
+                                                            <rect key="frame" x="0.0" y="220.66666666666663" width="364" height="220.33333333333337"/>
+                                                        </datePicker>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CG8-rm-Rwp" firstAttribute="top" secondItem="TvP-QS-WvF" secondAttribute="top" constant="12" id="6HR-Za-HeC"/>
+                                                <constraint firstItem="CG8-rm-Rwp" firstAttribute="leading" secondItem="TvP-QS-WvF" secondAttribute="leading" constant="12" id="CLx-l5-oTi"/>
+                                                <constraint firstAttribute="trailing" secondItem="CG8-rm-Rwp" secondAttribute="trailing" constant="12" id="S4k-42-8u4"/>
+                                                <constraint firstAttribute="bottom" secondItem="CG8-rm-Rwp" secondAttribute="bottom" constant="12" id="aaD-Yq-1SE"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="388" height="465"/>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dQM-DO-cF0">
+                                        <rect key="frame" x="1" y="857" width="388" height="372"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mts-I5-p8M">
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="372"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentRecodeCell" id="rqm-uN-6S2">
+                                        <rect key="frame" x="1" y="1239" width="388" height="372"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RXX-MQ-XJ9">
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="372"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pBw-Aq-w1h">
+                                                    <rect key="frame" x="12" y="12" width="364" height="348"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <accessibility key="accessibilityConfiguration" identifier="WaklRecordTextView"/>
+                                                    <color key="textColor" systemColor="labelColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pBw-Aq-w1h" firstAttribute="leading" secondItem="RXX-MQ-XJ9" secondAttribute="leading" constant="12" id="CLF-ef-ExX"/>
+                                                <constraint firstAttribute="trailing" secondItem="pBw-Aq-w1h" secondAttribute="trailing" constant="12" id="Rhl-Un-7J6"/>
+                                                <constraint firstAttribute="bottom" secondItem="pBw-Aq-w1h" secondAttribute="bottom" constant="12" id="lJ7-ZP-6md"/>
+                                                <constraint firstItem="pBw-Aq-w1h" firstAttribute="top" secondItem="RXX-MQ-XJ9" secondAttribute="top" constant="12" id="s1C-NV-Dy8"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -371,58 +434,11 @@
                             <constraint firstAttribute="bottom" secondItem="0p7-p7-dAt" secondAttribute="bottom" id="jth-GF-brW"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="390" height="1500"/>
+                    <size key="freeformSize" width="390" height="1700"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4598.4615384615381" y="-374.64454976303318"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Swa-7g-YbB">
-            <objects>
-                <viewController id="i1d-nw-ygg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iru-0o-h88">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="xa3-ej-63l">
-                                <rect key="frame" x="-16" y="246" width="390" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </datePicker>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TNe-En-aCc">
-                                <rect key="frame" x="24" y="416" width="336" height="164"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Omf-ss-i0E">
-                                        <rect key="frame" x="99" y="24" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1em-PP-gyo">
-                                        <rect key="frame" x="99" y="72" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="681-c4-N0R">
-                                <rect key="frame" x="24" y="609" width="336" height="235"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGrayColor"/>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="2m6-Be-gnR"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SlX-sM-aNH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5520" y="-383.17535545023696"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="72s-P6-kZt">
@@ -625,11 +641,11 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="pills.fill" catalog="system" width="128" height="106"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
