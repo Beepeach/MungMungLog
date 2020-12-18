@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KRU-YD-Xzh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IDg-gl-8Cr">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -305,7 +305,7 @@
         <!--Walk Record Editing View Controller-->
         <scene sceneID="9lW-Yi-N9P">
             <objects>
-                <viewController id="KRU-YD-Xzh" customClass="WalkRecordEditingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="walkRecordEditingViewController" id="KRU-YD-Xzh" customClass="WalkRecordEditingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yrl-1g-QDb">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="1700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -402,7 +402,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="372"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pBw-Aq-w1h">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pBw-Aq-w1h">
                                                     <rect key="frame" x="12" y="12" width="364" height="348"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="WaklRecordTextView"/>
