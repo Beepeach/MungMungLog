@@ -9,4 +9,5 @@ import UIKit
 
 class DateSelectCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var walkDatePicker: UIDatePicker!
 }

@@ -305,12 +305,12 @@
         <!--Walk Record Editing View Controller-->
         <scene sceneID="9lW-Yi-N9P">
             <objects>
-                <viewController storyboardIdentifier="walkRecordEditingViewController" id="KRU-YD-Xzh" customClass="WalkRecordEditingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KRU-YD-Xzh" customClass="WalkRecordEditingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yrl-1g-QDb">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="1700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0p7-p7-dAt">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0p7-p7-dAt">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="1700"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lj1-r7-KdD">
@@ -358,64 +358,117 @@
                                             <outlet property="walkRecordPhotoImageView" destination="3bv-JY-p4c" id="IQF-uV-C4I"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dataSelectCell" id="ghR-K6-D8h" customClass="DateSelectCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
-                                        <rect key="frame" x="1" y="382" width="388" height="465"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="dateSelectCell" id="ghR-K6-D8h" customClass="DateSelectCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="382" width="388" height="369"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TvP-QS-WvF">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="465"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="369"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CG8-rm-Rwp">
-                                                    <rect key="frame" x="12" y="12" width="364" height="441"/>
+                                                <datePicker contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-bY-1KE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="388" height="369"/>
+                                                    <locale key="locale" localeIdentifier="ko"/>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Is1-bY-1KE" secondAttribute="trailing" id="2Ca-eU-EiL"/>
+                                                <constraint firstAttribute="bottom" secondItem="Is1-bY-1KE" secondAttribute="bottom" id="3f0-Ot-Jg2"/>
+                                                <constraint firstItem="Is1-bY-1KE" firstAttribute="top" secondItem="TvP-QS-WvF" secondAttribute="top" id="W35-Rz-WIq"/>
+                                                <constraint firstItem="Is1-bY-1KE" firstAttribute="leading" secondItem="TvP-QS-WvF" secondAttribute="leading" id="fPD-FP-5Cg"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="388" height="369"/>
+                                        <connections>
+                                            <outlet property="walkDatePicker" destination="Is1-bY-1KE" id="BQj-Aa-ihy"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="walkTimeAndDistanceDataCell" id="dQM-DO-cF0" customClass="WalkTimeAndDistanceDataCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="761" width="388" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mts-I5-p8M">
+                                            <rect key="frame" x="0.0" y="0.0" width="388" height="175"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2fy-LM-APi">
+                                                    <rect key="frame" x="119.33333333333333" y="59.666666666666671" width="149.33333333333337" height="55.666666666666671"/>
                                                     <subviews>
-                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-bY-1KE">
-                                                            <rect key="frame" x="0.0" y="0.0" width="364" height="220.66666666666666"/>
-                                                            <locale key="locale" localeIdentifier="ko"/>
-                                                        </datePicker>
-                                                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="dfb-co-5Sd">
-                                                            <rect key="frame" x="0.0" y="220.66666666666663" width="364" height="220.33333333333337"/>
-                                                        </datePicker>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Aym-iJ-uDJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="149.33333333333334" height="20.333333333333332"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책 거리:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RhG-St-Jeo">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zAA-lT-L0N">
+                                                                    <rect key="frame" x="108.00000000000001" y="0.0" width="41.333333333333329" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Z4l-4d-aPy">
+                                                            <rect key="frame" x="0.0" y="35.333333333333336" width="149.33333333333334" height="20.333333333333336"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="산책 시간:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXh-Cu-qYh">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0f-ZS-b4P">
+                                                                    <rect key="frame" x="108.00000000000001" y="0.0" width="41.333333333333329" height="20.333333333333332"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="CG8-rm-Rwp" firstAttribute="top" secondItem="TvP-QS-WvF" secondAttribute="top" constant="12" id="6HR-Za-HeC"/>
-                                                <constraint firstItem="CG8-rm-Rwp" firstAttribute="leading" secondItem="TvP-QS-WvF" secondAttribute="leading" constant="12" id="CLx-l5-oTi"/>
-                                                <constraint firstAttribute="trailing" secondItem="CG8-rm-Rwp" secondAttribute="trailing" constant="12" id="S4k-42-8u4"/>
-                                                <constraint firstAttribute="bottom" secondItem="CG8-rm-Rwp" secondAttribute="bottom" constant="12" id="aaD-Yq-1SE"/>
+                                                <constraint firstItem="2fy-LM-APi" firstAttribute="centerX" secondItem="Mts-I5-p8M" secondAttribute="centerX" id="G4u-5e-wV8"/>
+                                                <constraint firstItem="2fy-LM-APi" firstAttribute="centerY" secondItem="Mts-I5-p8M" secondAttribute="centerY" id="gg8-Z6-leK"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="388" height="465"/>
+                                        <size key="customSize" width="388" height="175"/>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dQM-DO-cF0">
-                                        <rect key="frame" x="1" y="857" width="388" height="372"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Mts-I5-p8M">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="372"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </collectionViewCellContentView>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ContentRecodeCell" id="rqm-uN-6S2">
-                                        <rect key="frame" x="1" y="1239" width="388" height="372"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="contentRecodeCell" id="rqm-uN-6S2" customClass="ContentRecodeCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                        <rect key="frame" x="1" y="946" width="388" height="372"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RXX-MQ-XJ9">
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="372"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pBw-Aq-w1h">
-                                                    <rect key="frame" x="12" y="12" width="364" height="348"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <accessibility key="accessibilityConfiguration" identifier="WaklRecordTextView"/>
-                                                    <color key="textColor" systemColor="labelColor"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eau-Mu-uku">
+                                                    <rect key="frame" x="12" y="39" width="364" height="1"/>
+                                                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="FfX-Jc-R0r"/>
+                                                    </constraints>
+                                                </view>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TItle" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47G-g9-2BQ">
+                                                    <rect key="frame" x="12" y="12" width="364" height="22"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SN4-Jo-9ey">
+                                                    <rect key="frame" x="12" y="60" width="97" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="pBw-Aq-w1h" firstAttribute="leading" secondItem="RXX-MQ-XJ9" secondAttribute="leading" constant="12" id="CLF-ef-ExX"/>
-                                                <constraint firstAttribute="trailing" secondItem="pBw-Aq-w1h" secondAttribute="trailing" constant="12" id="Rhl-Un-7J6"/>
-                                                <constraint firstAttribute="bottom" secondItem="pBw-Aq-w1h" secondAttribute="bottom" constant="12" id="lJ7-ZP-6md"/>
-                                                <constraint firstItem="pBw-Aq-w1h" firstAttribute="top" secondItem="RXX-MQ-XJ9" secondAttribute="top" constant="12" id="s1C-NV-Dy8"/>
+                                                <constraint firstItem="47G-g9-2BQ" firstAttribute="leading" secondItem="RXX-MQ-XJ9" secondAttribute="leading" constant="12" id="1P3-Xr-gJ6"/>
+                                                <constraint firstItem="eau-Mu-uku" firstAttribute="trailing" secondItem="47G-g9-2BQ" secondAttribute="trailing" id="4Ap-rf-Y4H"/>
+                                                <constraint firstItem="47G-g9-2BQ" firstAttribute="top" secondItem="RXX-MQ-XJ9" secondAttribute="top" constant="12" id="AoA-gI-l8U"/>
+                                                <constraint firstItem="eau-Mu-uku" firstAttribute="leading" secondItem="47G-g9-2BQ" secondAttribute="leading" id="DHs-SZ-Snt"/>
+                                                <constraint firstAttribute="trailing" secondItem="47G-g9-2BQ" secondAttribute="trailing" constant="12" id="jGL-Fy-Qqp"/>
+                                                <constraint firstItem="eau-Mu-uku" firstAttribute="top" secondItem="47G-g9-2BQ" secondAttribute="bottom" constant="5" id="ohb-Wt-YxG"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
@@ -435,11 +488,15 @@
                             <constraint firstAttribute="bottom" secondItem="0p7-p7-dAt" secondAttribute="bottom" id="jth-GF-brW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FYr-xh-6Yg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wxU-VR-pUV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TwD-oZ-h0S"/>
+                    </navigationItem>
                     <size key="freeformSize" width="390" height="1700"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4598.4615384615381" y="-374.64454976303318"/>
+            <point key="canvasLocation" x="5527.6923076923076" y="-374.64454976303318"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="72s-P6-kZt">
@@ -629,6 +686,24 @@
             </objects>
             <point key="canvasLocation" x="1755.3846153846152" y="428.67298578199052"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pYu-vj-AJc">
+            <objects>
+                <navigationController storyboardIdentifier="walkRecordEditingViewController" automaticallyAdjustsScrollViewInsets="NO" id="yWM-JS-zNu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="plk-eB-bnu">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KRU-YD-Xzh" kind="relationship" relationship="rootViewController" id="ZkO-1i-Eyx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eBg-of-Xfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4598.4615384615381" y="-374.64454976303318"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Test" width="1411" height="1411"/>
@@ -642,9 +717,6 @@
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="pills.fill" catalog="system" width="128" height="106"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

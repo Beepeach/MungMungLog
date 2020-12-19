@@ -7,38 +7,72 @@
 
 import UIKit
 
-class WalkRecordEditingViewController: UIViewController {
+enum EditingCell {
+    case photo(image: UIImage?)
+    case date
+    case walkData(time: Date?, distance: Double?)
+    case content(text: String)
+}
 
+class WalkRecordEditingViewController: UIViewController {
+    
+    var dummyData: [EditingCell] = [
+        .photo(image: nil),
+        .date,
+        .walkData(time: Date(), distance: 1.3),
+        .content(text: "")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
 extension WalkRecordEditingViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return dummyData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoSelectCell", for: indexPath) as? PhotoSelectCollectionViewCell else { return UICollectionViewCell()}
+        let target = dummyData[indexPath.row]
         
-        return cell
+        switch target {
+        case .photo(_):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoSelectCell", for: indexPath) as? PhotoSelectCollectionViewCell else {
+                return UICollectionViewCell()
+                
+            }
+            
+            return cell
+            
+        case .date:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateSelectCell", for: indexPath) as? DateSelectCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            cell.walkDatePicker.minimumDate = Date()
+            
+            return cell
+            
+        case .walkData(_, _):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "walkTimeAndDistanceDataCell", for: indexPath) as? WalkTimeAndDistanceDataCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            return cell
+            
+        case .content(_):
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "contentRecodeCell", for: indexPath) as? ContentRecodeCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            
+            return cell
+            
+        }
     }
-    
-    
 }
+
+
