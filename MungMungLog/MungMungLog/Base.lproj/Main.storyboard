@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -80,8 +79,8 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="150" height="107.66666666666667"/>
                                                             <accessibility key="accessibilityConfiguration" identifier="profileAddButton"/>
                                                             <color key="tintColor" systemColor="systemTealColor"/>
-                                                            <state key="normal">
-                                                                <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                                            <state key="normal" title="+">
+                                                                <color key="titleColor" systemColor="linkColor"/>
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                                             </state>
                                                         </button>
@@ -132,7 +131,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q4q-Kz-T63" secondAttribute="bottom" constant="10" id="yuM-5e-S34"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="홈" image="house.fill" catalog="system" id="Aat-se-JSQ"/>
+                    <tabBarItem key="tabBarItem" title="홈" id="Aat-se-JSQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,7 +147,7 @@
                         <viewLayoutGuide key="safeArea" id="jwO-mC-1bp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="다이어리" image="book.fill" catalog="system" id="xWI-al-33u"/>
+                    <tabBarItem key="tabBarItem" title="다이어리" id="xWI-al-33u"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tue-Kd-SvD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -202,7 +201,7 @@
                             <constraint firstItem="KbU-9v-Fah" firstAttribute="centerX" secondItem="Bzu-dq-5Rm" secondAttribute="centerX" id="qqr-dG-PCq"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="산책" image="figure.walk" catalog="system" id="Meh-Lc-6me"/>
+                    <tabBarItem key="tabBarItem" title="산책" id="Meh-Lc-6me"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ip8-9B-3Ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -336,8 +335,7 @@
                                                     <rect key="frame" x="135.66666666666666" y="130.33333333333334" width="116.66666666666666" height="111.33333333333334"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <accessibility key="accessibilityConfiguration" identifier="WaklRecordPhotoSelectButton"/>
-                                                    <state key="normal">
-                                                        <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                                    <state key="normal" title="+">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                                     </state>
                                                 </button>
@@ -365,7 +363,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="388" height="369"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <datePicker contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-bY-1KE">
+                                                <datePicker contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-bY-1KE">
                                                     <rect key="frame" x="0.0" y="0.0" width="388" height="369"/>
                                                     <locale key="locale" localeIdentifier="ko"/>
                                                 </datePicker>
@@ -508,7 +506,7 @@
                         <viewLayoutGuide key="safeArea" id="q0v-w5-Vzy"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="마이페이지" image="person.fill" catalog="system" id="Y2j-mV-oq8"/>
+                    <tabBarItem key="tabBarItem" title="마이페이지" id="Y2j-mV-oq8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCV-7f-haR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -611,7 +609,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="recordItemContentView" destination="scO-Ew-J88" id="X65-re-BOU"/>
+                                            <outlet property="recordItemContainerView" destination="scO-Ew-J88" id="X65-re-BOU"/>
                                             <outlet property="recordItemImageView" destination="HuR-n1-jSK" id="UlQ-Ye-db0"/>
                                             <outlet property="recordItemTitleLabel" destination="EKr-T7-gfi" id="hC1-yI-wCc"/>
                                         </connections>
@@ -641,21 +639,6 @@
             </objects>
             <point key="canvasLocation" x="2394" y="429"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="6kf-p1-VFK">
-            <objects>
-                <viewController id="zKr-A4-z7S" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CsA-nX-DCq">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Kop-Iz-Rif"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="deO-UO-SBO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3483" y="429"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="pYu-vj-AJc">
             <objects>
@@ -677,11 +660,9 @@
     </scenes>
     <resources>
         <image name="Test" width="1411" height="1411"/>
-        <image name="book.fill" catalog="system" width="128" height="102"/>
-        <image name="figure.walk" catalog="system" width="95" height="128"/>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
