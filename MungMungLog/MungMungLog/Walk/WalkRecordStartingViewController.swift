@@ -8,10 +8,11 @@
 import UIKit
 
 class WalkRecordStartingViewController: UIViewController {
-
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 
 //    override func viewDidLayoutSubviews() {
