@@ -9,7 +9,7 @@ import UIKit
 
 struct Profile {
     struct Item {
-        let imageName: String
+        let imageName: String?
     }
 }
 
@@ -22,10 +22,14 @@ class HomeViewController: UIViewController {
     
     let list: [ProfileCell] = [
         ProfileCell.vaild(image: Profile.Item.init(imageName: "Test")),
-        ProfileCell.vaild(image: Profile.Item.init(imageName: "Test")),
+        ProfileCell.vaild(image: Profile.Item.init(imageName: nil)),
         ProfileCell.empty
     ]
-
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var ageLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -41,17 +45,17 @@ extension HomeViewController: UICollectionViewDataSource {
         let targetCell = list[indexPath.row]
         switch targetCell {
         case .empty:
-            let wrappedEmptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyProfileCell", for: indexPath) as? EmptyProfileCollectionViewCell
+            let wrappedEmptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyProfileCollectionViewCell", for: indexPath) as? EmptyProfileCollectionViewCell
             
             guard let emptyCell = wrappedEmptyCell else { return UICollectionViewCell() }
             
             return emptyCell
         case .vaild(let profileItem):
-            let wrappedVaildCell = collectionView.dequeueReusableCell(withReuseIdentifier: "profileCell", for: indexPath) as? VaildProfileCollectionViewCell
+            let wrappedVaildCell = collectionView.dequeueReusableCell(withReuseIdentifier: "vaildProfileCollectionViewCell", for: indexPath) as? VaildProfileCollectionViewCell
             
             guard let VaildCell = wrappedVaildCell else { return UICollectionViewCell() }
             
-            VaildCell.profileImageView.image = UIImage(named: profileItem.imageName)
+            VaildCell.profileImageView.image = UIImage(named: profileItem.imageName ?? "somsom")
             
             return VaildCell
         }
