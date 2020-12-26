@@ -9,7 +9,7 @@ import UIKit
 
 class WalkRecordEndingViewController: UIViewController {
     
-    var timer: Timer?
+    var mainTimer: Timer?
     var timeCount = 0
     
     var pause = true
@@ -20,26 +20,44 @@ class WalkRecordEndingViewController: UIViewController {
     @IBOutlet weak var pauseOrStartImageView: UIImageView!
     @IBOutlet weak var pauseOrStartLabel: UILabel!
     
-    
     @IBAction func PauseOrStart(_ sender: UIButton) {
         if pause == true {
             UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
                 self.pauseOrStartImageView.image = UIImage(named: "start")
                 self.pauseOrStartLabel.text = "다시 시작"
             }
             
             pause = false
+            stopTimer()
         } else {
             UIView.animate(withDuration: 0.3) {
+                self.view.layoutIfNeeded()
                 self.pauseOrStartImageView.image = UIImage(named: "pause")
                 self.pauseOrStartLabel.text = "일시 정지"
             }
             
             pause = true
-            
-            // ToDo
-            // 타이머 구현
+            startTimer()
         }
+    }
+    
+    
+    func startTimer() {
+        mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+            self.timeCount += 1
+            DispatchQueue.main.async {
+                self.timeLabel.text = self.timerStringFormatter.string(from: Double(self.timeCount))
+            }
+        })
+        
+        // ToDo
+        // Milsecond를 어떻게 구현할것인가 생각.
+    }
+    
+    func stopTimer() {
+        mainTimer?.invalidate()
+        mainTimer = nil
     }
     
     
@@ -55,6 +73,8 @@ class WalkRecordEndingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startTimer()
 
     }
 }

@@ -27,6 +27,7 @@
 		46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
 		46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */; };
 		46D1AF6025820B6000DF7B2A /* RecordItemSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordItemSelectViewController.swift */; };
+		46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */; };
 		46DFB30725792782008800AC /* EmptyProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */; };
 		46DFB30B25792938008800AC /* VaildProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */; };
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
@@ -55,6 +56,7 @@
 		46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingViewController.swift; sourceTree = "<group>"; };
 		46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46D1AF5F25820B6000DF7B2A /* RecordItemSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItemSelectViewController.swift; sourceTree = "<group>"; };
+		46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dateComponentsFormatter.swift"; sourceTree = "<group>"; };
 		46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaildProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		460EB00B2557F76B00027376 /* MungMungLog */ = {
 			isa = PBXGroup;
 			children = (
+				46D7CE062597840400134271 /* Extension */,
 				4656860925766C8900088513 /* ViewShapeClass */,
 				46A025A92577D1530022BDBF /* Home */,
 				46E69ACC25806FC200019FD9 /* Walk */,
@@ -101,8 +104,6 @@
 				460EB0152557F76B00027376 /* Assets.xcassets */,
 				460EB0172557F76B00027376 /* LaunchScreen.storyboard */,
 				460EB01A2557F76B00027376 /* Info.plist */,
-				460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */,
-				460EB02825582EEF00027376 /* UIViewController+alert.swift */,
 			);
 			path = MungMungLog;
 			sourceTree = "<group>";
@@ -152,6 +153,16 @@
 				464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		46D7CE062597840400134271 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */,
+				460EB02825582EEF00027376 /* UIViewController+alert.swift */,
+				46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		46DFB305257926EF008800AC /* Cell */ = {
@@ -259,6 +270,7 @@
 				46DFB30B25792938008800AC /* VaildProfileCollectionViewCell.swift in Sources */,
 				46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */,
 				46D1AF6025820B6000DF7B2A /* RecordItemSelectViewController.swift in Sources */,
+				46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */,
 				46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
 				464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */,

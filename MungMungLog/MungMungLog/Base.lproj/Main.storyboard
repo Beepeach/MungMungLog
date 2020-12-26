@@ -275,16 +275,16 @@
                                 <rect key="frame" x="0.0" y="339.33333333333331" width="390" height="147.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-Lw-8UE">
-                                        <rect key="frame" x="140" y="53.666666666666686" width="110.33333333333331" height="40.666666666666657"/>
+                                        <rect key="frame" x="115" y="53.666666666666686" width="160" height="40.666666666666657"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdG-kJ-eYs">
-                                                <rect key="frame" x="0.0" y="0.0" width="92" height="40.666666666666664"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdG-kJ-eYs">
+                                                <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="40.666666666666664"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-Mn-Udw">
-                                                <rect key="frame" x="92" y="11.333333333333313" width="18.333333333333329" height="26.333333333333329"/>
+                                                <rect key="frame" x="141.66666666666669" y="11.333333333333313" width="18.333333333333343" height="26.333333333333329"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
