@@ -594,6 +594,9 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wxU-VR-pUV"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="TwD-oZ-h0S"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="walkingTimeLabel" destination="et8-ru-xqt" id="Ieo-ld-Tea"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -745,7 +748,7 @@
         <!--Navigation Controller-->
         <scene sceneID="pYu-vj-AJc">
             <objects>
-                <navigationController storyboardIdentifier="walkRecordEditingViewController" automaticallyAdjustsScrollViewInsets="NO" id="yWM-JS-zNu" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="walkRecordEditingNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="yWM-JS-zNu" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="plk-eB-bnu">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>

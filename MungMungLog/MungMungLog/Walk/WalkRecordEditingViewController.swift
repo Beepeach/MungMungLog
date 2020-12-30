@@ -23,9 +23,16 @@ class WalkRecordEditingViewController: UIViewController {
         .content(text: "")
     ]
     
+    var walkingTime: Int = 0
+    
+    @IBOutlet weak var walkingTimeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let formattedWalkingTime = timerStringFormatter.string(from: Double(walkingTime)) {
+            walkingTimeLabel.text = "산책 시간: \(formattedWalkingTime)"
+        }
     }
     
 }

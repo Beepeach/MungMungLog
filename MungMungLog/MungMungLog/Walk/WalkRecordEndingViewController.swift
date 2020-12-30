@@ -11,7 +11,6 @@ class WalkRecordEndingViewController: UIViewController {
     
     var mainTimer: Timer?
     var timeCount = 0
-    
     var pause = true
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -65,10 +64,15 @@ class WalkRecordEndingViewController: UIViewController {
     
     @IBAction func stopRecord(_ sender: Any) {
         presentTwoButtonAlert(alertTitle: "산책을 마치셨나요?", message: "지금까지의 기록을 저장하시려면 저장을 눌러주세요.", confirmActionTitle: "저장", cancelActionTitle: "취소") {_ in
-            guard let editingViewController = self.storyboard?.instantiateViewController(withIdentifier: "walkRecordEditingViewController") else { return }
             
-            editingViewController.modalPresentationStyle = .fullScreen
-            self.present(editingViewController, animated: true, completion: nil)
+            guard let editingNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "walkRecordEditingNavigationController") as? UINavigationController else { return }
+            
+            guard let editingViewController = editingNavigationController.topViewController as? WalkRecordEditingViewController else { return }
+            
+            editingViewController.walkingTime = self.timeCount
+            
+            editingNavigationController.modalPresentationStyle = .fullScreen
+            self.present(editingNavigationController, animated: true, completion: nil)
         }
     }
     
