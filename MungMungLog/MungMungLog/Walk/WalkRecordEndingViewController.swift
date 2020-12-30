@@ -80,7 +80,6 @@ class WalkRecordEndingViewController: UIViewController {
         super.viewDidLoad()
         
         startTimer()
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {

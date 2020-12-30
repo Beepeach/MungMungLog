@@ -11,17 +11,5 @@ class WalkRecordStartingViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
-
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        
-//        guard let startButtonContainerView = view.subviews.first else { return }
-//        startButtonContainerView.layer.cornerRadius = startButtonContainerView.frame.height / 2
-//    }
-    
-    
-
 }
