@@ -19,7 +19,7 @@ enum ProfileCell {
 }
 
 class HomeViewController: UIViewController {
-    
+
     let list: [ProfileCell] = [
         ProfileCell.vaild(image: Profile.Item.init(imageName: "Test")),
         ProfileCell.vaild(image: Profile.Item.init(imageName: nil)),
@@ -29,6 +29,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var weightLabel: UILabel!
+    
+    
+    @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
