@@ -423,10 +423,10 @@
             </objects>
             <point key="canvasLocation" x="3483.0769230769229" y="-374.64454976303318"/>
         </scene>
-        <!--Walk Record Editing View Controller-->
+        <!--산책 기록-->
         <scene sceneID="9lW-Yi-N9P">
             <objects>
-                <viewController id="KRU-YD-Xzh" customClass="WalkRecordEditingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="walkRecordEditingViewController" id="KRU-YD-Xzh" customClass="WalkRecordEditingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yrl-1g-QDb">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -459,7 +459,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAS-Rf-ZXu" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="390" width="342" height="80"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020년 12월 25일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWk-Oz-M1e">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜를 선택해 주세요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWk-Oz-M1e">
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="80"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="80" id="bP4-MF-dGa"/>
@@ -470,6 +470,9 @@
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxE-sj-NYJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="80"/>
+                                                        <connections>
+                                                            <segue destination="tJy-ea-nFp" kind="presentation" identifier="" id="Hzd-rd-OCp"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -590,17 +593,101 @@
                             <constraint firstAttribute="bottom" secondItem="0Wn-Gj-wAY" secondAttribute="bottom" id="iQ4-gZ-fwD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="FYr-xh-6Yg">
+                    <navigationItem key="navigationItem" title="산책 기록" id="FYr-xh-6Yg">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wxU-VR-pUV"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TwD-oZ-h0S"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="TwD-oZ-h0S">
+                            <connections>
+                                <action selector="save:" destination="KRU-YD-Xzh" id="qcF-QL-IPG"/>
+                                <segue destination="2iv-X0-47R" kind="unwind" unwindAction="unwindToHome:" id="c0M-gr-MxK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="walkDateAndTimeLabel" destination="gWk-Oz-M1e" id="opV-0X-WCh"/>
                         <outlet property="walkingTimeLabel" destination="et8-ru-xqt" id="Ieo-ld-Tea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="2iv-X0-47R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5527.6923076923076" y="-374.64454976303318"/>
+        </scene>
+        <!--산책 날짜-->
+        <scene sceneID="IYq-tl-7m7">
+            <objects>
+                <viewController id="5xA-Bz-rEd" customClass="WalkDateAndTimeViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hx1-fY-K65">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qf6-H0-KLM" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="439.66666666666674" width="390" height="276.33333333333326"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="1qQ-AS-a8l">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="276.33333333333331"/>
+                                        <locale key="locale" localeIdentifier="ko"/>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="1qQ-AS-a8l" firstAttribute="leading" secondItem="Qf6-H0-KLM" secondAttribute="leading" id="THh-3a-Ugd"/>
+                                    <constraint firstAttribute="bottom" secondItem="1qQ-AS-a8l" secondAttribute="bottom" id="kHV-ai-YXo"/>
+                                    <constraint firstAttribute="trailing" secondItem="1qQ-AS-a8l" secondAttribute="trailing" id="pfb-Ta-sH3"/>
+                                    <constraint firstItem="1qQ-AS-a8l" firstAttribute="top" secondItem="Qf6-H0-KLM" secondAttribute="top" id="u0C-3B-IIq"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMk-iW-nZe" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="96" width="390" height="276.66666666666669"/>
+                                <subviews>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="zFX-z5-MxY">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="276.66666666666669"/>
+                                        <locale key="locale" localeIdentifier="ko"/>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zFX-z5-MxY" secondAttribute="trailing" id="1Wl-Hq-RCV"/>
+                                    <constraint firstItem="zFX-z5-MxY" firstAttribute="leading" secondItem="qMk-iW-nZe" secondAttribute="leading" id="cGD-ul-Xwe"/>
+                                    <constraint firstAttribute="bottom" secondItem="zFX-z5-MxY" secondAttribute="bottom" id="igU-hn-5SJ"/>
+                                    <constraint firstItem="zFX-z5-MxY" firstAttribute="top" secondItem="qMk-iW-nZe" secondAttribute="top" id="kON-eF-V79"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vda-MY-rXu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qMk-iW-nZe" firstAttribute="trailing" secondItem="Vda-MY-rXu" secondAttribute="trailing" id="IMX-S5-73Z"/>
+                            <constraint firstItem="Qf6-H0-KLM" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qMk-iW-nZe" secondAttribute="bottom" constant="24" id="M55-w7-lgM"/>
+                            <constraint firstItem="qMk-iW-nZe" firstAttribute="height" secondItem="Hx1-fY-K65" secondAttribute="height" multiplier="0.35" id="RGF-Xl-V6E"/>
+                            <constraint firstItem="Qf6-H0-KLM" firstAttribute="trailing" secondItem="Vda-MY-rXu" secondAttribute="trailing" id="TVg-dC-K1t"/>
+                            <constraint firstItem="qMk-iW-nZe" firstAttribute="top" secondItem="Vda-MY-rXu" secondAttribute="top" constant="40" id="g3B-eu-zJY"/>
+                            <constraint firstItem="Qf6-H0-KLM" firstAttribute="height" secondItem="qMk-iW-nZe" secondAttribute="height" id="nLf-N1-w6p"/>
+                            <constraint firstItem="Vda-MY-rXu" firstAttribute="bottom" secondItem="Qf6-H0-KLM" secondAttribute="bottom" constant="40" id="pP7-Pa-ntR"/>
+                            <constraint firstItem="Qf6-H0-KLM" firstAttribute="leading" secondItem="Vda-MY-rXu" secondAttribute="leading" id="uyg-6u-AAq"/>
+                            <constraint firstItem="qMk-iW-nZe" firstAttribute="leading" secondItem="Vda-MY-rXu" secondAttribute="leading" id="wNm-WN-X1b"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="산책 날짜" id="bcI-L7-Lkw">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="p5h-V2-XrG">
+                            <connections>
+                                <action selector="cancel:" destination="5xA-Bz-rEd" id="omL-GT-bVC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="ouc-nV-FAI">
+                            <connections>
+                                <segue destination="gQX-A6-br7" kind="unwind" unwindAction="unwindToWalkRecordEditingVC:" id="ps1-jK-TwV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="walkDatePicker" destination="zFX-z5-MxY" id="aFP-Qj-qsB"/>
+                        <outlet property="walkTimePicker" destination="1qQ-AS-a8l" id="3no-XR-ec6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oc9-2o-oZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="gQX-A6-br7" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="7523.0769230769229" y="-375.35545023696682"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="72s-P6-kZt">
@@ -762,6 +849,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBg-of-Xfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4598.4615384615381" y="-374.64454976303318"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="auT-Sh-2aS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tJy-ea-nFp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="33V-dS-EW0">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5xA-Bz-rEd" kind="relationship" relationship="rootViewController" id="2XP-36-ZPe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pvy-q6-eIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6593.8461538461534" y="-375.35545023696682"/>
         </scene>
     </scenes>
     <resources>
