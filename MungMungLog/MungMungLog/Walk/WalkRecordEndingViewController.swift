@@ -69,7 +69,7 @@ class WalkRecordEndingViewController: UIViewController {
             
             guard let editingViewController = editingNavigationController.topViewController as? WalkRecordEditingViewController else { return }
             
-            editingViewController.walkingTime = self.timeCount
+            editingViewController.walkRecordTime = self.timeCount
             
             editingNavigationController.modalPresentationStyle = .fullScreen
             self.present(editingNavigationController, animated: true, completion: nil)

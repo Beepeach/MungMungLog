@@ -604,7 +604,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="walkDateAndTimeLabel" destination="gWk-Oz-M1e" id="opV-0X-WCh"/>
-                        <outlet property="walkingTimeLabel" destination="et8-ru-xqt" id="Ieo-ld-Tea"/>
+                        <outlet property="walkRecordTimeLabel" destination="et8-ru-xqt" id="Ieo-ld-Tea"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

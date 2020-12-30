@@ -9,10 +9,10 @@ import UIKit
 
 class WalkRecordEditingViewController: UIViewController {
 
-    var walkingTime: Int = 0
+    var walkRecordTime: Int = 0
     
     @IBOutlet weak var walkDateAndTimeLabel: UILabel!
-    @IBOutlet weak var walkingTimeLabel: UILabel!
+    @IBOutlet weak var walkRecordTimeLabel: UILabel!
     
     
     @IBAction func save(_ sender: Any) {
@@ -33,8 +33,8 @@ class WalkRecordEditingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let formattedWalkingTime = timerStringFormatter.string(from: Double(walkingTime)) {
-            walkingTimeLabel.text = "산책 시간: \(formattedWalkingTime)"
+        if let formattedWalkingTime = timerStringFormatter.string(from: Double(walkRecordTime)) {
+            walkRecordTimeLabel.text = "산책 시간: \(formattedWalkingTime)"
         }
     }
 }
