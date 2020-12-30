@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="390" height="717"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-6D-WG0" userLabel="Contents View">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="840"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="860"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FQK-7G-bmw">
                                                 <rect key="frame" x="24" y="10" width="342" height="150"/>
@@ -100,7 +100,7 @@
                                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="RVX-BA-x2s"/>
                                                 </connections>
                                             </collectionView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKp-Xa-EBM" customClass="RoundedView" customModule="MungMungLog" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZKp-Xa-EBM" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="170" width="370" height="150"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="EU1-5C-iQx">
@@ -136,8 +136,8 @@
                                                     <constraint firstItem="EU1-5C-iQx" firstAttribute="top" secondItem="ZKp-Xa-EBM" secondAttribute="top" constant="10" id="vuV-me-GiY"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQr-fc-2de">
-                                                <rect key="frame" x="10" y="330" width="370" height="500"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQr-fc-2de" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="350" width="370" height="500"/>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="500" id="DQc-sP-amN"/>
@@ -146,7 +146,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="UQr-fc-2de" firstAttribute="top" secondItem="ZKp-Xa-EBM" secondAttribute="bottom" constant="10" id="8wF-7l-SEb"/>
+                                            <constraint firstItem="UQr-fc-2de" firstAttribute="top" secondItem="ZKp-Xa-EBM" secondAttribute="bottom" constant="30" id="8wF-7l-SEb"/>
                                             <constraint firstItem="ZKp-Xa-EBM" firstAttribute="leading" secondItem="6Eq-6D-WG0" secondAttribute="leading" constant="10" id="Lkp-ed-T7d"/>
                                             <constraint firstAttribute="trailing" secondItem="ZKp-Xa-EBM" secondAttribute="trailing" constant="10" id="QI0-HM-Qz4"/>
                                             <constraint firstAttribute="trailing" secondItem="FQK-7G-bmw" secondAttribute="trailing" constant="24" id="Stz-xK-cUb"/>
@@ -214,7 +214,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-9v-Fah" customClass="CircleView" customModule="MungMungLog" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KbU-9v-Fah" customClass="CircleWithShadowView" customModule="MungMungLog" customModuleProvider="target">
                                 <rect key="frame" x="95" y="322" width="200" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="산책 시작" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Boj-C1-aq1">
@@ -437,7 +437,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vla-Ss-EWH" userLabel="Contents View">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1222"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zbm-VQ-VL1" customClass="RoundedBorderView" customModule="MungMungLog" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zbm-VQ-VL1" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="24" width="342" height="342"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="walk" translatesAutoresizingMaskIntoConstraints="NO" id="aOC-sg-ppK">
@@ -456,7 +456,7 @@
                                                     <constraint firstItem="aOC-sg-ppK" firstAttribute="leading" secondItem="Zbm-VQ-VL1" secondAttribute="leading" id="uUs-oC-p9S"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAS-Rf-ZXu" customClass="RoundedBorderView" customModule="MungMungLog" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAS-Rf-ZXu" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="390" width="342" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020년 12월 25일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWk-Oz-M1e">
@@ -484,7 +484,7 @@
                                                     <constraint firstItem="gWk-Oz-M1e" firstAttribute="leading" secondItem="kAS-Rf-ZXu" secondAttribute="leading" id="xur-9u-JZF"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3Y-sb-S05" customClass="RoundedBorderView" customModule="MungMungLog" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S3Y-sb-S05" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="494" width="342" height="80"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="goa-me-Uwl">
@@ -513,7 +513,7 @@
                                                     <constraint firstAttribute="bottom" secondItem="goa-me-Uwl" secondAttribute="bottom" constant="8" id="uNC-iZ-g2V"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CJ-gp-zaH" customClass="RoundedBorderView" customModule="MungMungLog" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2CJ-gp-zaH" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="24" y="598" width="342" height="600"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V2c-Ld-gCC">

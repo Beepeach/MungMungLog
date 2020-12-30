@@ -46,6 +46,7 @@ class WalkRecordEndingViewController: UIViewController {
     func startTimer() {
         mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
             self.timeCount += 1
+            print(self.timeCount)
             DispatchQueue.main.async {
                 self.timeLabel.text = self.timerStringFormatter.string(from: Double(self.timeCount))
             }
@@ -76,5 +77,11 @@ class WalkRecordEndingViewController: UIViewController {
         
         startTimer()
 
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        stopTimer()
     }
 }

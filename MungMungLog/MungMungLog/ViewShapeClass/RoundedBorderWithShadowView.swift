@@ -7,18 +7,22 @@
 
 import UIKit
 
-class RoundedBorderView: UIView {
+class RoundedBorderWithShadowView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         layer.cornerRadius = 10
         
         layer.borderWidth = 1
+        
         if #available(iOS 13.0, *) {
             layer.borderColor = UIColor.systemGray5.cgColor
         } else {
             
         }
         
-        clipsToBounds = true
+        layer.shadowOffset = CGSize(width: 10, height: 0)
+        layer.shadowOpacity = 0.6
+        layer.shadowRadius = layer.cornerRadius
+        layer.masksToBounds = false
     }
 }
