@@ -20,9 +20,8 @@ class RoundedBorderWithShadowView: UIView {
             
         }
         
-        layer.shadowOffset = CGSize(width: 10, height: 0)
+        layer.shadowOffset = CGSize(width: 5, height: 5)
         layer.shadowOpacity = 0.6
-        layer.shadowRadius = layer.cornerRadius
         layer.masksToBounds = false
     }
 }

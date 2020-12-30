@@ -13,9 +13,8 @@ class CircleWithShadowView: UIView {
         layer.cornerRadius = self.frame.width / 2
         clipsToBounds = true
         
-        layer.shadowOffset = CGSize(width: 10, height: 10)
+        layer.shadowOffset = CGSize(width: 5, height: 5)
         layer.shadowOpacity = 0.6
-        layer.shadowRadius = 10
         layer.masksToBounds = false
     }
     
