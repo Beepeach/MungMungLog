@@ -14,7 +14,6 @@ class WalkRecordEndingViewController: UIViewController {
     var pause = true
     
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var milliSecondLabel: UILabel!
     
     @IBOutlet weak var pauseOrStartImageView: UIImageView!
     @IBOutlet weak var pauseOrStartLabel: UILabel!

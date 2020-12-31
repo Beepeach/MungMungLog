@@ -274,29 +274,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgb-AC-6nP">
                                 <rect key="frame" x="0.0" y="339.33333333333331" width="390" height="147.66666666666669"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="r8G-Lw-8UE">
-                                        <rect key="frame" x="115" y="53.666666666666686" width="160" height="40.666666666666657"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdG-kJ-eYs">
-                                                <rect key="frame" x="0.0" y="0.0" width="141.66666666666666" height="40.666666666666664"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=".0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYX-Mn-Udw">
-                                                <rect key="frame" x="141.66666666666669" y="11.333333333333313" width="18.333333333333343" height="26.333333333333329"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdG-kJ-eYs">
+                                        <rect key="frame" x="124.33333333333333" y="53.666666666666686" width="141.66666666666669" height="40.666666666666657"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration" identifier="clockAndEndButtonContainerView"/>
                                 <constraints>
-                                    <constraint firstItem="r8G-Lw-8UE" firstAttribute="centerY" secondItem="bgb-AC-6nP" secondAttribute="centerY" id="5Bm-IK-KIH"/>
-                                    <constraint firstItem="r8G-Lw-8UE" firstAttribute="centerX" secondItem="bgb-AC-6nP" secondAttribute="centerX" id="h62-aJ-DHx"/>
+                                    <constraint firstItem="sdG-kJ-eYs" firstAttribute="centerX" secondItem="bgb-AC-6nP" secondAttribute="centerX" id="N8G-nA-cuG"/>
+                                    <constraint firstItem="sdG-kJ-eYs" firstAttribute="centerY" secondItem="bgb-AC-6nP" secondAttribute="centerY" id="NAY-NA-6JM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D29-Ix-vf6">
@@ -413,7 +402,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="RCC-Vo-bSv"/>
                     <connections>
-                        <outlet property="milliSecondLabel" destination="QYX-Mn-Udw" id="1UL-uv-y4v"/>
                         <outlet property="pauseOrStartImageView" destination="xZj-zz-uko" id="NKF-Db-ers"/>
                         <outlet property="pauseOrStartLabel" destination="gD1-O1-iVI" id="Xl5-9T-jPj"/>
                         <outlet property="timeLabel" destination="sdG-kJ-eYs" id="0cY-E9-LPi"/>
