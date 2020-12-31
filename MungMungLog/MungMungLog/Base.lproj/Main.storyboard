@@ -675,7 +675,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ouc-nV-FAI">
                             <connections>
-                                <segue destination="gQX-A6-br7" kind="unwind" unwindAction="unwindToWalkRecordEditingVC:" id="ps1-jK-TwV"/>
+                                <action selector="save:" destination="5xA-Bz-rEd" id="ywt-Dj-oig"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -685,7 +685,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oc9-2o-oZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="gQX-A6-br7" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7523.0769230769229" y="-375.35545023696682"/>
         </scene>

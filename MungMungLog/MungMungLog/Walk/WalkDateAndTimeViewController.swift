@@ -17,17 +17,24 @@ class WalkDateAndTimeViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let walkRecordEditingVC = segue.destination as? WalkRecordEditingViewController else { return }
+    @IBAction func save(_ sender: Any) {
+        let walkDate = self.koreaDateFormatter.string(from: walkDatePicker.date)
+        let walkTime = self.koreaTimeFormatter.string(from: walkTimePicker.date)
         
-        walkRecordEditingVC.walkDateAndTimeLabel.text = """
-            \(self.koreaDateFormatter.string(from: walkDatePicker.date))
-            \(self.koreaTimeFormatter.string(from: walkTimePicker.date))
-            """
+        let walkDateAndTime = [walkDate, walkTime]
+        
+        NotificationCenter.default.post(name: NSNotification.Name.DateValueDidChange, object: nil, userInfo: ["WalkDateAndTime": walkDateAndTime])
+        
+        dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+}
+
+
+extension NSNotification.Name {
+    static let DateValueDidChange = NSNotification.Name("DateValueDidChangeNotification")
 }

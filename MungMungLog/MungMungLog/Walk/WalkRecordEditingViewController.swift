@@ -8,8 +8,18 @@
 import UIKit
 
 class WalkRecordEditingViewController: UIViewController {
-
+    
     var walkRecordTime: Int = 0
+    
+    @objc func changeWalkDateAndTimeLabel(notification: Notification) {
+        guard let walkDateAndTime = notification.userInfo?["WalkDateAndTime"] as? [String],
+              let walkDate = walkDateAndTime.first,
+              let walkTime = walkDateAndTime.last else {
+            return
+        }
+        
+        self.walkDateAndTimeLabel.text = "\(walkDate)\n\(walkTime)"
+    }
     
     @IBOutlet weak var walkDateAndTimeLabel: UILabel!
     @IBOutlet weak var walkRecordTimeLabel: UILabel!
@@ -19,15 +29,6 @@ class WalkRecordEditingViewController: UIViewController {
         print("save")
         // ToDo
         // 데이터베이스에 산책데이터를 저장하는 코드
-        
-        // unwind와 같이 사용해도 괜찮은지??
-    }
-    
-    @IBAction func unwindToWalkRecordEditingVC(_ unwindSegue: UIStoryboardSegue) {
-    }
-    
-    override func canPerformUnwindSegueAction(_ action: Selector, from fromViewController: UIViewController, sender: Any?) -> Bool {
-        return true
     }
     
     override func viewDidLoad() {
@@ -36,5 +37,7 @@ class WalkRecordEditingViewController: UIViewController {
         if let formattedWalkingTime = timerStringFormatter.string(from: Double(walkRecordTime)) {
             walkRecordTimeLabel.text = "산책 시간: \(formattedWalkingTime)"
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeWalkDateAndTimeLabel(notification:)), name: NSNotification.Name.DateValueDidChange, object: nil)
     }
 }
