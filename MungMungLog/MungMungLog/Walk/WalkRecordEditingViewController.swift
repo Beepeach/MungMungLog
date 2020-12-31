@@ -11,6 +11,10 @@ class WalkRecordEditingViewController: UIViewController {
     
     var walkRecordTime: Int = 0
     
+    @IBOutlet weak var walkDateAndTimeLabel: UILabel!
+    @IBOutlet weak var walkRecordTimeLabel: UILabel!
+    
+    
     @objc func changeWalkDateAndTimeLabel(notification: Notification) {
         guard let walkDateAndTime = notification.userInfo?["WalkDateAndTime"] as? [String],
               let walkDate = walkDateAndTime.first,
@@ -21,9 +25,12 @@ class WalkRecordEditingViewController: UIViewController {
         self.walkDateAndTimeLabel.text = "\(walkDate)\n\(walkTime)"
     }
     
-    @IBOutlet weak var walkDateAndTimeLabel: UILabel!
-    @IBOutlet weak var walkRecordTimeLabel: UILabel!
-    
+    @IBAction func cancel(_ sender: Any) {
+        self.presentTwoButtonAlert(alertTitle: "기록을 중지하시겠어요?", message: "중지하시면 현재 데이터가 삭제됩니다.", confirmActionTitle: "확인", cancelActionTitle: "취소") {_ in
+            
+            self.performSegue(withIdentifier: "unwindToHome", sender: self)
+        }
+    }
     
     @IBAction func save(_ sender: Any) {
         print("save")
@@ -41,3 +48,4 @@ class WalkRecordEditingViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(changeWalkDateAndTimeLabel(notification:)), name: NSNotification.Name.DateValueDidChange, object: nil)
     }
 }
+

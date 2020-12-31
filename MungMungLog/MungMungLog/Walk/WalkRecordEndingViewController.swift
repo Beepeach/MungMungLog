@@ -19,6 +19,7 @@ class WalkRecordEndingViewController: UIViewController {
     @IBOutlet weak var pauseOrStartImageView: UIImageView!
     @IBOutlet weak var pauseOrStartLabel: UILabel!
     
+    
     @IBAction func PauseOrStart(_ sender: UIButton) {
         if pause == true {
             UIView.animate(withDuration: 0.3) {
@@ -43,11 +44,13 @@ class WalkRecordEndingViewController: UIViewController {
     
     
     func startTimer() {
-        mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
-            self.timeCount += 1
-            print(self.timeCount)
-            DispatchQueue.main.async {
-                self.timeLabel.text = self.timerStringFormatter.string(from: Double(self.timeCount))
+        mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            DispatchQueue.global().async {
+                self.timeCount += 1
+                print(self.timeCount)
+                DispatchQueue.main.async {
+                    self.timeLabel.text = self.timerStringFormatter.string(from: Double(self.timeCount))
+                }
             }
         })
         
@@ -59,7 +62,6 @@ class WalkRecordEndingViewController: UIViewController {
         mainTimer?.invalidate()
         mainTimer = nil
     }
-    
     
     
     @IBAction func stopRecord(_ sender: Any) {

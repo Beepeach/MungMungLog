@@ -594,17 +594,22 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="산책 기록" id="FYr-xh-6Yg">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wxU-VR-pUV"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wxU-VR-pUV">
+                            <connections>
+                                <action selector="cancel:" destination="KRU-YD-Xzh" id="7YG-in-OlV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="TwD-oZ-h0S">
                             <connections>
                                 <action selector="save:" destination="KRU-YD-Xzh" id="qcF-QL-IPG"/>
-                                <segue destination="2iv-X0-47R" kind="unwind" unwindAction="unwindToHome:" id="c0M-gr-MxK"/>
+                                <segue destination="2iv-X0-47R" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="c0M-gr-MxK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="walkDateAndTimeLabel" destination="gWk-Oz-M1e" id="opV-0X-WCh"/>
                         <outlet property="walkRecordTimeLabel" destination="et8-ru-xqt" id="Ieo-ld-Tea"/>
+                        <segue destination="2iv-X0-47R" kind="unwind" unwindAction="unwindToHome:" id="quc-mz-GfP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
