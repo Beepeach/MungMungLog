@@ -614,7 +614,6 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="TwD-oZ-h0S">
                             <connections>
                                 <action selector="save:" destination="KRU-YD-Xzh" id="qcF-QL-IPG"/>
-                                <segue destination="2iv-X0-47R" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="c0M-gr-MxK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -622,7 +621,7 @@
                         <outlet property="walkDateAndTimeLabel" destination="gWk-Oz-M1e" id="opV-0X-WCh"/>
                         <outlet property="walkRecordImageView" destination="aOC-sg-ppK" id="x0V-Tt-xeb"/>
                         <outlet property="walkRecordTimeLabel" destination="et8-ru-xqt" id="Ieo-ld-Tea"/>
-                        <segue destination="2iv-X0-47R" kind="unwind" unwindAction="unwindToHome:" id="quc-mz-GfP"/>
+                        <segue destination="2iv-X0-47R" kind="unwind" identifier="unwindToHome" unwindAction="unwindToHome:" id="CEO-gB-WVc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
