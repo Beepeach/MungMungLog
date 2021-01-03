@@ -14,16 +14,19 @@ struct Profile {
 }
 
 enum ProfileCell {
+    case invisible
     case empty
     case vaild(image: Profile.Item)
 }
 
 class HomeViewController: UIViewController {
-
+    
     let list: [ProfileCell] = [
+        ProfileCell.invisible,
         ProfileCell.vaild(image: Profile.Item.init(imageName: "Test")),
         ProfileCell.vaild(image: Profile.Item.init(imageName: nil)),
-        ProfileCell.empty
+        ProfileCell.empty,
+        ProfileCell.invisible
     ]
     
     @IBOutlet weak var nameLabel: UILabel!
@@ -48,6 +51,12 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let targetCell = list[indexPath.row]
         switch targetCell {
+        case .invisible:
+            let wrappedInvisibleCell = collectionView.dequeueReusableCell(withReuseIdentifier: "invisibleCollectionViewCell", for: indexPath) as? InvisibleCollectionViewCell
+            
+            guard let invisibleCell = wrappedInvisibleCell else { return UICollectionViewCell()}
+            
+            return invisibleCell
         case .empty:
             let wrappedEmptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyProfileCollectionViewCell", for: indexPath) as? EmptyProfileCollectionViewCell
             
@@ -72,11 +81,19 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         guard let layer = collectionViewLayout as? UICollectionViewFlowLayout else { return .zero}
         
         let height = layer.itemSize.height
         let width = height
         
-        return CGSize(width: width, height: height)
+        let target = list[indexPath.item]
+        
+        switch target {
+        case .invisible:
+            return CGSize(width: (collectionView.bounds.width / 2) + 100, height: width)
+        default:
+            return CGSize(width: width, height: height)
+        }
     }
 }

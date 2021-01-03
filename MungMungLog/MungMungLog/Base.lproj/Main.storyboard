@@ -24,7 +24,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Eq-6D-WG0" userLabel="Contents View">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="860"/>
                                         <subviews>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FQK-7G-bmw">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FQK-7G-bmw">
                                                 <rect key="frame" x="24" y="10" width="342" height="150"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
@@ -67,8 +67,16 @@
                                                             <outlet property="profileImageView" destination="Ak6-j2-XwA" id="7St-vr-WHf"/>
                                                         </connections>
                                                     </collectionViewCell>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="emptyProfileCollectionViewCell" id="UbZ-yJ-5Ie" customClass="EmptyProfileCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="invisibleCollectionViewCell" id="ViS-hU-Upe" customClass="InvisibleCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
                                                         <rect key="frame" x="110" y="25" width="100" height="100"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z5u-Zi-e9u">
+                                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </collectionViewCellContentView>
+                                                    </collectionViewCell>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="emptyProfileCollectionViewCell" id="UbZ-yJ-5Ie" customClass="EmptyProfileCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                                        <rect key="frame" x="220" y="25" width="100" height="100"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BZ9-bK-eAX">
                                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>

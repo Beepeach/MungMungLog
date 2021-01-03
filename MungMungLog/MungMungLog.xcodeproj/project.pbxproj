@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4602B0D725A23D9B00D46F22 /* InvisibleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602B0D625A23D9B00D46F22 /* InvisibleCollectionViewCell.swift */; };
 		460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00C2557F76B00027376 /* AppDelegate.swift */; };
 		460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00E2557F76B00027376 /* SceneDelegate.swift */; };
 		460EB0112557F76B00027376 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB0102557F76B00027376 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4602B0D625A23D9B00D46F22 /* InvisibleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvisibleCollectionViewCell.swift; sourceTree = "<group>"; };
 		460EB0092557F76B00027376 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		460EB00C2557F76B00027376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		460EB00E2557F76B00027376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */,
 				46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */,
+				4602B0D625A23D9B00D46F22 /* InvisibleCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */,
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 				464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */,
+				4602B0D725A23D9B00D46F22 /* InvisibleCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
