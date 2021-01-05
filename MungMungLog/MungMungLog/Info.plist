@@ -61,6 +61,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>위치 정보</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>위치 정보</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>위치 정보</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

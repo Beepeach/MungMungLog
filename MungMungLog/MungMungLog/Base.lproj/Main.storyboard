@@ -276,7 +276,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lg7-A0-kGP">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lg7-A0-kGP">
                                 <rect key="frame" x="0.0" y="44" width="390" height="295.33333333333331"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgb-AC-6nP">
@@ -410,6 +410,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="RCC-Vo-bSv"/>
                     <connections>
+                        <outlet property="mapView" destination="lg7-A0-kGP" id="zhB-nH-nkW"/>
                         <outlet property="pauseOrStartImageView" destination="xZj-zz-uko" id="NKF-Db-ers"/>
                         <outlet property="pauseOrStartLabel" destination="gD1-O1-iVI" id="Xl5-9T-jPj"/>
                         <outlet property="timeLabel" destination="sdG-kJ-eYs" id="0cY-E9-LPi"/>
