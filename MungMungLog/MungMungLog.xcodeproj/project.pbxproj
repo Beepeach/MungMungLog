@@ -20,6 +20,7 @@
 		464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */; };
 		464092CE258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */; };
 		464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */; };
+		464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */; };
 		464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */; };
 		4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */; };
 		467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* CircleWithShadowView.swift */; };
@@ -52,6 +53,7 @@
 		464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTimeAndDistanceDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRecodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItemTableViewCell.swift; sourceTree = "<group>"; };
+		464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEndingViewController.swift; sourceTree = "<group>"; };
 		467BF53625748F8900511451 /* CircleWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithShadowView.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				46D7CE062597840400134271 /* Extension */,
 				4656860925766C8900088513 /* ViewShapeClass */,
+				464A6B7C25AAED4000E56ED9 /* Login */,
 				46A025A92577D1530022BDBF /* Home */,
 				46E69ACC25806FC200019FD9 /* Walk */,
 				46A5749E25729B3D00B7ADF5 /* Record */,
@@ -120,6 +123,14 @@
 				464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		464A6B7C25AAED4000E56ED9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		4656860925766C8900088513 /* ViewShapeClass */ = {
@@ -277,6 +288,7 @@
 				46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */,
 				464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
+				464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */,
 				46DFB30B25792938008800AC /* VaildProfileCollectionViewCell.swift in Sources */,
 				46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */,
 				46D1AF6025820B6000DF7B2A /* RecordItemSelectViewController.swift in Sources */,
