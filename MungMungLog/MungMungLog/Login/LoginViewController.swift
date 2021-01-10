@@ -30,12 +30,12 @@ class LoginViewController: UIViewController {
         }
         
         func moveLogoToTop() {
-            self.logoCenterYConstraint.constant = -(self.view.frame.height / 5)
+            logoCenterYConstraint.constant = -(view.frame.height / 5)
         }
         
         func presentLoginView() {
-            self.loginStackView.alpha = 1.0
-            self.passwordFindingView.alpha = 1.0
+            loginStackView.alpha = 1.0
+            passwordFindingView.alpha = 1.0
         }
         
     }
