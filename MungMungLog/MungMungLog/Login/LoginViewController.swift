@@ -10,15 +10,27 @@ import UIKit
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var logoCenterYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var loginStackViewTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var loginStackView: UIStackView!
     @IBOutlet weak var passwordFindingView: UIView!
+    @IBOutlet weak var idInputField: UITextField!
+    @IBOutlet weak var passwordInputField: UITextField!
+    @IBOutlet weak var loginWithSnsStackView: UIStackView!
+    
+    func setContentsStartPosition() {
+        loginStackViewTopConstraint.constant = (view.frame.height * 0.55)
+        loginStackView.alpha = 0
+        passwordFindingView.alpha = 0
+        loginWithSnsStackView.alpha = 0
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginStackView.alpha = 0
-        passwordFindingView.alpha = 0
+        setContentsStartPosition()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             moveLogoToTop()
@@ -27,8 +39,9 @@ class LoginViewController: UIViewController {
                 self.view.layoutIfNeeded()
                 presentLoginView()
             })
+            
         }
-        
+
         func moveLogoToTop() {
             logoCenterYConstraint.constant = -(view.frame.height / 5)
         }
@@ -36,8 +49,31 @@ class LoginViewController: UIViewController {
         func presentLoginView() {
             loginStackView.alpha = 1.0
             passwordFindingView.alpha = 1.0
+            passwordFindingView.alpha = 1.0
+            loginWithSnsStackView.alpha = 1.0
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
+            guard let userInfo = noti.userInfo else {
+                return
+            }
+            
+            guard let bounds = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
+                return
+            }
+            
+            self.logoImageView.alpha = 0
+            self.loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bounds.height, right: 0)
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (_) in
+            self.logoImageView.alpha = 1
+            self.loginScrollView.contentInset = .zero
         }
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
 }

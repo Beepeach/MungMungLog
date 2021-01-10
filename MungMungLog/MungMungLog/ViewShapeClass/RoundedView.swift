@@ -10,7 +10,7 @@ import UIKit
 class RoundedView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
-        layer.cornerRadius = 10
+        layer.cornerRadius = 5
         clipsToBounds = true
     }
 }
