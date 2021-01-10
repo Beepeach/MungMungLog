@@ -848,6 +848,7 @@
                     </view>
                     <connections>
                         <outlet property="loginStackView" destination="WTK-ta-VvB" id="zhk-v6-ulW"/>
+                        <outlet property="logoCenterYConstraint" destination="eLC-jw-mqf" id="VcW-Q8-nAe"/>
                         <outlet property="logoImageView" destination="CtH-ch-Xwq" id="ClT-Rk-4gd"/>
                         <outlet property="passwordFindingView" destination="jjy-wN-shw" id="hlt-mk-k95"/>
                     </connections>
