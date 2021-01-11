@@ -1,14 +1,14 @@
 //
-//  RoundedView.swift
+//  RoundedStackView.swift
 //  MungMungLog
 //
-//  Created by JunHee Jo on 2020/12/02.
+//  Created by JunHee Jo on 2021/01/12.
 //
 
 import UIKit
 
-class RoundedView: UIView {
-    
+class RoundedStackView: UIStackView {
+
     @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius

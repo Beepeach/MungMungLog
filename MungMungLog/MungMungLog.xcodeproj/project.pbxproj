@@ -35,6 +35,7 @@
 		46DFB30725792782008800AC /* EmptyProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */; };
 		46DFB30B25792938008800AC /* VaildProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */; };
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
+		46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaildProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
+		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				46A025AE2577D7BB0022BDBF /* CircleImageView.swift */,
 				46A025B12577D9760022BDBF /* RoundedView.swift */,
 				46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */,
+				46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */,
 			);
 			path = ViewShapeClass;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 				464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */,
 				4602B0D725A23D9B00D46F22 /* InvisibleCollectionViewCell.swift in Sources */,
+				46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
