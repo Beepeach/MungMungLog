@@ -742,7 +742,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kP-93-Zxe" userLabel="Contents View">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="861.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="869.33333333333337"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Lak-A7-iKY" userLabel="Login Stack View">
                                                 <rect key="frame" x="24" y="426.99999999999994" width="342" height="253.33333333333331"/>
@@ -756,7 +756,10 @@
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Adj-hO-9pb"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="LQF-VB-7aJ" id="Hgx-wI-Kg4"/>
+                                                                </connections>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q4q-as-6NG">
                                                                 <rect key="frame" x="0.0" y="73.333333333333314" width="342" height="1"/>
@@ -776,7 +779,10 @@
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xyS-Kz-yfh"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                                <textInputTraits key="textInputTraits" returnKeyType="join"/>
+                                                                <textInputTraits key="textInputTraits" returnKeyType="join" textContentType="password"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="LQF-VB-7aJ" id="M1I-WY-ykD"/>
+                                                                </connections>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMH-Cg-YeP">
                                                                 <rect key="frame" x="0.0" y="73.333333333333258" width="342" height="1"/>
@@ -839,7 +845,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iSw-yL-IhT">
-                                                <rect key="frame" x="24" y="742" width="342" height="109.33333333333337"/>
+                                                <rect key="frame" x="24" y="742" width="342" height="117.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="GwH-ja-lXe" customClass="RoundedStackView" customModule="MungMungLog" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="49.666666666666664"/>
@@ -900,9 +906,10 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </stackView>
                                                 </subviews>
+                                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="8" right="0.0"/>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="somsom" translatesAutoresizingMaskIntoConstraints="NO" id="BzI-yU-t0g">
-                                                <rect key="frame" x="67" y="101" width="256" height="256"/>
+                                                <rect key="frame" x="67" y="105" width="256" height="256"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

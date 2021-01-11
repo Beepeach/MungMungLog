@@ -70,7 +70,7 @@ class LoginViewController: UIViewController {
         
         func moveScreentoFirstResponder() {
             if self.idInputField.isFirstResponder == true || self.passwordInputField.isFirstResponder == true {
-                self.loginScrollView.scrollRectToVisible(self.loginWithSnsStackView.frame, animated: true)
+                self.loginScrollView.scrollRectToVisible(self.loginWithSnsStackView.frame  , animated: true)
             }
         }
         
@@ -91,5 +91,34 @@ extension LoginViewController: UIScrollViewDelegate {
         let y = scrollView.contentOffset.y + scrollView.contentInset.top
         
         logoImageView.alpha = min(max(1.0 - (y / (view.frame.height / 10)), 0.0), 1.0)
+    }
+}
+
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case idInputField:
+            if idInputField.text?.count != 0 {
+                passwordInputField.becomeFirstResponder()
+            } else {
+                idInputField.becomeFirstResponder()
+                presentOneButtonAlert(alertTitle: "알림", message: "아이디를 입력해주세요.", actionTitle: "확인")
+            }
+            
+        case passwordInputField:
+            if passwordInputField.text?.count != 0 {
+                self.view.endEditing(true)
+            } else {
+                passwordInputField.becomeFirstResponder()
+                presentOneButtonAlert(alertTitle: "알림", message: "비밀번호를 입력해주세요.", actionTitle: "확인") 
+            }
+            
+        default:
+            view.endEditing(true)
+        }
+        
+        return true
+        
     }
 }

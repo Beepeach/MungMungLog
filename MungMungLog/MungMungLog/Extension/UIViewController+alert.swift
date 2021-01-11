@@ -2,7 +2,7 @@ import UIKit
 
 
 extension UIViewController {
-    func presentOneButtonAlert(alertTitle: String, message: String, actionTitle: String) {
+    func presentOneButtonAlert(alertTitle: String, message: String, actionTitle: String, handler: ((UIAlertAction) -> Void)? = nil) {
         let oneButtonAlert = UIAlertController(title: alertTitle, message: message, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: actionTitle, style: .cancel, handler: nil)
         
