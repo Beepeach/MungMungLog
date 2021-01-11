@@ -41,7 +41,7 @@ class LoginViewController: UIViewController {
             })
             
         }
-
+        
         func moveLogoToTop() {
             logoCenterYConstraint.constant = -(view.frame.height / 5)
         }
@@ -54,6 +54,7 @@ class LoginViewController: UIViewController {
         }
         
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
+            
             guard let userInfo = noti.userInfo else {
                 return
             }
@@ -61,13 +62,19 @@ class LoginViewController: UIViewController {
             guard let bounds = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
                 return
             }
-            
-            self.logoImageView.alpha = 0
+        
             self.loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bounds.height, right: 0)
+            
+            moveScreentoFirstResponder()
+        }
+        
+        func moveScreentoFirstResponder() {
+            if self.idInputField.isFirstResponder == true || self.passwordInputField.isFirstResponder == true {
+                self.loginScrollView.scrollRectToVisible(self.loginWithSnsStackView.frame, animated: true)
+            }
         }
         
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (_) in
-            self.logoImageView.alpha = 1
             self.loginScrollView.contentInset = .zero
         }
         
@@ -75,5 +82,14 @@ class LoginViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+    }
+}
+
+
+extension LoginViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let y = scrollView.contentOffset.y + scrollView.contentInset.top
+        
+        logoImageView.alpha = min(max(1.0 - (y / (view.frame.height / 10)), 0.0), 1.0)
     }
 }
