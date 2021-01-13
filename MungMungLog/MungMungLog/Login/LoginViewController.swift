@@ -27,6 +27,35 @@ class LoginViewController: UIViewController {
         loginWithSnsStackView.alpha = 0
     }
     
+    func setScreenWhenShowKeyboard() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
+            
+            guard let userInfo = noti.userInfo else {
+                return
+            }
+            
+            guard let bounds = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
+                return
+            }
+            
+            self.loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bounds.height, right: 0)
+            
+            self.moveScreentoFirstResponder()
+        }
+    }
+    
+    func moveScreentoFirstResponder() {
+        if self.idInputField.isFirstResponder == true || self.passwordInputField.isFirstResponder == true {
+            self.loginScrollView.scrollRectToVisible(self.loginWithSnsStackView.frame  , animated: true)
+        }
+    }
+    
+    func setScreenWhenHideKeyboard() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (_) in
+            self.loginScrollView.contentInset = .zero
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -53,35 +82,14 @@ class LoginViewController: UIViewController {
             loginWithSnsStackView.alpha = 1.0
         }
         
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
-            
-            guard let userInfo = noti.userInfo else {
-                return
-            }
-            
-            guard let bounds = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
-                return
-            }
-        
-            self.loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bounds.height, right: 0)
-            
-            moveScreentoFirstResponder()
-        }
-        
-        func moveScreentoFirstResponder() {
-            if self.idInputField.isFirstResponder == true || self.passwordInputField.isFirstResponder == true {
-                self.loginScrollView.scrollRectToVisible(self.loginWithSnsStackView.frame  , animated: true)
-            }
-        }
-        
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (_) in
-            self.loginScrollView.contentInset = .zero
-        }
+        setScreenWhenShowKeyboard()
+        setScreenWhenHideKeyboard()
         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        view.endEditing(true)
     }
 }
 
