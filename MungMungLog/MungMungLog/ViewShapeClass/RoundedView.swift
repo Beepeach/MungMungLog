@@ -20,4 +20,19 @@ class RoundedView: UIView {
         
     }
     
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        layer.borderColor = UIColor.black.cgColor
+    }
+    
 }
