@@ -793,7 +793,7 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLf-KZ-FlA" userLabel="Login Contanier View" customClass="RoundedView" customModule="MungMungLog" customModuleProvider="target">
+                                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLf-KZ-FlA" userLabel="Login Contanier View" customClass="RoundedView" customModule="MungMungLog" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="172.33333333333337" width="342" height="71.333333333333314"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="로그인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vy-oD-lAO">
@@ -959,6 +959,7 @@
                     </view>
                     <connections>
                         <outlet property="idInputField" destination="Nzx-qL-hBN" id="A2E-lp-Hdo"/>
+                        <outlet property="loginContainerView" destination="oLf-KZ-FlA" id="rHn-0Y-ZEW"/>
                         <outlet property="loginScrollView" destination="aGc-nF-QLp" id="XM4-hb-TQ9"/>
                         <outlet property="loginStackView" destination="Lak-A7-iKY" id="8UO-DP-HB8"/>
                         <outlet property="loginStackViewTopConstraint" destination="4te-HB-X3d" id="agR-Ga-EZt"/>

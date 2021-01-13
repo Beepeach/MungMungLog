@@ -15,10 +15,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var loginStackView: UIStackView!
-    @IBOutlet weak var passwordFindingView: UIView!
     @IBOutlet weak var idInputField: UITextField!
     @IBOutlet weak var passwordInputField: UITextField!
+    @IBOutlet weak var loginContainerView: RoundedView!
+    @IBOutlet weak var passwordFindingView: UIView!
     @IBOutlet weak var loginWithSnsStackView: UIStackView!
+    
+    var isAccessibleLoginId = false
+    var isAccessibleLoginPassword = false
+    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     
     func setContentsStartPosition() {
         loginStackViewTopConstraint.constant = (view.frame.height * 0.55)
@@ -129,4 +134,59 @@ extension LoginViewController: UITextFieldDelegate {
         return true
         
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let currentText = textField.text as NSString? else {
+            return true
+        }
+        
+        let finalText = currentText.replacingCharacters(in: range, with: string)
+  
+        switch textField {
+        case idInputField:
+            guard let range = finalText.range(of: emailRegEx,
+                                              options: .regularExpression),
+                  range.lowerBound == finalText.startIndex && range.upperBound == finalText.endIndex else {
+                isAccessibleLoginId = false
+                checkLoginButtonEnable()
+                return true
+            }
+            
+            isAccessibleLoginId = true
+            checkLoginButtonEnable()
+            return true
+            
+        case passwordInputField:
+            guard finalText.count >= 4,
+                  finalText.count <= 20 else {
+                isAccessibleLoginPassword = false
+                checkLoginButtonEnable()
+                return true
+            }
+            
+            isAccessibleLoginPassword = true
+            checkLoginButtonEnable()
+            return true
+            
+        default:
+            return true
+        }
+        
+    }
+    
+    func checkLoginButtonEnable() {
+        if isAccessibleLoginId == true && isAccessibleLoginPassword == true {
+            loginContainerView.isUserInteractionEnabled = true
+            loginContainerView.backgroundColor = .systemTeal
+        } else {
+            loginContainerView.isUserInteractionEnabled = false
+            if #available(iOS 13.0, *) {
+                loginContainerView.backgroundColor = .systemGray4
+            } else {
+                loginContainerView.backgroundColor = .lightGray
+            }
+        }
+    }
+    
 }
