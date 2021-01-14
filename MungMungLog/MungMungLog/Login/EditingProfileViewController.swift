@@ -42,14 +42,9 @@ class EditingProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
         maleContainerView.backgroundColor = .none
         femaleContainerView.backgroundColor = .none
+       
     }
     
 }

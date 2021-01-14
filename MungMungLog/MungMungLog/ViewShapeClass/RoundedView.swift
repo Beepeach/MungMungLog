@@ -35,8 +35,6 @@ class RoundedView: UIView {
         guard let grayBlack = UIColor(named: "GrayBalck") else { return }
         
         layer.borderColor = grayBlack.cgColor
-        
-        print("적용완료")
     }
     
 }
