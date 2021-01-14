@@ -15,6 +15,10 @@ class EditingProfileViewController: UIViewController {
     @IBOutlet weak var femaleContainerView: RoundedView!
     
     
+    @IBAction func cancelEditing(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func selectMale(_ sender: Any) {
         if #available(iOS 13.0, *) {
             maleContainerView.backgroundColor = .systemGray4

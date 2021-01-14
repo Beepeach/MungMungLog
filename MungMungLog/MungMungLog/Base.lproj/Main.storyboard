@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m4u-bB-Ujf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQF-VB-7aJ">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1036,19 +1036,31 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Add a pet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AA1-8D-nBo">
-                                                        <rect key="frame" x="46.333333333333343" y="17.666666666666629" width="92" height="26.333333333333329"/>
+                                                        <rect key="frame" x="46.333333333333343" y="12" width="92" height="33.666666666666664"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9MX-9Z-5Tc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.33333333333334" height="57.666666666666664"/>
+                                                        <connections>
+                                                            <action selector="addPet:" destination="1zt-ug-jLK" eventType="touchUpInside" id="Gpo-qX-A9Y"/>
+                                                            <segue destination="m4u-bB-Ujf" kind="presentation" modalPresentationStyle="fullScreen" id="zrW-OL-TMj"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                 <constraints>
+                                                    <constraint firstItem="AA1-8D-nBo" firstAttribute="top" secondItem="c1B-rh-Gla" secondAttribute="top" id="1D1-AF-aKm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9MX-9Z-5Tc" secondAttribute="trailing" id="1tv-N0-FgM"/>
+                                                    <constraint firstItem="9MX-9Z-5Tc" firstAttribute="top" secondItem="L4s-vH-vaq" secondAttribute="top" id="6vy-8i-bgl"/>
                                                     <constraint firstAttribute="bottom" secondItem="c1B-rh-Gla" secondAttribute="bottom" constant="12" id="GlE-tG-GGA"/>
                                                     <constraint firstItem="c1B-rh-Gla" firstAttribute="leading" secondItem="L4s-vH-vaq" secondAttribute="leading" constant="24" id="IQe-Fn-lad"/>
+                                                    <constraint firstItem="9MX-9Z-5Tc" firstAttribute="leading" secondItem="L4s-vH-vaq" secondAttribute="leading" id="Nke-kV-m3A"/>
+                                                    <constraint firstAttribute="bottom" secondItem="9MX-9Z-5Tc" secondAttribute="bottom" id="Oor-3Q-dir"/>
                                                     <constraint firstAttribute="trailing" secondItem="AA1-8D-nBo" secondAttribute="trailing" constant="24" id="fVJ-Sh-Tnk"/>
+                                                    <constraint firstItem="AA1-8D-nBo" firstAttribute="bottom" secondItem="c1B-rh-Gla" secondAttribute="bottom" id="gjn-1d-XJA"/>
                                                     <constraint firstItem="AA1-8D-nBo" firstAttribute="leading" secondItem="c1B-rh-Gla" secondAttribute="trailing" constant="5" id="oAW-av-lqo"/>
-                                                    <constraint firstItem="AA1-8D-nBo" firstAttribute="firstBaseline" secondItem="c1B-rh-Gla" secondAttribute="firstBaseline" id="pVg-2q-dKa"/>
                                                     <constraint firstItem="c1B-rh-Gla" firstAttribute="top" secondItem="L4s-vH-vaq" secondAttribute="top" constant="12" id="zUR-ju-d9c"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
@@ -1063,7 +1075,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음에 등록하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYn-Yd-3Lc">
                                                         <rect key="frame" x="0.0" y="0.0" width="101.33333333333333" height="30"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" systemColor="systemGray4Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WjX-bS-1Ml">
@@ -1121,6 +1133,9 @@
                             <constraint firstAttribute="bottom" secondItem="w51-qN-1w2" secondAttribute="bottom" id="qfL-f5-yFp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addPetButtonContainerView" destination="L4s-vH-vaq" id="oxe-xe-lDD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sd-3Y-QN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1513,6 +1528,9 @@
                     <navigationItem key="navigationItem" title="프로필 등록" id="XK5-zB-2Fk">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QIu-UG-XMw">
                             <color key="tintColor" systemColor="systemTealColor"/>
+                            <connections>
+                                <action selector="cancelEditing:" destination="AFs-c6-JGu" id="gPT-GH-d8t"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="j24-LZ-h6Q">
                             <color key="tintColor" systemColor="systemTealColor"/>
@@ -1718,7 +1736,7 @@
         <image name="kakao" width="256" height="256"/>
         <image name="male" width="256" height="256"/>
         <image name="pause" width="256" height="256"/>
-        <image name="plusbox" width="256" height="256"/>
+        <image name="plusbox" width="512" height="512"/>
         <image name="somsom" width="256" height="256"/>
         <image name="stop" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
