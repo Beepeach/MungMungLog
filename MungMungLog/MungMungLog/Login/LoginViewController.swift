@@ -20,6 +20,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginContainerView: RoundedView!
     @IBOutlet weak var passwordFindingView: UIView!
     @IBOutlet weak var loginWithSnsStackView: UIStackView!
+    @IBOutlet weak var withKakaoStackView: RoundedStackView!
+    @IBOutlet weak var withAppleStackView: RoundedStackView!
     
     var isAccessibleLoginId = false
     var isAccessibleLoginPassword = false
@@ -30,6 +32,14 @@ class LoginViewController: UIViewController {
         loginStackView.alpha = 0
         passwordFindingView.alpha = 0
         loginWithSnsStackView.alpha = 0
+        
+        if #available(iOS 13.0, *) {
+            withKakaoStackView.backgroundColor = .systemGray4
+        } else {
+            withKakaoStackView.backgroundColor = .lightGray
+        }
+        withAppleStackView.backgroundColor = withKakaoStackView.backgroundColor
+        
     }
     
     func setScreenWhenShowKeyboard() {
@@ -60,7 +70,6 @@ class LoginViewController: UIViewController {
             self.loginScrollView.contentInset = .zero
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
