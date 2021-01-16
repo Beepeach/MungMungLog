@@ -1169,7 +1169,7 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
                                                                 <connections>
-                                                                    <outlet property="delegate" destination="LQF-VB-7aJ" id="L4P-zC-knd"/>
+                                                                    <outlet property="delegate" destination="AFs-c6-JGu" id="Fef-5e-AvW"/>
                                                                 </connections>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UkH-Jh-7hR">
@@ -1537,13 +1537,17 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="birthdayField" destination="l9v-WA-O0Z" id="Mxk-GO-JCQ"/>
+                        <outlet property="breedField" destination="Rzf-H6-tuR" id="pPI-3R-mcb"/>
+                        <outlet property="editingProfileScrollView" destination="zhQ-af-6Vt" id="SKm-aU-9Kh"/>
                         <outlet property="femaleContainerView" destination="bkN-0V-0M1" id="puR-7c-btX"/>
                         <outlet property="maleContainerView" destination="KSt-tx-TWS" id="7ld-dn-x3y"/>
+                        <outlet property="nameField" destination="JMI-Tl-UQP" id="OTQ-4u-BgY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmw-Gx-iSb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-198.46153846153845" y="125.82938388625591"/>
+            <point key="canvasLocation" x="-391" y="119"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Dqk-Om-CYb">
@@ -1725,7 +1729,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F1X-sS-soY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1071" y="126"/>
+            <point key="canvasLocation" x="-1225" y="119"/>
         </scene>
     </scenes>
     <resources>

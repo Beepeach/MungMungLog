@@ -11,9 +11,12 @@ class EditingProfileViewController: UIViewController {
     
     var isMale: Bool = true
     
+    @IBOutlet weak var editingProfileScrollView: UIScrollView!
+    @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var maleContainerView: RoundedView!
     @IBOutlet weak var femaleContainerView: RoundedView!
-    
+    @IBOutlet weak var birthdayField: UITextField!
+    @IBOutlet weak var breedField: UITextField!
     
     @IBAction func cancelEditing(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -47,4 +50,17 @@ class EditingProfileViewController: UIViewController {
        
     }
     
+}
+
+
+extension EditingProfileViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameField {
+            
+        }
+        
+        
+        
+        return true
+    }
 }
