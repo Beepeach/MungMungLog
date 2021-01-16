@@ -1285,12 +1285,22 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZr-d8-5Sq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="342" height="50.333333333333336"/>
+                                                        <connections>
+                                                            <segue destination="1zt-ug-jLK" kind="presentation" modalPresentationStyle="fullScreen" id="uOo-rh-TrC"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="lZr-d8-5Sq" secondAttribute="trailing" id="66J-6g-Gyq"/>
                                                     <constraint firstItem="Bah-xS-g8B" firstAttribute="centerX" secondItem="sLm-Be-xQ4" secondAttribute="centerX" id="DWc-qi-r35"/>
                                                     <constraint firstItem="Bah-xS-g8B" firstAttribute="top" secondItem="sLm-Be-xQ4" secondAttribute="top" constant="12" id="Kuq-Zw-opt"/>
+                                                    <constraint firstItem="lZr-d8-5Sq" firstAttribute="leading" secondItem="sLm-Be-xQ4" secondAttribute="leading" id="cK4-6m-hpy"/>
                                                     <constraint firstAttribute="bottom" secondItem="Bah-xS-g8B" secondAttribute="bottom" constant="12" id="m4D-bK-kpu"/>
+                                                    <constraint firstItem="lZr-d8-5Sq" firstAttribute="top" secondItem="sLm-Be-xQ4" secondAttribute="top" id="m94-37-cds"/>
+                                                    <constraint firstAttribute="bottom" secondItem="lZr-d8-5Sq" secondAttribute="bottom" id="sC8-PM-JTV"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -1359,7 +1369,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="57u-vR-0J3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2926.1538461538462" y="560.18957345971558"/>
+            <point key="canvasLocation" x="-2935" y="126"/>
         </scene>
         <!--Registration Guide View Controller-->
         <scene sceneID="4oJ-RK-Ole">
