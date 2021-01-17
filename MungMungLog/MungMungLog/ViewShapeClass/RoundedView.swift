@@ -32,7 +32,7 @@ class RoundedView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        guard let grayBlack = UIColor(named: "GrayBalck") else { return }
+        guard let grayBlack = UIColor(named: "MyGrayBalck") else { return }
         
         layer.borderColor = grayBlack.cgColor
     }
