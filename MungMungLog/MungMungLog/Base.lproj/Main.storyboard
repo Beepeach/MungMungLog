@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQF-VB-7aJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hba-dX-kBN">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1056,6 +1056,9 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="hba-dX-kBN" id="vf4-nx-u01"/>
+                                                                </connections>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CmA-Hf-9X1">
                                                                 <rect key="frame" x="0.0" y="40.000000000000028" width="318" height="1"/>
@@ -1097,6 +1100,9 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="hba-dX-kBN" id="XHj-mb-pmf"/>
+                                                                </connections>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUZ-8P-em2">
                                                                 <rect key="frame" x="0.0" y="40" width="318" height="1"/>
@@ -1383,11 +1389,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="continueFlotingView" destination="sLm-Be-xQ4" id="LL4-kO-iqM"/>
+                        <outlet property="continueContainerView" destination="sLm-Be-xQ4" id="LL4-kO-iqM"/>
                         <outlet property="genderContainerView" destination="jLu-qc-Xlh" id="nZf-Cf-hGW"/>
+                        <outlet property="membershipRegistrationScrollView" destination="pJp-g0-OaU" id="psU-Ly-4nd"/>
                         <outlet property="nicknameContainerView" destination="FsE-I8-fGb" id="EYQ-VM-ssn"/>
+                        <outlet property="nicknameField" destination="sGi-m3-k6z" id="OFk-dd-WMq"/>
                         <outlet property="photoContainerView" destination="deG-8a-MVY" id="EaD-6j-O3T"/>
                         <outlet property="relationshipContainerView" destination="6Xe-yb-9Mz" id="G6x-fc-jlP"/>
+                        <outlet property="relationshipField" destination="A1U-mt-dqr" id="CUV-TA-9Fb"/>
                         <outlet property="welcomeTextLabel" destination="btk-cI-aQT" id="sKF-2C-QfY"/>
                         <outlet property="welcomeTextTopConstraint" destination="sQk-wM-D5C" id="rPL-Zb-ugL"/>
                     </connections>
