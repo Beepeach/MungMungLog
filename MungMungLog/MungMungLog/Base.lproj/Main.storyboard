@@ -993,7 +993,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ljv-bn-h4D"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="aGc-nF-QLp" secondAttribute="bottom" id="0Ac-Aj-fhS"/>
                             <constraint firstItem="BzI-yU-t0g" firstAttribute="centerY" secondItem="Ljv-bn-h4D" secondAttribute="centerY" priority="250" id="Biv-jF-Fdv"/>
@@ -1170,6 +1170,7 @@
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <connections>
                                                                             <action selector="selectMale:" destination="AFs-c6-JGu" eventType="touchUpInside" id="pZW-RU-ilA"/>
+                                                                            <action selector="selectMale:" destination="hba-dX-kBN" eventType="touchUpInside" id="vQr-c8-GQ2"/>
                                                                         </connections>
                                                                     </button>
                                                                 </subviews>
@@ -1217,6 +1218,7 @@
                                                                         <rect key="frame" x="0.0" y="0.0" width="134" height="81"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <connections>
+                                                                            <action selector="selectFemale:" destination="hba-dX-kBN" eventType="touchUpInside" id="lpx-hd-SNm"/>
                                                                             <action selector="selectFemale:" destination="AFs-c6-JGu" eventType="touchUpInside" id="sxR-zi-SxN"/>
                                                                         </connections>
                                                                     </button>
@@ -1390,7 +1392,9 @@
                     </view>
                     <connections>
                         <outlet property="continueContainerView" destination="sLm-Be-xQ4" id="LL4-kO-iqM"/>
+                        <outlet property="femaleContainerView" destination="b24-II-jMg" id="ZTa-zc-Ycf"/>
                         <outlet property="genderContainerView" destination="jLu-qc-Xlh" id="nZf-Cf-hGW"/>
+                        <outlet property="maleContainerView" destination="86L-2F-mVi" id="wDw-Yq-z9w"/>
                         <outlet property="membershipRegistrationScrollView" destination="pJp-g0-OaU" id="psU-Ly-4nd"/>
                         <outlet property="nicknameContainerView" destination="FsE-I8-fGb" id="EYQ-VM-ssn"/>
                         <outlet property="nicknameField" destination="sGi-m3-k6z" id="OFk-dd-WMq"/>

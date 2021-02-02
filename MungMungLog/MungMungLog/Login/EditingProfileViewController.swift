@@ -26,7 +26,7 @@ class EditingProfileViewController: UIViewController {
         if #available(iOS 13.0, *) {
             maleContainerView.backgroundColor = .systemGray4
         } else {
-            maleContainerView.backgroundColor = UIColor.lightGray
+            maleContainerView.backgroundColor = .lightGray
         }
         femaleContainerView.backgroundColor = .none
         isMale = true

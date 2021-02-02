@@ -9,6 +9,8 @@ import UIKit
 
 class MembershipRegistrationViewController: UIViewController {
     
+    var userIsMale: Bool = true
+    
     @IBOutlet weak var welcomeTextTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var membershipRegistrationScrollView: UIScrollView!
     @IBOutlet weak var welcomeTextLabel: UILabel!
@@ -17,9 +19,31 @@ class MembershipRegistrationViewController: UIViewController {
     @IBOutlet weak var relationshipContainerView: UIView!
     @IBOutlet weak var relationshipField: UITextField!
     @IBOutlet weak var genderContainerView: UIView!
+    @IBOutlet weak var maleContainerView: RoundedView!
+    @IBOutlet weak var femaleContainerView: RoundedView!
     @IBOutlet weak var photoContainerView: UIView!
     
     @IBOutlet weak var continueContainerView: RoundedView!
+    
+    @IBAction func selectMale(_ sender: Any) {
+        if #available(iOS 13.0, *) {
+            maleContainerView.backgroundColor = .systemGray4
+        } else {
+            maleContainerView.backgroundColor = .lightGray
+        }
+        femaleContainerView.backgroundColor = .none
+        userIsMale = true
+    }
+    
+    @IBAction func selectFemale(_ sender: Any) {
+        if #available(iOS 13.0, *) {
+            femaleContainerView.backgroundColor = .systemGray4
+        } else {
+            femaleContainerView.backgroundColor = .lightGray
+        }
+        maleContainerView.backgroundColor = .none
+        userIsMale = false
+    }
     
     func setContentsStartPosition() {
         welcomeTextTopConstraint.constant = (view.frame.height / 2) - (welcomeTextLabel.bounds.height / 2)
