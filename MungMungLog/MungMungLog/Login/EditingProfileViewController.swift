@@ -42,11 +42,34 @@ class EditingProfileViewController: UIViewController {
         isMale = false
     }
     
+    func setScreenWhenShowKeyboard() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
+            guard let userInfo = noti.userInfo else {
+                return
+            }
+            
+            guard let keyboardBounds = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
+                return
+            }
+            
+            self.editingProfileScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardBounds.height, right: 0)
+        }
+    }
+    
+    func setScreenWhenHideKeyboard() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (_) in
+            self.editingProfileScrollView.contentInset = .zero
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         maleContainerView.backgroundColor = .none
         femaleContainerView.backgroundColor = .none
+        
+        setScreenWhenShowKeyboard()
+        setScreenWhenHideKeyboard()
        
     }
     
