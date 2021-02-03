@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hba-dX-kBN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQF-VB-7aJ">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1280,6 +1280,9 @@
                                                                     <constraint firstAttribute="width" secondItem="LE8-rj-mhy" secondAttribute="height" multiplier="1:1" id="zcw-f0-iQo"/>
                                                                 </constraints>
                                                                 <state key="normal" title="Button" image="plusbox"/>
+                                                                <connections>
+                                                                    <action selector="selectPhoto:" destination="hba-dX-kBN" eventType="touchUpInside" id="57b-0t-5pC"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

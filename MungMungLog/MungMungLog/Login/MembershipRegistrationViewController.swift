@@ -55,6 +55,20 @@ class MembershipRegistrationViewController: UIViewController {
         continueContainerView.alpha = 0.0
     }
     
+    @IBAction func selectPhoto(_ sender: Any) {
+        let alert = UIAlertController(title: "프로필 사진을 골라주세요.", message: "어디서 가져올까요??", preferredStyle: .actionSheet)
+        let library = UIAlertAction(title: "앨범", style: .default, handler: nil)
+        let camera = UIAlertAction(title: "카메라", style: .default, handler: nil)
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(library)
+        alert.addAction(camera)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
     func setScreenWhenShowKeyboard() {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
             
