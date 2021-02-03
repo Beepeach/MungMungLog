@@ -23,7 +23,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>카메라 접근 권한</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>위치 정보</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -31,7 +31,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>위치 정보</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>앨범 접근 권한</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -9,6 +9,8 @@ import UIKit
 
 class MembershipRegistrationViewController: UIViewController {
     
+    let imagePicker = UIImagePickerController()
+    
     var userIsMale: Bool = true
     
     @IBOutlet weak var welcomeTextTopConstraint: NSLayoutConstraint!
@@ -22,7 +24,8 @@ class MembershipRegistrationViewController: UIViewController {
     @IBOutlet weak var maleContainerView: RoundedView!
     @IBOutlet weak var femaleContainerView: RoundedView!
     @IBOutlet weak var photoContainerView: UIView!
-    
+    @IBOutlet weak var membershipImageView: UIImageView!
+    @IBOutlet weak var membershipImageAddbutton: UIButton!
     @IBOutlet weak var continueContainerView: RoundedView!
     
     @IBAction func selectMale(_ sender: Any) {
@@ -57,8 +60,33 @@ class MembershipRegistrationViewController: UIViewController {
     
     @IBAction func selectPhoto(_ sender: Any) {
         let alert = UIAlertController(title: "프로필 사진을 골라주세요.", message: "어디서 가져올까요??", preferredStyle: .actionSheet)
-        let library = UIAlertAction(title: "앨범", style: .default, handler: nil)
-        let camera = UIAlertAction(title: "카메라", style: .default, handler: nil)
+        
+        let library = UIAlertAction(title: "앨범", style: .default) { [self] _ in
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                openLibrary()
+            } else {
+                presentOneButtonAlert(alertTitle: "알림", message: "앨범 사용이 불가능 합니다.", actionTitle: "확인")
+            }
+        }
+        
+        func openLibrary() {
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: false, completion: nil)
+        }
+        
+        let camera = UIAlertAction(title: "카메라", style: .default) { [self] _ in
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                openCamera()
+            } else {
+                presentOneButtonAlert(alertTitle: "알림", message: "카메라 사용이 불가능 합니다.", actionTitle: "확인")
+            }
+        }
+        
+        func openCamera() {
+            imagePicker.sourceType = .camera
+            present(imagePicker, animated: true, completion: nil)
+        }
+        
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
         
         alert.addAction(library)
@@ -67,6 +95,10 @@ class MembershipRegistrationViewController: UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    
+    
+    
+    
     
     
     func setScreenWhenShowKeyboard() {
@@ -124,6 +156,8 @@ class MembershipRegistrationViewController: UIViewController {
         
         setScreenWhenShowKeyboard()
         setScreenWhenHideKeyboard()
+        
+        imagePicker.delegate = self
     }
     
 }
@@ -152,5 +186,18 @@ extension MembershipRegistrationViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+}
+
+
+extension MembershipRegistrationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            dismiss(animated: true, completion: nil)
+            return
+        }
+        membershipImageView.image = image
+        membershipImageAddbutton.alpha = 0.4
+        dismiss(animated: true, completion: nil)
     }
 }

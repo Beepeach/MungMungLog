@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQF-VB-7aJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hba-dX-kBN">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1267,7 +1267,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JEo-4N-adX" userLabel="AddButton Container View" customClass="RoundedView" customModule="MungMungLog" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="30.333333333333258" width="318" height="318"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OcZ-tD-eUl">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OcZ-tD-eUl">
                                                                 <rect key="frame" x="0.0" y="0.0" width="318" height="318"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="OcZ-tD-eUl" secondAttribute="height" multiplier="1:1" id="f0b-QG-PGJ"/>
@@ -1401,6 +1401,8 @@
                         <outlet property="femaleContainerView" destination="b24-II-jMg" id="ZTa-zc-Ycf"/>
                         <outlet property="genderContainerView" destination="jLu-qc-Xlh" id="nZf-Cf-hGW"/>
                         <outlet property="maleContainerView" destination="86L-2F-mVi" id="wDw-Yq-z9w"/>
+                        <outlet property="membershipImageAddbutton" destination="LE8-rj-mhy" id="aEJ-yS-APp"/>
+                        <outlet property="membershipImageView" destination="OcZ-tD-eUl" id="MjI-w9-lEl"/>
                         <outlet property="membershipRegistrationScrollView" destination="pJp-g0-OaU" id="psU-Ly-4nd"/>
                         <outlet property="nicknameContainerView" destination="FsE-I8-fGb" id="EYQ-VM-ssn"/>
                         <outlet property="nicknameField" destination="sGi-m3-k6z" id="OFk-dd-WMq"/>

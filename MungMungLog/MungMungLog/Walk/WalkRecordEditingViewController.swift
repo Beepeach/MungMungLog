@@ -112,6 +112,7 @@ extension WalkRecordEditingViewController: UIImagePickerControllerDelegate, UINa
         
         walkRecordImageView.image = image
         
+        
         dismiss(animated: true, completion: nil)
     }
 }
