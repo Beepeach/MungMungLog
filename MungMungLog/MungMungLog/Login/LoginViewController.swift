@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     
     func setContentsStartPosition() {
-        loginStackViewTopConstraint.constant = (view.frame.height * 0.55)
+        loginStackViewTopConstraint.constant = (view.frame.height * 0.5)
         loginStackView.alpha = 0
         passwordFindingView.alpha = 0
         loginWithSnsStackView.alpha = 0
@@ -63,33 +63,37 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            
+        }
+
         setContentsStartPosition()
-        
+
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             moveLogoToTop()
-            
+
             UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
                 self.view.layoutIfNeeded()
                 presentLoginView()
             })
-            
+
         }
         
         func moveLogoToTop() {
             logoCenterYConstraint.constant = -(view.frame.height / 5)
         }
-        
+
         func presentLoginView() {
             loginStackView.alpha = 1.0
             passwordFindingView.alpha = 1.0
             passwordFindingView.alpha = 1.0
             loginWithSnsStackView.alpha = 1.0
         }
-        
+
         setScreenWhenShowKeyboard()
         setScreenWhenHideKeyboard()
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
