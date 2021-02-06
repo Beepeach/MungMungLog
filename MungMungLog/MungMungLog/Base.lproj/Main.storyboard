@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AFs-c6-JGu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQF-VB-7aJ">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1865,7 +1865,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="edU-Gl-WYK" userLabel="Name Stack View">
                                                         <rect key="frame" x="0.0" y="20.333333333333314" width="318" height="41"/>
                                                         <subviews>
-                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="견종을 선택해주세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rzf-H6-tuR">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="견종을 선택해주세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rzf-H6-tuR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="318" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="cZN-A7-i05"/>
@@ -1888,19 +1888,12 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bk-sr-Qwa">
-                                                        <rect key="frame" x="0.0" y="20.333333333333314" width="318" height="41"/>
-                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="edU-Gl-WYK" firstAttribute="leading" secondItem="g9l-bP-xuS" secondAttribute="leading" id="2rz-1h-rjW"/>
-                                                    <constraint firstAttribute="bottom" secondItem="0bk-sr-Qwa" secondAttribute="bottom" id="6Oy-ST-15D"/>
                                                     <constraint firstItem="Tby-xd-oqg" firstAttribute="leading" secondItem="g9l-bP-xuS" secondAttribute="leading" id="BwT-21-mzB"/>
-                                                    <constraint firstAttribute="trailing" secondItem="0bk-sr-Qwa" secondAttribute="trailing" id="Ezy-hF-Z9J"/>
-                                                    <constraint firstItem="0bk-sr-Qwa" firstAttribute="leading" secondItem="g9l-bP-xuS" secondAttribute="leading" id="GtS-7z-sRb"/>
                                                     <constraint firstItem="edU-Gl-WYK" firstAttribute="top" secondItem="Tby-xd-oqg" secondAttribute="bottom" id="Xv7-sk-sTH"/>
-                                                    <constraint firstItem="0bk-sr-Qwa" firstAttribute="top" secondItem="Tby-xd-oqg" secondAttribute="bottom" id="f16-l0-RPs"/>
                                                     <constraint firstAttribute="bottom" secondItem="edU-Gl-WYK" secondAttribute="bottom" id="fGE-CO-zYg"/>
                                                     <constraint firstAttribute="trailing" secondItem="edU-Gl-WYK" secondAttribute="trailing" id="gLf-In-pcO"/>
                                                     <constraint firstItem="Tby-xd-oqg" firstAttribute="top" secondItem="g9l-bP-xuS" secondAttribute="top" id="obF-US-0Um"/>
@@ -2058,6 +2051,8 @@
                         <outlet property="birthdayField" destination="l9v-WA-O0Z" id="Mxk-GO-JCQ"/>
                         <outlet property="birthdayPickerContainerView" destination="mma-il-u6K" id="0ET-x5-59O"/>
                         <outlet property="breedField" destination="Rzf-H6-tuR" id="pPI-3R-mcb"/>
+                        <outlet property="breedsContainerView" destination="jLu-er-uz7" id="85P-BG-rFg"/>
+                        <outlet property="breedsPickerView" destination="jeL-Fx-e42" id="gx7-a5-QGR"/>
                         <outlet property="doneAccessoryBar" destination="cDc-8E-RZr" id="dht-3D-8kD"/>
                         <outlet property="editingProfileScrollView" destination="zhQ-af-6Vt" id="SKm-aU-9Kh"/>
                         <outlet property="femaleContainerView" destination="bkN-0V-0M1" id="puR-7c-btX"/>
@@ -2068,7 +2063,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmw-Gx-iSb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="mma-il-u6K">
+                <view contentMode="scaleToFill" id="mma-il-u6K" userLabel="BirthdayContainerView">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="216"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -2086,6 +2081,27 @@
                         <constraint firstAttribute="bottom" secondItem="mAC-Dq-x7Q" secondAttribute="bottom" constant="20" id="lhA-A1-Zoj"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" id="jLu-er-uz7" userLabel="BreedsContainerView">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="216"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jeL-Fx-e42">
+                            <rect key="frame" x="0.0" y="20" width="240" height="176"/>
+                            <connections>
+                                <outlet property="dataSource" destination="AFs-c6-JGu" id="yhq-aw-FvS"/>
+                                <outlet property="delegate" destination="AFs-c6-JGu" id="6Cu-M4-bKz"/>
+                            </connections>
+                        </pickerView>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="Qs9-eN-iHW"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="jeL-Fx-e42" secondAttribute="bottom" constant="20" id="EIz-wi-wff"/>
+                        <constraint firstItem="jeL-Fx-e42" firstAttribute="top" secondItem="jLu-er-uz7" secondAttribute="top" constant="20" id="l2T-R3-eA0"/>
+                        <constraint firstItem="jeL-Fx-e42" firstAttribute="trailing" secondItem="jLu-er-uz7" secondAttribute="trailing" id="tGn-jl-GZD"/>
+                        <constraint firstItem="jeL-Fx-e42" firstAttribute="leading" secondItem="jLu-er-uz7" secondAttribute="leading" id="wTH-hx-hc3"/>
+                    </constraints>
+                </view>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cDc-8E-RZr">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -2094,7 +2110,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Evh-Nv-Qta"/>
                         <barButtonItem title="확인" id="ZMh-5A-0c8">
                             <connections>
-                                <action selector="selectDate:" destination="AFs-c6-JGu" id="NYh-eq-9UH"/>
+                                <action selector="selectBirthdayOrBreeds:" destination="AFs-c6-JGu" id="NYh-eq-9UH"/>
                             </connections>
                         </barButtonItem>
                     </items>

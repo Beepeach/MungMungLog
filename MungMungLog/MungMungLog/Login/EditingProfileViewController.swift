@@ -15,6 +15,8 @@ class EditingProfileViewController: UIViewController {
     
     @IBOutlet var birthdayPickerContainerView: UIView!
     @IBOutlet weak var birthdayDatePicker: UIDatePicker!
+    @IBOutlet var breedsContainerView: UIView!
+    @IBOutlet weak var breedsPickerView: UIPickerView!
     @IBOutlet var doneAccessoryBar: UIToolbar!
     
     @IBOutlet weak var editingProfileScrollView: UIScrollView!
@@ -50,9 +52,15 @@ class EditingProfileViewController: UIViewController {
         isMale = false
     }
     
-    @IBAction func selectDate(_ sender: Any) {
-        birthdayField.text = koreaDateFormatter.string(from: birthdayDatePicker.date)
-        birthdayField.resignFirstResponder()
+    @IBAction func selectBirthdayOrBreeds(_ sender: Any) {
+        if birthdayField.isFirstResponder {
+            birthdayField.text = koreaDateFormatter.string(from: birthdayDatePicker.date)
+            birthdayField.resignFirstResponder()
+        } else if breedField.isFirstResponder {
+            breedField.text = breeds[breedsPickerView.selectedRow(inComponent: 0)]
+            breedField.resignFirstResponder()
+        }
+        
     }
     
     // ToDo: 중복되는 코드이므로 줄일 방법 생각해보기
@@ -141,6 +149,10 @@ class EditingProfileViewController: UIViewController {
         birthdayField.inputView = birthdayPickerContainerView
         birthdayField.inputAccessoryView = doneAccessoryBar
         birthdayField.tintColor = .clear
+        
+        breedField.inputView = breedsContainerView
+        breedField.inputAccessoryView = doneAccessoryBar
+        breedField.tintColor = .clear
     }
     
 }
@@ -157,6 +169,8 @@ extension EditingProfileViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         switch textField {
         case birthdayField:
+            return false
+        case breedField:
             return false
         default:
             return true
@@ -178,5 +192,19 @@ extension EditingProfileViewController: UIImagePickerControllerDelegate, UINavig
     }
 }
 
+extension EditingProfileViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return breeds.count
+    }
+}
 
 
+extension EditingProfileViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return breeds[row]
+    }
+}

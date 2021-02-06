@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4602B0D725A23D9B00D46F22 /* InvisibleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602B0D625A23D9B00D46F22 /* InvisibleCollectionViewCell.swift */; };
+		4605D1D625CECC69001C6815 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4605D1D525CECC69001C6815 /* Breeds.swift */; };
 		460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00C2557F76B00027376 /* AppDelegate.swift */; };
 		460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00E2557F76B00027376 /* SceneDelegate.swift */; };
 		460EB0112557F76B00027376 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB0102557F76B00027376 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		4602B0D625A23D9B00D46F22 /* InvisibleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvisibleCollectionViewCell.swift; sourceTree = "<group>"; };
+		4605D1D525CECC69001C6815 /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
 		460EB0092557F76B00027376 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		460EB00C2557F76B00027376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		460EB00E2557F76B00027376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4605D1D425CECC4F001C6815 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4605D1D525CECC69001C6815 /* Breeds.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		460EB0002557F76B00027376 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		460EB00B2557F76B00027376 /* MungMungLog */ = {
 			isa = PBXGroup;
 			children = (
+				4605D1D425CECC4F001C6815 /* Data */,
 				46D7CE062597840400134271 /* Extension */,
 				4656860925766C8900088513 /* ViewShapeClass */,
 				464A6B7C25AAED4000E56ED9 /* Login */,
@@ -297,6 +308,7 @@
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */,
 				46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */,
+				4605D1D625CECC69001C6815 /* Breeds.swift in Sources */,
 				468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */,
 				46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */,
 				46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */,
