@@ -149,6 +149,8 @@ class EditingProfileViewController: UIViewController {
         birthdayField.inputView = birthdayPickerContainerView
         birthdayField.inputAccessoryView = doneAccessoryBar
         birthdayField.tintColor = .clear
+        birthdayDatePicker.maximumDate = Date()
+        birthdayDatePicker.minimumDate = Date(timeIntervalSince1970: 0)
         
         breedField.inputView = breedsContainerView
         breedField.inputAccessoryView = doneAccessoryBar
