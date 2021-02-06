@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LQF-VB-7aJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AFs-c6-JGu">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1821,7 +1821,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qXr-uB-YDw" userLabel="Name Stack View">
                                                         <rect key="frame" x="0.0" y="20.333333333333314" width="318" height="41"/>
                                                         <subviews>
-                                                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일을 선택해주세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l9v-WA-O0Z">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일을 선택해주세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l9v-WA-O0Z">
                                                                 <rect key="frame" x="0.0" y="0.0" width="318" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="R8p-fr-vBk"/>
@@ -1829,7 +1829,7 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
                                                                 <connections>
-                                                                    <outlet property="delegate" destination="LQF-VB-7aJ" id="5Bu-bW-Vm5"/>
+                                                                    <outlet property="delegate" destination="AFs-c6-JGu" id="nX1-Gf-TkH"/>
                                                                 </connections>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kU9-OU-yt5">
@@ -1847,23 +1847,16 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5J-nL-z8F">
-                                                        <rect key="frame" x="0.0" y="20.333333333333314" width="318" height="41"/>
-                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="qXr-uB-YDw" secondAttribute="trailing" id="2li-X0-ZDY"/>
-                                                    <constraint firstItem="q5J-nL-z8F" firstAttribute="top" secondItem="NMX-A5-hbA" secondAttribute="bottom" id="BG7-EN-Vnv"/>
-                                                    <constraint firstAttribute="trailing" secondItem="q5J-nL-z8F" secondAttribute="trailing" id="UZk-A7-gWc"/>
                                                     <constraint firstItem="qXr-uB-YDw" firstAttribute="leading" secondItem="ZoY-AG-OSA" secondAttribute="leading" id="YQ6-ab-QSe"/>
                                                     <constraint firstItem="NMX-A5-hbA" firstAttribute="leading" secondItem="ZoY-AG-OSA" secondAttribute="leading" id="YV8-3W-SRn"/>
                                                     <constraint firstAttribute="bottom" secondItem="qXr-uB-YDw" secondAttribute="bottom" id="asF-mn-iSl"/>
-                                                    <constraint firstAttribute="bottom" secondItem="q5J-nL-z8F" secondAttribute="bottom" id="bcD-Ia-bE9"/>
                                                     <constraint firstAttribute="trailing" secondItem="NMX-A5-hbA" secondAttribute="trailing" id="iHM-2F-ZVT"/>
                                                     <constraint firstItem="NMX-A5-hbA" firstAttribute="top" secondItem="ZoY-AG-OSA" secondAttribute="top" id="oS3-dq-WSc"/>
                                                     <constraint firstItem="qXr-uB-YDw" firstAttribute="top" secondItem="NMX-A5-hbA" secondAttribute="bottom" id="wch-Z6-Ewc"/>
-                                                    <constraint firstItem="q5J-nL-z8F" firstAttribute="leading" secondItem="ZoY-AG-OSA" secondAttribute="leading" id="xnp-E8-RWU"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9l-bP-xuS" userLabel="Breed Container View">
@@ -1879,9 +1872,6 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
-                                                                <connections>
-                                                                    <outlet property="delegate" destination="LQF-VB-7aJ" id="IoR-pq-lo4"/>
-                                                                </connections>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zg-Ba-NQK">
                                                                 <rect key="frame" x="0.0" y="40" width="318" height="1"/>
@@ -2064,8 +2054,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="birthdayDatePicker" destination="mAC-Dq-x7Q" id="bkL-yZ-HO8"/>
                         <outlet property="birthdayField" destination="l9v-WA-O0Z" id="Mxk-GO-JCQ"/>
+                        <outlet property="birthdayPickerContainerView" destination="mma-il-u6K" id="0ET-x5-59O"/>
                         <outlet property="breedField" destination="Rzf-H6-tuR" id="pPI-3R-mcb"/>
+                        <outlet property="doneAccessoryBar" destination="cDc-8E-RZr" id="dht-3D-8kD"/>
                         <outlet property="editingProfileScrollView" destination="zhQ-af-6Vt" id="SKm-aU-9Kh"/>
                         <outlet property="femaleContainerView" destination="bkN-0V-0M1" id="puR-7c-btX"/>
                         <outlet property="maleContainerView" destination="KSt-tx-TWS" id="7ld-dn-x3y"/>
@@ -2075,6 +2068,37 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmw-Gx-iSb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="mma-il-u6K">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="216"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="mAC-Dq-x7Q">
+                            <rect key="frame" x="0.0" y="20" width="240" height="176"/>
+                            <locale key="locale" localeIdentifier="ko_KR"/>
+                        </datePicker>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="0cK-7R-aZu"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="mAC-Dq-x7Q" secondAttribute="trailing" id="H9A-MI-Fu3"/>
+                        <constraint firstItem="mAC-Dq-x7Q" firstAttribute="leading" secondItem="mma-il-u6K" secondAttribute="leading" id="Hlt-Fa-i1P"/>
+                        <constraint firstItem="mAC-Dq-x7Q" firstAttribute="top" secondItem="mma-il-u6K" secondAttribute="top" constant="20" id="i9E-UM-C4B"/>
+                        <constraint firstAttribute="bottom" secondItem="mAC-Dq-x7Q" secondAttribute="bottom" constant="20" id="lhA-A1-Zoj"/>
+                    </constraints>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cDc-8E-RZr">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Evh-Nv-Qta"/>
+                        <barButtonItem title="확인" id="ZMh-5A-0c8">
+                            <connections>
+                                <action selector="selectDate:" destination="AFs-c6-JGu" id="NYh-eq-9UH"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </objects>
             <point key="canvasLocation" x="-391" y="119"/>
         </scene>

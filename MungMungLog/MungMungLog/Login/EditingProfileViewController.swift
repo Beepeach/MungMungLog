@@ -10,8 +10,12 @@ import UIKit
 class EditingProfileViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
-    
+
     var isMale: Bool = true
+    
+    @IBOutlet var birthdayPickerContainerView: UIView!
+    @IBOutlet weak var birthdayDatePicker: UIDatePicker!
+    @IBOutlet var doneAccessoryBar: UIToolbar!
     
     @IBOutlet weak var editingProfileScrollView: UIScrollView!
     @IBOutlet weak var nameField: UITextField!
@@ -44,6 +48,11 @@ class EditingProfileViewController: UIViewController {
         }
         maleContainerView.backgroundColor = .none
         isMale = false
+    }
+    
+    @IBAction func selectDate(_ sender: Any) {
+        birthdayField.text = koreaDateFormatter.string(from: birthdayDatePicker.date)
+        birthdayField.resignFirstResponder()
     }
     
     // ToDo: 중복되는 코드이므로 줄일 방법 생각해보기
@@ -105,6 +114,19 @@ class EditingProfileViewController: UIViewController {
         }
     }
     
+    // InputView의 height를 정할수는 없을까??
+//    func specifyInputViewSize(_ view: UIView) {
+//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) { (noti) in
+//            guard let userInfo = noti.userInfo else {
+//                return
+//            }
+//
+//            guard let keyboardBounds = userInfo[UIResponder.keyboardDidChangeFrameNotification] as? CGRect else {
+//                return
+//            }
+//        }
+//    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -116,6 +138,9 @@ class EditingProfileViewController: UIViewController {
         setScreenWhenShowKeyboard()
         setScreenWhenHideKeyboard()
         
+        birthdayField.inputView = birthdayPickerContainerView
+        birthdayField.inputAccessoryView = doneAccessoryBar
+        birthdayField.tintColor = .clear
     }
     
 }
@@ -126,10 +151,16 @@ extension EditingProfileViewController: UITextFieldDelegate {
         if textField == nameField {
             
         }
-        
-        
-        
         return true
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField {
+        case birthdayField:
+            return false
+        default:
+            return true
+        }
     }
 }
 
@@ -146,3 +177,6 @@ extension EditingProfileViewController: UIImagePickerControllerDelegate, UINavig
         dismiss(animated: true, completion: nil)
     }
 }
+
+
+
