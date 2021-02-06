@@ -15,9 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var loginStackView: UIStackView!
-    @IBOutlet weak var incorrectIdFormatLabel: UILabel!
     @IBOutlet weak var idInputField: UITextField!
-    @IBOutlet weak var incorrectPasswordFormatLabel: UILabel!
     @IBOutlet weak var passwordInputField: UITextField!
     @IBOutlet weak var loginContainerView: RoundedView!
     @IBOutlet weak var passwordFindingView: UIView!
@@ -32,8 +30,6 @@ class LoginViewController: UIViewController {
         loginStackView.alpha = 0
         passwordFindingView.alpha = 0
         loginWithSnsStackView.alpha = 0
-        incorrectIdFormatLabel.alpha = 0
-        incorrectPasswordFormatLabel.alpha = 0
     }
     
     func setScreenWhenShowKeyboard() {
@@ -158,11 +154,9 @@ extension LoginViewController: UITextFieldDelegate {
                   range.lowerBound == finalText.startIndex && range.upperBound == finalText.endIndex else {
                 isAccessibleLoginId = false
                 checkLoginButtonEnable()
-                incorrectIdFormatLabel.alpha = 1
                 return true
             }
             
-            incorrectIdFormatLabel.alpha = 0
             isAccessibleLoginId = true
             checkLoginButtonEnable()
             return true
@@ -172,11 +166,9 @@ extension LoginViewController: UITextFieldDelegate {
                   finalText.count <= 20 else {
                 isAccessibleLoginPassword = false
                 checkLoginButtonEnable()
-                incorrectPasswordFormatLabel.alpha = 1
                 return true
             }
             
-            incorrectPasswordFormatLabel.alpha = 0
             isAccessibleLoginPassword = true
             checkLoginButtonEnable()
             return true
