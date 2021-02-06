@@ -750,8 +750,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vgq-PF-dPQ" userLabel="Email Stack View">
                                                         <rect key="frame" x="0.0" y="0.0" width="342" height="53"/>
                                                         <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="올바른 이메일 형식으로 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Njk-ca-gCq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="12"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Nzx-qL-hBN">
-                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="52"/>
+                                                                <rect key="frame" x="0.0" y="12" width="342" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Adj-hO-9pb"/>
                                                                 </constraints>
@@ -773,8 +779,14 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5ha-Kv-KcX" userLabel="Password Stack View">
                                                         <rect key="frame" x="0.0" y="68" width="342" height="53.333333333333343"/>
                                                         <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 4 ~ 20자로 입력해주세요." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8i-I8-Ic5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="12.333333333333334"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zr8-vB-ySs">
-                                                                <rect key="frame" x="0.0" y="0.0" width="342" height="52.333333333333336"/>
+                                                                <rect key="frame" x="0.0" y="12.333333333333314" width="342" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xyS-Kz-yfh"/>
                                                                 </constraints>
@@ -884,7 +896,6 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="trailing" secondItem="5ht-Fp-HP9" secondAttribute="trailing" id="48k-15-olU"/>
                                                                     <constraint firstItem="5ht-Fp-HP9" firstAttribute="top" secondItem="4v7-UM-AUo" secondAttribute="top" id="QLN-nh-0ya"/>
@@ -896,7 +907,7 @@
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <color key="backgroundColor" systemColor="systemTealColor"/>
                                                         <constraints>
                                                             <constraint firstItem="4v7-UM-AUo" firstAttribute="top" secondItem="T0E-YT-HKi" secondAttribute="top" constant="12" id="5lE-ZA-Dms"/>
                                                             <constraint firstAttribute="bottom" secondItem="4v7-UM-AUo" secondAttribute="bottom" constant="12" id="dAv-rz-Iso"/>
@@ -928,7 +939,6 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
-                                                                <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                                 <constraints>
                                                                     <constraint firstItem="raM-Kd-mF6" firstAttribute="leading" secondItem="iKV-UI-Qne" secondAttribute="leading" id="8J9-A6-7OH"/>
                                                                     <constraint firstItem="raM-Kd-mF6" firstAttribute="bottom" secondItem="c6r-qh-FzV" secondAttribute="bottom" constant="-2" id="ANA-Ow-imd"/>
@@ -940,7 +950,7 @@
                                                                 </constraints>
                                                             </view>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <color key="backgroundColor" systemColor="systemTealColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="bottom" secondItem="iKV-UI-Qne" secondAttribute="bottom" constant="12" id="CyM-ay-OAD"/>
                                                             <constraint firstItem="iKV-UI-Qne" firstAttribute="top" secondItem="Kfh-rG-QEC" secondAttribute="top" constant="12" id="fjX-zT-LaV"/>
@@ -1006,6 +1016,8 @@
                     </view>
                     <connections>
                         <outlet property="idInputField" destination="Nzx-qL-hBN" id="A2E-lp-Hdo"/>
+                        <outlet property="incorrectIdFormatLabel" destination="Njk-ca-gCq" id="SPz-Mz-Vlv"/>
+                        <outlet property="incorrectPasswordFormatLabel" destination="g8i-I8-Ic5" id="chk-Md-xyj"/>
                         <outlet property="loginContainerView" destination="oLf-KZ-FlA" id="rHn-0Y-ZEW"/>
                         <outlet property="loginScrollView" destination="aGc-nF-QLp" id="XM4-hb-TQ9"/>
                         <outlet property="loginStackView" destination="Lak-A7-iKY" id="8UO-DP-HB8"/>
@@ -2269,6 +2281,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
