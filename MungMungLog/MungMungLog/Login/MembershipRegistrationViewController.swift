@@ -65,7 +65,7 @@ class MembershipRegistrationViewController: UIViewController {
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 openLibrary()
             } else {
-                presentOneButtonAlert(alertTitle: "알림", message: "앨범 사용이 불가능 합니다.", actionTitle: "확인")
+                presentOneButtonAlert(alertTitle: "알림", message: "앨범 사용이 불가능합니다.", actionTitle: "확인")
             }
         }
         
@@ -78,7 +78,7 @@ class MembershipRegistrationViewController: UIViewController {
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 openCamera()
             } else {
-                presentOneButtonAlert(alertTitle: "알림", message: "카메라 사용이 불가능 합니다.", actionTitle: "확인")
+                presentOneButtonAlert(alertTitle: "알림", message: "카메라 사용이 불가능합니다.", actionTitle: "확인")
             }
         }
         
