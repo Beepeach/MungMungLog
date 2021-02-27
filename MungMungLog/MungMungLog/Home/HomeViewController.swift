@@ -10,6 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var contentsCollectionView: UICollectionView!
+
+    @IBOutlet weak var writerProfileImageView: UIImageView!
     
     
     @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
@@ -17,6 +19,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        writerProfileImageView.layer.cornerRadius = writerProfileImageView.frame.height / 2
     }
 }
 
