@@ -74,7 +74,10 @@ class LoginViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             moveLogoToTop()
 
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
+            // 여기 animate에 문제가 있는 듯하다.
+            // device에서만 Cpu 100% 문데
+            // weak self로도 해결 X
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: { //[weak self] in
                 self.view.layoutIfNeeded()
                 presentLoginView()
             })

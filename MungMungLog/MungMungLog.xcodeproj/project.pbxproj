@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4602B0D725A23D9B00D46F22 /* InvisibleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4602B0D625A23D9B00D46F22 /* InvisibleCollectionViewCell.swift */; };
 		4605D1D625CECC69001C6815 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4605D1D525CECC69001C6815 /* Breeds.swift */; };
 		460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00C2557F76B00027376 /* AppDelegate.swift */; };
 		460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00E2557F76B00027376 /* SceneDelegate.swift */; };
@@ -36,14 +35,12 @@
 		46D1AF6025820B6000DF7B2A /* RecordItemSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordItemSelectViewController.swift */; };
 		46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */; };
 		46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */; };
-		46DFB30725792782008800AC /* EmptyProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */; };
-		46DFB30B25792938008800AC /* VaildProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */; };
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
 		46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */; };
+		46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4602B0D625A23D9B00D46F22 /* InvisibleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvisibleCollectionViewCell.swift; sourceTree = "<group>"; };
 		4605D1D525CECC69001C6815 /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
 		460EB0092557F76B00027376 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		460EB00C2557F76B00027376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,10 +71,9 @@
 		46D1AF5F25820B6000DF7B2A /* RecordItemSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItemSelectViewController.swift; sourceTree = "<group>"; };
 		46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dateComponentsFormatter.swift"; sourceTree = "<group>"; };
 		46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderWithShadowView.swift; sourceTree = "<group>"; };
-		46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyProfileCollectionViewCell.swift; sourceTree = "<group>"; };
-		46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaildProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
 		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
+		46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +166,7 @@
 		46A025A92577D1530022BDBF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				46DFB305257926EF008800AC /* Cell */,
+				46FC5B7625EA08C300D161F5 /* Cell */,
 				46A025AA2577D17D0022BDBF /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -206,16 +202,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		46DFB305257926EF008800AC /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				46DFB30625792782008800AC /* EmptyProfileCollectionViewCell.swift */,
-				46DFB30A25792938008800AC /* VaildProfileCollectionViewCell.swift */,
-				4602B0D625A23D9B00D46F22 /* InvisibleCollectionViewCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		46E69ACC25806FC200019FD9 /* Walk */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +212,14 @@
 				461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */,
 			);
 			path = Walk;
+			sourceTree = "<group>";
+		};
+		46FC5B7625EA08C300D161F5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +296,6 @@
 				461E3129259CC9E900AE8011 /* WalkDateAndTimeViewController.swift in Sources */,
 				460EB0112557F76B00027376 /* ViewController.swift in Sources */,
 				460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */,
-				46DFB30725792782008800AC /* EmptyProfileCollectionViewCell.swift in Sources */,
 				467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */,
 				461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
@@ -315,18 +308,17 @@
 				464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
 				464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */,
-				46DFB30B25792938008800AC /* VaildProfileCollectionViewCell.swift in Sources */,
 				46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */,
 				46D1AF6025820B6000DF7B2A /* RecordItemSelectViewController.swift in Sources */,
 				46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */,
 				46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */,
 				46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */,
+				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
 				46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
 				464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */,
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 				464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */,
-				4602B0D725A23D9B00D46F22 /* InvisibleCollectionViewCell.swift in Sources */,
 				46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
