@@ -21,8 +21,8 @@ class RecordContentsCollectionViewCell: UICollectionViewCell {
         contentsTitleLabel.isHidden = true
         contentsTitleLabel.alpha = 0.0
         
-        contentsIconContainerView.layer.borderWidth = 1
-        contentsIconContainerView.layer.borderColor = UIColor.darkGray.cgColor
+        contentsIconContainerView.layer.borderWidth = 2
+        contentsIconContainerView.layer.borderColor = UIColor.lightGray.cgColor
         contentsIconContainerView.layer.cornerRadius = 25
         
 //        contentsImageView.image = UIImage(named: "rice")
