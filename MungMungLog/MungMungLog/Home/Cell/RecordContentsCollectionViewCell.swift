@@ -9,6 +9,8 @@ import UIKit
 
 class RecordContentsCollectionViewCell: UICollectionViewCell {
     
+    
+    @IBOutlet weak var contentsIconContainerView: UIView!
     @IBOutlet weak var contentsImageView: UIImageView!
     @IBOutlet weak var contentsTitleLabel: UILabel!
     
@@ -16,11 +18,14 @@ class RecordContentsCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //        layer.cornerRadius = self.frame.width / 2
-        contentsImageView.layer.borderWidth = 1
-        layer.borderColor = UIColor.darkGray.cgColor
+        contentsTitleLabel.isHidden = true
+        contentsTitleLabel.alpha = 0.0
         
-        contentsImageView.image = UIImage(named: "rice")
-        contentsTitleLabel.text = "Food"
+        contentsIconContainerView.layer.borderWidth = 1
+        contentsIconContainerView.layer.borderColor = UIColor.darkGray.cgColor
+        contentsIconContainerView.layer.cornerRadius = 25
+        
+//        contentsImageView.image = UIImage(named: "rice")
+//        contentsTitleLabel.text = "Food"
     }
 }
