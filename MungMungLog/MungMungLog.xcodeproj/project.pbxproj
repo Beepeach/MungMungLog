@@ -39,6 +39,7 @@
 		46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */; };
 		46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */; };
 		46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */; };
+		46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
 		46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
+		46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,11 +159,8 @@
 		4656860925766C8900088513 /* ViewShapeClass */ = {
 			isa = PBXGroup;
 			children = (
-				467BF53625748F8900511451 /* CircleWithShadowView.swift */,
-				46A025AE2577D7BB0022BDBF /* CircleImageView.swift */,
-				46A025B12577D9760022BDBF /* RoundedView.swift */,
-				46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */,
-				46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */,
+				46FC5B7F25EBE69700D161F5 /* StackView */,
+				46FC5B7E25EBE68100D161F5 /* View */,
 			);
 			path = ViewShapeClass;
 			sourceTree = "<group>";
@@ -223,6 +222,26 @@
 				46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		46FC5B7E25EBE68100D161F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				467BF53625748F8900511451 /* CircleWithShadowView.swift */,
+				46A025AE2577D7BB0022BDBF /* CircleImageView.swift */,
+				46A025B12577D9760022BDBF /* RoundedView.swift */,
+				46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */,
+				46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		46FC5B7F25EBE69700D161F5 /* StackView */ = {
+			isa = PBXGroup;
+			children = (
+				46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */,
+			);
+			path = StackView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +336,7 @@
 				46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */,
 				46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */,
 				46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */,
+				46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */,
 				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
 				46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,

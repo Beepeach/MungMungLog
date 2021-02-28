@@ -68,8 +68,6 @@ class WalkRecordEndingViewController: UIViewController {
             }
         })
         
-        // ToDo
-        // Milsecond를 어떻게 구현할것인가 생각.
     }
     
     func stopTimer() {
