@@ -1799,6 +1799,9 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4n2-Gx-aJE">
                                         <rect key="frame" x="0.0" y="0.0" width="356" height="50.333333333333336"/>
+                                        <connections>
+                                            <action selector="enterCode:" destination="2dp-RH-dQm" eventType="touchUpInside" id="zNy-uj-3lH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -1839,6 +1842,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ContinueContainerView" destination="xSB-Ds-3mK" id="L0V-3l-nx7"/>
+                        <outlet property="continueContainerViewBottomCostraint" destination="AIM-TI-kC2" id="QXP-2S-QaG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiv-3u-ilH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
