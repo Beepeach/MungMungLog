@@ -38,6 +38,7 @@
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
 		46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */; };
 		46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */; };
+		46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
 		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
 		46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordContentsCollectionViewCell.swift; sourceTree = "<group>"; };
+		46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */,
 				46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */,
 				468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */,
+				46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */,
 				46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */,
 				46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */,
+				46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */,
 				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
 				46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
