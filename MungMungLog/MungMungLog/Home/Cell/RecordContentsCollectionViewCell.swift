@@ -9,7 +9,6 @@ import UIKit
 
 class RecordContentsCollectionViewCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var contentsIconContainerView: UIView!
     @IBOutlet weak var contentsImageView: UIImageView!
     @IBOutlet weak var contentsTitleLabel: UILabel!
@@ -24,8 +23,5 @@ class RecordContentsCollectionViewCell: UICollectionViewCell {
         contentsIconContainerView.layer.borderWidth = 2
         contentsIconContainerView.layer.borderColor = UIColor.lightGray.cgColor
         contentsIconContainerView.layer.cornerRadius = 25
-        
-//        contentsImageView.image = UIImage(named: "rice")
-//        contentsTitleLabel.text = "Food"
     }
 }

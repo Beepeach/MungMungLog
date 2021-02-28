@@ -88,5 +88,4 @@ extension HomeViewController: UICollectionViewDelegate {
             cell.contentsIconContainerView.backgroundColor = .none
         }
     }
-    
 }
