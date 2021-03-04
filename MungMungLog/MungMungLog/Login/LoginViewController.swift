@@ -10,14 +10,16 @@ import UIKit
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var logoCenterYConstraint: NSLayoutConstraint!
-    @IBOutlet weak var loginStackViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var loginContainerViewTopConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var loginStackView: UIStackView!
+    @IBOutlet weak var loginContainerView: UIView!
+    @IBOutlet weak var incorrectIdFormatLabel: UILabel!
     @IBOutlet weak var idInputField: UITextField!
+    @IBOutlet weak var incorrectPasswordFormatLabel: UILabel!
     @IBOutlet weak var passwordInputField: UITextField!
-    @IBOutlet weak var loginContainerView: RoundedView!
+    @IBOutlet weak var loginButtonContainerView: RoundedView!
     @IBOutlet weak var passwordFindingView: UIView!
     @IBOutlet weak var loginWithSnsStackView: UIStackView!
     
@@ -26,10 +28,12 @@ class LoginViewController: UIViewController {
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     
     func setContentsStartPosition() {
-        loginStackViewTopConstraint.constant = (view.frame.height * 0.5)
-        loginStackView.alpha = 0
+        loginContainerViewTopConstraint.constant = (view.frame.height * 0.55)
+        loginContainerView.alpha = 0
         passwordFindingView.alpha = 0
         loginWithSnsStackView.alpha = 0
+        incorrectIdFormatLabel.alpha = 0
+        incorrectPasswordFormatLabel.alpha = 0
     }
     
     func setScreenWhenShowKeyboard() {
@@ -74,10 +78,7 @@ class LoginViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             moveLogoToTop()
 
-            // 여기 animate에 문제가 있는 듯하다.
-            // device에서만 Cpu 100% 문데
-            // weak self로도 해결 X
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: { //[weak self] in
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
                 self.view.layoutIfNeeded()
                 presentLoginView()
             })
@@ -89,7 +90,7 @@ class LoginViewController: UIViewController {
         }
 
         func presentLoginView() {
-            loginStackView.alpha = 1.0
+            loginContainerView.alpha = 1.0
             passwordFindingView.alpha = 1.0
             passwordFindingView.alpha = 1.0
             loginWithSnsStackView.alpha = 1.0
@@ -156,11 +157,13 @@ extension LoginViewController: UITextFieldDelegate {
                                               options: .regularExpression),
                   range.lowerBound == finalText.startIndex && range.upperBound == finalText.endIndex else {
                 isAccessibleLoginId = false
+                incorrectIdFormatLabel.alpha = 1
                 checkLoginButtonEnable()
                 return true
             }
             
             isAccessibleLoginId = true
+            incorrectIdFormatLabel.alpha = 0
             checkLoginButtonEnable()
             return true
             
@@ -168,11 +171,13 @@ extension LoginViewController: UITextFieldDelegate {
             guard finalText.count >= 4,
                   finalText.count <= 20 else {
                 isAccessibleLoginPassword = false
+                incorrectPasswordFormatLabel.alpha = 1
                 checkLoginButtonEnable()
                 return true
             }
             
             isAccessibleLoginPassword = true
+            incorrectPasswordFormatLabel.alpha = 0
             checkLoginButtonEnable()
             return true
             
@@ -184,14 +189,14 @@ extension LoginViewController: UITextFieldDelegate {
     
     func checkLoginButtonEnable() {
         if isAccessibleLoginId == true && isAccessibleLoginPassword == true {
-            loginContainerView.isUserInteractionEnabled = true
-            loginContainerView.backgroundColor = .systemTeal
+            loginButtonContainerView.isUserInteractionEnabled = true
+            loginButtonContainerView.backgroundColor = .systemTeal
         } else {
-            loginContainerView.isUserInteractionEnabled = false
+            loginButtonContainerView.isUserInteractionEnabled = false
             if #available(iOS 13.0, *) {
-                loginContainerView.backgroundColor = .systemGray4
+                loginButtonContainerView.backgroundColor = .systemGray4
             } else {
-                loginContainerView.backgroundColor = .lightGray
+                loginButtonContainerView.backgroundColor = .lightGray
             }
         }
     }
