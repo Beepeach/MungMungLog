@@ -235,14 +235,30 @@
                                                     <constraint firstAttribute="height" constant="150" id="TeB-PB-fSX"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CE-Go-cLR">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCy-Xw-yEi">
                                                 <rect key="frame" x="354" y="776" width="50" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CE-Go-cLR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="FZA-dw-xvx"/>
+                                                            <constraint firstAttribute="width" secondItem="0CE-Go-cLR" secondAttribute="height" multiplier="1:1" id="YhG-8t-V4l"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button" image="plusbox"/>
+                                                        <connections>
+                                                            <action selector="showFloatingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RIR-RQ-Cep"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="FZA-dw-xvx"/>
-                                                    <constraint firstAttribute="width" secondItem="0CE-Go-cLR" secondAttribute="height" multiplier="1:1" id="YhG-8t-V4l"/>
+                                                    <constraint firstItem="0CE-Go-cLR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RCy-Xw-yEi" secondAttribute="leading" id="2z6-dC-IOG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="0CE-Go-cLR" secondAttribute="bottom" id="FmT-Og-5iU"/>
+                                                    <constraint firstItem="0CE-Go-cLR" firstAttribute="leading" secondItem="RCy-Xw-yEi" secondAttribute="leading" id="LSG-5p-Bdk"/>
+                                                    <constraint firstItem="0CE-Go-cLR" firstAttribute="top" secondItem="RCy-Xw-yEi" secondAttribute="top" priority="250" id="MRP-Tm-3fs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0CE-Go-cLR" secondAttribute="trailing" id="hGE-tZ-PjZ"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="plusbox"/>
-                                            </button>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -254,7 +270,6 @@
                                             <constraint firstItem="0ho-IG-LIt" firstAttribute="leading" secondItem="Q5l-Ks-235" secondAttribute="leading" id="S5s-VU-l5c"/>
                                             <constraint firstItem="zke-pN-Oec" firstAttribute="top" secondItem="0ho-IG-LIt" secondAttribute="bottom" constant="12" id="ViX-ap-yFK"/>
                                             <constraint firstItem="d5g-5I-3Yk" firstAttribute="top" secondItem="PZ4-pu-tJK" secondAttribute="bottom" id="Zsv-PS-1QG"/>
-                                            <constraint firstItem="0CE-Go-cLR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q5l-Ks-235" secondAttribute="leading" constant="24" id="aJ1-2u-vpe"/>
                                             <constraint firstAttribute="trailing" secondItem="0ho-IG-LIt" secondAttribute="trailing" id="czj-HS-216"/>
                                             <constraint firstAttribute="trailing" secondItem="PZ4-pu-tJK" secondAttribute="trailing" id="fe4-Db-oAw"/>
                                             <constraint firstItem="ciF-AL-BdW" firstAttribute="top" secondItem="zke-pN-Oec" secondAttribute="bottom" id="hdc-dt-RHd"/>
@@ -268,9 +283,9 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="8U6-vE-X19" firstAttribute="bottom" secondItem="0CE-Go-cLR" secondAttribute="bottom" constant="100" id="CnK-4i-fre"/>
-                                    <constraint firstItem="8U6-vE-X19" firstAttribute="trailing" secondItem="0CE-Go-cLR" secondAttribute="trailing" constant="24" id="LEz-C8-uKg"/>
+                                    <constraint firstItem="8U6-vE-X19" firstAttribute="bottom" secondItem="RCy-Xw-yEi" secondAttribute="bottom" constant="100" id="11B-DF-kYL"/>
                                     <constraint firstItem="d5g-5I-3Yk" firstAttribute="height" secondItem="8U6-vE-X19" secondAttribute="height" multiplier="0.35" id="Lu5-sP-ARX"/>
+                                    <constraint firstItem="8U6-vE-X19" firstAttribute="trailing" secondItem="RCy-Xw-yEi" secondAttribute="trailing" constant="24" id="N7A-Ph-3as"/>
                                     <constraint firstItem="Q5l-Ks-235" firstAttribute="width" secondItem="DT5-iA-bdT" secondAttribute="width" id="NQL-0k-Wg8"/>
                                     <constraint firstAttribute="trailing" secondItem="Q5l-Ks-235" secondAttribute="trailing" id="bMb-Nv-C5U"/>
                                     <constraint firstItem="Q5l-Ks-235" firstAttribute="leading" secondItem="DT5-iA-bdT" secondAttribute="leading" id="dai-2t-z9L"/>
@@ -293,6 +308,7 @@
                     <tabBarItem key="tabBarItem" title="홈" id="Aat-se-JSQ"/>
                     <connections>
                         <outlet property="contentsCollectionView" destination="b8t-2r-1wp" id="Dbb-Lw-3dn"/>
+                        <outlet property="floatingButtonContainerView" destination="RCy-Xw-yEi" id="dl8-nM-ggf"/>
                         <outlet property="writerProfileImageView" destination="YSv-zw-TsU" id="Ky2-dN-awc"/>
                     </connections>
                 </viewController>

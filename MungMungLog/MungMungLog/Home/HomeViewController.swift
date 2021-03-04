@@ -8,19 +8,72 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    var menuStack: UIStackView?
+    let buttonImageNames = ["rice", "snack", "pill", "hospital", "walk"]
     
     @IBOutlet weak var contentsCollectionView: UICollectionView!
-
+    
     @IBOutlet weak var writerProfileImageView: UIImageView!
     
+    @IBOutlet weak var floatingButtonContainerView: UIView!
     
     @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func showFloatingButton(_ sender: Any) {        
+        UIView.animate(withDuration: 0.3,
+                       delay: 0,
+                       usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0.3,
+                       options: [],
+                       animations: { [self] in
+                        menuStack?.arrangedSubviews.forEach({ (button) in
+                            button.isHidden = button.isHidden ? false : true
+                        })
+                        
+                        menuStack?.layoutIfNeeded()
+                       }, completion: nil)
+    }
+    
+    func createMenuStackView() -> UIStackView {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = 10
+        
+        buttonImageNames.forEach { (imageName) in
+            let button = UIButton(type: .system)
+            let image = UIImage(named: imageName)
+            button.setImage(image, for: .normal)
+            stack.addArrangedSubview(button)
+            
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.widthAnchor.constraint(equalToConstant: 50).isActive = true
+            button.heightAnchor.constraint(equalTo: button.widthAnchor).isActive = true
+            button.isHidden = true
+        }
+        
+        floatingButtonContainerView.addSubview(stack)
+        
+        stack.trailingAnchor.constraint(equalTo: floatingButtonContainerView.trailingAnchor).isActive = true
+        
+        let floatingButtonTopConstaint = stack.topAnchor.constraint(equalTo: floatingButtonContainerView.topAnchor)
+        floatingButtonTopConstaint.priority = .defaultHigh
+        floatingButtonTopConstaint.isActive = true
+//        stack.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
+//        stack.heightAnchor.constraint(equalToConstant: 290).isActive = true
+        
+        stack.bottomAnchor.constraint(equalTo: floatingButtonContainerView.topAnchor, constant: -10).isActive = true
+        
+        return stack
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         writerProfileImageView.layer.cornerRadius = writerProfileImageView.frame.height / 2
+        
+        menuStack = createMenuStackView()
     }
 }
 
@@ -79,7 +132,7 @@ extension HomeViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-
+        
         guard let cell = collectionView.cellForItem(at: indexPath) as? RecordContentsCollectionViewCell else { return }
         
         UIView.animate(withDuration: 0.2) {
