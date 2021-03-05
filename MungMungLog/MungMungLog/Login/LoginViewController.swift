@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     
     func setContentsStartPosition() {
-        loginContainerViewTopConstraint.constant = (view.frame.height * 0.55)
+        loginContainerViewTopConstraint.constant = (view.frame.height * 0.5)
         loginContainerView.alpha = 0
         passwordFindingView.alpha = 0
         loginWithSnsStackView.alpha = 0

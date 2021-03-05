@@ -60,8 +60,7 @@ class HomeViewController: UIViewController {
         let floatingButtonTopConstaint = stack.topAnchor.constraint(equalTo: floatingButtonContainerView.topAnchor)
         floatingButtonTopConstaint.priority = .defaultHigh
         floatingButtonTopConstaint.isActive = true
-//        stack.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.5).isActive = true
-//        stack.heightAnchor.constraint(equalToConstant: 290).isActive = true
+        
         
         stack.bottomAnchor.constraint(equalTo: floatingButtonContainerView.topAnchor, constant: -10).isActive = true
         
