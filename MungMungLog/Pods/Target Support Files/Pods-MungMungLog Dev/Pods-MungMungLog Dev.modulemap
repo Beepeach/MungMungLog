@@ -1,0 +1,6 @@
+framework module Pods_MungMungLog_Dev {
+  umbrella header "Pods-MungMungLog Dev-umbrella.h"
+
+  export *
+  module * { export * }
+}

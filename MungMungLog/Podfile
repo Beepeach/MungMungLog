@@ -1,0 +1,24 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+def shared_pods
+    pod 'RxSwift'
+    pod 'RxCocoa'
+end
+
+
+target 'MungMungLog' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for MungMungLog
+    shared_pods
+end
+
+target 'MungMungLog Dev' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for MungMungLog Dev
+    shared_pods
+end

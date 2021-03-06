@@ -25,6 +25,39 @@
 		464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */; };
 		46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */; };
 		4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */; };
+		466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */; };
+		466492B725F372FC00903265 /* WalkDateAndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */; };
+		466492B825F372FC00903265 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB0102557F76B00027376 /* ViewController.swift */; };
+		466492B925F372FC00903265 /* UIViewController+dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */; };
+		466492BA25F372FC00903265 /* CircleWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* CircleWithShadowView.swift */; };
+		466492BB25F372FC00903265 /* MembershipRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */; };
+		466492BC25F372FC00903265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00C2557F76B00027376 /* AppDelegate.swift */; };
+		466492BD25F372FC00903265 /* WalkRecordEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */; };
+		466492BE25F372FC00903265 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
+		466492BF25F372FC00903265 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4605D1D525CECC69001C6815 /* Breeds.swift */; };
+		466492C025F372FC00903265 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
+		466492C125F372FC00903265 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
+		466492C225F372FC00903265 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
+		466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */; };
+		466492C425F372FC00903265 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00E2557F76B00027376 /* SceneDelegate.swift */; };
+		466492C525F372FC00903265 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */; };
+		466492C625F372FC00903265 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
+		466492C725F372FC00903265 /* RecordItemSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordItemSelectViewController.swift */; };
+		466492C825F372FC00903265 /* UIViewController+dateComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */; };
+		466492C925F372FC00903265 /* RoundedBorderWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */; };
+		466492CA25F372FC00903265 /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */; };
+		466492CB25F372FC00903265 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */; };
+		466492CC25F372FC00903265 /* PartialRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */; };
+		466492CD25F372FC00903265 /* RecordContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */; };
+		466492CE25F372FC00903265 /* RegistrationGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */; };
+		466492CF25F372FC00903265 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
+		466492D025F372FC00903265 /* RecordItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */; };
+		466492D125F372FC00903265 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02825582EEF00027376 /* UIViewController+alert.swift */; };
+		466492D225F372FC00903265 /* DateSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */; };
+		466492D325F372FC00903265 /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */; };
+		466492D625F372FC00903265 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0172557F76B00027376 /* LaunchScreen.storyboard */; };
+		466492D725F372FC00903265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0152557F76B00027376 /* Assets.xcassets */; };
+		466492D825F372FC00903265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0122557F76B00027376 /* Main.storyboard */; };
 		467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* CircleWithShadowView.swift */; };
 		468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
 		46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
@@ -40,9 +73,14 @@
 		46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */; };
 		46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */; };
 		46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */; };
+		51BA6FA398E44EF3577A32A0 /* Pods_MungMungLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38085EC03A53F738CFD5C466 /* Pods_MungMungLog.framework */; };
+		5FAA6723E27BEC8C6BC68A6C /* Pods_MungMungLog_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D045616CAF89FB8A27647A8 /* Pods_MungMungLog_Dev.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32D4DED83170753C1A4F64D9 /* Pods-MungMungLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog.debug.xcconfig"; path = "Target Support Files/Pods-MungMungLog/Pods-MungMungLog.debug.xcconfig"; sourceTree = "<group>"; };
+		38085EC03A53F738CFD5C466 /* Pods_MungMungLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MungMungLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D045616CAF89FB8A27647A8 /* Pods_MungMungLog_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MungMungLog_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4605D1D525CECC69001C6815 /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
 		460EB0092557F76B00027376 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		460EB00C2557F76B00027376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +101,8 @@
 		464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationGuideViewController.swift; sourceTree = "<group>"; };
 		4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEndingViewController.swift; sourceTree = "<group>"; };
+		466492DC25F372FC00903265 /* MungMungLog Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MungMungLog Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		466492DD25F372FC00903265 /* MungMungLog copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MungMungLog copy-Info.plist"; path = "/Users/junheejo/Desktop/maestroCamp/MungMungLog/MungMungLog/MungMungLog copy-Info.plist"; sourceTree = "<absolute>"; };
 		467BF53625748F8900511451 /* CircleWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithShadowView.swift; sourceTree = "<group>"; };
 		468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileViewController.swift; sourceTree = "<group>"; };
 		46A025AA2577D17D0022BDBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +118,9 @@
 		46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedView.swift; sourceTree = "<group>"; };
+		557617E33042023773289A79 /* Pods-MungMungLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog.release.xcconfig"; path = "Target Support Files/Pods-MungMungLog/Pods-MungMungLog.release.xcconfig"; sourceTree = "<group>"; };
+		928DE05854C954558A46EA97 /* Pods-MungMungLog Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog Dev.release.xcconfig"; path = "Target Support Files/Pods-MungMungLog Dev/Pods-MungMungLog Dev.release.xcconfig"; sourceTree = "<group>"; };
+		D0198980636E322777EB820F /* Pods-MungMungLog Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog Dev.debug.xcconfig"; path = "Target Support Files/Pods-MungMungLog Dev/Pods-MungMungLog Dev.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +128,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51BA6FA398E44EF3577A32A0 /* Pods_MungMungLog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466492D425F372FC00903265 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5FAA6723E27BEC8C6BC68A6C /* Pods_MungMungLog_Dev.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29201029F4F659AB26538FC6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32D4DED83170753C1A4F64D9 /* Pods-MungMungLog.debug.xcconfig */,
+				557617E33042023773289A79 /* Pods-MungMungLog.release.xcconfig */,
+				D0198980636E322777EB820F /* Pods-MungMungLog Dev.debug.xcconfig */,
+				928DE05854C954558A46EA97 /* Pods-MungMungLog Dev.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		4605D1D425CECC4F001C6815 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +168,9 @@
 			children = (
 				460EB00B2557F76B00027376 /* MungMungLog */,
 				460EB00A2557F76B00027376 /* Products */,
+				466492DD25F372FC00903265 /* MungMungLog copy-Info.plist */,
+				29201029F4F659AB26538FC6 /* Pods */,
+				A6FCC250A69EA7AC54BAD613 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -111,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				460EB0092557F76B00027376 /* MungMungLog.app */,
+				466492DC25F372FC00903265 /* MungMungLog Dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +312,15 @@
 			path = StackView;
 			sourceTree = "<group>";
 		};
+		A6FCC250A69EA7AC54BAD613 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38085EC03A53F738CFD5C466 /* Pods_MungMungLog.framework */,
+				3D045616CAF89FB8A27647A8 /* Pods_MungMungLog_Dev.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -251,9 +328,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 460EB01D2557F76B00027376 /* Build configuration list for PBXNativeTarget "MungMungLog" */;
 			buildPhases = (
+				8AB13DECB2F9B715F70195FA /* [CP] Check Pods Manifest.lock */,
 				460EB0052557F76B00027376 /* Sources */,
 				460EB0062557F76B00027376 /* Frameworks */,
 				460EB0072557F76B00027376 /* Resources */,
+				95B5A4649D1E80B82F158F32 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +341,25 @@
 			name = MungMungLog;
 			productName = MungMungLog;
 			productReference = 460EB0092557F76B00027376 /* MungMungLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		466492B425F372FC00903265 /* MungMungLog Dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 466492D925F372FC00903265 /* Build configuration list for PBXNativeTarget "MungMungLog Dev" */;
+			buildPhases = (
+				D1FAB6E364F22B748EEEF809 /* [CP] Check Pods Manifest.lock */,
+				466492B525F372FC00903265 /* Sources */,
+				466492D425F372FC00903265 /* Frameworks */,
+				466492D525F372FC00903265 /* Resources */,
+				9ABB8DF2329F3FC07F08BF74 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MungMungLog Dev";
+			productName = MungMungLog;
+			productReference = 466492DC25F372FC00903265 /* MungMungLog Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -292,6 +390,7 @@
 			projectRoot = "";
 			targets = (
 				460EB0082557F76B00027376 /* MungMungLog */,
+				466492B425F372FC00903265 /* MungMungLog Dev */,
 			);
 		};
 /* End PBXProject section */
@@ -307,7 +406,98 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		466492D525F372FC00903265 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466492D625F372FC00903265 /* LaunchScreen.storyboard in Resources */,
+				466492D725F372FC00903265 /* Assets.xcassets in Resources */,
+				466492D825F372FC00903265 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8AB13DECB2F9B715F70195FA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MungMungLog-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		95B5A4649D1E80B82F158F32 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MungMungLog/Pods-MungMungLog-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MungMungLog/Pods-MungMungLog-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MungMungLog/Pods-MungMungLog-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ABB8DF2329F3FC07F08BF74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MungMungLog Dev/Pods-MungMungLog Dev-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MungMungLog Dev/Pods-MungMungLog Dev-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MungMungLog Dev/Pods-MungMungLog Dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1FAB6E364F22B748EEEF809 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MungMungLog Dev-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		460EB0052557F76B00027376 /* Sources */ = {
@@ -344,6 +534,43 @@
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 				464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */,
 				46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		466492B525F372FC00903265 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */,
+				466492B725F372FC00903265 /* WalkDateAndTimeViewController.swift in Sources */,
+				466492B825F372FC00903265 /* ViewController.swift in Sources */,
+				466492B925F372FC00903265 /* UIViewController+dateFormatter.swift in Sources */,
+				466492BA25F372FC00903265 /* CircleWithShadowView.swift in Sources */,
+				466492BB25F372FC00903265 /* MembershipRegistrationViewController.swift in Sources */,
+				466492BC25F372FC00903265 /* AppDelegate.swift in Sources */,
+				466492BD25F372FC00903265 /* WalkRecordEndingViewController.swift in Sources */,
+				466492BE25F372FC00903265 /* WalkRecordEditingViewController.swift in Sources */,
+				466492BF25F372FC00903265 /* Breeds.swift in Sources */,
+				466492C025F372FC00903265 /* EditingProfileViewController.swift in Sources */,
+				466492C125F372FC00903265 /* HomeViewController.swift in Sources */,
+				466492C225F372FC00903265 /* WalkRecordStartingViewController.swift in Sources */,
+				466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
+				466492C425F372FC00903265 /* SceneDelegate.swift in Sources */,
+				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
+				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,
+				466492C725F372FC00903265 /* RecordItemSelectViewController.swift in Sources */,
+				466492C825F372FC00903265 /* UIViewController+dateComponentsFormatter.swift in Sources */,
+				466492C925F372FC00903265 /* RoundedBorderWithShadowView.swift in Sources */,
+				466492CA25F372FC00903265 /* PhotoSelectCollectionViewCell.swift in Sources */,
+				466492CB25F372FC00903265 /* CodeInputViewController.swift in Sources */,
+				466492CC25F372FC00903265 /* PartialRoundedView.swift in Sources */,
+				466492CD25F372FC00903265 /* RecordContentsCollectionViewCell.swift in Sources */,
+				466492CE25F372FC00903265 /* RegistrationGuideViewController.swift in Sources */,
+				466492CF25F372FC00903265 /* RoundedView.swift in Sources */,
+				466492D025F372FC00903265 /* RecordItemTableViewCell.swift in Sources */,
+				466492D125F372FC00903265 /* UIViewController+alert.swift in Sources */,
+				466492D225F372FC00903265 /* DateSelectCollectionViewCell.swift in Sources */,
+				466492D325F372FC00903265 /* RoundedStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +714,7 @@
 		};
 		460EB01E2557F76B00027376 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32D4DED83170753C1A4F64D9 /* Pods-MungMungLog.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -508,12 +736,57 @@
 		};
 		460EB01F2557F76B00027376 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 557617E33042023773289A79 /* Pods-MungMungLog.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
 				INFOPLIST_FILE = MungMungLog/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		466492DA25F372FC00903265 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0198980636E322777EB820F /* Pods-MungMungLog Dev.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G5RH9MF273;
+				INFOPLIST_FILE = "MungMungLog copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLog;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		466492DB25F372FC00903265 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 928DE05854C954558A46EA97 /* Pods-MungMungLog Dev.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G5RH9MF273;
+				INFOPLIST_FILE = "MungMungLog copy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -544,6 +817,15 @@
 			buildConfigurations = (
 				460EB01E2557F76B00027376 /* Debug */,
 				460EB01F2557F76B00027376 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		466492D925F372FC00903265 /* Build configuration list for PBXNativeTarget "MungMungLog Dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				466492DA25F372FC00903265 /* Debug */,
+				466492DB25F372FC00903265 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
