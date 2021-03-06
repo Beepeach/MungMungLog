@@ -13,7 +13,7 @@ struct RecordItem {
 }
 
 
-class RecordItemSelectViewController: UIViewController {
+class RecordDetailViewController: UIViewController {
 
     let recordItemList: [RecordItem] = [
         RecordItem(imageName: "rice", title: "밥"),
@@ -23,8 +23,6 @@ class RecordItemSelectViewController: UIViewController {
         RecordItem(imageName: "walk", title: "산책")
     ]
     
-    @IBOutlet weak var recordItemListTableView: UITableView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,7 +30,10 @@ class RecordItemSelectViewController: UIViewController {
     
 }
 
-extension RecordItemSelectViewController: UITableViewDataSource {
+extension Reco
+
+
+extension RecordDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         recordItemList.count
     }
@@ -53,8 +54,7 @@ extension RecordItemSelectViewController: UITableViewDataSource {
     
 }
 
-
-extension RecordItemSelectViewController: UITableViewDelegate {
+extension RecordDetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         let safeAreaHeight = self.view.safeAreaLayoutGuide.layoutFrame.height

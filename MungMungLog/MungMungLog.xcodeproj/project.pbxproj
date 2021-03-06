@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -42,7 +42,7 @@
 		466492C425F372FC00903265 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00E2557F76B00027376 /* SceneDelegate.swift */; };
 		466492C525F372FC00903265 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */; };
 		466492C625F372FC00903265 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
-		466492C725F372FC00903265 /* RecordItemSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordItemSelectViewController.swift */; };
+		466492C725F372FC00903265 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */; };
 		466492C825F372FC00903265 /* UIViewController+dateComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */; };
 		466492C925F372FC00903265 /* RoundedBorderWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */; };
 		466492CA25F372FC00903265 /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */; };
@@ -59,13 +59,15 @@
 		466492D725F372FC00903265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0152557F76B00027376 /* Assets.xcassets */; };
 		466492D825F372FC00903265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0122557F76B00027376 /* Main.storyboard */; };
 		467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* CircleWithShadowView.swift */; };
+		467EF92725F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */; };
+		467EF92825F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */; };
 		468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
 		46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
 		46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
 		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
 		46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
 		46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */; };
-		46D1AF6025820B6000DF7B2A /* RecordItemSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordItemSelectViewController.swift */; };
+		46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */; };
 		46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */; };
 		46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */; };
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
@@ -104,13 +106,14 @@
 		466492DC25F372FC00903265 /* MungMungLog Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MungMungLog Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		466492DD25F372FC00903265 /* MungMungLog copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MungMungLog copy-Info.plist"; path = "/Users/junheejo/Desktop/maestroCamp/MungMungLog/MungMungLog/MungMungLog copy-Info.plist"; sourceTree = "<absolute>"; };
 		467BF53625748F8900511451 /* CircleWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithShadowView.swift; sourceTree = "<group>"; };
+		467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileViewController.swift; sourceTree = "<group>"; };
 		46A025AA2577D17D0022BDBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		46A025AE2577D7BB0022BDBF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingViewController.swift; sourceTree = "<group>"; };
 		46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectCollectionViewCell.swift; sourceTree = "<group>"; };
-		46D1AF5F25820B6000DF7B2A /* RecordItemSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItemSelectViewController.swift; sourceTree = "<group>"; };
+		46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
 		46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dateComponentsFormatter.swift"; sourceTree = "<group>"; };
 		46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderWithShadowView.swift; sourceTree = "<group>"; };
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +154,6 @@
 				D0198980636E322777EB820F /* Pods-MungMungLog Dev.debug.xcconfig */,
 				928DE05854C954558A46EA97 /* Pods-MungMungLog Dev.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -191,8 +193,8 @@
 				4656860925766C8900088513 /* ViewShapeClass */,
 				464A6B7C25AAED4000E56ED9 /* Login */,
 				46A025A92577D1530022BDBF /* Home */,
-				46E69ACC25806FC200019FD9 /* Walk */,
 				46A5749E25729B3D00B7ADF5 /* Record */,
+				46E69ACC25806FC200019FD9 /* Walk */,
 				460EB00C2557F76B00027376 /* AppDelegate.swift */,
 				460EB00E2557F76B00027376 /* SceneDelegate.swift */,
 				460EB0102557F76B00027376 /* ViewController.swift */,
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */,
+				467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -246,7 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				464092DA258E2EE100C85524 /* Cell */,
-				46D1AF5F25820B6000DF7B2A /* RecordItemSelectViewController.swift */,
+				46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -521,11 +524,12 @@
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
 				464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */,
 				46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */,
-				46D1AF6025820B6000DF7B2A /* RecordItemSelectViewController.swift in Sources */,
+				46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */,
 				46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */,
 				46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */,
 				46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */,
 				46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */,
+				467EF92725F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */,
 				46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */,
 				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
 				46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */,
@@ -558,11 +562,12 @@
 				466492C425F372FC00903265 /* SceneDelegate.swift in Sources */,
 				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
 				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,
-				466492C725F372FC00903265 /* RecordItemSelectViewController.swift in Sources */,
+				466492C725F372FC00903265 /* RecordDetailViewController.swift in Sources */,
 				466492C825F372FC00903265 /* UIViewController+dateComponentsFormatter.swift in Sources */,
 				466492C925F372FC00903265 /* RoundedBorderWithShadowView.swift in Sources */,
 				466492CA25F372FC00903265 /* PhotoSelectCollectionViewCell.swift in Sources */,
 				466492CB25F372FC00903265 /* CodeInputViewController.swift in Sources */,
+				467EF92825F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */,
 				466492CC25F372FC00903265 /* PartialRoundedView.swift in Sources */,
 				466492CD25F372FC00903265 /* RecordContentsCollectionViewCell.swift in Sources */,
 				466492CE25F372FC00903265 /* RegistrationGuideViewController.swift in Sources */,
