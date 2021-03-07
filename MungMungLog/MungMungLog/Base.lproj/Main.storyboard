@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1zt-ug-jLK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zva-Vq-R9P">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1863,10 +1863,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kP-93-Zxe" userLabel="Contents View">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="813"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="776"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8l-6K-tGt">
-                                                <rect key="frame" x="24" y="407" width="380" height="202.33333333333337"/>
+                                                <rect key="frame" x="24" y="370" width="380" height="202.33333333333337"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uer-04-yxL" userLabel="Id Container View">
                                                         <rect key="frame" x="0.0" y="15" width="380" height="46"/>
@@ -1999,7 +1999,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-BU-dBv" userLabel="Password Finding View">
-                                                <rect key="frame" x="141.33333333333331" y="624.33333333333337" width="145.33333333333331" height="30"/>
+                                                <rect key="frame" x="141.33333333333331" y="587.33333333333337" width="145.33333333333331" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 잊어버리셨나요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbx-l3-QXU">
                                                         <rect key="frame" x="0.0" y="0.0" width="145.33333333333334" height="29"/>
@@ -2034,7 +2034,7 @@
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iSw-yL-IhT">
-                                                <rect key="frame" x="24" y="684.33333333333337" width="380" height="118.66666666666663"/>
+                                                <rect key="frame" x="24" y="647.33333333333337" width="380" height="118.66666666666663"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0E-YT-HKi" userLabel="Kakao Container View" customClass="RoundedView" customModule="MungMungLog" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="50.333333333333336"/>
@@ -2126,11 +2126,16 @@
                                                 <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="8" right="0.0"/>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="somsom" translatesAutoresizingMaskIntoConstraints="NO" id="BzI-yU-t0g">
-                                                <rect key="frame" x="86" y="76.666666666666686" width="256" height="256"/>
+                                                <rect key="frame" x="89" y="60" width="250" height="250"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="BzI-yU-t0g" secondAttribute="height" multiplier="1:1" id="3xa-mu-efe"/>
+                                                    <constraint firstAttribute="height" constant="250" id="QOM-zq-xDP"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="BzI-yU-t0g" firstAttribute="top" secondItem="9kP-93-Zxe" secondAttribute="top" constant="60" id="3n1-PP-5Fs"/>
                                             <constraint firstItem="gvb-BU-dBv" firstAttribute="top" secondItem="k8l-6K-tGt" secondAttribute="bottom" constant="15" id="9rC-bV-cOS"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="gvb-BU-dBv" secondAttribute="trailing" constant="24" id="Cuh-Yu-Ncx"/>
                                             <constraint firstItem="gvb-BU-dBv" firstAttribute="centerX" secondItem="9kP-93-Zxe" secondAttribute="centerX" id="EAx-71-kcV"/>
@@ -2140,8 +2145,7 @@
                                             <constraint firstItem="iSw-yL-IhT" firstAttribute="top" secondItem="gvb-BU-dBv" secondAttribute="bottom" priority="750" constant="30" placeholder="YES" id="WBr-gH-jJB"/>
                                             <constraint firstAttribute="trailing" secondItem="iSw-yL-IhT" secondAttribute="trailing" constant="24" id="YoM-fd-80C"/>
                                             <constraint firstAttribute="bottom" secondItem="iSw-yL-IhT" secondAttribute="bottom" constant="10" id="i3O-vu-3vK"/>
-                                            <constraint firstItem="k8l-6K-tGt" firstAttribute="top" secondItem="9kP-93-Zxe" secondAttribute="top" constant="407" id="mNI-N7-4Q0"/>
-                                            <constraint firstItem="BzI-yU-t0g" firstAttribute="centerY" secondItem="9kP-93-Zxe" secondAttribute="centerY" constant="-201.66999999999999" placeholder="YES" id="umH-YB-pt8"/>
+                                            <constraint firstItem="k8l-6K-tGt" firstAttribute="top" secondItem="BzI-yU-t0g" secondAttribute="bottom" constant="60" id="p8F-cQ-TZW"/>
                                             <constraint firstAttribute="trailing" secondItem="k8l-6K-tGt" secondAttribute="trailing" constant="24" id="v2I-Wf-AXO"/>
                                             <constraint firstItem="gvb-BU-dBv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9kP-93-Zxe" secondAttribute="leading" constant="24" id="wEk-5j-dar"/>
                                             <constraint firstItem="aSR-2d-pNx" firstAttribute="height" relation="greaterThanOrEqual" secondItem="T0E-YT-HKi" secondAttribute="height" id="wZZ-Xn-iT0"/>
@@ -2166,7 +2170,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="aGc-nF-QLp" secondAttribute="bottom" id="0Ac-Aj-fhS"/>
-                            <constraint firstItem="BzI-yU-t0g" firstAttribute="centerY" secondItem="Ljv-bn-h4D" secondAttribute="centerY" priority="250" id="Biv-jF-Fdv"/>
                             <constraint firstItem="aGc-nF-QLp" firstAttribute="top" secondItem="kIa-Pe-nwf" secondAttribute="top" id="F2A-En-YQw"/>
                             <constraint firstItem="BzI-yU-t0g" firstAttribute="centerX" secondItem="Ljv-bn-h4D" secondAttribute="centerX" id="dvB-GB-K16"/>
                             <constraint firstItem="aGc-nF-QLp" firstAttribute="trailing" secondItem="Ljv-bn-h4D" secondAttribute="trailing" id="ib2-Lb-0lO"/>
@@ -2179,10 +2182,8 @@
                         <outlet property="incorrectPasswordFormatLabel" destination="By3-DC-6fD" id="EQq-By-RlI"/>
                         <outlet property="loginButtonContainerView" destination="oLf-KZ-FlA" id="rHn-0Y-ZEW"/>
                         <outlet property="loginContainerView" destination="k8l-6K-tGt" id="kCw-Ie-gHK"/>
-                        <outlet property="loginContainerViewTopConstraint" destination="mNI-N7-4Q0" id="9Ka-C0-4ZY"/>
                         <outlet property="loginScrollView" destination="aGc-nF-QLp" id="XM4-hb-TQ9"/>
                         <outlet property="loginWithSnsStackView" destination="iSw-yL-IhT" id="Tt8-1p-Bxb"/>
-                        <outlet property="logoCenterYConstraint" destination="Biv-jF-Fdv" id="H7G-ay-3jT"/>
                         <outlet property="logoImageView" destination="BzI-yU-t0g" id="wPr-H7-WDo"/>
                         <outlet property="passwordFindingView" destination="gvb-BU-dBv" id="Xj7-K1-5CN"/>
                         <outlet property="passwordInputField" destination="zr8-vB-ySs" id="C7R-J0-oUY"/>
@@ -2190,7 +2191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQV-fx-KyS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3852" y="119"/>
+            <point key="canvasLocation" x="-3852.3364485981306" y="118.5745140388769"/>
         </scene>
         <!--Membership Registration View Controller-->
         <scene sceneID="jc9-Cp-O1U">
@@ -3505,6 +3506,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bpg-61-bMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4512.6168224299063" y="-2108.4233261339095"/>
+        </scene>
+        <!--Intro View Controller-->
+        <scene sceneID="ypc-kC-hpl">
+            <objects>
+                <viewController id="zva-Vq-R9P" customClass="IntroViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ovb-7l-Lmw">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="somsom" translatesAutoresizingMaskIntoConstraints="NO" id="N0p-x2-JRq">
+                                <rect key="frame" x="89" y="338" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Vzw-dI-iSG"/>
+                                    <constraint firstAttribute="width" secondItem="N0p-x2-JRq" secondAttribute="height" multiplier="1:1" id="ukp-J6-zA1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hCi-X6-uZf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="N0p-x2-JRq" firstAttribute="centerX" secondItem="Ovb-7l-Lmw" secondAttribute="centerX" id="Ivj-d6-ecZ"/>
+                            <constraint firstItem="N0p-x2-JRq" firstAttribute="centerY" secondItem="Ovb-7l-Lmw" secondAttribute="centerY" placeholder="YES" id="ahQ-cL-CF4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="logoImageVIew" destination="N0p-x2-JRq" id="9sP-ep-r3U"/>
+                        <segue destination="LQF-VB-7aJ" kind="custom" identifier="moveToLoginView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="cYL-UJ-6AL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="469-mJ-U62" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5132" y="119"/>
         </scene>
     </scenes>
     <resources>

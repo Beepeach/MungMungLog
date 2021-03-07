@@ -10,6 +10,10 @@
 		4605D1D625CECC69001C6815 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4605D1D525CECC69001C6815 /* Breeds.swift */; };
 		460C4EA725F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EA625F3ECC900D4E58D /* FamilyTableViewCell.swift */; };
 		460C4EA825F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EA625F3ECC900D4E58D /* FamilyTableViewCell.swift */; };
+		460C4EAE25F4B8FC00D4E58D /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EAD25F4B8FC00D4E58D /* IntroViewController.swift */; };
+		460C4EAF25F4B8FC00D4E58D /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EAD25F4B8FC00D4E58D /* IntroViewController.swift */; };
+		460C4EB825F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EB725F4C5B900D4E58D /* ReplaceRootViewSegue.swift */; };
+		460C4EB925F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EB725F4C5B900D4E58D /* ReplaceRootViewSegue.swift */; };
 		460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00C2557F76B00027376 /* AppDelegate.swift */; };
 		460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00E2557F76B00027376 /* SceneDelegate.swift */; };
 		460EB0112557F76B00027376 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB0102557F76B00027376 /* ViewController.swift */; };
@@ -89,6 +93,8 @@
 		3D045616CAF89FB8A27647A8 /* Pods_MungMungLog_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MungMungLog_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4605D1D525CECC69001C6815 /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
 		460C4EA625F3ECC900D4E58D /* FamilyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyTableViewCell.swift; sourceTree = "<group>"; };
+		460C4EAD25F4B8FC00D4E58D /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		460C4EB725F4C5B900D4E58D /* ReplaceRootViewSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceRootViewSegue.swift; sourceTree = "<group>"; };
 		460EB0092557F76B00027376 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		460EB00C2557F76B00027376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		460EB00E2557F76B00027376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +185,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		460C4EB625F4C58700D4E58D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				460C4EB725F4C5B900D4E58D /* ReplaceRootViewSegue.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		460EB0002557F76B00027376 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +216,7 @@
 		460EB00B2557F76B00027376 /* MungMungLog */ = {
 			isa = PBXGroup;
 			children = (
+				460C4EB625F4C58700D4E58D /* UI */,
 				4605D1D425CECC4F001C6815 /* Data */,
 				46D7CE062597840400134271 /* Extension */,
 				4656860925766C8900088513 /* ViewShapeClass */,
@@ -216,6 +231,7 @@
 				460EB0122557F76B00027376 /* Main.storyboard */,
 				460EB0152557F76B00027376 /* Assets.xcassets */,
 				460EB0172557F76B00027376 /* LaunchScreen.storyboard */,
+				460C4EAD25F4B8FC00D4E58D /* IntroViewController.swift */,
 				460EB01A2557F76B00027376 /* Info.plist */,
 			);
 			path = MungMungLog;
@@ -531,12 +547,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460C4EB825F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
 				464092CE258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift in Sources */,
 				461E3129259CC9E900AE8011 /* WalkDateAndTimeViewController.swift in Sources */,
 				460EB0112557F76B00027376 /* ViewController.swift in Sources */,
 				460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */,
 				467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */,
 				461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */,
+				460C4EAE25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				460C4EA725F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */,
@@ -571,12 +589,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460C4EB925F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
 				466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */,
 				466492B725F372FC00903265 /* WalkDateAndTimeViewController.swift in Sources */,
 				466492B825F372FC00903265 /* ViewController.swift in Sources */,
 				466492B925F372FC00903265 /* UIViewController+dateFormatter.swift in Sources */,
 				466492BA25F372FC00903265 /* CircleWithShadowView.swift in Sources */,
 				466492BB25F372FC00903265 /* MembershipRegistrationViewController.swift in Sources */,
+				460C4EAF25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				466492BC25F372FC00903265 /* AppDelegate.swift in Sources */,
 				460C4EA825F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				466492BD25F372FC00903265 /* WalkRecordEndingViewController.swift in Sources */,

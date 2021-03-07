@@ -9,9 +9,6 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var logoCenterYConstraint: NSLayoutConstraint!
-    @IBOutlet weak var loginContainerViewTopConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var loginContainerView: UIView!
@@ -28,7 +25,6 @@ class LoginViewController: UIViewController {
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     
     func setContentsStartPosition() {
-        loginContainerViewTopConstraint.constant = (view.frame.height * 0.5)
         loginContainerView.alpha = 0
         passwordFindingView.alpha = 0
         loginWithSnsStackView.alpha = 0
@@ -67,6 +63,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
@@ -74,21 +71,13 @@ class LoginViewController: UIViewController {
         }
 
         setContentsStartPosition()
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            moveLogoToTop()
-
-            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
-                self.view.layoutIfNeeded()
+        
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5) {
                 presentLoginView()
-            })
-
+            }
         }
         
-        func moveLogoToTop() {
-            logoCenterYConstraint.constant = -(view.frame.height / 5)
-        }
-
         func presentLoginView() {
             loginContainerView.alpha = 1.0
             passwordFindingView.alpha = 1.0
