@@ -14,6 +14,12 @@
 		460C4EAF25F4B8FC00D4E58D /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EAD25F4B8FC00D4E58D /* IntroViewController.swift */; };
 		460C4EB825F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EB725F4C5B900D4E58D /* ReplaceRootViewSegue.swift */; };
 		460C4EB925F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EB725F4C5B900D4E58D /* ReplaceRootViewSegue.swift */; };
+		460C4ED125F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4ED025F51C9D00D4E58D /* FamilyConfigViewController.swift */; };
+		460C4ED225F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4ED025F51C9D00D4E58D /* FamilyConfigViewController.swift */; };
+		460C4ED625F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4ED525F5290A00D4E58D /* UserProfileConfigViewController.swift */; };
+		460C4ED725F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4ED525F5290A00D4E58D /* UserProfileConfigViewController.swift */; };
+		460C4EDB25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EDA25F5292700D4E58D /* PetProfileConfigViewController.swift */; };
+		460C4EDC25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EDA25F5292700D4E58D /* PetProfileConfigViewController.swift */; };
 		460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00C2557F76B00027376 /* AppDelegate.swift */; };
 		460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00E2557F76B00027376 /* SceneDelegate.swift */; };
 		460EB0112557F76B00027376 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB0102557F76B00027376 /* ViewController.swift */; };
@@ -95,6 +101,9 @@
 		460C4EA625F3ECC900D4E58D /* FamilyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyTableViewCell.swift; sourceTree = "<group>"; };
 		460C4EAD25F4B8FC00D4E58D /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		460C4EB725F4C5B900D4E58D /* ReplaceRootViewSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplaceRootViewSegue.swift; sourceTree = "<group>"; };
+		460C4ED025F51C9D00D4E58D /* FamilyConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyConfigViewController.swift; sourceTree = "<group>"; };
+		460C4ED525F5290A00D4E58D /* UserProfileConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileConfigViewController.swift; sourceTree = "<group>"; };
+		460C4EDA25F5292700D4E58D /* PetProfileConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetProfileConfigViewController.swift; sourceTree = "<group>"; };
 		460EB0092557F76B00027376 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		460EB00C2557F76B00027376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		460EB00E2557F76B00027376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -272,6 +281,9 @@
 			children = (
 				460C4EA525F3ECA800D4E58D /* Cell */,
 				467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */,
+				460C4EDA25F5292700D4E58D /* PetProfileConfigViewController.swift */,
+				460C4ED525F5290A00D4E58D /* UserProfileConfigViewController.swift */,
+				460C4ED025F51C9D00D4E58D /* FamilyConfigViewController.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -550,6 +562,7 @@
 				460C4EB825F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
 				464092CE258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift in Sources */,
 				461E3129259CC9E900AE8011 /* WalkDateAndTimeViewController.swift in Sources */,
+				460C4ED625F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */,
 				460EB0112557F76B00027376 /* ViewController.swift in Sources */,
 				460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */,
 				467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */,
@@ -559,6 +572,7 @@
 				460C4EA725F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */,
 				46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */,
+				460C4ED125F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */,
 				4605D1D625CECC69001C6815 /* Breeds.swift in Sources */,
 				468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */,
 				46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */,
@@ -577,6 +591,7 @@
 				46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */,
 				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
 				46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */,
+				460C4EDB25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
 				464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */,
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
@@ -592,6 +607,7 @@
 				460C4EB925F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
 				466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */,
 				466492B725F372FC00903265 /* WalkDateAndTimeViewController.swift in Sources */,
+				460C4ED725F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */,
 				466492B825F372FC00903265 /* ViewController.swift in Sources */,
 				466492B925F372FC00903265 /* UIViewController+dateFormatter.swift in Sources */,
 				466492BA25F372FC00903265 /* CircleWithShadowView.swift in Sources */,
@@ -601,6 +617,7 @@
 				460C4EA825F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				466492BD25F372FC00903265 /* WalkRecordEndingViewController.swift in Sources */,
 				466492BE25F372FC00903265 /* WalkRecordEditingViewController.swift in Sources */,
+				460C4ED225F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */,
 				466492BF25F372FC00903265 /* Breeds.swift in Sources */,
 				466492C025F372FC00903265 /* EditingProfileViewController.swift in Sources */,
 				466492C125F372FC00903265 /* HomeViewController.swift in Sources */,
@@ -619,6 +636,7 @@
 				466492CC25F372FC00903265 /* PartialRoundedView.swift in Sources */,
 				466492CD25F372FC00903265 /* RecordContentsCollectionViewCell.swift in Sources */,
 				466492CE25F372FC00903265 /* RegistrationGuideViewController.swift in Sources */,
+				460C4EDC25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
 				466492CF25F372FC00903265 /* RoundedView.swift in Sources */,
 				466492D025F372FC00903265 /* RecordItemTableViewCell.swift in Sources */,
 				466492D125F372FC00903265 /* UIViewController+alert.swift in Sources */,
