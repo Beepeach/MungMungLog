@@ -72,7 +72,7 @@ class LoginViewController: UIViewController {
                 let responseData = try decoder.decode(LoginResponseModel.self, from: data)
                 
                 if responseData.code == Statuscode.ok.rawValue {
-                    dump(responseData)
+                    //                    dump(responseData)
                     
                     if let token = responseData.token {
                         KeychainWrapper.standard.set(token, forKey: "api-token")
@@ -84,6 +84,7 @@ class LoginViewController: UIViewController {
                     
                 } else {
                     print("========로그인실패===========")
+                    print(responseData)
                 }
             } catch {
                 print(error)
@@ -95,40 +96,55 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginWithKakao(_ sender: Any) {
         // 카카오톡 설치 여부 확인
-        if (UserApi.isKakaoTalkLoginAvailable()) {
+        if UserApi.isKakaoTalkLoginAvailable() {
             UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
                 if let error = error {
                     print(error)
                 }
-                else {
-                    print("loginWithKakaoTalk() success.")
-                    
-                    UserApi.shared.me { (user, error) in
-                        if let error = error {
-                            print(error)
-                        } else {
-                            guard let id = user?.id else { return }
-                            let email = user?.kakaoAccount?.email ?? "\(UUID().uuidString)@empty.com"
-                            
-                            let model = SNSLoginRequestModel(provider: "Kakao", id: "\(id)", email: email)
-                            
-                            self.login(model: model)
-                        }
-                    }
-                }
+                
+                print("loginWithKakaoTalk() success.")
+                self.getUserInfoFromKakao()
             }
+        } else { UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            print("loginWithKakaoAccount() success.")
+            self.getUserInfoFromKakao()
+          }
         }
+    }
+    
+    func getUserInfoFromKakao() {
+        UserApi.shared.me { (user, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let id = user?.id else { return }
+            
+            let email = user?.kakaoAccount?.email ?? "\(UUID().uuidString)@empty.com"
+            
+            self.requestKaKaoLogin(id: id, email: email)
+        }
+    }
+    
+    func requestKaKaoLogin(id: Int64, email: String) {
+        let model = SNSLoginRequestModel(provider: "Kakao", id: "\(id)", email: email)
+        
+        self.login(model: model)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
             
         }
-
+        
         setContentsStartPosition()
         
         DispatchQueue.main.async {
@@ -146,7 +162,7 @@ class LoginViewController: UIViewController {
             passwordFindingView.alpha = 1.0
             loginWithSnsStackView.alpha = 1.0
         }
-
+        
     }
     
     func setContentsStartPosition() {
@@ -236,7 +252,7 @@ extension LoginViewController: UITextFieldDelegate {
         }
         
         let finalText = currentText.replacingCharacters(in: range, with: string)
-  
+        
         switch textField {
         case idInputField:
             guard let range = finalText.range(of: emailRegEx,
