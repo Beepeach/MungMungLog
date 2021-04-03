@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import KakaoSDKAuth
+import KakaoSDKCommon
+import KakaoSDKUser
+import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
     
@@ -23,6 +27,127 @@ class LoginViewController: UIViewController {
     var isAccessibleLoginId = false
     var isAccessibleLoginPassword = false
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    
+    func login(model: SNSLoginRequestModel) {
+        KeychainWrapper.standard.remove(forKey: "api-token")
+        
+        guard let url = URL(string: ApiManager.snsLogin) else {
+            print(ApiError.invalidURL)
+            return
+        }
+        
+        let session = URLSession.shared
+        var request = URLRequest(url: url)
+        request.httpMethod = "Post"
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        
+        do {
+            let encoder = JSONEncoder()
+            request.httpBody = try encoder.encode(model)
+        } catch {
+            print(error)
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                if let httpResponse = response as? HTTPURLResponse {
+                    print(ApiError.failed(httpResponse.statusCode))
+                }
+                
+                return
+            }
+            
+            guard let data = data else {
+                print(ApiError.emptyData)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let responseData = try decoder.decode(LoginResponseModel.self, from: data)
+                
+                if responseData.code == Statuscode.ok.rawValue {
+                    dump(responseData)
+                    
+                    if let token = responseData.token {
+                        KeychainWrapper.standard.set(token, forKey: "api-token")
+                    }
+                    
+                    if let userId = responseData.userId {
+                        KeychainWrapper.standard.set(userId, forKey: "api-userId")
+                    }
+                    
+                } else {
+                    print("========로그인실패===========")
+                }
+            } catch {
+                print(error)
+            }
+        }
+        
+        task.resume()
+    }
+    
+    @IBAction func loginWithKakao(_ sender: Any) {
+        // 카카오톡 설치 여부 확인
+        if (UserApi.isKakaoTalkLoginAvailable()) {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
+                    
+                    UserApi.shared.me { (user, error) in
+                        if let error = error {
+                            print(error)
+                        } else {
+                            guard let id = user?.id else { return }
+                            let email = user?.kakaoAccount?.email ?? "\(UUID().uuidString)@empty.com"
+                            
+                            let model = SNSLoginRequestModel(provider: "Kakao", id: "\(id)", email: email)
+                            
+                            self.login(model: model)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            
+        }
+
+        setContentsStartPosition()
+        
+        DispatchQueue.main.async {
+            UIView.animate(withDuration: 0.5) {
+                presentLoginView()
+            }
+        }
+        
+        setScreenWhenShowKeyboard()
+        setScreenWhenHideKeyboard()
+        
+        func presentLoginView() {
+            loginContainerView.alpha = 1.0
+            passwordFindingView.alpha = 1.0
+            passwordFindingView.alpha = 1.0
+            loginWithSnsStackView.alpha = 1.0
+        }
+
+    }
     
     func setContentsStartPosition() {
         loginContainerView.alpha = 0
@@ -59,34 +184,6 @@ class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (_) in
             self.loginScrollView.contentInset = .zero
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        } else {
-            
-        }
-
-        setContentsStartPosition()
-        
-        DispatchQueue.main.async {
-            UIView.animate(withDuration: 0.5) {
-                presentLoginView()
-            }
-        }
-        
-        func presentLoginView() {
-            loginContainerView.alpha = 1.0
-            passwordFindingView.alpha = 1.0
-            passwordFindingView.alpha = 1.0
-            loginWithSnsStackView.alpha = 1.0
-        }
-
-        setScreenWhenShowKeyboard()
-        setScreenWhenHideKeyboard()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

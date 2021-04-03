@@ -2128,12 +2128,22 @@
                                                                     <constraint firstAttribute="bottom" secondItem="QLl-LZ-JoL" secondAttribute="bottom" id="uFa-KO-shr"/>
                                                                 </constraints>
                                                             </view>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jrh-Mu-MbO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="380" height="50.333333333333336"/>
+                                                                <connections>
+                                                                    <action selector="loginWithKakao:" destination="LQF-VB-7aJ" eventType="touchUpInside" id="paX-az-Bbf"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemTealColor"/>
                                                         <constraints>
                                                             <constraint firstItem="bSR-YV-j22" firstAttribute="top" secondItem="JA1-Gd-GHe" secondAttribute="top" constant="12" id="0E6-zW-Gve"/>
                                                             <constraint firstAttribute="bottom" secondItem="bSR-YV-j22" secondAttribute="bottom" constant="12" id="81i-iL-VoX"/>
+                                                            <constraint firstItem="Jrh-Mu-MbO" firstAttribute="top" secondItem="JA1-Gd-GHe" secondAttribute="top" id="Tpa-cl-bqy"/>
+                                                            <constraint firstItem="Jrh-Mu-MbO" firstAttribute="leading" secondItem="JA1-Gd-GHe" secondAttribute="leading" id="eHf-L8-M3Z"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Jrh-Mu-MbO" secondAttribute="trailing" id="rqf-dA-ZiV"/>
                                                             <constraint firstItem="bSR-YV-j22" firstAttribute="centerX" secondItem="JA1-Gd-GHe" secondAttribute="centerX" id="t52-6i-z0r"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Jrh-Mu-MbO" secondAttribute="bottom" id="yNv-j2-PJf"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

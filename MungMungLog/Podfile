@@ -4,6 +4,8 @@
 def shared_pods
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'KakaoSDK'
+    pod 'SwiftKeychainWrapper'
 end
 
 

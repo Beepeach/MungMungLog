@@ -76,6 +76,12 @@
 		467EF92E25F3C51700AC8F88 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */; };
 		467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */; };
 		468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
+		4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
+		4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
+		4694977626184F520049D7FE /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694977526184F520049D7FE /* ApiModel.swift */; };
+		4694977726184F520049D7FE /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694977526184F520049D7FE /* ApiModel.swift */; };
+		469497A226186A200049D7FE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469497A126186A200049D7FE /* Product.swift */; };
+		469497A826186A4C0049D7FE /* Staging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469497A726186A4C0049D7FE /* Staging.swift */; };
 		46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
 		46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
 		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
@@ -126,11 +132,14 @@
 		46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationGuideViewController.swift; sourceTree = "<group>"; };
 		4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEndingViewController.swift; sourceTree = "<group>"; };
 		466492DC25F372FC00903265 /* MungMungLog Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MungMungLog Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		466492DD25F372FC00903265 /* MungMungLog copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MungMungLog copy-Info.plist"; path = "/Users/junheejo/Desktop/maestroCamp/MungMungLog/MungMungLog/MungMungLog copy-Info.plist"; sourceTree = "<absolute>"; };
 		467BF53625748F8900511451 /* CircleWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithShadowView.swift; sourceTree = "<group>"; };
 		467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileViewController.swift; sourceTree = "<group>"; };
+		4694976D26184E6D0049D7FE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		4694977526184F520049D7FE /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
+		469497A126186A200049D7FE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		469497A726186A4C0049D7FE /* Staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staging.swift; sourceTree = "<group>"; };
 		46A025AA2577D17D0022BDBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		46A025AE2577D7BB0022BDBF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -210,7 +219,6 @@
 			children = (
 				460EB00B2557F76B00027376 /* MungMungLog */,
 				460EB00A2557F76B00027376 /* Products */,
-				466492DD25F372FC00903265 /* MungMungLog copy-Info.plist */,
 				29201029F4F659AB26538FC6 /* Pods */,
 				A6FCC250A69EA7AC54BAD613 /* Frameworks */,
 			);
@@ -228,6 +236,9 @@
 		460EB00B2557F76B00027376 /* MungMungLog */ = {
 			isa = PBXGroup;
 			children = (
+				469497A026186A000049D7FE /* Common */,
+				4694977426184F3E0049D7FE /* Model */,
+				4694976C26184E560049D7FE /* API */,
 				460C4EB625F4C58700D4E58D /* UI */,
 				4605D1D425CECC4F001C6815 /* Data */,
 				46D7CE062597840400134271 /* Extension */,
@@ -290,6 +301,31 @@
 				460C4ED025F51C9D00D4E58D /* FamilyConfigViewController.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		4694976C26184E560049D7FE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				4694976D26184E6D0049D7FE /* ApiManager.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		4694977426184F3E0049D7FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4694977526184F520049D7FE /* ApiModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		469497A026186A000049D7FE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				469497A126186A200049D7FE /* Product.swift */,
+				469497A726186A4C0049D7FE /* Staging.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		46A025A92577D1530022BDBF /* Home */ = {
@@ -572,6 +608,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				460C4EB825F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
+				4694977626184F520049D7FE /* ApiModel.swift in Sources */,
 				464092CE258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift in Sources */,
 				461E3129259CC9E900AE8011 /* WalkDateAndTimeViewController.swift in Sources */,
 				460C4ED625F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */,
@@ -603,6 +640,7 @@
 				467EF92E25F3C51700AC8F88 /* MyPageViewController.swift in Sources */,
 				46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */,
 				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
+				4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */,
 				46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */,
 				460C4EDB25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
@@ -610,6 +648,7 @@
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 				464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */,
 				46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */,
+				469497A226186A200049D7FE /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +657,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				460C4EB925F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
+				4694977726184F520049D7FE /* ApiModel.swift in Sources */,
 				466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */,
 				466492B725F372FC00903265 /* WalkDateAndTimeViewController.swift in Sources */,
 				460C4ED725F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */,
@@ -641,6 +681,7 @@
 				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
 				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,
 				466492C725F372FC00903265 /* RecordDetailViewController.swift in Sources */,
+				469497A826186A4C0049D7FE /* Staging.swift in Sources */,
 				466492C825F372FC00903265 /* UIViewController+dateComponentsFormatter.swift in Sources */,
 				466492C925F372FC00903265 /* RoundedBorderWithShadowView.swift in Sources */,
 				466492CA25F372FC00903265 /* PhotoSelectCollectionViewCell.swift in Sources */,
@@ -649,6 +690,7 @@
 				467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */,
 				466492CC25F372FC00903265 /* PartialRoundedView.swift in Sources */,
 				466492CD25F372FC00903265 /* RecordContentsCollectionViewCell.swift in Sources */,
+				4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */,
 				466492CE25F372FC00903265 /* RegistrationGuideViewController.swift in Sources */,
 				460C4EDC25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
 				466492CF25F372FC00903265 /* RoundedView.swift in Sources */,
@@ -849,7 +891,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
-				INFOPLIST_FILE = "MungMungLog copy-Info.plist";
+				INFOPLIST_FILE = MungMungLog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -871,7 +913,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
-				INFOPLIST_FILE = "MungMungLog copy-Info.plist";
+				INFOPLIST_FILE = MungMungLog/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
