@@ -1872,7 +1872,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kP-93-Zxe" userLabel="Contents View">
-                                        <rect key="frame" x="0.0" y="0.0" width="428" height="836.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="776"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8l-6K-tGt">
                                                 <rect key="frame" x="24" y="370" width="380" height="202.33333333333337"/>
@@ -2042,8 +2042,8 @@
                                                     <constraint firstItem="afs-9V-AyT" firstAttribute="leading" secondItem="Rbx-l3-QXU" secondAttribute="leading" id="wSK-Ls-RKV"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iSw-yL-IhT">
-                                                <rect key="frame" x="24" y="647.33333333333337" width="380" height="179"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iSw-yL-IhT">
+                                                <rect key="frame" x="24" y="647.33333333333337" width="380" height="118.66666666666663"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0E-YT-HKi" userLabel="Email Container View" customClass="RoundedView" customModule="MungMungLog" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="380" height="50.333333333333336"/>
@@ -2135,7 +2135,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                                                         <constraints>
                                                             <constraint firstItem="bSR-YV-j22" firstAttribute="top" secondItem="JA1-Gd-GHe" secondAttribute="top" constant="12" id="0E6-zW-Gve"/>
                                                             <constraint firstAttribute="bottom" secondItem="bSR-YV-j22" secondAttribute="bottom" constant="12" id="81i-iL-VoX"/>
@@ -2144,49 +2144,6 @@
                                                             <constraint firstAttribute="trailing" secondItem="Jrh-Mu-MbO" secondAttribute="trailing" id="rqf-dA-ZiV"/>
                                                             <constraint firstItem="bSR-YV-j22" firstAttribute="centerX" secondItem="JA1-Gd-GHe" secondAttribute="centerX" id="t52-6i-z0r"/>
                                                             <constraint firstAttribute="bottom" secondItem="Jrh-Mu-MbO" secondAttribute="bottom" id="yNv-j2-PJf"/>
-                                                        </constraints>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                <real key="value" value="5"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kfh-rG-QEC" userLabel="Apple Container View" customClass="RoundedView" customModule="MungMungLog" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="120.66666666666661" width="380" height="50.333333333333329"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iKV-UI-Qne">
-                                                                <rect key="frame" x="98.666666666666686" y="11.999999999999998" width="183" height="26.333333333333329"/>
-                                                                <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apple" translatesAutoresizingMaskIntoConstraints="NO" id="raM-Kd-mF6">
-                                                                        <rect key="frame" x="0.0" y="2" width="22.333333333333332" height="22.333333333333332"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="DYc-0K-7o3"/>
-                                                                            <constraint firstAttribute="width" secondItem="raM-Kd-mF6" secondAttribute="height" multiplier="1:1" id="Xbb-T0-dG7"/>
-                                                                        </constraints>
-                                                                    </imageView>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="Apple로 시작하기" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6r-qh-FzV">
-                                                                        <rect key="frame" x="27.333333333333329" y="0.0" width="155.66666666666669" height="26.333333333333332"/>
-                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="raM-Kd-mF6" firstAttribute="leading" secondItem="iKV-UI-Qne" secondAttribute="leading" id="8J9-A6-7OH"/>
-                                                                    <constraint firstItem="raM-Kd-mF6" firstAttribute="bottom" secondItem="c6r-qh-FzV" secondAttribute="bottom" constant="-2" id="ANA-Ow-imd"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="c6r-qh-FzV" secondAttribute="bottom" id="ImQ-aM-3gx"/>
-                                                                    <constraint firstItem="c6r-qh-FzV" firstAttribute="leading" secondItem="raM-Kd-mF6" secondAttribute="trailing" constant="5" id="J70-PF-pmH"/>
-                                                                    <constraint firstItem="raM-Kd-mF6" firstAttribute="top" secondItem="c6r-qh-FzV" secondAttribute="top" constant="2" id="Md9-4D-Z5Z"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="c6r-qh-FzV" secondAttribute="trailing" id="ZEh-uL-Lgy"/>
-                                                                    <constraint firstItem="c6r-qh-FzV" firstAttribute="top" secondItem="iKV-UI-Qne" secondAttribute="top" id="euK-PU-tz1"/>
-                                                                </constraints>
-                                                            </view>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemTealColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="iKV-UI-Qne" secondAttribute="bottom" constant="12" id="CyM-ay-OAD"/>
-                                                            <constraint firstItem="iKV-UI-Qne" firstAttribute="top" secondItem="Kfh-rG-QEC" secondAttribute="top" constant="12" id="fjX-zT-LaV"/>
-                                                            <constraint firstItem="iKV-UI-Qne" firstAttribute="centerX" secondItem="Kfh-rG-QEC" secondAttribute="centerX" id="zFr-o4-2b4"/>
                                                         </constraints>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -4826,7 +4783,6 @@
     <resources>
         <image name="Test" width="1411" height="1411"/>
         <image name="Test3" width="960" height="637.5"/>
-        <image name="apple" width="256" height="256"/>
         <image name="calendar" width="256" height="256"/>
         <image name="camera" width="256" height="256"/>
         <image name="cancel" width="256" height="256"/>
@@ -4866,6 +4822,9 @@
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

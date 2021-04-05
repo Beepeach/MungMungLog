@@ -9,6 +9,7 @@ import UIKit
 import KakaoSDKAuth
 import KakaoSDKCommon
 import KakaoSDKUser
+import AuthenticationServices
 import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
@@ -136,6 +137,8 @@ class LoginViewController: UIViewController {
         self.login(model: model)
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -163,6 +166,32 @@ class LoginViewController: UIViewController {
             loginWithSnsStackView.alpha = 1.0
         }
         
+        if #available(iOS 13.0, *) {
+            setupAppple()
+        } else {
+            
+        }
+        
+        
+    }
+    @available(iOS 13.0, *)
+    func setupAppple() {
+        let appleLoginButton = ASAuthorizationAppleIDButton()
+        appleLoginButton.addTarget(self, action: #selector(handleAppleLogin), for: .touchUpInside)
+        loginWithSnsStackView.addArrangedSubview(appleLoginButton)
+    }
+    
+    @available(iOS 13.0, *)
+    @objc func handleAppleLogin() {
+        let appleIdProvider = ASAuthorizationAppleIDProvider()
+        let request = appleIdProvider.createRequest()
+        request.requestedScopes = [.fullName, .email]
+        
+        let authenticationController = ASAuthorizationController(authorizationRequests: [request])
+        
+        authenticationController.delegate = self
+        authenticationController.presentationContextProvider = self
+        authenticationController.performRequests()
     }
     
     func setContentsStartPosition() {
@@ -303,4 +332,41 @@ extension LoginViewController: UITextFieldDelegate {
         }
     }
     
+}
+
+
+@available(iOS 13.0, *)
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        print("==============, \(error.localizedDescription)")
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIdCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+            let userId = appleIdCredential.user
+            var email = appleIdCredential.email
+            
+            if let savedEmail = KeychainWrapper.standard.string(forKey: "userEmail") {
+                email = savedEmail
+            } else {
+                if let email = email {
+                    KeychainWrapper.standard.set(email, forKey: "userEmail")
+                }
+            }
+            
+            let appleLoginModel = SNSLoginRequestModel(provider: "Apple", id: userId, email: email ?? "")
+            
+            self.login(model: appleLoginModel)
+        } else {
+            presentOneButtonAlert(alertTitle: "실패", message: "인증서 오류", actionTitle: "확인")
+        }
+    }
+}
+
+
+@available(iOS 13.0, *)
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window ?? ASPresentationAnchor()
+    }
 }
