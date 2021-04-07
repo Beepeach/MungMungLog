@@ -1972,9 +1972,6 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSR-2d-pNx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="50.333333333333336"/>
-                                                                <connections>
-                                                                    <segue destination="RwH-MD-3al" kind="presentation" modalPresentationStyle="fullScreen" id="iQR-NO-eMS"/>
-                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
@@ -2397,6 +2394,7 @@
                         <outlet property="emailField" destination="Y7f-U2-xoj" id="d0W-91-v43"/>
                         <outlet property="passwordConfirmField" destination="h8C-6c-KKe" id="bYc-Ka-SSS"/>
                         <outlet property="passwordField" destination="D8x-Xc-urm" id="CIx-Aa-nfz"/>
+                        <segue destination="RwH-MD-3al" kind="custom" identifier="moveToMembershipRegistrationView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="s9T-V0-fbL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrF-K7-c8f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2412,7 +2410,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJp-g0-OaU">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="925.99999999999989"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtP-rd-TF3" userLabel="Contents View">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="1146.3333333333333"/>
@@ -4828,7 +4826,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oEs-uz-L4I"/>
+        <segue reference="0Ma-Gb-q2e"/>
         <segue reference="5ZM-Ic-1F1"/>
         <segue reference="TmC-yD-XV5"/>
     </inferredMetricsTieBreakers>

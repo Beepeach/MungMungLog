@@ -12,6 +12,7 @@ enum Statuscode: Int {
     case notFound = 404
     case unKnown = -999
     case fail = -998
+    case failWithDuplication = -997
     
 }
 

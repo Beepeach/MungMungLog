@@ -11,7 +11,7 @@ import SwiftKeychainWrapper
 class EmailJoinViewController: UIViewController {
     
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-
+    
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordConfirmField: UITextField!
@@ -29,7 +29,7 @@ class EmailJoinViewController: UIViewController {
         }
         
         guard let range = emailField.text?.range(of: emailRegEx,
-                                                options: .regularExpression),
+                                                 options: .regularExpression),
               range.lowerBound == emailField.text?.startIndex && range.upperBound == emailField.text?.endIndex else {
             emailField.becomeFirstResponder()
             presentOneButtonAlert(alertTitle: "알림", message: "올바른 이메일을 입력해주세요.", actionTitle: "확인")
@@ -45,7 +45,7 @@ class EmailJoinViewController: UIViewController {
         
         guard let passwordConfirm = passwordConfirmField.text,
               password == passwordConfirm
-              else {
+        else {
             passwordConfirmField.becomeFirstResponder()
             presentOneButtonAlert(alertTitle: "알림", message: "비밀번호가 일치하지 않습니다.", actionTitle: "확인")
             return
@@ -93,7 +93,8 @@ class EmailJoinViewController: UIViewController {
                 let responseData = try decoder.decode(
                     JoinResponseModel.self, from: data)
                 
-                if responseData.code == Statuscode.ok.rawValue {
+                switch responseData.code {
+                case Statuscode.ok.rawValue:
                     if let token = responseData.token {
                         KeychainWrapper.standard.set(token, forKey: "api-token")
                     }
@@ -107,14 +108,33 @@ class EmailJoinViewController: UIViewController {
                     }
                     
                     DispatchQueue.main.async {
-                        // 화면 이동
-                        print("가입성공")
+                        self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
+                        print("회원 가입에 성공했습니다.")
                     }
-                } else {
+                    
+                case Statuscode.fail.rawValue:
                     DispatchQueue.main.async {
-                        self.presentOneButtonAlert(alertTitle: "알림", message: "가입 실패", actionTitle: "확인")
+                        self.presentOneButtonAlert(alertTitle: "알림", message: "토큰 생성에 실패했습니다.", actionTitle: "확인")
                     }
+                    print(responseData)
+                    
+                case Statuscode.failWithDuplication.rawValue:
+                    DispatchQueue.main.async {
+                        self.presentOneButtonAlert(alertTitle: "알림", message: "존재하는 이메일 계정입니다.", actionTitle: "확인")
+                    }
+                    print(responseData)
+                    
+                case Statuscode.unKnown.rawValue:
+                    fallthrough
+                    
+                default :
+                    DispatchQueue.main.async {
+                        self.presentOneButtonAlert(alertTitle: "알림", message: "유저 생성에 실패했습니다.", actionTitle: "확인")
+                    }
+                    print(responseData)
                 }
+                
+                // 존재하는 계정이라면 존재하는 계정입니다 라는
                 
             } catch {
                 print(error)
@@ -149,6 +169,7 @@ extension EmailJoinViewController: UITextFieldDelegate {
             return true
         case passwordConfirmField:
             passwordConfirmField.resignFirstResponder()
+            joinWithEmail(self)
             return true
         default:
             return true
