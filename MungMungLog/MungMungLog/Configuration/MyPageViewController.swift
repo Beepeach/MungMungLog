@@ -9,7 +9,7 @@ import UIKit
 
 struct Family {
     var isFamilyHead: Bool = false
-    var nickName: String
+    var nickname: String
     var relationship: String
     var totalWalkDistance: Double
     var profileImage: String?
@@ -18,9 +18,9 @@ struct Family {
 class MyPageViewController: UIViewController {
     
     var familyList = [
-        Family(isFamilyHead: true, nickName: "아빠", relationship: "돈줄", totalWalkDistance: 100, profileImage: "Test"),
-        Family(nickName: "엄마", relationship: "돈줄2", totalWalkDistance: 110, profileImage: "Test2"),
-        Family(nickName: "셔틀", relationship: "팝콘셔틀", totalWalkDistance: 12, profileImage: "Test3")
+        Family(isFamilyHead: true, nickname: "아빠", relationship: "돈줄", totalWalkDistance: 100, profileImage: "Test"),
+        Family(nickname: "엄마", relationship: "돈줄2", totalWalkDistance: 110, profileImage: "Test2"),
+        Family(nickname: "셔틀", relationship: "팝콘셔틀", totalWalkDistance: 12, profileImage: "Test3")
     ].sorted { (lhs, rhs) -> Bool in
         return lhs.totalWalkDistance > rhs.totalWalkDistance
     }
@@ -68,7 +68,7 @@ extension MyPageViewController: UITableViewDataSource {
         }
         
         cell.familyProfileImageView.image = UIImage(named: familyList[indexPath.row].profileImage ?? "")
-        cell.nickNamelabel.text = familyList[indexPath.row].nickName
+        cell.nicknamelabel.text = familyList[indexPath.row].nickname
         cell.relationshipLabel.text = familyList[indexPath.row].relationship
         cell.totalDistanceLabel.text = "\(familyList[indexPath.row].totalWalkDistance)Km"
         cell.familyHeadIconImageView.isHidden = !familyList[indexPath.row].isFamilyHead

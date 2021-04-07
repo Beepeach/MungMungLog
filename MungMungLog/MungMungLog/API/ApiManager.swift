@@ -21,11 +21,19 @@ class ApiManager {
     enum Path: String {
         case emailLogin = "/api/login/email"
         case snsLogin = "/api/login/sns"
+        case emailJoin = "/api/join/email"
+        case joinWithInfo = "/api/join/info"
     }
     
     static var snsLogin: String {
         return "\(host)\(Path.snsLogin.rawValue)"
     }
     
+    static var emailJoin: String{
+        return "\(host)\(Path.emailJoin.rawValue)"
+    }
     
+    static var joinWithInfo: String{
+        return "\(host)\(Path.joinWithInfo.rawValue)"
+    }
 }

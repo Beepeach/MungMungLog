@@ -7,6 +7,14 @@
 
 import UIKit
 
+enum MovetoView: String {
+    case login = "moveToLoginView"
+    case membershipRegistration = "moveToMembershipRegistrationView"
+    case registrationGuide = "moveToRegistrationGuideView"
+    case home = "moveToHome"
+    
+}
+
 class ReplaceRootViewSegue: UIStoryboardSegue {
     override func perform() {
         var window: UIWindow?

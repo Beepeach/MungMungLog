@@ -56,10 +56,6 @@ class LoginViewController: UIViewController {
             
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode == 200 else {
-                if let httpResponse = response as? HTTPURLResponse {
-                    print(ApiError.failed(httpResponse.statusCode))
-                }
-                
                 return
             }
             
@@ -82,6 +78,18 @@ class LoginViewController: UIViewController {
                     if let userId = responseData.userId {
                         KeychainWrapper.standard.set(userId, forKey: "api-userId")
                     }
+                    
+                    if let email = responseData.email {
+                        KeychainWrapper.standard.set(email, forKey: "api-email")
+                    }
+                    
+                    print("=======로그인 성공========")
+                    print(responseData)
+                    
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
+                    }
+               
                     
                 } else {
                     print("========로그인실패===========")
@@ -113,7 +121,7 @@ class LoginViewController: UIViewController {
             
             print("loginWithKakaoAccount() success.")
             self.getUserInfoFromKakao()
-          }
+        }
         }
     }
     
@@ -125,7 +133,8 @@ class LoginViewController: UIViewController {
             
             guard let id = user?.id else { return }
             
-            let email = user?.kakaoAccount?.email ?? "\(UUID().uuidString)@empty.com"
+            // 카카오 email을 받을수 있을때부터는 UUID로 변경
+            let email = user?.kakaoAccount?.email ?? "Test100@test.com" //"\(UUID().uuidString)@empty.com"
             
             self.requestKaKaoLogin(id: id, email: email)
         }
@@ -174,6 +183,7 @@ class LoginViewController: UIViewController {
         
         
     }
+    
     @available(iOS 13.0, *)
     func setupAppple() {
         let appleLoginButton = ASAuthorizationAppleIDButton()
@@ -344,13 +354,15 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIdCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
             let userId = appleIdCredential.user
+            
+            // email과 name은 첫번째 이후부터 nil을 주므로 따로 저장하는게 좋지만 name은 사용하지 않으므로 저장하지 않았다.
             var email = appleIdCredential.email
             
-            if let savedEmail = KeychainWrapper.standard.string(forKey: "userEmail") {
+            if let savedEmail = KeychainWrapper.standard.string(forKey: "AppleUser-Email") {
                 email = savedEmail
             } else {
                 if let email = email {
-                    KeychainWrapper.standard.set(email, forKey: "userEmail")
+                    KeychainWrapper.standard.set(email, forKey: "AppleUser-Email")
                 }
             }
             
@@ -358,7 +370,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             
             self.login(model: appleLoginModel)
         } else {
-            presentOneButtonAlert(alertTitle: "실패", message: "인증서 오류", actionTitle: "확인")
+            presentOneButtonAlert(alertTitle: "실패", message: "Apple 인증서 오류", actionTitle: "확인")
         }
     }
 }

@@ -6,16 +6,19 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class MembershipRegistrationViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
     
-    var userIsMale: Bool = true
+    var userIsMale: Bool?
     
     @IBOutlet weak var welcomeTextTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var membershipRegistrationScrollView: UIScrollView!
     @IBOutlet weak var welcomeTextLabel: UILabel!
+    @IBOutlet weak var emailContainerView: UIView!
+    @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var nicknameContainerView: UIView!
     @IBOutlet weak var nicknameField: UITextField!
     @IBOutlet weak var relationshipContainerView: UIView!
@@ -27,6 +30,14 @@ class MembershipRegistrationViewController: UIViewController {
     @IBOutlet weak var membershipImageView: UIImageView!
     @IBOutlet weak var membershipImageAddbutton: UIButton!
     @IBOutlet weak var continueContainerView: RoundedView!
+    
+    
+    @IBAction func logout(_ sender: Any) {
+        KeychainWrapper.standard.remove(forKey: "api-token")
+        KeychainWrapper.standard.remove(forKey: "api-userId")
+        KeychainWrapper.standard.remove(forKey: "api-email")
+        performSegue(withIdentifier: MovetoView.login.rawValue, sender: nil)
+    }
     
     @IBAction func selectMale(_ sender: Any) {
         if #available(iOS 13.0, *) {
@@ -50,7 +61,8 @@ class MembershipRegistrationViewController: UIViewController {
     
     func setContentsStartPosition() {
         welcomeTextTopConstraint.constant = (view.frame.height / 2) - (welcomeTextLabel.bounds.height / 2)
-        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        emailContainerView.alpha = 0.0
         nicknameContainerView.alpha = 0.0
         relationshipContainerView.alpha = 0.0
         genderContainerView.alpha = 0.0
@@ -97,6 +109,94 @@ class MembershipRegistrationViewController: UIViewController {
     }
     
     
+    @IBAction func RegisterUserInfo(_ sender: Any) {
+        guard let email = emailField.text else {
+            
+            presentOneButtonAlert(alertTitle: "알림", message: "잘못된 이메일 회원정보입니다.\n로그인화면으로 돌아갑니다.", actionTitle: "확인") { (_) in
+                self.performSegue(withIdentifier: MovetoView.login.rawValue, sender: nil)
+            }
+            return
+        }
+        
+        guard let nickname = nicknameField.text, nickname.count > 0 else {
+            nicknameField.becomeFirstResponder()
+            presentOneButtonAlert(alertTitle: "알림", message: "올바른 닉네임을 입력해주세요.", actionTitle: "확인")
+            return
+        }
+        
+        guard let relationship = relationshipField.text, relationship.count > 0 else {
+            relationshipField.becomeFirstResponder()
+            presentOneButtonAlert(alertTitle: "알림", message: "올바른 관계를 입력해주세요.", actionTitle: "확인")
+            return
+        }
+        
+        guard let gender = userIsMale else {
+            presentOneButtonAlert(alertTitle: "알림", message: "성별을 선택해주세요.", actionTitle: "확인")
+            return
+        }
+        
+        // 사진 등록
+        
+        guard let url = URL(string: ApiManager.joinWithInfo) else {
+            print(ApiError.invalidURL)
+            return
+        }
+        
+        let session = URLSession.shared
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "Post"
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        
+        do {
+            
+            let encoder = JSONEncoder()
+            let requestModel = JoinInfoRequestModel(email: email, nickname: nickname, relationship: relationship, gender: gender, fileUrl: "")
+            request.httpBody = try encoder.encode(requestModel)
+        } catch {
+            print(error)
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                return
+            }
+            
+            guard let data = data else {
+                print(ApiError.emptyData)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let responseData = try decoder.decode(JoinResponseModel.self, from: data)
+                
+                if responseData.code == Statuscode.ok.rawValue {
+                    if let nickname = responseData.nickname {
+                        KeychainWrapper.standard.set(nickname, forKey: "api-nickname")
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: MovetoView.registrationGuide.rawValue, sender: nil)
+                    }
+                    print(responseData)
+                } else {
+                    print("회원정보입력 실패")
+                    print(responseData)
+                }
+                
+            } catch {
+                print(error)
+            }
+        }
+        
+        task.resume()
+    }
     
     
     
@@ -147,6 +247,8 @@ class MembershipRegistrationViewController: UIViewController {
         }
         
         func presentContents() {
+            navigationController?.setNavigationBarHidden(false, animated: true)
+            emailContainerView.alpha = 1.0
             nicknameContainerView.alpha = 1.0
             relationshipContainerView.alpha = 1.0
             genderContainerView.alpha = 1.0
@@ -158,6 +260,8 @@ class MembershipRegistrationViewController: UIViewController {
         setScreenWhenHideKeyboard()
         
         imagePicker.delegate = self
+        
+        emailField.text = KeychainWrapper.standard.string(forKey: "api-email") ?? "Unknown"
     }
     
 }

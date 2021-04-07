@@ -10,7 +10,7 @@ import UIKit
 class FamilyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var familyProfileImageView: UIImageView!
-    @IBOutlet weak var nickNamelabel: UILabel!
+    @IBOutlet weak var nicknamelabel: UILabel!
     @IBOutlet weak var relationshipLabel: UILabel!
     @IBOutlet weak var totalDistanceLabel: UILabel!
     @IBOutlet weak var familyHeadIconImageView: UIImageView!

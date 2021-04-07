@@ -40,6 +40,7 @@ struct EmailLoginRequestModel: Codable {
 struct LoginResponseModel: Codable {
     let code: Int
     let message: String?
+    let email: String?
     let userId: String?
     let token: String?
 }
@@ -50,8 +51,27 @@ struct SNSLoginRequestModel: Codable {
     let email: String
 }
 
+struct EmailJoinRequestModel: Codable {
+    let email: String
+    let password: String
+}
 
+struct JoinResponseModel: Codable {
+    let code: Int
+    let message: String?
+    let email: String?
+    let nickname: String?
+    let userId: String?
+    let token: String?
+}
 
+struct JoinInfoRequestModel: Codable {
+    let email: String
+    let nickname: String
+    let relationship: String
+    let gender: Bool
+    let fileUrl: String?
+}
 
 
 
