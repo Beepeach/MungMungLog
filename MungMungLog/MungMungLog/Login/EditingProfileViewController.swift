@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class EditingProfileViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
 
-    var isMale: Bool = true
+    var isMale: Bool?
     
     @IBOutlet var birthdayPickerContainerView: UIView!
     @IBOutlet weak var birthdayDatePicker: UIDatePicker!
@@ -102,25 +103,78 @@ class EditingProfileViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func setScreenWhenShowKeyboard() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
-            guard let userInfo = noti.userInfo else {
-                return
-            }
-            
-            guard let keyboardBounds = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
-                return
-            }
-            
-            self.editingProfileScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardBounds.height, right: 0)
+    @IBAction func createPet(_ sender: Any) {
+        guard let url = URL(string: ApiManager.createPet) else {
+            print(ApiError.invalidURL)
+            return
         }
+        
+        let session = URLSession.shared
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "Post"
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        
+        do {
+            let encoder = JSONEncoder()
+            let baseDate = Date(timeIntervalSinceReferenceDate: 0)
+            let birthdayInterval = DateInterval(start: baseDate, end: birthdayDatePicker.date).duration
+            request.httpBody = try encoder.encode(PetPostModel(
+                                                    email: KeychainWrapper.standard.string(forKey: "api-email"),
+                                                    name: nameField.text,
+                                                    birthday: birthdayInterval,
+                                                    breed: breedField.text,
+                                                    gender: isMale,
+                                                    fileUrl: nil))
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                print(ApiError.failed(0))
+                return
+            }
+            
+            guard let data = data else {
+                print(ApiError.emptyData)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let responseData = try decoder.decode(SingleResponse<PetDto>.self, from: data)
+                
+                switch responseData.code {
+                case Statuscode.ok.rawValue:
+                    if let familyId = responseData.data?.familyId {
+                        KeychainWrapper.standard.set("\(familyId)", forKey: "api-familyId")
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
+                    }
+                    print(responseData)
+                    
+                default:
+                    print(responseData)
+                    self.presentOneButtonAlert(alertTitle: "알림", message: "오류 발생", actionTitle: "확인")
+                }
+                
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        
+        task.resume()
     }
     
-    func setScreenWhenHideKeyboard() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (_) in
-            self.editingProfileScrollView.contentInset = .zero
-        }
-    }
+
     
     // InputView의 height를 정할수는 없을까??
 //    func specifyInputViewSize(_ view: UIView) {
@@ -157,14 +211,31 @@ class EditingProfileViewController: UIViewController {
         breedField.tintColor = .clear
     }
     
+    func setScreenWhenShowKeyboard() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { [self] (noti) in
+            guard let userInfo = noti.userInfo else {
+                return
+            }
+            
+            guard let keyboardBounds = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
+                return
+            }
+            
+            editingProfileScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardBounds.height, right: 0)
+        }
+    }
+
+    func setScreenWhenHideKeyboard() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { [self] (_) in
+            editingProfileScrollView.contentInset = .zero
+        }
+    }
 }
 
 
 extension EditingProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == nameField {
-            
-        }
+        textField.resignFirstResponder()
         return true
     }
     

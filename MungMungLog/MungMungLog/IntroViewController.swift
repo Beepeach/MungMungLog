@@ -35,11 +35,14 @@ class IntroViewController: UIViewController {
                     chageView(to: MovetoView.membershipRegistration.rawValue)
                 }
             } else {
-                logoCenterYAnchor.isActive = false
-                logoImageVIew.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
-                chageView(to: MovetoView.login.rawValue)
+                if let _ = KeychainWrapper.standard.string(forKey: "api-familyId") {
+                    logoCenterYAnchor.isActive = false
+                    logoImageVIew.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
+                    chageView(to: MovetoView.login.rawValue)
+                }
+                
+                chageView(to: MovetoView.registrationGuide.rawValue)
             }
-               
         }
     }
     

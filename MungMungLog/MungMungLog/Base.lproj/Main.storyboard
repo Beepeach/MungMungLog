@@ -3364,7 +3364,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qXr-uB-YDw" userLabel="Name Stack View">
                                                         <rect key="frame" x="0.0" y="20.333333333333314" width="356" height="41"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일을 선택해주세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l9v-WA-O0Z">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="생년월일을 선택해주세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9v-WA-O0Z">
                                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="R8p-fr-vBk"/>
@@ -3408,13 +3408,16 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="edU-Gl-WYK" userLabel="Name Stack View">
                                                         <rect key="frame" x="0.0" y="20.333333333333314" width="356" height="41"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="견종을 선택해주세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Rzf-H6-tuR">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="견종을 선택해주세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rzf-H6-tuR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="cZN-A7-i05"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                                 <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="AFs-c6-JGu" id="flf-fl-0GT"/>
+                                                                </connections>
                                                             </textField>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zg-Ba-NQK">
                                                                 <rect key="frame" x="0.0" y="40" width="356" height="1"/>
@@ -3514,6 +3517,9 @@
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xn-4J-C5O">
                                                         <rect key="frame" x="0.0" y="0.0" width="356" height="50.333333333333336"/>
+                                                        <connections>
+                                                            <action selector="createPet:" destination="AFs-c6-JGu" eventType="touchUpInside" id="8KW-G6-mtL"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemTealColor"/>
@@ -3603,6 +3609,7 @@
                         <outlet property="nameField" destination="JMI-Tl-UQP" id="OTQ-4u-BgY"/>
                         <outlet property="petImageAddButton" destination="x2g-uD-iwF" id="Sz8-To-hCS"/>
                         <outlet property="petImageView" destination="SZB-l6-L4g" id="7ml-LN-GrT"/>
+                        <segue destination="IDg-gl-8Cr" kind="custom" identifier="moveToHome" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="Azu-Sb-ycS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmw-Gx-iSb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -3802,6 +3809,7 @@
                         <segue destination="LQF-VB-7aJ" kind="custom" identifier="moveToLoginView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="cYL-UJ-6AL"/>
                         <segue destination="RwH-MD-3al" kind="custom" identifier="moveToMembershipRegistrationView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="oEs-uz-L4I"/>
                         <segue destination="IDg-gl-8Cr" kind="custom" identifier="moveToHome" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="5ZM-Ic-1F1"/>
+                        <segue destination="1zt-ug-jLK" kind="custom" identifier="moveToRegistrationGuideView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="iF4-f1-o8r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="469-mJ-U62" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4829,8 +4837,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0Ma-Gb-q2e"/>
-        <segue reference="5ZM-Ic-1F1"/>
+        <segue reference="oEs-uz-L4I"/>
+        <segue reference="Azu-Sb-ycS"/>
+        <segue reference="fSx-LO-08t"/>
         <segue reference="TmC-yD-XV5"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -23,6 +23,7 @@ class ApiManager {
         case snsLogin = "/api/login/sns"
         case emailJoin = "/api/join/email"
         case joinWithInfo = "/api/join/info"
+        case createPet = "/api/pet"
     }
     
     static var emailLogin: String {
@@ -33,11 +34,15 @@ class ApiManager {
         return "\(host)\(Path.snsLogin.rawValue)"
     }
     
-    static var emailJoin: String{
+    static var emailJoin: String {
         return "\(host)\(Path.emailJoin.rawValue)"
     }
     
-    static var joinWithInfo: String{
+    static var joinWithInfo: String {
         return "\(host)\(Path.joinWithInfo.rawValue)"
+    }
+    
+    static var createPet: String {
+        return "\(host)\(Path.createPet.rawValue)"
     }
 }

@@ -25,7 +25,7 @@ struct CommonResponse: Codable {
 struct SingleResponse<T: Codable>: Codable {
     let code: Int
     let message: String?
-    let data: T
+    let data: T?
 }
 
 struct ListResponse<T: Codable>: Codable {
@@ -74,6 +74,3 @@ struct JoinInfoRequestModel: Codable {
     let gender: Bool
     let fileUrl: String?
 }
-
-
-
