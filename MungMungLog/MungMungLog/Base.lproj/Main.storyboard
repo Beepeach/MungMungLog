@@ -1972,6 +1972,9 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSR-2d-pNx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="50.333333333333336"/>
+                                                                <connections>
+                                                                    <action selector="loginWithEmail:" destination="LQF-VB-7aJ" eventType="touchUpInside" id="pus-Gr-5KD"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemGray4Color"/>

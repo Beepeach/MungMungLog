@@ -29,6 +29,7 @@ class LoginViewController: UIViewController {
     var isAccessibleLoginPassword = false
     let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     
+    // 이걸 그대로 emailLogin에서 이용할 방법은?? Codable로 하면 encode가 안된다.
     func login(model: SNSLoginRequestModel) {
         KeychainWrapper.standard.remove(forKey: "api-token")
         
@@ -94,6 +95,108 @@ class LoginViewController: UIViewController {
                 } else {
                     print("========로그인실패===========")
                     print(responseData)
+                }
+            } catch {
+                print(error)
+            }
+        }
+        
+        task.resume()
+    }
+    
+    
+    @IBAction func loginWithEmail(_ sender: Any) {
+        KeychainWrapper.standard.remove(forKey: "api-token")
+        
+        guard let email = idInputField.text else {
+            return
+        }
+        
+        guard let password = passwordInputField.text else {
+            return
+        }
+        
+        guard let url = URL(string: ApiManager.emailLogin) else {
+            print(ApiError.invalidURL)
+            return
+        }
+        
+        let session = URLSession.shared
+        var request = URLRequest(url: url)
+        request.httpMethod = "Post"
+        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        
+        do {
+            let encoder = JSONEncoder()
+            request.httpBody = try encoder.encode(EmailLoginRequestModel(email: email, password: password))
+        } catch {
+            print(error)
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                return
+            }
+            
+            guard let data = data else {
+                print(ApiError.emptyData)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let responseData = try decoder.decode(LoginResponseModel.self, from: data)
+                
+                switch responseData.code {
+                case Statuscode.ok.rawValue:
+                    if let token = responseData.token {
+                        KeychainWrapper.standard.set(token, forKey: "api-token")
+                    }
+                    
+                    if let userId = responseData.userId {
+                        KeychainWrapper.standard.set(userId, forKey: "api-userId")
+                    }
+                    
+                    if let email = responseData.email {
+                        KeychainWrapper.standard.set(email, forKey: "api-email")
+                    }
+                    
+                    print("=======로그인 성공========")
+                    print(responseData)
+                    
+                    DispatchQueue.main.async {
+                        self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
+                    }
+                    
+                case Statuscode.notFound.rawValue:
+                    print("아이디를 확인해주세요")
+                    
+                    DispatchQueue.main.async {
+                        self.idInputField.becomeFirstResponder()
+                        self.presentOneButtonAlert(alertTitle: "알림", message: "존재하지 않는 이메일입니다.", actionTitle: "확인")
+                    }
+                  
+                case Statuscode.fail.rawValue:
+                    print("비밀번호가 틀렸습니다.")
+
+                    DispatchQueue.main.async {
+                        self.passwordInputField.becomeFirstResponder()
+                        self.presentOneButtonAlert(alertTitle: "알림", message: "비밀번호가 틀렸습니다.", actionTitle: "확인")
+                    }
+                  
+                case Statuscode.tokenError.rawValue:
+                    fallthrough
+                    
+                default:
+                    print("로그인 실패")
+                    DispatchQueue.main.async {
+                        self.presentOneButtonAlert(alertTitle: "알림", message: "로그인에 실패했습니다.", actionTitle: "확인")
+                    }
                 }
             } catch {
                 print(error)

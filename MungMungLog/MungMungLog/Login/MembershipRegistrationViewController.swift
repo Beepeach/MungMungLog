@@ -198,9 +198,6 @@ class MembershipRegistrationViewController: UIViewController {
         task.resume()
     }
     
-    
-    
-    
     func setScreenWhenShowKeyboard() {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
             

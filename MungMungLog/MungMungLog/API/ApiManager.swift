@@ -25,6 +25,10 @@ class ApiManager {
         case joinWithInfo = "/api/join/info"
     }
     
+    static var emailLogin: String {
+        return "\(host)\(Path.emailLogin.rawValue)"
+    }
+    
     static var snsLogin: String {
         return "\(host)\(Path.snsLogin.rawValue)"
     }

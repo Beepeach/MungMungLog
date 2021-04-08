@@ -13,6 +13,7 @@ enum Statuscode: Int {
     case unKnown = -999
     case fail = -998
     case failWithDuplication = -997
+    case tokenError = -996
     
 }
 
