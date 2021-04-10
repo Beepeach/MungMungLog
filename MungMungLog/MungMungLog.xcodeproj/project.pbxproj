@@ -35,6 +35,7 @@
 		464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */; };
 		464A5B68261F5D8E00BA1DB7 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A5B67261F5D8E00BA1DB7 /* PetModel.swift */; };
 		464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A5B67261F5D8E00BA1DB7 /* PetModel.swift */; };
+		464A5B762621950800BA1DB7 /* MungMungLogDevTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A5B752621950800BA1DB7 /* MungMungLogDevTests.swift */; };
 		464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */; };
 		464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */; };
 		46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */; };
@@ -103,6 +104,16 @@
 		5FAA6723E27BEC8C6BC68A6C /* Pods_MungMungLog_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D045616CAF89FB8A27647A8 /* Pods_MungMungLog_Dev.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		464A5B782621950800BA1DB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 460EB0012557F76B00027376 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 466492B425F372FC00903265;
+			remoteInfo = "MungMungLog Dev";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		32D4DED83170753C1A4F64D9 /* Pods-MungMungLog.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog.debug.xcconfig"; path = "Target Support Files/Pods-MungMungLog/Pods-MungMungLog.debug.xcconfig"; sourceTree = "<group>"; };
 		38085EC03A53F738CFD5C466 /* Pods_MungMungLog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MungMungLog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +141,9 @@
 		464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRecodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItemTableViewCell.swift; sourceTree = "<group>"; };
 		464A5B67261F5D8E00BA1DB7 /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
+		464A5B732621950800BA1DB7 /* MungMungLogDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MungMungLogDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		464A5B752621950800BA1DB7 /* MungMungLogDevTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MungMungLogDevTests.swift; sourceTree = "<group>"; };
+		464A5B772621950800BA1DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationGuideViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +184,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				51BA6FA398E44EF3577A32A0 /* Pods_MungMungLog.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		464A5B702621950800BA1DB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +245,7 @@
 			children = (
 				466E3AE3261B13AC0077B3F2 /* MungMungLog Dev.entitlements */,
 				460EB00B2557F76B00027376 /* MungMungLog */,
+				464A5B742621950800BA1DB7 /* MungMungLogDevTests */,
 				460EB00A2557F76B00027376 /* Products */,
 				29201029F4F659AB26538FC6 /* Pods */,
 				A6FCC250A69EA7AC54BAD613 /* Frameworks */,
@@ -235,6 +257,7 @@
 			children = (
 				460EB0092557F76B00027376 /* MungMungLog.app */,
 				466492DC25F372FC00903265 /* MungMungLog Dev.app */,
+				464A5B732621950800BA1DB7 /* MungMungLogDevTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -242,6 +265,7 @@
 		460EB00B2557F76B00027376 /* MungMungLog */ = {
 			isa = PBXGroup;
 			children = (
+				464A5B6E2621949B00BA1DB7 /* Test */,
 				46D0EFFF2619B3A200F117B2 /* MungMungLog.entitlements */,
 				469497A026186A000049D7FE /* Common */,
 				4694977426184F3E0049D7FE /* Model */,
@@ -275,6 +299,22 @@
 				467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		464A5B6E2621949B00BA1DB7 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		464A5B742621950800BA1DB7 /* MungMungLogDevTests */ = {
+			isa = PBXGroup;
+			children = (
+				464A5B752621950800BA1DB7 /* MungMungLogDevTests.swift */,
+				464A5B772621950800BA1DB7 /* Info.plist */,
+			);
+			path = MungMungLogDevTests;
 			sourceTree = "<group>";
 		};
 		464A6B7C25AAED4000E56ED9 /* Login */ = {
@@ -454,6 +494,24 @@
 			productReference = 460EB0092557F76B00027376 /* MungMungLog.app */;
 			productType = "com.apple.product-type.application";
 		};
+		464A5B722621950800BA1DB7 /* MungMungLogDevTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 464A5B7A2621950800BA1DB7 /* Build configuration list for PBXNativeTarget "MungMungLogDevTests" */;
+			buildPhases = (
+				464A5B6F2621950800BA1DB7 /* Sources */,
+				464A5B702621950800BA1DB7 /* Frameworks */,
+				464A5B712621950800BA1DB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				464A5B792621950800BA1DB7 /* PBXTargetDependency */,
+			);
+			name = MungMungLogDevTests;
+			productName = MungMungLogDevTests;
+			productReference = 464A5B732621950800BA1DB7 /* MungMungLogDevTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		466492B425F372FC00903265 /* MungMungLog Dev */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 466492D925F372FC00903265 /* Build configuration list for PBXNativeTarget "MungMungLog Dev" */;
@@ -479,11 +537,15 @@
 		460EB0012557F76B00027376 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					460EB0082557F76B00027376 = {
 						CreatedOnToolsVersion = 12.1;
+					};
+					464A5B722621950800BA1DB7 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 466492B425F372FC00903265;
 					};
 				};
 			};
@@ -502,6 +564,7 @@
 			targets = (
 				460EB0082557F76B00027376 /* MungMungLog */,
 				466492B425F372FC00903265 /* MungMungLog Dev */,
+				464A5B722621950800BA1DB7 /* MungMungLogDevTests */,
 			);
 		};
 /* End PBXProject section */
@@ -514,6 +577,13 @@
 				460EB0192557F76B00027376 /* LaunchScreen.storyboard in Resources */,
 				460EB0162557F76B00027376 /* Assets.xcassets in Resources */,
 				460EB0142557F76B00027376 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		464A5B712621950800BA1DB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +731,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		464A5B6F2621950800BA1DB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				464A5B762621950800BA1DB7 /* MungMungLogDevTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		466492B525F372FC00903265 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -712,6 +790,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		464A5B792621950800BA1DB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 466492B425F372FC00903265 /* MungMungLog Dev */;
+			targetProxy = 464A5B782621950800BA1DB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		460EB0122557F76B00027376 /* Main.storyboard */ = {
@@ -895,6 +981,48 @@
 			};
 			name = Release;
 		};
+		464A5B7B2621950800BA1DB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G5RH9MF273;
+				INFOPLIST_FILE = MungMungLogDevTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLogDevTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MungMungLog Dev.app/MungMungLog Dev";
+			};
+			name = Debug;
+		};
+		464A5B7C2621950800BA1DB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G5RH9MF273;
+				INFOPLIST_FILE = MungMungLogDevTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLogDevTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MungMungLog Dev.app/MungMungLog Dev";
+			};
+			name = Release;
+		};
 		466492DA25F372FC00903265 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D0198980636E322777EB820F /* Pods-MungMungLog Dev.debug.xcconfig */;
@@ -958,6 +1086,15 @@
 			buildConfigurations = (
 				460EB01E2557F76B00027376 /* Debug */,
 				460EB01F2557F76B00027376 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		464A5B7A2621950800BA1DB7 /* Build configuration list for PBXNativeTarget "MungMungLogDevTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				464A5B7B2621950800BA1DB7 /* Debug */,
+				464A5B7C2621950800BA1DB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
