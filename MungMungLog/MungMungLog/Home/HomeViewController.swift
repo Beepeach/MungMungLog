@@ -11,6 +11,11 @@ class HomeViewController: UIViewController {
     var menuStack: UIStackView?
     let buttonImageNames = ["rice", "snack", "pill", "hospital", "walk"]
     
+    @IBOutlet weak var petNameLabel: UILabel!
+    @IBOutlet weak var petBreedLabel: UILabel!
+    @IBOutlet weak var petProfileImageView: UIImageView!
+    
+    
     @IBOutlet weak var contentsCollectionView: UICollectionView!
     
     @IBOutlet weak var writerProfileImageView: UIImageView!
@@ -67,10 +72,15 @@ class HomeViewController: UIViewController {
         return stack
     }
     
+    func fetch() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         writerProfileImageView.layer.cornerRadius = writerProfileImageView.frame.height / 2
+        
+        
         
         menuStack = createMenuStackView()
     }
