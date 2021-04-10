@@ -30,18 +30,20 @@ class IntroViewController: UIViewController {
                 
                 if let nickname = KeychainWrapper.standard.string(forKey: "api-nickname"),
                    nickname.count > 0 {
-                    chageView(to: MovetoView.home.rawValue )
+                    if let _ = KeychainWrapper.standard.string(forKey: "api-familyId") {
+                        chageView(to: MovetoView.home.rawValue )
+                    } else {
+                        chageView(to: MovetoView.registrationGuide.rawValue)
+                    }
+                    
                 } else {
                     chageView(to: MovetoView.membershipRegistration.rawValue)
                 }
             } else {
-                if let _ = KeychainWrapper.standard.string(forKey: "api-familyId") {
-                    logoCenterYAnchor.isActive = false
-                    logoImageVIew.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
-                    chageView(to: MovetoView.login.rawValue)
-                }
                 
-                chageView(to: MovetoView.registrationGuide.rawValue)
+                logoCenterYAnchor.isActive = false
+                logoImageVIew.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
+                chageView(to: MovetoView.login.rawValue)
             }
         }
     }

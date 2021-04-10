@@ -104,6 +104,46 @@ class EditingProfileViewController: UIViewController {
     }
     
     @IBAction func createPet(_ sender: Any) {
+        guard let email = KeychainWrapper.standard.string(forKey: "api-email") else {
+            KeychainWrapper.standard.remove(forKey: "api-token")
+            KeychainWrapper.standard.remove(forKey: "api-userId")
+            KeychainWrapper.standard.remove(forKey: "api-email")
+            
+            presentOneButtonAlert(alertTitle: "알림", message: "생성 중 오류가 발생했습니다.\n로그인 화면으로 이동합니다.", actionTitle: "확인") { [self] (_) in
+                DispatchQueue.main.async {
+                    performSegue(withIdentifier: MovetoView.login.rawValue, sender: nil)
+                }
+            }
+            return
+        }
+        
+        guard let name = nameField.text,
+              name.count > 0 else {
+            nameField.becomeFirstResponder()
+            presentOneButtonAlert(alertTitle: "알림", message: "반려견의 이름을 입력해주세요.", actionTitle: "확인")
+            return
+        }
+        
+        guard let gender = isMale else {
+            presentOneButtonAlert(alertTitle: "알림", message: "\(name) 성별을 선택해주세요.", actionTitle: "확인")
+            return
+        }
+    
+        guard let birthdayStr = birthdayField.text,
+              birthdayStr.count > 0 else {
+            presentOneButtonAlert(alertTitle: "알림", message: "\(name) 생일을 선택해주세요.", actionTitle: "확인")
+            return
+        }
+        
+        guard let breed = breedField.text,
+              breed.count > 0 else {
+            presentOneButtonAlert(alertTitle: "알림", message: "\(name) 견종을 선택해주세요.", actionTitle: "확인")
+            return
+        }
+        
+        let baseDate = Date(timeIntervalSinceReferenceDate: 0)
+        let birthdayInterval = DateInterval(start: baseDate, end: birthdayDatePicker.date).duration
+        
         guard let url = URL(string: ApiManager.createPet) else {
             print(ApiError.invalidURL)
             return
@@ -117,14 +157,14 @@ class EditingProfileViewController: UIViewController {
         
         do {
             let encoder = JSONEncoder()
-            let baseDate = Date(timeIntervalSinceReferenceDate: 0)
-            let birthdayInterval = DateInterval(start: baseDate, end: birthdayDatePicker.date).duration
+            
+         
             request.httpBody = try encoder.encode(PetPostModel(
-                                                    email: KeychainWrapper.standard.string(forKey: "api-email"),
-                                                    name: nameField.text,
+                                                    email: email,
+                                                    name: name,
                                                     birthday: birthdayInterval,
-                                                    breed: breedField.text,
-                                                    gender: isMale,
+                                                    breed: breed,
+                                                    gender: gender,
                                                     fileUrl: nil))
         } catch {
             print(error.localizedDescription)

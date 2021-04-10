@@ -18,11 +18,11 @@ struct PetDto: Codable {
 }
 
 struct PetPostModel: Codable {
-    let email: String?
-    let name: String?
-    let birthday: Double?
-    let breed: String?
-    let gender: Bool?
+    let email: String
+    let name: String
+    let birthday: Double
+    let breed: String
+    let gender: Bool
     let fileUrl: String?
 }
 
