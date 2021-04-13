@@ -97,6 +97,7 @@
 		46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
 		46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */; };
+		46F450AF262596CA0025B915 /* MungMungLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450AE262596CA0025B915 /* MungMungLogUITests.swift */; };
 		46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */; };
 		46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */; };
 		46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */; };
@@ -111,6 +112,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 466492B425F372FC00903265;
 			remoteInfo = "MungMungLog Dev";
+		};
+		46F450B1262596CA0025B915 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 460EB0012557F76B00027376 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 460EB0082557F76B00027376;
+			remoteInfo = MungMungLog;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -170,6 +178,9 @@
 		46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailJoinViewController.swift; sourceTree = "<group>"; };
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
 		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
+		46F450AC262596CA0025B915 /* MungMungLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MungMungLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46F450AE262596CA0025B915 /* MungMungLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MungMungLogUITests.swift; sourceTree = "<group>"; };
+		46F450B0262596CA0025B915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedView.swift; sourceTree = "<group>"; };
@@ -199,6 +210,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FAA6723E27BEC8C6BC68A6C /* Pods_MungMungLog_Dev.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46F450A9262596CA0025B915 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +264,7 @@
 				466E3AE3261B13AC0077B3F2 /* MungMungLog Dev.entitlements */,
 				460EB00B2557F76B00027376 /* MungMungLog */,
 				464A5B742621950800BA1DB7 /* MungMungLogDevTests */,
+				46F450AD262596CA0025B915 /* MungMungLogUITests */,
 				460EB00A2557F76B00027376 /* Products */,
 				29201029F4F659AB26538FC6 /* Pods */,
 				A6FCC250A69EA7AC54BAD613 /* Frameworks */,
@@ -258,6 +277,7 @@
 				460EB0092557F76B00027376 /* MungMungLog.app */,
 				466492DC25F372FC00903265 /* MungMungLog Dev.app */,
 				464A5B732621950800BA1DB7 /* MungMungLogDevTests.xctest */,
+				46F450AC262596CA0025B915 /* MungMungLogUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -435,6 +455,15 @@
 			path = Walk;
 			sourceTree = "<group>";
 		};
+		46F450AD262596CA0025B915 /* MungMungLogUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46F450AE262596CA0025B915 /* MungMungLogUITests.swift */,
+				46F450B0262596CA0025B915 /* Info.plist */,
+			);
+			path = MungMungLogUITests;
+			sourceTree = "<group>";
+		};
 		46FC5B7625EA08C300D161F5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +560,24 @@
 			productReference = 466492DC25F372FC00903265 /* MungMungLog Dev.app */;
 			productType = "com.apple.product-type.application";
 		};
+		46F450AB262596CA0025B915 /* MungMungLogUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46F450B5262596CA0025B915 /* Build configuration list for PBXNativeTarget "MungMungLogUITests" */;
+			buildPhases = (
+				46F450A8262596CA0025B915 /* Sources */,
+				46F450A9262596CA0025B915 /* Frameworks */,
+				46F450AA262596CA0025B915 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				46F450B2262596CA0025B915 /* PBXTargetDependency */,
+			);
+			name = MungMungLogUITests;
+			productName = MungMungLogUITests;
+			productReference = 46F450AC262596CA0025B915 /* MungMungLogUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -546,6 +593,10 @@
 					464A5B722621950800BA1DB7 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = 466492B425F372FC00903265;
+					};
+					46F450AB262596CA0025B915 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 460EB0082557F76B00027376;
 					};
 				};
 			};
@@ -565,6 +616,7 @@
 				460EB0082557F76B00027376 /* MungMungLog */,
 				466492B425F372FC00903265 /* MungMungLog Dev */,
 				464A5B722621950800BA1DB7 /* MungMungLogDevTests */,
+				46F450AB262596CA0025B915 /* MungMungLogUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -594,6 +646,13 @@
 				466492D625F372FC00903265 /* LaunchScreen.storyboard in Resources */,
 				466492D725F372FC00903265 /* Assets.xcassets in Resources */,
 				466492D825F372FC00903265 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		46F450AA262596CA0025B915 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,6 +848,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		46F450A8262596CA0025B915 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46F450AF262596CA0025B915 /* MungMungLogUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -796,6 +863,11 @@
 			isa = PBXTargetDependency;
 			target = 466492B425F372FC00903265 /* MungMungLog Dev */;
 			targetProxy = 464A5B782621950800BA1DB7 /* PBXContainerItemProxy */;
+		};
+		46F450B2262596CA0025B915 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 460EB0082557F76B00027376 /* MungMungLog */;
+			targetProxy = 46F450B1262596CA0025B915 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1069,6 +1141,46 @@
 			};
 			name = Release;
 		};
+		46F450B3262596CA0025B915 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G5RH9MF273;
+				INFOPLIST_FILE = MungMungLogUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MungMungLog;
+			};
+			name = Debug;
+		};
+		46F450B4262596CA0025B915 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G5RH9MF273;
+				INFOPLIST_FILE = MungMungLogUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLogUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MungMungLog;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1104,6 +1216,15 @@
 			buildConfigurations = (
 				466492DA25F372FC00903265 /* Debug */,
 				466492DB25F372FC00903265 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46F450B5262596CA0025B915 /* Build configuration list for PBXNativeTarget "MungMungLogUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46F450B3262596CA0025B915 /* Debug */,
+				46F450B4262596CA0025B915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
