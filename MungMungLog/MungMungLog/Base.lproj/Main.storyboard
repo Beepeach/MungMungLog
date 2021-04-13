@@ -3081,13 +3081,16 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ILu-Oq-2qV" userLabel="Code Stack View">
                                         <rect key="frame" x="0.0" y="20.333333333333343" width="356" height="41"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="코드를 입력해주세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4kE-Zp-6Pb">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="8자리 초대 코드를 입력해주세요." adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="4kE-Zp-6Pb">
                                                 <rect key="frame" x="0.0" y="0.0" width="356" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="WaF-e7-WPW"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="2dp-RH-dQm" id="mmu-kH-N2f"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cLO-7F-kvG">
                                                 <rect key="frame" x="0.0" y="40" width="356" height="1"/>
@@ -3098,7 +3101,7 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hs6-V4-byc">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초대 코드" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hs6-V4-byc">
                                         <rect key="frame" x="0.0" y="0.0" width="356" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <nil key="textColor"/>
@@ -3172,7 +3175,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ContinueContainerView" destination="xSB-Ds-3mK" id="L0V-3l-nx7"/>
+                        <outlet property="codeField" destination="4kE-Zp-6Pb" id="WzJ-11-3Wt"/>
                         <outlet property="continueContainerViewBottomCostraint" destination="AIM-TI-kC2" id="QXP-2S-QaG"/>
+                        <segue destination="IDg-gl-8Cr" kind="custom" identifier="moveToHome" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="zw3-4X-v9p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iiv-3u-ilH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4842,7 +4847,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="0Ma-Gb-q2e"/>
-        <segue reference="Azu-Sb-ycS"/>
+        <segue reference="zw3-4X-v9p"/>
         <segue reference="fSx-LO-08t"/>
         <segue reference="yGo-5l-hNg"/>
     </inferredMetricsTieBreakers>

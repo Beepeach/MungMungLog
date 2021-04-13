@@ -24,6 +24,7 @@ class ApiManager {
         case emailJoin = "/api/join/email"
         case joinWithInfo = "/api/join/info"
         case createPet = "/api/pet"
+        case requestInvitation = "/api/family/invitation"
     }
     
     static var emailLogin: String {
@@ -44,5 +45,9 @@ class ApiManager {
     
     static var createPet: String {
         return "\(host)\(Path.createPet.rawValue)"
+    }
+    
+    static var requestInvitation: String {
+        return "\(host)\(Path.requestInvitation.rawValue)"
     }
 }

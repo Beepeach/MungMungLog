@@ -98,6 +98,10 @@
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
 		46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */; };
 		46F450AF262596CA0025B915 /* MungMungLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450AE262596CA0025B915 /* MungMungLogUITests.swift */; };
+		46F450BB2625EDCE0025B915 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450BA2625EDCE0025B915 /* FamilyModel.swift */; };
+		46F450BC2625EDCE0025B915 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450BA2625EDCE0025B915 /* FamilyModel.swift */; };
+		46F450C22625F1BC0025B915 /* FamilyMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */; };
+		46F450C32625F1BC0025B915 /* FamilyMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */; };
 		46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */; };
 		46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */; };
 		46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */; };
@@ -181,6 +185,8 @@
 		46F450AC262596CA0025B915 /* MungMungLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MungMungLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46F450AE262596CA0025B915 /* MungMungLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MungMungLogUITests.swift; sourceTree = "<group>"; };
 		46F450B0262596CA0025B915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46F450BA2625EDCE0025B915 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
+		46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemberModel.swift; sourceTree = "<group>"; };
 		46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedView.swift; sourceTree = "<group>"; };
@@ -383,6 +389,8 @@
 			children = (
 				4694977526184F520049D7FE /* ApiModel.swift */,
 				464A5B67261F5D8E00BA1DB7 /* PetModel.swift */,
+				46F450BA2625EDCE0025B915 /* FamilyModel.swift */,
+				46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -775,10 +783,12 @@
 				46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */,
 				46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */,
 				467EF92725F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */,
+				46F450C22625F1BC0025B915 /* FamilyMemberModel.swift in Sources */,
 				467EF92E25F3C51700AC8F88 /* MyPageViewController.swift in Sources */,
 				46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */,
 				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
 				4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */,
+				46F450BB2625EDCE0025B915 /* FamilyModel.swift in Sources */,
 				46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */,
 				460C4EDB25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
@@ -833,10 +843,12 @@
 				466492C925F372FC00903265 /* RoundedBorderWithShadowView.swift in Sources */,
 				466492CA25F372FC00903265 /* PhotoSelectCollectionViewCell.swift in Sources */,
 				466492CB25F372FC00903265 /* CodeInputViewController.swift in Sources */,
+				46F450C32625F1BC0025B915 /* FamilyMemberModel.swift in Sources */,
 				467EF92825F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */,
 				467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */,
 				466492CC25F372FC00903265 /* PartialRoundedView.swift in Sources */,
 				466492CD25F372FC00903265 /* RecordContentsCollectionViewCell.swift in Sources */,
+				46F450BC2625EDCE0025B915 /* FamilyModel.swift in Sources */,
 				4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */,
 				466492CE25F372FC00903265 /* RegistrationGuideViewController.swift in Sources */,
 				460C4EDC25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,

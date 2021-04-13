@@ -74,3 +74,8 @@ struct JoinInfoRequestModel: Codable {
     let gender: Bool
     let fileUrl: String?
 }
+
+struct InvitationCodeRequestModel: Codable {
+    let code: String
+    let email: String
+}

@@ -158,7 +158,6 @@ class EditingProfileViewController: UIViewController {
         do {
             let encoder = JSONEncoder()
             
-         
             request.httpBody = try encoder.encode(PetPostModel(
                                                     email: email,
                                                     name: name,
@@ -178,6 +177,10 @@ class EditingProfileViewController: UIViewController {
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode == 200 else {
                 print(ApiError.failed(0))
+                DispatchQueue.main.async {
+                    self.presentOneButtonAlert(alertTitle: "알림", message: "네트워크 오류가 발생했습니다.", actionTitle: "확인")
+                }
+               
                 return
             }
             
@@ -203,7 +206,10 @@ class EditingProfileViewController: UIViewController {
                     
                 default:
                     print(responseData)
-                    self.presentOneButtonAlert(alertTitle: "알림", message: "오류 발생", actionTitle: "확인")
+                    DispatchQueue.main.async {
+                        self.presentOneButtonAlert(alertTitle: "알림", message: "오류 발생", actionTitle: "확인")
+                    }
+                   
                 }
                 
             } catch {
