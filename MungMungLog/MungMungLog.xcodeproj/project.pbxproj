@@ -35,7 +35,6 @@
 		464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */; };
 		464A5B68261F5D8E00BA1DB7 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A5B67261F5D8E00BA1DB7 /* PetModel.swift */; };
 		464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A5B67261F5D8E00BA1DB7 /* PetModel.swift */; };
-		464A5B762621950800BA1DB7 /* MungMungLogDevTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A5B752621950800BA1DB7 /* MungMungLogDevTests.swift */; };
 		464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */; };
 		464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */; };
 		46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */; };
@@ -102,6 +101,13 @@
 		46F450BC2625EDCE0025B915 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450BA2625EDCE0025B915 /* FamilyModel.swift */; };
 		46F450C22625F1BC0025B915 /* FamilyMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */; };
 		46F450C32625F1BC0025B915 /* FamilyMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */; };
+		46F45133262713340025B915 /* CommonDecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F45132262713340025B915 /* CommonDecodableTests.swift */; };
+		46F45149262716040025B915 /* PetDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F45148262716040025B915 /* PetDtoTests.swift */; };
+		46F45157262718DA0025B915 /* PetDto.json in Resources */ = {isa = PBXBuildFile; fileRef = 46F45156262718DA0025B915 /* PetDto.json */; };
+		46F451672627220D0025B915 /* FamilyDto.json in Resources */ = {isa = PBXBuildFile; fileRef = 46F451662627220D0025B915 /* FamilyDto.json */; };
+		46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4516C262722310025B915 /* FamilyDtoTests.swift */; };
+		46F451772627248C0025B915 /* FamilyMemberDto.json in Resources */ = {isa = PBXBuildFile; fileRef = 46F451762627248C0025B915 /* FamilyMemberDto.json */; };
+		46F4517D262724D20025B915 /* FamilyMemberDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */; };
 		46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */; };
 		46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */; };
 		46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */; };
@@ -154,7 +160,6 @@
 		464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItemTableViewCell.swift; sourceTree = "<group>"; };
 		464A5B67261F5D8E00BA1DB7 /* PetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetModel.swift; sourceTree = "<group>"; };
 		464A5B732621950800BA1DB7 /* MungMungLogDevTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MungMungLogDevTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		464A5B752621950800BA1DB7 /* MungMungLogDevTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MungMungLogDevTests.swift; sourceTree = "<group>"; };
 		464A5B772621950800BA1DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -187,6 +192,13 @@
 		46F450B0262596CA0025B915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46F450BA2625EDCE0025B915 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
 		46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemberModel.swift; sourceTree = "<group>"; };
+		46F45132262713340025B915 /* CommonDecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDecodableTests.swift; sourceTree = "<group>"; };
+		46F45148262716040025B915 /* PetDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetDtoTests.swift; sourceTree = "<group>"; };
+		46F45156262718DA0025B915 /* PetDto.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PetDto.json; sourceTree = "<group>"; };
+		46F451662627220D0025B915 /* FamilyDto.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FamilyDto.json; sourceTree = "<group>"; };
+		46F4516C262722310025B915 /* FamilyDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDtoTests.swift; sourceTree = "<group>"; };
+		46F451762627248C0025B915 /* FamilyMemberDto.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FamilyMemberDto.json; sourceTree = "<group>"; };
+		46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemberDtoTests.swift; sourceTree = "<group>"; };
 		46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedView.swift; sourceTree = "<group>"; };
@@ -337,7 +349,8 @@
 		464A5B742621950800BA1DB7 /* MungMungLogDevTests */ = {
 			isa = PBXGroup;
 			children = (
-				464A5B752621950800BA1DB7 /* MungMungLogDevTests.swift */,
+				46F45147262715F00025B915 /* TestCases */,
+				46F45138262714830025B915 /* TestAssets */,
 				464A5B772621950800BA1DB7 /* Info.plist */,
 			);
 			path = MungMungLogDevTests;
@@ -472,6 +485,35 @@
 			path = MungMungLogUITests;
 			sourceTree = "<group>";
 		};
+		46F45115262711F30025B915 /* TestClasses */ = {
+			isa = PBXGroup;
+			children = (
+				46F45132262713340025B915 /* CommonDecodableTests.swift */,
+			);
+			path = TestClasses;
+			sourceTree = "<group>";
+		};
+		46F45138262714830025B915 /* TestAssets */ = {
+			isa = PBXGroup;
+			children = (
+				46F45156262718DA0025B915 /* PetDto.json */,
+				46F451662627220D0025B915 /* FamilyDto.json */,
+				46F451762627248C0025B915 /* FamilyMemberDto.json */,
+				46F45115262711F30025B915 /* TestClasses */,
+			);
+			path = TestAssets;
+			sourceTree = "<group>";
+		};
+		46F45147262715F00025B915 /* TestCases */ = {
+			isa = PBXGroup;
+			children = (
+				46F45148262716040025B915 /* PetDtoTests.swift */,
+				46F4516C262722310025B915 /* FamilyDtoTests.swift */,
+				46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */,
+			);
+			path = TestCases;
+			sourceTree = "<group>";
+		};
 		46FC5B7625EA08C300D161F5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +642,7 @@
 					};
 					464A5B722621950800BA1DB7 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 						TestTargetID = 466492B425F372FC00903265;
 					};
 					46F450AB262596CA0025B915 = {
@@ -644,6 +687,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46F45157262718DA0025B915 /* PetDto.json in Resources */,
+				46F451772627248C0025B915 /* FamilyMemberDto.json in Resources */,
+				46F451672627220D0025B915 /* FamilyDto.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,7 +850,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				464A5B762621950800BA1DB7 /* MungMungLogDevTests.swift in Sources */,
+				46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */,
+				46F4517D262724D20025B915 /* FamilyMemberDtoTests.swift in Sources */,
+				46F45133262713340025B915 /* CommonDecodableTests.swift in Sources */,
+				46F45149262716040025B915 /* PetDtoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1069,6 +1118,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
 				INFOPLIST_FILE = MungMungLogDevTests/Info.plist;
@@ -1080,6 +1130,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLogDevTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MungMungLog Dev.app/MungMungLog Dev";
@@ -1090,6 +1141,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
 				INFOPLIST_FILE = MungMungLogDevTests/Info.plist;

@@ -1,0 +1,16 @@
+{
+    "invitationCode": "1Q2W3E4R",
+    "codeExpirationDate": 640078941.6684746,
+    "familyMembers": null,
+    "pets": [
+        {
+            "petId": 1,
+            "name": "테스트",
+            "birthday": -62631651600,
+            "breed": "비숑 프리제",
+            "gender": true,
+            "fileUrl": null,
+            "familyId": 1
+        }
+    ]
+}
