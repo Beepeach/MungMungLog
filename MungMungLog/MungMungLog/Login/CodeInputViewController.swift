@@ -91,7 +91,7 @@ class CodeInputViewController: UIViewController {
                     }
                 }
             } catch {
-                print(#function, error.localizedDescription)
+                print(#function, error)
             }
             
             

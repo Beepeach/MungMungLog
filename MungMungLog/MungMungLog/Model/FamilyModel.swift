@@ -10,6 +10,6 @@ import Foundation
 struct FamilyDto: Codable {
     let invitationCode: String
     let codeExpirationDate: Double
-    let familyMembers: [FamilyMemberDto]
+    let familyMembers: [FamilyMemberDto]?
     let pets: [PetDto]
 }
