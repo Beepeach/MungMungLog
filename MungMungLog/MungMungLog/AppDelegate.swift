@@ -8,6 +8,7 @@
 import UIKit
 import KakaoSDKCommon
 import KakaoSDKAuth
+import SwiftKeychainWrapper
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         KakaoSDKCommon.initSDK(appKey: "c21b7a3b3d287e24904b0f47c9c233f5")
         
+        checkIsFirstlaunch()
+        
         return true
+    }
+    
+    func checkIsFirstlaunch() {
+        if !UserDefaults.standard.bool(forKey: UserDefaultKeys.isSecondLaunch.rawValue) {
+            KeychainWrapper.standard.removeAllKeys()
+            UserDefaults.standard.set(true, forKey: UserDefaultKeys.isSecondLaunch.rawValue)
+        } else {
+            print("첫 실행이 아닙니다.")
+        }
     }
     
     // Kakao login
