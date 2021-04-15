@@ -33,9 +33,9 @@ class MembershipRegistrationViewController: UIViewController {
     
     
     @IBAction func logout(_ sender: Any) {
-        KeychainWrapper.standard.remove(forKey: "api-token")
-        KeychainWrapper.standard.remove(forKey: "api-userId")
-        KeychainWrapper.standard.remove(forKey: "api-email")
+        KeychainWrapper.standard.remove(forKey: .apiToken)
+        KeychainWrapper.standard.remove(forKey: .apiUserId)
+        KeychainWrapper.standard.remove(forKey: .apiEmail)
         performSegue(withIdentifier: MovetoView.login.rawValue, sender: nil)
     }
     
@@ -179,7 +179,7 @@ class MembershipRegistrationViewController: UIViewController {
                 
                 if responseData.code == Statuscode.ok.rawValue {
                     if let nickname = responseData.nickname {
-                        KeychainWrapper.standard.set(nickname, forKey: "api-nickname")
+                        KeychainWrapper.standard.set(nickname, forKey: KeychainWrapper.Key.apiNickname.rawValue)
                     }
                     
                     DispatchQueue.main.async {
@@ -259,7 +259,7 @@ class MembershipRegistrationViewController: UIViewController {
         
         imagePicker.delegate = self
         
-        emailField.text = KeychainWrapper.standard.string(forKey: "api-email") ?? "Unknown"
+        emailField.text = KeychainWrapper.standard.string(forKey: .apiEmail) ?? "Unknown"
     }
     
 }

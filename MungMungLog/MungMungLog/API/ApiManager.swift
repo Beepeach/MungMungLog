@@ -49,7 +49,7 @@ class ApiManager {
     }
     
     static var getPetList: String {
-        let familyId = KeychainWrapper.standard.string(forKey: "api-familyId") ?? "-1"
+        let familyId = KeychainWrapper.standard.string(forKey: .apiFamilyId) ?? "-1"
         
         return "\(host)\(Path.getPetList.rawValue)" + "/\(familyId)"
     }
@@ -59,4 +59,71 @@ class ApiManager {
     }
     
     
+    
+    private func fetch<T: Codable> (urlStr: String, httpMethod: String = "Get", body: Data? = nil, completion: @escaping (Result<T, Error>) -> ()) {
+        
+        guard let url = URL(string: urlStr) else {
+            DispatchQueue.main.async {
+                completion(.failure(ApiError.invalidURL))
+            }
+            return
+        }
+        
+        let session = URLSession.shared
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = httpMethod
+        
+        if let body = body {
+            request.httpBody = body
+            request.addValue("application/json", forHTTPHeaderField: "content-type")
+        }
+        
+        if let token = KeychainWrapper.standard.string(forKey: .apiToken) {
+            request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error)
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                DispatchQueue.main.async {
+                    completion(.failure(ApiError.failed((response as? HTTPURLResponse)?.statusCode ?? -1)))
+                }
+                return
+            }
+            
+            guard let data = data else {
+                DispatchQueue.main.async {
+                    completion(.failure(ApiError.emptyData))
+                }
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let responseData = try decoder.decode(T.self, from: data)
+                
+                DispatchQueue.main.async {
+                    completion(.success(responseData))
+                }
+                
+            } catch {
+                print(error)
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+            
+        }
+        
+        task.resume()
+    }
 }

@@ -51,7 +51,7 @@ class EmailJoinViewController: UIViewController {
             return
         }
         
-        KeychainWrapper.standard.remove(forKey: "api-token")
+        KeychainWrapper.standard.remove(forKey: .apiToken)
         
         guard let url = URL(string: ApiManager.emailJoin) else {
             print(ApiError.invalidURL)
@@ -96,15 +96,15 @@ class EmailJoinViewController: UIViewController {
                 switch responseData.code {
                 case Statuscode.ok.rawValue:
                     if let token = responseData.token {
-                        KeychainWrapper.standard.set(token, forKey: "api-token")
+                        KeychainWrapper.standard.set(token, forKey: KeychainWrapper.Key.apiToken.rawValue)
                     }
                     
                     if let userId = responseData.userId {
-                        KeychainWrapper.standard.set(userId, forKey: "api-userId")
+                        KeychainWrapper.standard.set(userId, forKey: KeychainWrapper.Key.apiUserId.rawValue)
                     }
                     
                     if let email = responseData.email {
-                        KeychainWrapper.standard.set(email, forKey: "api-email")
+                        KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.apiEmail.rawValue)
                     }
                     
                     DispatchQueue.main.async {

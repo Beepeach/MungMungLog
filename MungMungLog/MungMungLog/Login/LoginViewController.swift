@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     
     // 이걸 그대로 emailLogin에서 이용할 방법은?? Codable로 하면 encode가 안된다.
     func login(model: SNSLoginRequestModel) {
-        KeychainWrapper.standard.remove(forKey: "api-token")
+        KeychainWrapper.standard.remove(forKey: .apiToken)
         
         guard let url = URL(string: ApiManager.snsLogin) else {
             print(ApiError.invalidURL)
@@ -73,15 +73,15 @@ class LoginViewController: UIViewController {
                     //                    dump(responseData)
                     
                     if let token = responseData.token {
-                        KeychainWrapper.standard.set(token, forKey: "api-token")
+                        KeychainWrapper.standard.set(token, forKey: KeychainWrapper.Key.apiToken.rawValue)
                     }
                     
                     if let userId = responseData.userId {
-                        KeychainWrapper.standard.set(userId, forKey: "api-userId")
+                        KeychainWrapper.standard.set(userId, forKey: KeychainWrapper.Key.apiUserId.rawValue)
                     }
                     
                     if let email = responseData.email {
-                        KeychainWrapper.standard.set(email, forKey: "api-email")
+                        KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.apiEmail.rawValue)
                     }
                     
                     print("=======로그인 성공========")
@@ -106,7 +106,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginWithEmail(_ sender: Any) {
-        KeychainWrapper.standard.remove(forKey: "api-token")
+        KeychainWrapper.standard.remove(forKey: .apiToken)
         
         guard let email = idInputField.text else {
             return
@@ -155,15 +155,15 @@ class LoginViewController: UIViewController {
                 switch responseData.code {
                 case Statuscode.ok.rawValue:
                     if let token = responseData.token {
-                        KeychainWrapper.standard.set(token, forKey: "api-token")
+                        KeychainWrapper.standard.set(token, forKey: KeychainWrapper.Key.apiToken.rawValue)
                     }
                     
                     if let userId = responseData.userId {
-                        KeychainWrapper.standard.set(userId, forKey: "api-userId")
+                        KeychainWrapper.standard.set(userId, forKey: KeychainWrapper.Key.apiUserId.rawValue)
                     }
                     
                     if let email = responseData.email {
-                        KeychainWrapper.standard.set(email, forKey: "api-email")
+                        KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.apiEmail.rawValue)
                     }
                     
                     print("=======로그인 성공========")
@@ -461,11 +461,11 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             // email과 name은 첫번째 이후부터 nil을 주므로 따로 저장하는게 좋지만 name은 사용하지 않으므로 저장하지 않았다.
             var email = appleIdCredential.email
             
-            if let savedEmail = KeychainWrapper.standard.string(forKey: "AppleUser-Email") {
+            if let savedEmail = KeychainWrapper.standard.string(forKey: .appleUserEmail) {
                 email = savedEmail
             } else {
                 if let email = email {
-                    KeychainWrapper.standard.set(email, forKey: "AppleUser-Email")
+                    KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.appleUserEmail.rawValue)
                 }
             }
             

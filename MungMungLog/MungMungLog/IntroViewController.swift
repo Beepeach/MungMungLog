@@ -25,12 +25,12 @@ class IntroViewController: UIViewController {
         logoCenterYAnchor.isActive = true
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [self] in
-            if let _ = KeychainWrapper.standard.string(forKey: "api-token"),
-               let _ = KeychainWrapper.standard.string(forKey: "api-userId") {
+            if let _ = KeychainWrapper.standard.string(forKey: .apiToken),
+               let _ = KeychainWrapper.standard.string(forKey: .apiUserId) {
                 
-                if let nickname = KeychainWrapper.standard.string(forKey: "api-nickname"),
+                if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
                    nickname.count > 0 {
-                    if let _ = KeychainWrapper.standard.string(forKey: "api-familyId") {
+                    if let _ = KeychainWrapper.standard.string(forKey: .apiFamilyId) {
                         chageView(to: MovetoView.home.rawValue )
                     } else {
                         chageView(to: MovetoView.registrationGuide.rawValue)

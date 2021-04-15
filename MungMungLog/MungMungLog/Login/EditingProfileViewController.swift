@@ -104,10 +104,10 @@ class EditingProfileViewController: UIViewController {
     }
     
     @IBAction func createPet(_ sender: Any) {
-        guard let email = KeychainWrapper.standard.string(forKey: "api-email") else {
-            KeychainWrapper.standard.remove(forKey: "api-token")
-            KeychainWrapper.standard.remove(forKey: "api-userId")
-            KeychainWrapper.standard.remove(forKey: "api-email")
+        guard let email = KeychainWrapper.standard.string(forKey: .apiEmail) else {
+            KeychainWrapper.standard.remove(forKey: .apiToken)
+            KeychainWrapper.standard.remove(forKey: .apiUserId)
+            KeychainWrapper.standard.remove(forKey: .apiEmail)
             
             presentOneButtonAlert(alertTitle: "알림", message: "생성 중 오류가 발생했습니다.\n로그인 화면으로 이동합니다.", actionTitle: "확인") { [self] (_) in
                 DispatchQueue.main.async {
@@ -196,7 +196,7 @@ class EditingProfileViewController: UIViewController {
                 switch responseData.code {
                 case Statuscode.ok.rawValue:
                     if let familyId = responseData.data?.familyId {
-                        KeychainWrapper.standard.set("\(familyId)", forKey: "api-familyId")
+                        KeychainWrapper.standard.set("\(familyId)", forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
                     }
                     
                     DispatchQueue.main.async {

@@ -28,7 +28,7 @@ class CodeInputViewController: UIViewController {
             return
         }
         
-        guard let email = KeychainWrapper.standard.string(forKey: "api-email") else {
+        guard let email = KeychainWrapper.standard.string(forKey: .apiEmail) else {
             presentOneButtonAlert(alertTitle: "알림", message: "계정 이메일에 문제가 발생했습니다.\n다시 로그인 후 시도해주세요.", actionTitle: "확인")
             return
         }
@@ -77,7 +77,7 @@ class CodeInputViewController: UIViewController {
                         return
                     }
                     
-                    KeychainWrapper.standard.set("\(pet.familyId)", forKey: "api-familyId")
+                    KeychainWrapper.standard.set("\(pet.familyId)", forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
                     
                     DispatchQueue.main.async {
                         self.presentOneButtonAlert(alertTitle: "알림", message: "\(pet.name)네 가족에 초대 신청을 보냈습니다.\n구성원장이 수락해야 초대가 완료됩니다.", actionTitle: "확인") { (_) in

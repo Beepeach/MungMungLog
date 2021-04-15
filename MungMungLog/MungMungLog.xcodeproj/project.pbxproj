@@ -96,6 +96,8 @@
 		46DBEA8126283EA000B07EC1 /* BlobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA7F26283EA000B07EC1 /* BlobManager.swift */; };
 		46DBEA8826288B2200B07EC1 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA8726288B2200B07EC1 /* UserDefault.swift */; };
 		46DBEA8926288B2200B07EC1 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA8726288B2200B07EC1 /* UserDefault.swift */; };
+		46DBEA8F262896EE00B07EC1 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */; };
+		46DBEA90262896EE00B07EC1 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */; };
 		46E1BA352616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
@@ -190,6 +192,7 @@
 		46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderWithShadowView.swift; sourceTree = "<group>"; };
 		46DBEA7F26283EA000B07EC1 /* BlobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobManager.swift; sourceTree = "<group>"; };
 		46DBEA8726288B2200B07EC1 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailJoinViewController.swift; sourceTree = "<group>"; };
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
 		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
@@ -263,6 +266,7 @@
 			children = (
 				4605D1D525CECC69001C6815 /* Breeds.swift */,
 				46DBEA8726288B2200B07EC1 /* UserDefault.swift */,
+				46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -851,6 +855,7 @@
 				464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */,
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 				464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */,
+				46DBEA8F262896EE00B07EC1 /* KeychainWrapper.swift in Sources */,
 				46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */,
 				469497A226186A200049D7FE /* Product.swift in Sources */,
 			);
@@ -916,6 +921,7 @@
 				466492CF25F372FC00903265 /* RoundedView.swift in Sources */,
 				466492D025F372FC00903265 /* RecordItemTableViewCell.swift in Sources */,
 				466492D125F372FC00903265 /* UIViewController+alert.swift in Sources */,
+				46DBEA90262896EE00B07EC1 /* KeychainWrapper.swift in Sources */,
 				466492D225F372FC00903265 /* DateSelectCollectionViewCell.swift in Sources */,
 				466492D325F372FC00903265 /* RoundedStackView.swift in Sources */,
 			);
