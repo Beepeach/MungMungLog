@@ -24,6 +24,7 @@ class ApiManager {
         case emailJoin = "/api/join/email"
         case joinWithInfo = "/api/join/info"
         case createPet = "/api/pet"
+        case getPetList = "/api/pet/list"
         case requestInvitation = "/api/family/invitation"
     }
     
@@ -47,7 +48,15 @@ class ApiManager {
         return "\(host)\(Path.createPet.rawValue)"
     }
     
+    static var getPetList: String {
+        let familyId = KeychainWrapper.standard.string(forKey: "api-familyId") ?? "-1"
+        
+        return "\(host)\(Path.getPetList.rawValue)" + "/\(familyId)"
+    }
+    
     static var requestInvitation: String {
         return "\(host)\(Path.requestInvitation.rawValue)"
     }
+    
+    
 }

@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-MungMungLog/Pods-MungMungLog-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AZSClient/AZSClient.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKAuth/KakaoSDKAuth.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKCommon/KakaoSDKCommon.framework

@@ -135,8 +135,6 @@ class MembershipRegistrationViewController: UIViewController {
             return
         }
         
-        // 사진 등록
-        
         guard let url = URL(string: ApiManager.joinWithInfo) else {
             print(ApiError.invalidURL)
             return
@@ -147,6 +145,9 @@ class MembershipRegistrationViewController: UIViewController {
         var request = URLRequest(url: url)
         request.httpMethod = "Post"
         request.addValue("application/json", forHTTPHeaderField: "content-type")
+        
+        
+        
         
         do {
             

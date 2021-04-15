@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class HomeViewController: UIViewController {
     var menuStack: UIStackView?
     let buttonImageNames = ["rice", "snack", "pill", "hospital", "walk"]
+    
+    var petList: [PetDto]?
     
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petBreedLabel: UILabel!
@@ -72,17 +75,67 @@ class HomeViewController: UIViewController {
         return stack
     }
     
-    func fetch() {
+    func fetchData() {
         
+        guard let url = URL(string: ApiManager.getPetList) else {
+            print(#function, ApiError.invalidURL)
+            return
+        }
+        
+        let session = URLSession.shared
+        var request = URLRequest(url: url)
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(#function, error)
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  httpResponse.statusCode == 200 else {
+                print(#function, ApiError.failed(-200))
+                return
+            }
+            
+            guard let data = data else {
+                print(#function, ApiError.emptyData)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let responseData = try decoder.decode(ListResponse<PetDto>.self, from: data)
+                
+                self.petList = responseData.list
+                self.showHomeWithFirstPetData()
+                
+            } catch {
+                print(#function, error)
+            }
+        }
+        
+        task.resume()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         writerProfileImageView.layer.cornerRadius = writerProfileImageView.frame.height / 2
         
-        
-        
         menuStack = createMenuStackView()
+        
+        fetchData()
+//        showHomeWithFirstPetData()
+    }
+    
+    func showHomeWithFirstPetData() {
+        guard let firstPet = petList?.first else {
+             return
+        }
+        
+        DispatchQueue.main.async { [self] in
+            petNameLabel.text = firstPet.name
+            petBreedLabel.text = firstPet.breed
+        }
+       
     }
 }
 
@@ -147,7 +200,7 @@ extension HomeViewController: UICollectionViewDelegate {
         UIView.animate(withDuration: 0.2) {
             cell.contentsTitleLabel.isHidden = true
             cell.contentsTitleLabel.alpha = 0.0
-            cell.contentsIconContainerView.backgroundColor = .none
+            cell.contentsIconContainerView.backgroundColor = UIColor(named: "MyDefaultColor")
         }
     }
 }

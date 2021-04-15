@@ -92,6 +92,8 @@
 		46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */; };
 		46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */; };
 		46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */; };
+		46DBEA8026283EA000B07EC1 /* BlobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA7F26283EA000B07EC1 /* BlobManager.swift */; };
+		46DBEA8126283EA000B07EC1 /* BlobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA7F26283EA000B07EC1 /* BlobManager.swift */; };
 		46E1BA352616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
@@ -184,6 +186,7 @@
 		46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
 		46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dateComponentsFormatter.swift"; sourceTree = "<group>"; };
 		46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderWithShadowView.swift; sourceTree = "<group>"; };
+		46DBEA7F26283EA000B07EC1 /* BlobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobManager.swift; sourceTree = "<group>"; };
 		46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailJoinViewController.swift; sourceTree = "<group>"; };
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
 		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
@@ -393,6 +396,7 @@
 			isa = PBXGroup;
 			children = (
 				4694976D26184E6D0049D7FE /* ApiManager.swift */,
+				46DBEA7F26283EA000B07EC1 /* BlobManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -828,6 +832,7 @@
 				46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */,
 				46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */,
 				46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */,
+				46DBEA8026283EA000B07EC1 /* BlobManager.swift in Sources */,
 				467EF92725F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */,
 				46F450C22625F1BC0025B915 /* FamilyMemberModel.swift in Sources */,
 				467EF92E25F3C51700AC8F88 /* MyPageViewController.swift in Sources */,
@@ -891,6 +896,7 @@
 				466492C825F372FC00903265 /* UIViewController+dateComponentsFormatter.swift in Sources */,
 				466492C925F372FC00903265 /* RoundedBorderWithShadowView.swift in Sources */,
 				466492CA25F372FC00903265 /* PhotoSelectCollectionViewCell.swift in Sources */,
+				46DBEA8126283EA000B07EC1 /* BlobManager.swift in Sources */,
 				466492CB25F372FC00903265 /* CodeInputViewController.swift in Sources */,
 				46F450C32625F1BC0025B915 /* FamilyMemberModel.swift in Sources */,
 				467EF92825F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */,
