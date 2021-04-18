@@ -90,8 +90,10 @@
                                                             <constraint firstItem="hYg-ey-lVr" firstAttribute="width" secondItem="YSv-zw-TsU" secondAttribute="width" multiplier="0.8" id="TiB-yy-lcw"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1000" text="여기엔 적은 글이 연동되어 나타납니다." lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55F-cC-9XJ">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1" verticalCompressionResistancePriority="1000" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55F-cC-9XJ">
                                                         <rect key="frame" x="140" y="0.0" width="264" height="49"/>
+                                                        <string key="text">기록된 글이 없어요.
+첫 기록을 남겨보세요.</string>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -310,9 +312,12 @@
                     <connections>
                         <outlet property="contentsCollectionView" destination="b8t-2r-1wp" id="Dbb-Lw-3dn"/>
                         <outlet property="floatingButtonContainerView" destination="RCy-Xw-yEi" id="dl8-nM-ggf"/>
+                        <outlet property="latestHistoryDateLabel" destination="kY4-4F-Frt" id="Nek-x0-YEW"/>
+                        <outlet property="latestHistroyLabel" destination="55F-cC-9XJ" id="7g9-9Y-tGA"/>
                         <outlet property="petBreedLabel" destination="Zml-m4-uYU" id="3RW-Rb-oHI"/>
                         <outlet property="petNameLabel" destination="34y-XC-hlS" id="4e4-Hb-XWC"/>
                         <outlet property="petProfileImageView" destination="V35-mW-iSj" id="S39-4r-V80"/>
+                        <outlet property="writerNicknameLabel" destination="hYg-ey-lVr" id="KGv-cd-JMb"/>
                         <outlet property="writerProfileImageView" destination="YSv-zw-TsU" id="Ky2-dN-awc"/>
                     </connections>
                 </viewController>

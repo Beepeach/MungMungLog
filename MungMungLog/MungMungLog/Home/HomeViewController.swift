@@ -22,6 +22,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var contentsCollectionView: UICollectionView!
     
     @IBOutlet weak var writerProfileImageView: UIImageView!
+    @IBOutlet weak var writerNicknameLabel: UILabel!
+    @IBOutlet weak var latestHistroyLabel: UILabel!
+    @IBOutlet weak var latestHistoryDateLabel: UILabel!
     
     @IBOutlet weak var floatingButtonContainerView: UIView!
     
@@ -135,6 +138,9 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async { [self] in
             petNameLabel.text = firstPet.name
             petBreedLabel.text = firstPet.breed
+            // petProfileImageView.image =
+            
+            
         }
        
     }
