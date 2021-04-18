@@ -2417,7 +2417,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJp-g0-OaU">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="925.99999999999989"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtP-rd-TF3" userLabel="Contents View">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="1146.3333333333333"/>
@@ -4850,7 +4850,7 @@
         <segue reference="0Ma-Gb-q2e"/>
         <segue reference="zw3-4X-v9p"/>
         <segue reference="fSx-LO-08t"/>
-        <segue reference="yGo-5l-hNg"/>
+        <segue reference="TmC-yD-XV5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Test" width="1411" height="1411"/>

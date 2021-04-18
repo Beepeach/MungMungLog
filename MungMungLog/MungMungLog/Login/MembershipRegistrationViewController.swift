@@ -146,13 +146,19 @@ class MembershipRegistrationViewController: UIViewController {
         request.httpMethod = "Post"
         request.addValue("application/json", forHTTPHeaderField: "content-type")
         
-        
-        
-        
         do {
+            var imageUrl: String?
+            
+            if let img = membershipImageView.image {
+                BlobManager.shared.upload(image: img) { (reutrnUrl) in
+                    if let returnUrl = reutrnUrl {
+                        imageUrl = returnUrl
+                    }
+                }
+            }
             
             let encoder = JSONEncoder()
-            let requestModel = JoinInfoRequestModel(email: email, nickname: nickname, relationship: relationship, gender: gender, fileUrl: "")
+            let requestModel = JoinInfoRequestModel(email: email, nickname: nickname, relationship: relationship, gender: gender, fileUrl: imageUrl ?? "")
             request.httpBody = try encoder.encode(requestModel)
         } catch {
             print(error)
@@ -298,8 +304,16 @@ extension MembershipRegistrationViewController: UIImagePickerControllerDelegate,
             dismiss(animated: true, completion: nil)
             return
         }
+        
         membershipImageView.image = image
-        membershipImageAddbutton.alpha = 0.4
+        
+        if membershipImageView.image != nil {
+            let moreImage = UIImage(named: "more")
+            
+            membershipImageAddbutton.alpha = 0.4
+            membershipImageAddbutton.setImage(moreImage, for: .normal)
+        }
+        
         dismiss(animated: true, completion: nil)
     }
 }

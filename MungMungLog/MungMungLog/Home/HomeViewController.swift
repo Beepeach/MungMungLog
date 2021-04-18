@@ -75,6 +75,17 @@ class HomeViewController: UIViewController {
         return stack
     }
     
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        writerProfileImageView.layer.cornerRadius = writerProfileImageView.frame.height / 2
+        
+        menuStack = createMenuStackView()
+        
+        fetchData()
+    }
+    
     func fetchData() {
         
         guard let url = URL(string: ApiManager.getPetList) else {
@@ -114,16 +125,6 @@ class HomeViewController: UIViewController {
         }
         
         task.resume()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        writerProfileImageView.layer.cornerRadius = writerProfileImageView.frame.height / 2
-        
-        menuStack = createMenuStackView()
-        
-        fetchData()
-//        showHomeWithFirstPetData()
     }
     
     func showHomeWithFirstPetData() {

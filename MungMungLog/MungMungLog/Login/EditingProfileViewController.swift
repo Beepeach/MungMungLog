@@ -156,6 +156,16 @@ class EditingProfileViewController: UIViewController {
         request.addValue("application/json", forHTTPHeaderField: "content-type")
         
         do {
+            var imageUrl: String?
+            
+            if let img = petImageView.image {
+                BlobManager.shared.upload(image: img) { (reutrnUrl) in
+                    if let returnUrl = reutrnUrl {
+                        imageUrl = returnUrl
+                    }
+                }
+            }
+            
             let encoder = JSONEncoder()
             
             request.httpBody = try encoder.encode(PetPostModel(
@@ -164,7 +174,7 @@ class EditingProfileViewController: UIViewController {
                                                     birthday: birthdayInterval,
                                                     breed: breed,
                                                     gender: gender,
-                                                    fileUrl: nil))
+                                                    fileUrl: imageUrl ?? ""))
         } catch {
             print(error.localizedDescription)
         }
@@ -306,7 +316,13 @@ extension EditingProfileViewController: UIImagePickerControllerDelegate, UINavig
         }
         
         petImageView.image = image
-        petImageAddButton.alpha = 0.4
+        
+        if petImageView.image != nil {
+            let moreImage = UIImage(named: "more")
+            petImageAddButton.alpha = 0.4
+            petImageAddButton.setImage(moreImage, for: .normal)
+        }
+        
         dismiss(animated: true, completion: nil)
     }
 }
