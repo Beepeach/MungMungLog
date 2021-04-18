@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zva-Vq-R9P">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m4u-bB-Ujf">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -4862,10 +4862,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="l3V-o9-xLN"/>
         <segue reference="0Ma-Gb-q2e"/>
-        <segue reference="zw3-4X-v9p"/>
+        <segue reference="Azu-Sb-ycS"/>
         <segue reference="fSx-LO-08t"/>
-        <segue reference="NKW-8O-ZVt"/>
+        <segue reference="yGo-5l-hNg"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Test" width="1411" height="1411"/>
