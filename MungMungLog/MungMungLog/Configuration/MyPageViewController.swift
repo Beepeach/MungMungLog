@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 struct Family {
     var isFamilyHead: Bool = false
@@ -29,6 +30,23 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var petProfileImageView: UIImageView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var optionContainerView: UIView!
+    
+    
+    @IBAction func showOption(_ sender: Any) {
+        
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiEmail.rawValue)
+        KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiToken.rawValue)
+        KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiNickname.rawValue)
+        KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiUserId.rawValue)
+        KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
+        
+        performSegue(withIdentifier: MovetoView.login.rawValue, sender: nil)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

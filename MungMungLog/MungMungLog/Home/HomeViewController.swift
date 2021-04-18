@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
     }
     
-    @IBAction func showFloatingButton(_ sender: Any) {        
+    @IBAction func showFloatingButton(_ sender: Any) {
         UIView.animate(withDuration: 0.3,
                        delay: 0,
                        usingSpringWithDamping: 0.3,

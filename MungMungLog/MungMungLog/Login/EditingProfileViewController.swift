@@ -144,6 +144,16 @@ class EditingProfileViewController: UIViewController {
         let baseDate = Date(timeIntervalSinceReferenceDate: 0)
         let birthdayInterval = DateInterval(start: baseDate, end: birthdayDatePicker.date).duration
         
+        if let img = petImageView.image {
+            requestCreatePetWithImage(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender, img: img)
+        }
+        
+        requestCreatePet(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender)
+        
+        
+    }
+    
+    func requestCreatePet(email: String, name: String, birthdayInterval: Double, breed: String, gender: Bool, fileUrl: String? = nil) {
         guard let url = URL(string: ApiManager.createPet) else {
             print(ApiError.invalidURL)
             return
@@ -156,16 +166,6 @@ class EditingProfileViewController: UIViewController {
         request.addValue("application/json", forHTTPHeaderField: "content-type")
         
         do {
-            var imageUrl: String?
-            
-            if let img = petImageView.image {
-                BlobManager.shared.upload(image: img) { (reutrnUrl) in
-                    if let returnUrl = reutrnUrl {
-                        imageUrl = returnUrl
-                    }
-                }
-            }
-            
             let encoder = JSONEncoder()
             
             request.httpBody = try encoder.encode(PetPostModel(
@@ -174,7 +174,7 @@ class EditingProfileViewController: UIViewController {
                                                     birthday: birthdayInterval,
                                                     breed: breed,
                                                     gender: gender,
-                                                    fileUrl: imageUrl ?? ""))
+                                                    fileUrl: fileUrl))
         } catch {
             print(error.localizedDescription)
         }
@@ -228,6 +228,14 @@ class EditingProfileViewController: UIViewController {
         }
         
         task.resume()
+    }
+    
+    func requestCreatePetWithImage(email: String, name: String, birthdayInterval: Double, breed: String, gender: Bool, img: UIImage) {
+        BlobManager.shared.upload(image: img) { (reutrnUrl) in
+            if let imageUrl = reutrnUrl {
+                requestCreatePet(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender, fileUrl: imageUrl)
+            }
+        }
     }
     
 

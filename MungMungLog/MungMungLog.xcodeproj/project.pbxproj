@@ -49,7 +49,6 @@
 		466492BD25F372FC00903265 /* WalkRecordEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */; };
 		466492BE25F372FC00903265 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
 		466492BF25F372FC00903265 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4605D1D525CECC69001C6815 /* Breeds.swift */; };
-		466492C025F372FC00903265 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
 		466492C125F372FC00903265 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
 		466492C225F372FC00903265 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
 		466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */; };
@@ -893,7 +892,6 @@
 				466492BE25F372FC00903265 /* WalkRecordEditingViewController.swift in Sources */,
 				460C4ED225F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */,
 				466492BF25F372FC00903265 /* Breeds.swift in Sources */,
-				466492C025F372FC00903265 /* EditingProfileViewController.swift in Sources */,
 				466492C125F372FC00903265 /* HomeViewController.swift in Sources */,
 				466492C225F372FC00903265 /* WalkRecordStartingViewController.swift in Sources */,
 				466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,

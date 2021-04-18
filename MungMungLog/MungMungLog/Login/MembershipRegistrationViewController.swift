@@ -135,6 +135,14 @@ class MembershipRegistrationViewController: UIViewController {
             return
         }
         
+        if let img = membershipImageView.image {
+           requestJoinWithImage(email: email, nickname: nickname, relationship: relationship, gender: gender, img: img)
+        }
+        
+        requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender)
+    }
+    
+    func requestJoin(email: String, nickname: String, relationship: String, gender: Bool, fileUrl: String? = nil) {
         guard let url = URL(string: ApiManager.joinWithInfo) else {
             print(ApiError.invalidURL)
             return
@@ -147,18 +155,8 @@ class MembershipRegistrationViewController: UIViewController {
         request.addValue("application/json", forHTTPHeaderField: "content-type")
         
         do {
-            var imageUrl: String?
-            
-            if let img = membershipImageView.image {
-                BlobManager.shared.upload(image: img) { (reutrnUrl) in
-                    if let returnUrl = reutrnUrl {
-                        imageUrl = returnUrl
-                    }
-                }
-            }
-            
             let encoder = JSONEncoder()
-            let requestModel = JoinInfoRequestModel(email: email, nickname: nickname, relationship: relationship, gender: gender, fileUrl: imageUrl ?? "")
+            let requestModel = JoinInfoRequestModel(email: email, nickname: nickname, relationship: relationship, gender: gender, fileUrl: fileUrl)
             request.httpBody = try encoder.encode(requestModel)
         } catch {
             print(error)
@@ -203,6 +201,14 @@ class MembershipRegistrationViewController: UIViewController {
         }
         
         task.resume()
+    }
+    
+    func requestJoinWithImage(email: String, nickname: String, relationship: String, gender: Bool, img: UIImage ) {
+        BlobManager.shared.upload(image: img) { (reutrnUrl) in
+            if let imageUrl = reutrnUrl {
+                self.requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender, fileUrl: imageUrl)
+            }
+        }
     }
     
     func setScreenWhenShowKeyboard() {
