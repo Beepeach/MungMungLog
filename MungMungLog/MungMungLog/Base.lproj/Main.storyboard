@@ -1565,7 +1565,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="428" height="379.33333333333331"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2c-l3-ofC">
-                                                        <rect key="frame" x="364" y="40" width="40" height="40"/>
+                                                        <rect key="frame" x="24" y="40" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="GJc-Ze-ZAe"/>
                                                             <constraint firstAttribute="width" secondItem="W2c-l3-ofC" secondAttribute="height" multiplier="1:1" id="RJd-J8-GFP"/>
@@ -1575,16 +1575,25 @@
                                                             <segue destination="yen-uj-Gb3" kind="presentation" modalPresentationStyle="fullScreen" id="QBw-FY-nZv"/>
                                                         </connections>
                                                     </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2s8-o8-4pN">
+                                                        <rect key="frame" x="24" y="88" width="46" height="30"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <connections>
+                                                            <action selector="logout:" destination="CFr-HF-ErC" eventType="touchUpInside" id="bL3-D1-txx"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="L4K-IH-npN" firstAttribute="leading" secondItem="Pnl-dO-DZT" secondAttribute="leading" id="25p-TX-Kyx"/>
-                                                    <constraint firstItem="W2c-l3-ofC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Pnl-dO-DZT" secondAttribute="leading" constant="12" id="3PJ-so-cwb"/>
+                                                    <constraint firstItem="W2c-l3-ofC" firstAttribute="leading" secondItem="Pnl-dO-DZT" secondAttribute="leading" constant="24" id="3PJ-so-cwb"/>
                                                     <constraint firstItem="L4K-IH-npN" firstAttribute="top" secondItem="Pnl-dO-DZT" secondAttribute="top" id="6OC-Kf-ss4"/>
                                                     <constraint firstAttribute="trailing" secondItem="L4K-IH-npN" secondAttribute="trailing" id="HM8-g8-Au5"/>
+                                                    <constraint firstItem="2s8-o8-4pN" firstAttribute="top" secondItem="W2c-l3-ofC" secondAttribute="bottom" constant="8" id="PR1-N0-KFb"/>
                                                     <constraint firstAttribute="bottom" secondItem="L4K-IH-npN" secondAttribute="bottom" id="bLh-Po-KPR"/>
+                                                    <constraint firstItem="2s8-o8-4pN" firstAttribute="leading" secondItem="Pnl-dO-DZT" secondAttribute="leading" constant="24" id="d9N-Ht-ANH"/>
                                                     <constraint firstItem="W2c-l3-ofC" firstAttribute="top" secondItem="Pnl-dO-DZT" secondAttribute="top" constant="40" id="heW-eS-DsO"/>
-                                                    <constraint firstAttribute="trailing" secondItem="W2c-l3-ofC" secondAttribute="trailing" constant="24" id="iIZ-ts-f5b"/>
+                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="W2c-l3-ofC" secondAttribute="trailing" constant="12" id="iIZ-ts-f5b"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYA-BP-nGL" userLabel="Pet Info Container View" customClass="RoundedWithShadowView" customModule="MungMungLog" customModuleProvider="target">
@@ -2422,7 +2431,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pJp-g0-OaU">
-                                <rect key="frame" x="0.0" y="0.0" width="428" height="925.99999999999989"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtP-rd-TF3" userLabel="Contents View">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="1146.3333333333333"/>
