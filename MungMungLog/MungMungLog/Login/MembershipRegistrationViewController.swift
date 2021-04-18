@@ -137,9 +137,9 @@ class MembershipRegistrationViewController: UIViewController {
         
         if let img = membershipImageView.image {
            requestJoinWithImage(email: email, nickname: nickname, relationship: relationship, gender: gender, img: img)
+        } else {
+            requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender)
         }
-        
-        requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender)
     }
     
     func requestJoin(email: String, nickname: String, relationship: String, gender: Bool, fileUrl: String? = nil) {

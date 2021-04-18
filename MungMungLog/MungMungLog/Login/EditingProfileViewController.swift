@@ -11,7 +11,7 @@ import SwiftKeychainWrapper
 class EditingProfileViewController: UIViewController {
     
     let imagePicker = UIImagePickerController()
-
+    
     var isMale: Bool?
     
     @IBOutlet var birthdayPickerContainerView: UIView!
@@ -128,7 +128,7 @@ class EditingProfileViewController: UIViewController {
             presentOneButtonAlert(alertTitle: "알림", message: "\(name) 성별을 선택해주세요.", actionTitle: "확인")
             return
         }
-    
+        
         guard let birthdayStr = birthdayField.text,
               birthdayStr.count > 0 else {
             presentOneButtonAlert(alertTitle: "알림", message: "\(name) 생일을 선택해주세요.", actionTitle: "확인")
@@ -146,14 +146,13 @@ class EditingProfileViewController: UIViewController {
         
         if let img = petImageView.image {
             requestCreatePetWithImage(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender, img: img)
+        } else {
+            requestCreatePet(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender)
         }
-        
-        requestCreatePet(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender)
-        
-        
     }
     
     func requestCreatePet(email: String, name: String, birthdayInterval: Double, breed: String, gender: Bool, fileUrl: String? = nil) {
+        
         guard let url = URL(string: ApiManager.createPet) else {
             print(ApiError.invalidURL)
             return
@@ -190,7 +189,7 @@ class EditingProfileViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.presentOneButtonAlert(alertTitle: "알림", message: "네트워크 오류가 발생했습니다.", actionTitle: "확인")
                 }
-               
+                
                 return
             }
             
@@ -219,7 +218,7 @@ class EditingProfileViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.presentOneButtonAlert(alertTitle: "알림", message: "오류 발생", actionTitle: "확인")
                     }
-                   
+                    
                 }
                 
             } catch {
@@ -233,25 +232,23 @@ class EditingProfileViewController: UIViewController {
     func requestCreatePetWithImage(email: String, name: String, birthdayInterval: Double, breed: String, gender: Bool, img: UIImage) {
         BlobManager.shared.upload(image: img) { (reutrnUrl) in
             if let imageUrl = reutrnUrl {
-                requestCreatePet(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender, fileUrl: imageUrl)
+                self.requestCreatePet(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender, fileUrl: imageUrl)
             }
         }
     }
     
-
-    
     // InputView의 height를 정할수는 없을까??
-//    func specifyInputViewSize(_ view: UIView) {
-//        NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) { (noti) in
-//            guard let userInfo = noti.userInfo else {
-//                return
-//            }
-//
-//            guard let keyboardBounds = userInfo[UIResponder.keyboardDidChangeFrameNotification] as? CGRect else {
-//                return
-//            }
-//        }
-//    }
+    //    func specifyInputViewSize(_ view: UIView) {
+    //        NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) { (noti) in
+    //            guard let userInfo = noti.userInfo else {
+    //                return
+    //            }
+    //
+    //            guard let keyboardBounds = userInfo[UIResponder.keyboardDidChangeFrameNotification] as? CGRect else {
+    //                return
+    //            }
+    //        }
+    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -288,7 +285,7 @@ class EditingProfileViewController: UIViewController {
             editingProfileScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardBounds.height, right: 0)
         }
     }
-
+    
     func setScreenWhenHideKeyboard() {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { [self] (_) in
             editingProfileScrollView.contentInset = .zero
