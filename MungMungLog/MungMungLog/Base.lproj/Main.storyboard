@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m4u-bB-Ujf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zva-Vq-R9P">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -1579,7 +1579,7 @@
                                                         <rect key="frame" x="24" y="88" width="46" height="30"/>
                                                         <state key="normal" title="Button"/>
                                                         <connections>
-                                                            <action selector="logout:" destination="CFr-HF-ErC" eventType="touchUpInside" id="u2k-kI-pLS"/>
+                                                            <action selector="logout:" destination="CFr-HF-ErC" eventType="touchUpInside" id="bL3-D1-txx"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1872,7 +1872,7 @@
                         <outlet property="scrollView" destination="afe-na-gJE" id="sY7-LJ-DHm"/>
                         <outlet property="tableView" destination="3dT-l6-IYv" id="o7G-0v-aEu"/>
                         <outlet property="tableViewHeightConstraint" destination="QFF-Eb-yBT" id="eAU-9T-YwT"/>
-                        <segue destination="LQF-VB-7aJ" kind="custom" identifier="moveToLoginView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="NKW-8O-ZVt"/>
+                        <segue destination="LQF-VB-7aJ" kind="custom" identifier="moveToLoginView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="8Ag-hW-5aU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCV-7f-haR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4862,11 +4862,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="l3V-o9-xLN"/>
         <segue reference="0Ma-Gb-q2e"/>
-        <segue reference="Azu-Sb-ycS"/>
+        <segue reference="zw3-4X-v9p"/>
         <segue reference="fSx-LO-08t"/>
-        <segue reference="yGo-5l-hNg"/>
+        <segue reference="8Ag-hW-5aU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Test" width="1411" height="1411"/>
