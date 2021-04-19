@@ -26,12 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func checkIsFirstlaunch() {
         if !UserDefaults.standard.bool(forKey: UserDefaultKeys.isSecondLaunch.rawValue) {
-            KeychainWrapper.standard.removeAllKeys()
+            deleteKeychainInfo()
+            
             UserDefaults.standard.set(true, forKey: UserDefaultKeys.isSecondLaunch.rawValue)
         } else {
             print("첫 실행이 아닙니다.")
         }
     }
+    
     
     // Kakao login
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {

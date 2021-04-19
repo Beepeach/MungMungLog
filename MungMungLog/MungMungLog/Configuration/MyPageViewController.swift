@@ -38,11 +38,7 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func logout(_ sender: Any) {
-        KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiEmail.rawValue)
-        KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiToken.rawValue)
-        KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiNickname.rawValue)
-        KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiUserId.rawValue)
-        KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
+        deleteKeychainInfo()
         
         performSegue(withIdentifier: MovetoView.login.rawValue, sender: nil)
         

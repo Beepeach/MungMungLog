@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "466492B425F372FC00903265"
-               BuildableName = "MungMungLog Dev.app"
+               BuildableName = "MungMungLog.app"
                BlueprintName = "MungMungLog Dev"
                ReferencedContainer = "container:MungMungLog.xcodeproj">
             </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "466492B425F372FC00903265"
-            BuildableName = "MungMungLog Dev.app"
+            BuildableName = "MungMungLog.app"
             BlueprintName = "MungMungLog Dev"
             ReferencedContainer = "container:MungMungLog.xcodeproj">
          </BuildableReference>
@@ -73,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "466492B425F372FC00903265"
-            BuildableName = "MungMungLog Dev.app"
+            BuildableName = "MungMungLog.app"
             BlueprintName = "MungMungLog Dev"
             ReferencedContainer = "container:MungMungLog.xcodeproj">
          </BuildableReference>
