@@ -89,6 +89,7 @@
 		46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
 		46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */; };
 		46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */; };
+		46D4DF1E262D57790016252A /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
 		46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */; };
 		46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */; };
 		46DBEA8026283EA000B07EC1 /* BlobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA7F26283EA000B07EC1 /* BlobManager.swift */; };
@@ -170,7 +171,7 @@
 		464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationGuideViewController.swift; sourceTree = "<group>"; };
 		4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEndingViewController.swift; sourceTree = "<group>"; };
-		466492DC25F372FC00903265 /* MungMungLog Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MungMungLog Dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		466492DC25F372FC00903265 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466E3AE3261B13AC0077B3F2 /* MungMungLog Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MungMungLog Dev.entitlements"; sourceTree = "<group>"; };
 		467BF53625748F8900511451 /* CircleWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithShadowView.swift; sourceTree = "<group>"; };
 		467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -303,7 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				460EB0092557F76B00027376 /* MungMungLog.app */,
-				466492DC25F372FC00903265 /* MungMungLog Dev.app */,
+				466492DC25F372FC00903265 /* MungMungLog.app */,
 				464A5B732621950800BA1DB7 /* MungMungLogDevTests.xctest */,
 				46F450AC262596CA0025B915 /* MungMungLogUITests.xctest */,
 			);
@@ -618,7 +619,7 @@
 			);
 			name = "MungMungLog Dev";
 			productName = MungMungLog;
-			productReference = 466492DC25F372FC00903265 /* MungMungLog Dev.app */;
+			productReference = 466492DC25F372FC00903265 /* MungMungLog.app */;
 			productType = "com.apple.product-type.application";
 		};
 		46F450AB262596CA0025B915 /* MungMungLogUITests */ = {
@@ -880,6 +881,7 @@
 				466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */,
 				466492B725F372FC00903265 /* WalkDateAndTimeViewController.swift in Sources */,
 				460C4ED725F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */,
+				46D4DF1E262D57790016252A /* EditingProfileViewController.swift in Sources */,
 				466492B825F372FC00903265 /* ViewController.swift in Sources */,
 				466492B925F372FC00903265 /* UIViewController+dateFormatter.swift in Sources */,
 				46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */,
@@ -1192,7 +1194,7 @@
 				);
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLog;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MungMungLog;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1215,7 +1217,7 @@
 				);
 				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLog;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = MungMungLog;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
