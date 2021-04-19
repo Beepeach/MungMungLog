@@ -49,7 +49,7 @@ class ApiManager {
     }
     
     static var getPetList: String {
-        let familyId = KeychainWrapper.standard.string(forKey: .apiFamilyId) ?? "-1"
+        let familyId = KeychainWrapper.standard.integer(forKey: .apiFamilyId) ?? -1
         
         return "\(host)\(Path.getPetList.rawValue)" + "/\(familyId)"
     }

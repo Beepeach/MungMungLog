@@ -30,12 +30,8 @@ class IntroViewController: UIViewController {
                 
                 if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
                    nickname.count > 0 {
-                    if let _ = KeychainWrapper.standard.string(forKey: .apiFamilyId) {
-                        chageView(to: MovetoView.home.rawValue )
-                    } else {
-                        chageView(to: MovetoView.registrationGuide.rawValue)
-                    }
-                    
+                    checkNeededRegistrationAndChageView()
+
                 } else {
                     chageView(to: MovetoView.membershipRegistration.rawValue)
                 }
@@ -48,7 +44,15 @@ class IntroViewController: UIViewController {
         }
     }
     
-    func chageView(to SegueIdentifier : String) {
+    public func checkNeededRegistrationAndChageView() {
+        if let _ = KeychainWrapper.standard.integer(forKey: .apiFamilyId) {
+            chageView(to: MovetoView.home.rawValue )
+        } else {
+            chageView(to: MovetoView.registrationGuide.rawValue)
+        }
+    }
+    
+    public func chageView(to SegueIdentifier : String) {
         UIView.animate(withDuration: 0.5,
                        delay: 0,
                        options: .curveEaseIn,

@@ -205,7 +205,7 @@ class EditingProfileViewController: UIViewController {
                 switch responseData.code {
                 case Statuscode.ok.rawValue:
                     if let familyId = responseData.data?.familyId {
-                        KeychainWrapper.standard.set("\(familyId)", forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
+                        KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
                     }
                     
                     DispatchQueue.main.async {

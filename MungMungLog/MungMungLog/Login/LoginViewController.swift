@@ -84,14 +84,30 @@ class LoginViewController: UIViewController {
                         KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.apiEmail.rawValue)
                     }
                     
+                    if let nickname = responseData.nickname {
+                        KeychainWrapper.standard.set(nickname, forKey: KeychainWrapper.Key.apiNickname.rawValue)
+                    }
+                    
+                    if let familyId = responseData.familyId {
+                        KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
+                    }
+                    
                     print("=======로그인 성공========")
                     print(responseData)
                     
                     DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
+                        if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
+                           nickname.count > 0 {
+                            if let _ = KeychainWrapper.standard.integer(forKey: .apiFamilyId) {
+                                self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
+                            } else {
+                                self.performSegue(withIdentifier: MovetoView.registrationGuide.rawValue, sender: nil)
+                            }
+                        } else {
+                            self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
+                        }
+                        
                     }
-               
-                    
                 } else {
                     print("========로그인실패===========")
                     print(responseData)
@@ -166,11 +182,29 @@ class LoginViewController: UIViewController {
                         KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.apiEmail.rawValue)
                     }
                     
+                    if let nickname = responseData.nickname {
+                        KeychainWrapper.standard.set(nickname, forKey: KeychainWrapper.Key.apiNickname.rawValue)
+                    }
+                    
+                    if let familyId = responseData.familyId {
+                        KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
+                    }
+                    
                     print("=======로그인 성공========")
                     print(responseData)
                     
                     DispatchQueue.main.async {
-                        self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
+                        if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
+                           nickname.count > 0 {
+                            if let _ = KeychainWrapper.standard.integer(forKey: .apiFamilyId) {
+                                self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
+                            } else {
+                                self.performSegue(withIdentifier: MovetoView.registrationGuide.rawValue, sender: nil)
+                            }
+
+                        } else {
+                            self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
+                        }
                     }
                     
                 case Statuscode.notFound.rawValue:

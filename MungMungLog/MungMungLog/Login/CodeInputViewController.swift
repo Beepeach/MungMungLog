@@ -77,7 +77,7 @@ class CodeInputViewController: UIViewController {
                         return
                     }
                     
-                    KeychainWrapper.standard.set("\(pet.familyId)", forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
+                    KeychainWrapper.standard.set(pet.familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
                     
                     DispatchQueue.main.async {
                         self.presentOneButtonAlert(alertTitle: "알림", message: "\(pet.name)네 가족에 초대 신청을 보냈습니다.\n구성원장이 수락해야 초대가 완료됩니다.", actionTitle: "확인") { (_) in
