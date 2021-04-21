@@ -22,4 +22,13 @@ extension UIViewController {
         
         return dateFormatter
     }
+    
+    var koreaFullDateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.init(identifier: "ko_kr")
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+        
+        return dateFormatter
+    }
 }

@@ -49,7 +49,6 @@
 		466492BD25F372FC00903265 /* WalkRecordEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */; };
 		466492BE25F372FC00903265 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
 		466492BF25F372FC00903265 /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4605D1D525CECC69001C6815 /* Breeds.swift */; };
-		466492C125F372FC00903265 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
 		466492C225F372FC00903265 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
 		466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */; };
 		466492C425F372FC00903265 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00E2557F76B00027376 /* SceneDelegate.swift */; };
@@ -118,6 +117,7 @@
 		46F54565262DEDCD00FBDBA0 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F54563262DEDCD00FBDBA0 /* HistoryModel.swift */; };
 		46F5456B262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5456A262DEE6600FBDBA0 /* WalkHistoryModel.swift */; };
 		46F5456C262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5456A262DEE6600FBDBA0 /* WalkHistoryModel.swift */; };
+		46F54579262FF88900FBDBA0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
 		46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */; };
 		46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */; };
 		46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */; };
@@ -905,13 +905,13 @@
 				466492BE25F372FC00903265 /* WalkRecordEditingViewController.swift in Sources */,
 				460C4ED225F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */,
 				466492BF25F372FC00903265 /* Breeds.swift in Sources */,
-				466492C125F372FC00903265 /* HomeViewController.swift in Sources */,
 				466492C225F372FC00903265 /* WalkRecordStartingViewController.swift in Sources */,
 				466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
 				466492C425F372FC00903265 /* SceneDelegate.swift in Sources */,
 				464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
 				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
 				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,
+				46F54579262FF88900FBDBA0 /* HomeViewController.swift in Sources */,
 				466492C725F372FC00903265 /* RecordDetailViewController.swift in Sources */,
 				469497A826186A4C0049D7FE /* Staging.swift in Sources */,
 				466492C825F372FC00903265 /* UIViewController+dateComponentsFormatter.swift in Sources */,

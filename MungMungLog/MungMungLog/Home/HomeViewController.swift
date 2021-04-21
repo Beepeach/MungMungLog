@@ -127,7 +127,7 @@ class HomeViewController: UIViewController {
                 self.walkHistoryList = responseData.list.first?.walkHistories
                 
                 self.showHomeWithFirstPetData()
-                self.showHomeWithFirstHistoryData()
+                self.showHistoryDataWhenFirst()
                 
             } catch {
                 print(#function, error)
@@ -148,11 +148,25 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func showHomeWithFirstHistoryData() {
+    func showHistoryDataWhenFirst() {
         DispatchQueue.main.async { [self] in
-            latestHistoryDateLabel.text = koreaDateFormatter.string(for: Date())
+            // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
+            // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
+            latestHistoryDateLabel.text = koreaFullDateFormatter.string(for: Date())
+            latestHistroyLabel.text = "아이콘을 선택해서 가장 최근에 기록한 정보를 확인하세요."
         }
     }
+    
+    func showHistoryDataIfDataIsNil() {
+        DispatchQueue.main.async { [self] in
+            // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
+            // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
+            latestHistoryDateLabel.text = koreaFullDateFormatter.string(for: Date())
+            latestHistroyLabel.text = "저장된 기록이 없어요😭 기록을 남겨보시겠어요?"
+        }
+    }
+    
+    
 }
 
 
@@ -225,9 +239,9 @@ extension HomeViewController: UICollectionViewDelegate {
         if let latestHistory = historyList?.filter({ $0.type == type }).first {
             self.writerNicknameLabel.text = "\(latestHistory.familyMemberId)"
             self.latestHistroyLabel.text = latestHistory.contents
-            self.latestHistoryDateLabel.text = koreaDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
+            self.latestHistoryDateLabel.text = koreaFullDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
         } else {
-            showHomeWithFirstHistoryData()
+            showHistoryDataIfDataIsNil()
         }
         
     }
