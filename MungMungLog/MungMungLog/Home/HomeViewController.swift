@@ -13,12 +13,15 @@ class HomeViewController: UIViewController {
     let buttonImageNames = ["rice", "snack", "pill", "hospital", "walk"]
     
     var petList: [PetDto]?
+    var historyList: [HistoryDto]?
+    var walkHistoryList: [WalkHistoryDto]?
     
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petBreedLabel: UILabel!
     @IBOutlet weak var petProfileImageView: UIImageView!
     
     
+    @IBOutlet weak var historyContentsContainerView: UIView!
     @IBOutlet weak var contentsCollectionView: UICollectionView!
     
     @IBOutlet weak var writerProfileImageView: UIImageView!
@@ -106,7 +109,7 @@ class HomeViewController: UIViewController {
             
             guard let httpResponse = response as? HTTPURLResponse,
                   httpResponse.statusCode == 200 else {
-                print(#function, ApiError.failed(-200))
+                print(#function, ApiError.failed((response as? HTTPURLResponse)?.statusCode ?? -999))
                 return
             }
             
@@ -120,7 +123,11 @@ class HomeViewController: UIViewController {
                 let responseData = try decoder.decode(ListResponse<PetDto>.self, from: data)
                 
                 self.petList = responseData.list
+                self.historyList = responseData.list.first?.histories
+                self.walkHistoryList = responseData.list.first?.walkHistories
+                
                 self.showHomeWithFirstPetData()
+                self.showHomeWithFirstHistoryData()
                 
             } catch {
                 print(#function, error)
@@ -138,11 +145,13 @@ class HomeViewController: UIViewController {
         DispatchQueue.main.async { [self] in
             petNameLabel.text = firstPet.name
             petBreedLabel.text = firstPet.breed
-            // petProfileImageView.image =
-            
-            
         }
-       
+    }
+    
+    func showHomeWithFirstHistoryData() {
+        DispatchQueue.main.async { [self] in
+            latestHistoryDateLabel.text = koreaDateFormatter.string(for: Date())
+        }
     }
 }
 
@@ -186,9 +195,44 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         guard let cell = collectionView.cellForItem(at: indexPath) as? RecordContentsCollectionViewCell else { return }
         
+        switch indexPath.row {
+        case 0:
+            showLatestHistory(to: cell, with: 0)
+            
+        case 1:
+            showLatestHistory(to: cell, with: 1)
+            
+        case 2:
+            showLatestHistory(to: cell, with: 2)
+            
+        case 3:
+            showLatestHistory(to: cell, with: 3)
+            
+        case 4:
+            showLatestHistory(to: cell, with: 4)
+            
+        default:
+            break
+        }
+
+    }
+    
+    func showLatestHistory(to cell: RecordContentsCollectionViewCell, with type: Int) {
+        moveUp(to: cell)
+        
+        if let latestHistory = historyList?.filter({ $0.type == type }).first {
+            self.writerNicknameLabel.text = "\(latestHistory.familyMemberId)"
+            self.latestHistroyLabel.text = latestHistory.contents
+            self.latestHistoryDateLabel.text = koreaDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
+        } else {
+            showHomeWithFirstHistoryData()
+        }
+        
+    }
+    
+    func moveUp(to cell: RecordContentsCollectionViewCell) {
         UIView.animate(withDuration: 0.2) {
             cell.contentsTitleLabel.isHidden = false
             

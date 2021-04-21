@@ -13,6 +13,7 @@ class RecordContentsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var contentsImageView: UIImageView!
     @IBOutlet weak var contentsTitleLabel: UILabel!
     
+    var isCellSelected: Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()

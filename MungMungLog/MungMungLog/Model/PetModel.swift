@@ -15,6 +15,8 @@ struct PetDto: Codable {
     let gender: Bool
     var fileUrl: String? = nil
     let familyId: Int
+    let histories: [HistoryDto]?
+    let walkHistories: [WalkHistoryDto]?
 }
 
 struct PetPostModel: Codable {

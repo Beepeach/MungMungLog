@@ -7,4 +7,4 @@
 
 import Foundation
 
-let host = "https://mungmunglog.azurewebsites.net"
+let host = "https://localhost:5001"

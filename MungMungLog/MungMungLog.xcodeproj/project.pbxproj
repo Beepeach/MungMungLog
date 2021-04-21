@@ -114,6 +114,10 @@
 		46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4516C262722310025B915 /* FamilyDtoTests.swift */; };
 		46F451772627248C0025B915 /* FamilyMemberDto.json in Resources */ = {isa = PBXBuildFile; fileRef = 46F451762627248C0025B915 /* FamilyMemberDto.json */; };
 		46F4517D262724D20025B915 /* FamilyMemberDtoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */; };
+		46F54564262DEDCD00FBDBA0 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F54563262DEDCD00FBDBA0 /* HistoryModel.swift */; };
+		46F54565262DEDCD00FBDBA0 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F54563262DEDCD00FBDBA0 /* HistoryModel.swift */; };
+		46F5456B262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5456A262DEE6600FBDBA0 /* WalkHistoryModel.swift */; };
+		46F5456C262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5456A262DEE6600FBDBA0 /* WalkHistoryModel.swift */; };
 		46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */; };
 		46FC5B7C25EBA4A400D161F5 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */; };
 		46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */; };
@@ -208,6 +212,8 @@
 		46F4516C262722310025B915 /* FamilyDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyDtoTests.swift; sourceTree = "<group>"; };
 		46F451762627248C0025B915 /* FamilyMemberDto.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FamilyMemberDto.json; sourceTree = "<group>"; };
 		46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemberDtoTests.swift; sourceTree = "<group>"; };
+		46F54563262DEDCD00FBDBA0 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		46F5456A262DEE6600FBDBA0 /* WalkHistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkHistoryModel.swift; sourceTree = "<group>"; };
 		46FC5B7725EA098D00D161F5 /* RecordContentsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordContentsCollectionViewCell.swift; sourceTree = "<group>"; };
 		46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialRoundedView.swift; sourceTree = "<group>"; };
@@ -416,6 +422,8 @@
 				464A5B67261F5D8E00BA1DB7 /* PetModel.swift */,
 				46F450BA2625EDCE0025B915 /* FamilyModel.swift */,
 				46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */,
+				46F54563262DEDCD00FBDBA0 /* HistoryModel.swift */,
+				46F5456A262DEE6600FBDBA0 /* WalkHistoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -823,6 +831,7 @@
 				460C4EAE25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				460C4EA725F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
+				46F5456B262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */,
 				4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */,
 				46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */,
 				460C4ED125F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */,
@@ -857,6 +866,7 @@
 				464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */,
 				46DBEA8F262896EE00B07EC1 /* KeychainWrapper.swift in Sources */,
 				46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */,
+				46F54564262DEDCD00FBDBA0 /* HistoryModel.swift in Sources */,
 				469497A226186A200049D7FE /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -889,6 +899,7 @@
 				466492BB25F372FC00903265 /* MembershipRegistrationViewController.swift in Sources */,
 				460C4EAF25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				466492BC25F372FC00903265 /* AppDelegate.swift in Sources */,
+				46F5456C262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */,
 				460C4EA825F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				466492BD25F372FC00903265 /* WalkRecordEndingViewController.swift in Sources */,
 				466492BE25F372FC00903265 /* WalkRecordEditingViewController.swift in Sources */,
@@ -923,6 +934,7 @@
 				466492D125F372FC00903265 /* UIViewController+alert.swift in Sources */,
 				46DBEA90262896EE00B07EC1 /* KeychainWrapper.swift in Sources */,
 				466492D225F372FC00903265 /* DateSelectCollectionViewCell.swift in Sources */,
+				46F54565262DEDCD00FBDBA0 /* HistoryModel.swift in Sources */,
 				466492D325F372FC00903265 /* RoundedStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
