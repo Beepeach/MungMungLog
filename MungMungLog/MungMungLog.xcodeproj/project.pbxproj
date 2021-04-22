@@ -70,6 +70,8 @@
 		466492D625F372FC00903265 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0172557F76B00027376 /* LaunchScreen.storyboard */; };
 		466492D725F372FC00903265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0152557F76B00027376 /* Assets.xcassets */; };
 		466492D825F372FC00903265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0122557F76B00027376 /* Main.storyboard */; };
+		4674C6BB26318FEB004C9182 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674C6BA26318FEB004C9182 /* UserModel.swift */; };
+		4674C6BC26318FEB004C9182 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674C6BA26318FEB004C9182 /* UserModel.swift */; };
 		467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* CircleWithShadowView.swift */; };
 		467EF92725F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */; };
 		467EF92825F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */; };
@@ -177,6 +179,7 @@
 		4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEndingViewController.swift; sourceTree = "<group>"; };
 		466492DC25F372FC00903265 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466E3AE3261B13AC0077B3F2 /* MungMungLog Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MungMungLog Dev.entitlements"; sourceTree = "<group>"; };
+		4674C6BA26318FEB004C9182 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		467BF53625748F8900511451 /* CircleWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithShadowView.swift; sourceTree = "<group>"; };
 		467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
@@ -424,6 +427,7 @@
 				46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */,
 				46F54563262DEDCD00FBDBA0 /* HistoryModel.swift */,
 				46F5456A262DEE6600FBDBA0 /* WalkHistoryModel.swift */,
+				4674C6BA26318FEB004C9182 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -843,6 +847,7 @@
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
 				464A5B68261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
 				464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */,
+				4674C6BB26318FEB004C9182 /* UserModel.swift in Sources */,
 				46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */,
 				46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */,
 				46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */,
@@ -911,6 +916,7 @@
 				464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
 				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
 				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,
+				4674C6BC26318FEB004C9182 /* UserModel.swift in Sources */,
 				46F54579262FF88900FBDBA0 /* HomeViewController.swift in Sources */,
 				466492C725F372FC00903265 /* RecordDetailViewController.swift in Sources */,
 				469497A826186A4C0049D7FE /* Staging.swift in Sources */,

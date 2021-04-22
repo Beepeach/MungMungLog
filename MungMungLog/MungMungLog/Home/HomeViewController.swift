@@ -163,7 +163,7 @@ class HomeViewController: UIViewController {
             // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
             // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
             latestHistoryDateLabel.text = koreaFullDateFormatter.string(for: Date())
-            latestHistroyLabel.text = "저장된 기록이 없어요😭 기록을 남겨보시겠어요?"
+            latestHistroyLabel.text = "저장된 기록이 없어요😭\n기록을 남겨보시겠어요?"
         }
     }
     
@@ -227,12 +227,53 @@ extension HomeViewController: UICollectionViewDelegate {
                 DispatchQueue.main.async {
                     self.moveUp(to: cell)
                 }
+                
+                if let latestHistory = historyList?.filter({ $0.type == seletcedCellIndex }).first {
+                    guard let url = URL(string: ApiManager.getUser + "/\(latestHistory.familyMemberId)") else {
+                        print(#function, ApiError.invalidURL)
+                        return
+                    }
+                    
+                    let session = URLSession.shared
+                    var request = URLRequest(url: url)
+                    
+                    let task = session.dataTask(with: request) { (data, response, error) in
+                        if let error = error {
+                            print(#function, error)
+                        }
+                        
+                        guard let httpResponse = response as? HTTPURLResponse,
+                              httpResponse.statusCode == 200 else {
+                            print(#function, ApiError.failed((response as? HTTPURLResponse)?.statusCode ?? -999))
+                            return
+                        }
+                        
+                        guard let data = data else {
+                            print(#function, ApiError.emptyData)
+                            return
+                        }
+                        
+                        do {
+                            let decoder = JSONDecoder()
+                            let responseData = try decoder.decode(SingleResponse<User>.self, from: data)
+                            
+                            DispatchQueue.main.async {
+                                self.writerNicknameLabel.text = responseData.data?.nickname
+                                self.latestHistroyLabel.text = latestHistory.contents
+                                self.latestHistoryDateLabel.text = self.koreaFullDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
+                            }
+                        } catch {
+                            print(#function, error)
+                        }
+                    }
+                    task.resume()
+                }
             } else {
                 DispatchQueue.main.async {
                     self.moveDown(to: cell)
+                    self.showHistoryDataIfDataIsNil()
                 }
             }
-            
         }
     }
     

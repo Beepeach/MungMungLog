@@ -8,7 +8,7 @@
 import UIKit
 import SwiftKeychainWrapper
 
-struct Family {
+struct Family: Codable {
     var isFamilyHead: Bool = false
     var nickname: String
     var relationship: String
