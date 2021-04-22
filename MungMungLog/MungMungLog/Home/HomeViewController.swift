@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     var menuStack: UIStackView?
     
     let buttonImageNames = ["rice", "snack", "pill", "hospital", "walk"]
-    var seletcedCellIndex = -1
+    var selectedItemIndex = -1
     
     var petList: [PetDto]?
     var historyList: [HistoryDto]?
@@ -179,7 +179,7 @@ extension HomeViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RecordContentsCollectionViewCell
         
-        if seletcedCellIndex == indexPath.item {
+        if selectedItemIndex == indexPath.item {
             moveUp(to: cell)
         } else {
             moveDown(to: cell)
@@ -216,19 +216,19 @@ extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(#function, indexPath)
         
-        seletcedCellIndex = indexPath.item
+        selectedItemIndex = indexPath.item
         
         for index in 0 ..< buttonImageNames.count {
             let myIndexPath: IndexPath = IndexPath(item: index, section: 0)
             
             guard let cell = collectionView.cellForItem(at: myIndexPath) as? RecordContentsCollectionViewCell else { continue }
             
-            if index == seletcedCellIndex {
+            if index == selectedItemIndex {
                 DispatchQueue.main.async {
                     self.moveUp(to: cell)
                 }
                 
-                if let latestHistory = historyList?.filter({ $0.type == seletcedCellIndex }).first {
+                if let latestHistory = historyList?.filter({ $0.type == selectedItemIndex }).first {
                     guard let url = URL(string: ApiManager.getUser + "/\(latestHistory.familyMemberId)") else {
                         print(#function, ApiError.invalidURL)
                         return
