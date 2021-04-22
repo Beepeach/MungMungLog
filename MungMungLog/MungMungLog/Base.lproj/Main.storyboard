@@ -156,7 +156,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="G8L-BW-95i" secondAttribute="trailing" constant="24" id="xfW-Qp-cML"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ho-IG-LIt" userLabel="Collection View Container View">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ho-IG-LIt" userLabel="Collection View Container View">
                                                 <rect key="frame" x="0.0" y="397.66666666666669" width="428" height="150.00000000000006"/>
                                                 <subviews>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="b8t-2r-1wp">

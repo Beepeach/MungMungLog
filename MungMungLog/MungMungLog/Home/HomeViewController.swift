@@ -10,7 +10,9 @@ import SwiftKeychainWrapper
 
 class HomeViewController: UIViewController {
     var menuStack: UIStackView?
+    
     let buttonImageNames = ["rice", "snack", "pill", "hospital", "walk"]
+    var seletcedCellIndex = -1
     
     var petList: [PetDto]?
     var historyList: [HistoryDto]?
@@ -81,7 +83,6 @@ class HomeViewController: UIViewController {
         return stack
     }
     
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,7 +140,7 @@ class HomeViewController: UIViewController {
     
     func showHomeWithFirstPetData() {
         guard let firstPet = petList?.first else {
-             return
+            return
         }
         
         DispatchQueue.main.async { [self] in
@@ -166,20 +167,24 @@ class HomeViewController: UIViewController {
         }
     }
     
-    
 }
 
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return buttonImageNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RecordContentsCollectionViewCell
         
-        // 더 줄일수 있을거 같은데..?
+        if seletcedCellIndex == indexPath.item {
+            moveUp(to: cell)
+        } else {
+            moveDown(to: cell)
+        }
+        
         switch indexPath.row {
         case 0:
             cell.contentsImageView.image = UIImage(named: "rice")
@@ -209,28 +214,26 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? RecordContentsCollectionViewCell else { return }
+        print(#function, indexPath)
         
-        switch indexPath.row {
-        case 0:
-            showLatestHistory(to: cell, with: 0)
+        seletcedCellIndex = indexPath.item
+        
+        for index in 0 ..< buttonImageNames.count {
+            let myIndexPath: IndexPath = IndexPath(item: index, section: 0)
             
-        case 1:
-            showLatestHistory(to: cell, with: 1)
+            guard let cell = collectionView.cellForItem(at: myIndexPath) as? RecordContentsCollectionViewCell else { continue }
             
-        case 2:
-            showLatestHistory(to: cell, with: 2)
+            if index == seletcedCellIndex {
+                DispatchQueue.main.async {
+                    self.moveUp(to: cell)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.moveDown(to: cell)
+                }
+            }
             
-        case 3:
-            showLatestHistory(to: cell, with: 3)
-            
-        case 4:
-            showLatestHistory(to: cell, with: 4)
-            
-        default:
-            break
         }
-
     }
     
     func showLatestHistory(to cell: RecordContentsCollectionViewCell, with type: Int) {
@@ -258,14 +261,9 @@ extension HomeViewController: UICollectionViewDelegate {
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        
-        guard let cell = collectionView.cellForItem(at: indexPath) as? RecordContentsCollectionViewCell else { return }
-        
-        UIView.animate(withDuration: 0.2) {
-            cell.contentsTitleLabel.isHidden = true
-            cell.contentsTitleLabel.alpha = 0.0
-            cell.contentsIconContainerView.backgroundColor = UIColor(named: "MyDefaultColor")
-        }
+    func moveDown(to cell: RecordContentsCollectionViewCell) {
+        cell.contentsTitleLabel.isHidden = true
+        cell.contentsIconContainerView.backgroundColor = UIColor(named: "MyDefaultColor")
+        cell.contentsTitleLabel.alpha = 0.0
     }
 }
