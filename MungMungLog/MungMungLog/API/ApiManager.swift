@@ -66,7 +66,7 @@ class ApiManager {
     
     
     
-    private func fetch<T: Codable> (urlStr: String, httpMethod: String = "Get", body: Data? = nil, completion: @escaping (Result<T, Error>) -> ()) {
+     func fetch<T: Codable> (urlStr: String, httpMethod: String = "Get", body: Data? = nil, completion: @escaping (Result<T, Error>) -> ()) {
         
         guard let url = URL(string: urlStr) else {
             DispatchQueue.main.async {

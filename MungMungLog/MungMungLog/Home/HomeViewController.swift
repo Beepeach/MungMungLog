@@ -94,48 +94,19 @@ class HomeViewController: UIViewController {
     }
     
     func fetchData() {
-        
-        guard let url = URL(string: ApiManager.getPetList) else {
-            print(#function, ApiError.invalidURL)
-            return
-        }
-        
-        let session = URLSession.shared
-        var request = URLRequest(url: url)
-        
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print(#function, error)
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                  httpResponse.statusCode == 200 else {
-                print(#function, ApiError.failed((response as? HTTPURLResponse)?.statusCode ?? -999))
-                return
-            }
-            
-            guard let data = data else {
-                print(#function, ApiError.emptyData)
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let responseData = try decoder.decode(ListResponse<PetDto>.self, from: data)
-                
+        ApiManager.shared.fetch(urlStr: ApiManager.getPetList) { (result: Result<ListResponse<PetDto>, Error>) in
+            switch result {
+            case .success(let responseData):
                 self.petList = responseData.list
                 self.historyList = responseData.list.first?.histories
                 self.walkHistoryList = responseData.list.first?.walkHistories
                 
                 self.showHomeWithFirstPetData()
                 self.showHistoryDataWhenFirst()
-                
-            } catch {
-                print(#function, error)
+            case .failure(let error):
+                print(error)
             }
         }
-        
-        task.resume()
     }
     
     func showHomeWithFirstPetData() {
@@ -143,28 +114,22 @@ class HomeViewController: UIViewController {
             return
         }
         
-        DispatchQueue.main.async { [self] in
-            petNameLabel.text = firstPet.name
-            petBreedLabel.text = firstPet.breed
-        }
+        petNameLabel.text = firstPet.name
+        petBreedLabel.text = firstPet.breed
     }
     
     func showHistoryDataWhenFirst() {
-        DispatchQueue.main.async { [self] in
-            // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
-            // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
-            latestHistoryDateLabel.text = koreaFullDateFormatter.string(for: Date())
-            latestHistroyLabel.text = "아이콘을 선택해서 가장 최근에 기록한 정보를 확인하세요."
-        }
+        // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
+        // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
+        latestHistoryDateLabel.text = koreaFullDateFormatter.string(for: Date())
+        latestHistroyLabel.text = "아이콘을 선택해서 가장 최근에 기록한 정보를 확인하세요."
     }
     
     func showHistoryDataIfDataIsNil() {
-        DispatchQueue.main.async { [self] in
-            // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
-            // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
-            latestHistoryDateLabel.text = koreaFullDateFormatter.string(for: Date())
-            latestHistroyLabel.text = "저장된 기록이 없어요😭\n기록을 남겨보시겠어요?"
-        }
+        // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
+        // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
+        latestHistoryDateLabel.text = koreaFullDateFormatter.string(for: Date())
+        latestHistroyLabel.text = "저장된 기록이 없어요😭\n기록을 남겨보시겠어요?"
     }
     
 }
@@ -229,65 +194,30 @@ extension HomeViewController: UICollectionViewDelegate {
                 }
                 
                 if let latestHistory = historyList?.filter({ $0.type == selectedItemIndex }).first {
-                    guard let url = URL(string: ApiManager.getUser + "/\(latestHistory.familyMemberId)") else {
-                        print(#function, ApiError.invalidURL)
-                        return
-                    }
                     
-                    let session = URLSession.shared
-                    var request = URLRequest(url: url)
-                    
-                    let task = session.dataTask(with: request) { (data, response, error) in
-                        if let error = error {
-                            print(#function, error)
-                        }
-                        
-                        guard let httpResponse = response as? HTTPURLResponse,
-                              httpResponse.statusCode == 200 else {
-                            print(#function, ApiError.failed((response as? HTTPURLResponse)?.statusCode ?? -999))
-                            return
-                        }
-                        
-                        guard let data = data else {
-                            print(#function, ApiError.emptyData)
-                            return
-                        }
-                        
-                        do {
-                            let decoder = JSONDecoder()
-                            let responseData = try decoder.decode(SingleResponse<User>.self, from: data)
+                    ApiManager.shared.fetch(urlStr: ApiManager.getUser + "/\(latestHistory.familyMemberId)") { (result: Result<SingleResponse<User>, Error>) in
+                        switch result {
+                        case .success(let responseData):
+                            self.showLatestHistory(responsedata: responseData, latestHistory: latestHistory)
                             
-                            DispatchQueue.main.async {
-                                self.writerNicknameLabel.text = responseData.data?.nickname
-                                self.latestHistroyLabel.text = latestHistory.contents
-                                self.latestHistoryDateLabel.text = self.koreaFullDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
-                            }
-                        } catch {
+                        case .failure(let error):
+                            self.showHistoryDataIfDataIsNil()
                             print(#function, error)
                         }
                     }
-                    task.resume()
                 }
             } else {
                 DispatchQueue.main.async {
                     self.moveDown(to: cell)
-                    self.showHistoryDataIfDataIsNil()
                 }
             }
         }
     }
     
-    func showLatestHistory(to cell: RecordContentsCollectionViewCell, with type: Int) {
-        moveUp(to: cell)
-        
-        if let latestHistory = historyList?.filter({ $0.type == type }).first {
-            self.writerNicknameLabel.text = "\(latestHistory.familyMemberId)"
+    func showLatestHistory(responsedata: SingleResponse<User>, latestHistory: HistoryDto) {
+            self.writerNicknameLabel.text = responsedata.data?.nickname
             self.latestHistroyLabel.text = latestHistory.contents
             self.latestHistoryDateLabel.text = koreaFullDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
-        } else {
-            showHistoryDataIfDataIsNil()
-        }
-        
     }
     
     func moveUp(to cell: RecordContentsCollectionViewCell) {
