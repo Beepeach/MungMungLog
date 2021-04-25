@@ -99,6 +99,8 @@
 		46DBEA8926288B2200B07EC1 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA8726288B2200B07EC1 /* UserDefault.swift */; };
 		46DBEA8F262896EE00B07EC1 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */; };
 		46DBEA90262896EE00B07EC1 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */; };
+		46E0E2952635980900DC88A7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E0E2942635980900DC88A7 /* DataManager.swift */; };
+		46E0E2962635980900DC88A7 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E0E2942635980900DC88A7 /* DataManager.swift */; };
 		46E1BA352616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
@@ -200,6 +202,7 @@
 		46DBEA7F26283EA000B07EC1 /* BlobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobManager.swift; sourceTree = "<group>"; };
 		46DBEA8726288B2200B07EC1 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		46E0E2942635980900DC88A7 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailJoinViewController.swift; sourceTree = "<group>"; };
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
 		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
@@ -276,6 +279,7 @@
 				4605D1D525CECC69001C6815 /* Breeds.swift */,
 				46DBEA8726288B2200B07EC1 /* UserDefault.swift */,
 				46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */,
+				46E0E2942635980900DC88A7 /* DataManager.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -859,6 +863,7 @@
 				46F450C22625F1BC0025B915 /* FamilyMemberModel.swift in Sources */,
 				467EF92E25F3C51700AC8F88 /* MyPageViewController.swift in Sources */,
 				46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */,
+				46E0E2952635980900DC88A7 /* DataManager.swift in Sources */,
 				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
 				4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */,
 				46F450BB2625EDCE0025B915 /* FamilyModel.swift in Sources */,
@@ -928,6 +933,7 @@
 				46F450C32625F1BC0025B915 /* FamilyMemberModel.swift in Sources */,
 				467EF92825F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */,
 				467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */,
+				46E0E2962635980900DC88A7 /* DataManager.swift in Sources */,
 				466492CC25F372FC00903265 /* PartialRoundedView.swift in Sources */,
 				466492CD25F372FC00903265 /* RecordContentsCollectionViewCell.swift in Sources */,
 				46F450BC2625EDCE0025B915 /* FamilyModel.swift in Sources */,
