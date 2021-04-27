@@ -1856,7 +1856,6 @@
                         <outlet property="scrollView" destination="afe-na-gJE" id="sY7-LJ-DHm"/>
                         <outlet property="tableView" destination="3dT-l6-IYv" id="o7G-0v-aEu"/>
                         <outlet property="tableViewHeightConstraint" destination="QFF-Eb-yBT" id="eAU-9T-YwT"/>
-                        <segue destination="LQF-VB-7aJ" kind="custom" identifier="moveToLoginView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="8Ag-hW-5aU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCV-7f-haR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4894,6 +4893,9 @@
                             <constraint firstItem="M3s-wq-Y3w" firstAttribute="top" secondItem="kgm-2i-ETl" secondAttribute="top" id="fNc-AT-ywo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="LQF-VB-7aJ" kind="custom" identifier="moveToLoginView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="lnG-lL-ICa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gww-B5-Ken" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4922,7 +4924,7 @@
         <segue reference="0Ma-Gb-q2e"/>
         <segue reference="NJR-zq-Bph"/>
         <segue reference="AIA-p0-Nox"/>
-        <segue reference="8Ag-hW-5aU"/>
+        <segue reference="lnG-lL-ICa"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Test" width="1411" height="1411"/>

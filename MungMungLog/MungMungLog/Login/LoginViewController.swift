@@ -33,42 +33,20 @@ class LoginViewController: UIViewController {
     func login(model: SNSLoginRequestModel) {
         KeychainWrapper.standard.remove(forKey: .apiToken)
         
-        guard let url = URL(string: ApiManager.snsLogin) else {
-            print(ApiError.invalidURL)
-            return
-        }
+        var data: Data? = nil
         
-        let session = URLSession.shared
-        var request = URLRequest(url: url)
-        request.httpMethod = "Post"
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        let encoder = JSONEncoder()
         
         do {
-            let encoder = JSONEncoder()
-            request.httpBody = try encoder.encode(model)
+            data = try encoder.encode(model)
         } catch {
             print(error)
         }
         
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print(error)
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                  httpResponse.statusCode == 200 else {
-                return
-            }
-            
-            guard let data = data else {
-                print(ApiError.emptyData)
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let responseData = try decoder.decode(LoginResponseModel.self, from: data)
-                
+        
+        ApiManager.shared.fetch(urlStr: ApiManager.snsLogin, httpMethod: "Post", body: data) { (result: Result<LoginResponseModel, Error>) in
+            switch result {
+            case .success(let responseData):
                 if responseData.code == Statuscode.ok.rawValue {
                     //                    dump(responseData)
                     
@@ -92,9 +70,14 @@ class LoginViewController: UIViewController {
                         KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
                     }
                     
+                    
+                    // 로그인할때 데이터들을 다 받아야할거 같은데??
+                    // CoreDataManager.shared.createNewUser(dto: <#T##User#>)
+                    
                     print("=======로그인 성공========")
                     print(responseData)
                     
+                    // 저장된 데이터에따라 로그인 후 화면이동 구현코드
                     DispatchQueue.main.async {
                         if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
                            nickname.count > 0 {
@@ -108,16 +91,16 @@ class LoginViewController: UIViewController {
                         }
                         
                     }
+                    
                 } else {
-                    print("========로그인실패===========")
-                    print(responseData)
+                        print("========로그인실패===========")
+                        print(responseData)
+                    
                 }
-            } catch {
+            case .failure(let error):
                 print(error)
             }
         }
-        
-        task.resume()
     }
     
     
@@ -132,42 +115,19 @@ class LoginViewController: UIViewController {
             return
         }
         
-        guard let url = URL(string: ApiManager.emailLogin) else {
-            print(ApiError.invalidURL)
-            return
-        }
+        var data: Data? = nil
         
-        let session = URLSession.shared
-        var request = URLRequest(url: url)
-        request.httpMethod = "Post"
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        let encoder = JSONEncoder()
         
         do {
-            let encoder = JSONEncoder()
-            request.httpBody = try encoder.encode(EmailLoginRequestModel(email: email, password: password))
+            data = try encoder.encode(EmailLoginRequestModel(email: email, password: password))
         } catch {
             print(error)
         }
         
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print(error)
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                  httpResponse.statusCode == 200 else {
-                return
-            }
-            
-            guard let data = data else {
-                print(ApiError.emptyData)
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let responseData = try decoder.decode(LoginResponseModel.self, from: data)
-                
+        ApiManager.shared.fetch(urlStr: ApiManager.emailLogin, httpMethod: "Post", body: data) { (result: Result<LoginResponseModel, Error>) in
+            switch result{
+            case .success(let responseData):
                 switch responseData.code {
                 case Statuscode.ok.rawValue:
                     if let token = responseData.token {
@@ -189,6 +149,8 @@ class LoginViewController: UIViewController {
                     if let familyId = responseData.familyId {
                         KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
                     }
+                    
+                    // 여기도 Coredata를 저장하는 코드
                     
                     print("=======로그인 성공========")
                     print(responseData)
@@ -232,12 +194,11 @@ class LoginViewController: UIViewController {
                         self.presentOneButtonAlert(alertTitle: "알림", message: "로그인에 실패했습니다.", actionTitle: "확인")
                     }
                 }
-            } catch {
+                
+            case .failure(let error):
                 print(error)
             }
         }
-        
-        task.resume()
     }
     
     @IBAction func loginWithKakao(_ sender: Any) {
