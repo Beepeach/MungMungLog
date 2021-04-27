@@ -74,6 +74,8 @@
 		466686772638017C00F77084 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466686752638017C00F77084 /* CoreDataManager.swift */; };
 		46668682263801D700F77084 /* MungMungLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46668680263801D700F77084 /* MungMungLog.xcdatamodeld */; };
 		46668683263801D700F77084 /* MungMungLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46668680263801D700F77084 /* MungMungLog.xcdatamodeld */; };
+		466D8DB72638086600B356F9 /* OptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D8DB62638086600B356F9 /* OptionListViewController.swift */; };
+		466D8DB82638086600B356F9 /* OptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D8DB62638086600B356F9 /* OptionListViewController.swift */; };
 		4674C6BB26318FEB004C9182 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674C6BA26318FEB004C9182 /* UserModel.swift */; };
 		4674C6BC26318FEB004C9182 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674C6BA26318FEB004C9182 /* UserModel.swift */; };
 		467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* CircleWithShadowView.swift */; };
@@ -184,6 +186,7 @@
 		466492DC25F372FC00903265 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466686752638017C00F77084 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		46668681263801D700F77084 /* MungMungLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLog.xcdatamodel; sourceTree = "<group>"; };
+		466D8DB62638086600B356F9 /* OptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionListViewController.swift; sourceTree = "<group>"; };
 		466E3AE3261B13AC0077B3F2 /* MungMungLog Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MungMungLog Dev.entitlements"; sourceTree = "<group>"; };
 		4674C6BA26318FEB004C9182 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		467BF53625748F8900511451 /* CircleWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithShadowView.swift; sourceTree = "<group>"; };
@@ -413,6 +416,7 @@
 				460C4EDA25F5292700D4E58D /* PetProfileConfigViewController.swift */,
 				460C4ED525F5290A00D4E58D /* UserProfileConfigViewController.swift */,
 				460C4ED025F51C9D00D4E58D /* FamilyConfigViewController.swift */,
+				466D8DB62638086600B356F9 /* OptionListViewController.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -843,6 +847,7 @@
 				461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */,
 				460C4EAE25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
+				466D8DB72638086600B356F9 /* OptionListViewController.swift in Sources */,
 				460C4EA725F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				46F5456B262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */,
 				4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */,
@@ -914,6 +919,7 @@
 				466492BA25F372FC00903265 /* CircleWithShadowView.swift in Sources */,
 				466492BB25F372FC00903265 /* MembershipRegistrationViewController.swift in Sources */,
 				460C4EAF25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
+				466D8DB82638086600B356F9 /* OptionListViewController.swift in Sources */,
 				466492BC25F372FC00903265 /* AppDelegate.swift in Sources */,
 				46F5456C262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */,
 				460C4EA825F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,

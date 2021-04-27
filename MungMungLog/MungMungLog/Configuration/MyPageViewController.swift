@@ -30,11 +30,31 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var petProfileImageView: UIImageView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var optionContainerView: UIView!
+    @IBOutlet weak var dimmingView: UIView!
+    @IBOutlet weak var optionListContainerView: UIView!
     
+    @IBOutlet weak var optionListContainerViewLeadingConstraint: NSLayoutConstraint!
     
-    @IBAction func showOption(_ sender: Any) {
-        
+    @IBAction func showOptionList(_ sender: Any) {
+        UIView.animate(withDuration: 0.2) { [self] in
+            optionListContainerViewLeadingConstraint.constant = optionListContainerViewLeadingConstraint.constant == 0 ? hideList() : showList()
+            self.view.layoutIfNeeded()
+        }
+     
+    }
+    
+    @discardableResult
+    func showList() -> CGFloat {
+        dimmingView.isHidden = false
+        scrollView.isScrollEnabled = false
+        return 0
+    }
+    
+    @discardableResult
+    func hideList() -> CGFloat {
+        dimmingView.isHidden = true
+        scrollView.isScrollEnabled = true
+        return scrollView.frameLayoutGuide.layoutFrame.width / 2
     }
     
     @IBAction func logout(_ sender: Any) {
@@ -57,6 +77,8 @@ class MyPageViewController: UIViewController {
         
         
         petProfileImageView.layer.cornerRadius = petProfileImageView.frame.height / 2
+        
+        optionListContainerViewLeadingConstraint.constant = scrollView.frameLayoutGuide.layoutFrame.width / 2
 
     }
     
