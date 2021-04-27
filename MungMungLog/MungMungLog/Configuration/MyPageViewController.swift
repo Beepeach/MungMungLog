@@ -56,13 +56,7 @@ class MyPageViewController: UIViewController {
         scrollView.isScrollEnabled = true
         return scrollView.frameLayoutGuide.layoutFrame.width / 2
     }
-    
-    @IBAction func logout(_ sender: Any) {
-        deleteKeychainInfo()
-        
-        performSegue(withIdentifier: MovetoView.login.rawValue, sender: nil)
-        
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         

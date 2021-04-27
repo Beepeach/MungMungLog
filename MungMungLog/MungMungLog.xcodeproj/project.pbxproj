@@ -83,6 +83,8 @@
 		467EF92825F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */; };
 		467EF92E25F3C51700AC8F88 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */; };
 		467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */; };
+		468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEF13263854D9003A7FF0 /* QnaViewController.swift */; };
+		468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEF13263854D9003A7FF0 /* QnaViewController.swift */; };
 		468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
 		4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
 		4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
@@ -192,6 +194,7 @@
 		467BF53625748F8900511451 /* CircleWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithShadowView.swift; sourceTree = "<group>"; };
 		467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		468EEF13263854D9003A7FF0 /* QnaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnaViewController.swift; sourceTree = "<group>"; };
 		468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileViewController.swift; sourceTree = "<group>"; };
 		4694976D26184E6D0049D7FE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		4694977526184F520049D7FE /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
@@ -416,6 +419,7 @@
 				460C4EDA25F5292700D4E58D /* PetProfileConfigViewController.swift */,
 				460C4ED525F5290A00D4E58D /* UserProfileConfigViewController.swift */,
 				460C4ED025F51C9D00D4E58D /* FamilyConfigViewController.swift */,
+				468EEF13263854D9003A7FF0 /* QnaViewController.swift */,
 				466D8DB62638086600B356F9 /* OptionListViewController.swift */,
 			);
 			path = Configuration;
@@ -858,6 +862,7 @@
 				46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */,
 				46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */,
 				464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
+				468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
 				464A5B68261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
 				464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */,
@@ -930,6 +935,7 @@
 				466492C225F372FC00903265 /* WalkRecordStartingViewController.swift in Sources */,
 				466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
 				466492C425F372FC00903265 /* SceneDelegate.swift in Sources */,
+				468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
 				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
 				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,

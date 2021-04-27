@@ -36,3 +36,21 @@ struct PetPutModel: Codable {
     let gender: Bool
     let fileUrl: String?
 }
+
+
+extension CoreDataManager {
+    func createNewPet(dto: PetDto) {
+        mainContext.perform {
+            let newPet = PetEntity(context: self.mainContext)
+            
+            newPet.petId = Int64(dto.petId)
+            newPet.name = dto.name
+            newPet.birthday = Date(timeIntervalSinceReferenceDate: dto.birthday)
+            newPet.breed = dto.breed
+            newPet.gender = dto.gender
+            newPet.fileUrl = dto.fileUrl
+            
+            self.saveMainContext()
+        }
+    }
+}

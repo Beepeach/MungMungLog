@@ -3,18 +3,21 @@
     <entity name="Pet" representedClassName="PetEntity" syncable="YES" codeGenerationType="class">
         <attribute name="birthday" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="breed" attributeType="String"/>
+        <attribute name="familyId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="fileUrl" optional="YES" attributeType="String"/>
         <attribute name="gender" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String" maxValueString="10"/>
+        <attribute name="petId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <entity name="User" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="familyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="fileUrl" optional="YES" attributeType="String"/>
         <attribute name="gender" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="nickname" attributeType="String" maxValueString="15"/>
         <attribute name="relationship" attributeType="String" maxValueString="15"/>
     </entity>
     <elements>
-        <element name="User" positionX="-54" positionY="-9" width="128" height="89"/>
-        <element name="Pet" positionX="-36" positionY="36" width="128" height="104"/>
+        <element name="Pet" positionX="-36" positionY="36" width="128" height="14"/>
+        <element name="User" positionX="-54" positionY="-9" width="128" height="104"/>
     </elements>
 </model>
