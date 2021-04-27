@@ -1,15 +1,15 @@
 //
-//  DataManager.swift
+//  CoreDataManager.swift
 //  MungMungLog
 //
-//  Created by JunHee Jo on 2021/04/25.
+//  Created by JunHee Jo on 2021/04/27.
 //
 
 import Foundation
 import CoreData
 
-class  DataManager {
-    static let shared = DataManager()
+class  CoreDataManager {
+    static let shared = CoreDataManager()
     private init() {}
     
     var container: NSPersistentContainer?
@@ -44,3 +44,4 @@ class  DataManager {
     }
     
 }
+
