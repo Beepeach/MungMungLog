@@ -4746,8 +4746,46 @@
                     <view key="view" contentMode="scaleToFill" id="FMN-eC-ITG">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="제목" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b40-cL-SVs">
+                                <rect key="frame" x="20" y="124" width="388" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7S2-Ve-ecm" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
+                                <rect key="frame" x="20" y="194" width="388" height="678"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="내용을 입력해 주세요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yuo-G7-NfN">
+                                        <rect key="frame" x="8" y="8" width="372" height="662"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="Vtu-NM-wAa" id="gpj-75-x6s"/>
+                                        </connections>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yuo-G7-NfN" secondAttribute="trailing" constant="8" id="JyH-JE-ybw"/>
+                                    <constraint firstAttribute="bottom" secondItem="yuo-G7-NfN" secondAttribute="bottom" constant="8" id="QCE-5w-Tyl"/>
+                                    <constraint firstItem="yuo-G7-NfN" firstAttribute="top" secondItem="7S2-Ve-ecm" secondAttribute="top" constant="8" id="UJ9-Rq-xnw"/>
+                                    <constraint firstItem="yuo-G7-NfN" firstAttribute="leading" secondItem="7S2-Ve-ecm" secondAttribute="leading" constant="8" id="YOu-W3-hsf"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tej-sP-uyQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b40-cL-SVs" firstAttribute="top" secondItem="tej-sP-uyQ" secondAttribute="top" constant="36" id="LE7-8B-Vdw"/>
+                            <constraint firstItem="tej-sP-uyQ" firstAttribute="bottom" secondItem="7S2-Ve-ecm" secondAttribute="bottom" constant="20" id="NNr-X6-YCd"/>
+                            <constraint firstItem="tej-sP-uyQ" firstAttribute="trailing" secondItem="7S2-Ve-ecm" secondAttribute="trailing" constant="20" id="Pr3-Ni-ha8"/>
+                            <constraint firstItem="7S2-Ve-ecm" firstAttribute="leading" secondItem="tej-sP-uyQ" secondAttribute="leading" constant="20" id="Zc1-er-x2l"/>
+                            <constraint firstItem="b40-cL-SVs" firstAttribute="leading" secondItem="tej-sP-uyQ" secondAttribute="leading" constant="20" id="ZfL-L9-PQc"/>
+                            <constraint firstItem="tej-sP-uyQ" firstAttribute="trailing" secondItem="b40-cL-SVs" secondAttribute="trailing" constant="20" id="lVC-al-Xhe"/>
+                            <constraint firstItem="7S2-Ve-ecm" firstAttribute="top" secondItem="b40-cL-SVs" secondAttribute="bottom" constant="36" id="nFc-ho-QMk"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="문의하기" id="zzC-B2-Xim">
                         <barButtonItem key="leftBarButtonItem" title="뒤로" id="LIS-v7-CuB">
@@ -4755,12 +4793,20 @@
                                 <action selector="backMyPageVC:" destination="Vtu-NM-wAa" id="TfU-3W-JLB"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="보내기" id="oYy-a0-Xui"/>
+                        <barButtonItem key="rightBarButtonItem" title="보내기" id="oYy-a0-Xui">
+                            <connections>
+                                <action selector="send:" destination="Vtu-NM-wAa" id="PRA-gm-Lku"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentsTextView" destination="yuo-G7-NfN" id="ptt-4o-iQT"/>
+                        <outlet property="titleField" destination="b40-cL-SVs" id="S9C-yB-E5t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8A-Vu-cqf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7766" y="3701"/>
+            <point key="canvasLocation" x="7764.9532710280373" y="3700.431965442765"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j3G-4h-AVu">
