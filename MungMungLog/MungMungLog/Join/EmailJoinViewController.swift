@@ -53,46 +53,18 @@ class EmailJoinViewController: UIViewController {
         
         KeychainWrapper.standard.remove(forKey: .apiToken)
         
-        guard let url = URL(string: ApiManager.emailJoin) else {
-            print(ApiError.invalidURL)
-            return
-        }
-        
-        let session = URLSession.shared
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "Post"
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        var data: Data? = nil
         
         do {
             let encoder = JSONEncoder()
-            request.httpBody = try encoder.encode(EmailJoinRequestModel(email: email, password: password))
+            data = try encoder.encode(EmailJoinRequestModel(email: email, password: password))
         } catch {
             print(error)
         }
         
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if let error = error  {
-                print(error)
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                  httpResponse.statusCode == 200 else {
-                return
-            }
-            
-            guard let data = data else {
-                print(ApiError.emptyData)
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                
-                let responseData = try decoder.decode(
-                    JoinResponseModel.self, from: data)
-                
+        ApiManager.shared.fetch(urlStr: ApiManager.emailJoin, httpMethod: "Post", body: data) { (result: Result<JoinResponseModel, Error>) in
+            switch result {
+            case .success(let responseData):
                 switch responseData.code {
                 case Statuscode.ok.rawValue:
                     if let token = responseData.token {
@@ -133,21 +105,14 @@ class EmailJoinViewController: UIViewController {
                     }
                     print(responseData)
                 }
-                
-                // 존재하는 계정이라면 존재하는 계정입니다 라는
-                
-            } catch {
+            case .failure(let error):
                 print(error)
+                
+                DispatchQueue.main.async {
+                    self.presentOneButtonAlert(alertTitle: "알림", message: "유저 생성에 실패했습니다.", actionTitle: "확인")
+                }
             }
         }
-        
-        task.resume()
-        
-        
-        
-        
-        
-        
     }
     
     override func viewDidLoad() {
