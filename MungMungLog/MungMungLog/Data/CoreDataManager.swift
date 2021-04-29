@@ -8,6 +8,14 @@
 import Foundation
 import CoreData
 
+enum EntityName: String {
+    case user = "User"
+    case pet = "Pet"
+    case familyMember = "FamilyMember"
+    case history = "History"
+    case walkHistory = "WalkHistory"
+}
+
 class  CoreDataManager {
     static let shared = CoreDataManager()
     private init() {}
@@ -41,6 +49,21 @@ class  CoreDataManager {
                 }
             }
         }
+    }
+    
+    
+    
+    func deleteEntity(name: String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: name)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try mainContext.execute(deleteRequest)
+            try mainContext.save()
+        } catch {
+            print(error)
+        }
+        
     }
     
 }
