@@ -9,6 +9,7 @@ import Foundation
 import CoreData
 
 struct User: Codable {
+    let id: String
     let nickname: String
     let relationship: String
     let gender: Bool
@@ -35,6 +36,44 @@ extension CoreDataManager {
         }
     }
     
+    func fetchUserData() -> [UserEntity] {
+        var list: [UserEntity] = [UserEntity]()
+        
+        mainContext.performAndWait {
+            let request: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
+            
+            do {
+                list = try mainContext.fetch(request)
+            } catch {
+                print(error)
+            }
+        }
+        
+        return list
+    }
+    
+    func updateUserData(target: UserEntity, dto: User) {
+        mainContext.perform {
+            target.nickname = dto.nickname
+            target.relationship = dto.relationship
+            target.gender = dto.gender
+            target.fileUrl = dto.fileUrl
+            
+            if let familyId = dto.familyId {
+                target.familyId = Int64(familyId)
+            }
+            
+            self.saveMainContext()
+        }
+    }
+    
+    func deleteUserData(target: UserEntity) {
+        mainContext.perform {
+            self.mainContext.delete(target)
+            
+            self.saveMainContext()
+        }
+    }
     
 }
 

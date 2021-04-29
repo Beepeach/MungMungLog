@@ -50,59 +50,75 @@ class LoginViewController: UIViewController {
                 if responseData.code == Statuscode.ok.rawValue {
                     //                    dump(responseData)
                     
-                    if let token = responseData.token {
-                        KeychainWrapper.standard.set(token, forKey: KeychainWrapper.Key.apiToken.rawValue)
-                    }
-                    
-                    if let userId = responseData.userId {
-                        KeychainWrapper.standard.set(userId, forKey: KeychainWrapper.Key.apiUserId.rawValue)
-                    }
-                    
-                    if let email = responseData.email {
-                        KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.apiEmail.rawValue)
-                    }
-                    
-                    if let nickname = responseData.nickname {
-                        KeychainWrapper.standard.set(nickname, forKey: KeychainWrapper.Key.apiNickname.rawValue)
-                    }
-                    
-                    if let familyId = responseData.familyId {
-                        KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
-                    }
-                    
-                    
-                    // 로그인할때 데이터들을 다 받아야할거 같은데??
-                    // CoreDataManager.shared.createNewUser(dto: <#T##User#>)
+                    self.saveUserDataInKeychainAndCoreData(with: responseData)
                     
                     print("=======로그인 성공========")
                     print(responseData)
                     
-                    // 저장된 데이터에따라 로그인 후 화면이동 구현코드
-                    DispatchQueue.main.async {
-                        if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
-                           nickname.count > 0 {
-                            if let _ = KeychainWrapper.standard.integer(forKey: .apiFamilyId) {
-                                self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
-                            } else {
-                                self.performSegue(withIdentifier: MovetoView.registrationGuide.rawValue, sender: nil)
-                            }
-                        } else {
-                            self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
-                        }
-                        
-                    }
+                    self.goToCorrectSceneForKeychain()
                     
                 } else {
-                        print("========로그인실패===========")
-                        print(responseData)
+                    print("========로그인실패===========")
+                    print(responseData)
                     
+                    DispatchQueue.main.async {
+                        self.presentOneButtonAlert(alertTitle: "알림", message: "SNS 로그인에 실패했습니다.", actionTitle: "확인")
+                    }
                 }
             case .failure(let error):
                 print(error)
+                
+                DispatchQueue.main.async {
+                    self.presentOneButtonAlert(alertTitle: "알림", message: "SNS 로그인에 실패했습니다.", actionTitle: "확인")
+                }
             }
+            
         }
     }
     
+    func saveUserDataInKeychainAndCoreData(with responseData: LoginResponseModel) {
+        if let token = responseData.token {
+            KeychainWrapper.standard.set(token, forKey: KeychainWrapper.Key.apiToken.rawValue)
+        }
+        
+        if let userId = responseData.user?.id {
+            KeychainWrapper.standard.set(userId, forKey: KeychainWrapper.Key.apiUserId.rawValue)
+        }
+        
+        
+        if let email = responseData.email {
+            KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.apiEmail.rawValue)
+        }
+        
+        if let nickname = responseData.user?.nickname {
+            KeychainWrapper.standard.set(nickname, forKey: KeychainWrapper.Key.apiNickname.rawValue)
+        }
+        
+        if let familyId = responseData.user?.familyId {
+            KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
+        }
+        
+        // 서버에 성공했으면 userDto를 coredata에 저장
+        if let user = responseData.user {
+            CoreDataManager.shared.createNewUser(dto: user)
+        }
+    }
+    
+    func goToCorrectSceneForKeychain() {
+        DispatchQueue.main.async {
+            if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
+               nickname.count > 0 {
+                if let _ = KeychainWrapper.standard.integer(forKey: .apiFamilyId) {
+                    self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
+                } else {
+                    self.performSegue(withIdentifier: MovetoView.registrationGuide.rawValue, sender: nil)
+                }
+            } else {
+                self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
+            }
+            
+        }
+    }
     
     @IBAction func loginWithEmail(_ sender: Any) {
         KeychainWrapper.standard.remove(forKey: .apiToken)
@@ -130,44 +146,13 @@ class LoginViewController: UIViewController {
             case .success(let responseData):
                 switch responseData.code {
                 case Statuscode.ok.rawValue:
-                    if let token = responseData.token {
-                        KeychainWrapper.standard.set(token, forKey: KeychainWrapper.Key.apiToken.rawValue)
-                    }
                     
-                    if let userId = responseData.userId {
-                        KeychainWrapper.standard.set(userId, forKey: KeychainWrapper.Key.apiUserId.rawValue)
-                    }
-                    
-                    if let email = responseData.email {
-                        KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.apiEmail.rawValue)
-                    }
-                    
-                    if let nickname = responseData.nickname {
-                        KeychainWrapper.standard.set(nickname, forKey: KeychainWrapper.Key.apiNickname.rawValue)
-                    }
-                    
-                    if let familyId = responseData.familyId {
-                        KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
-                    }
-                    
-                    // 여기도 Coredata를 저장하는 코드
+                    self.saveUserDataInKeychainAndCoreData(with: responseData)
                     
                     print("=======로그인 성공========")
                     print(responseData)
                     
-                    DispatchQueue.main.async {
-                        if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
-                           nickname.count > 0 {
-                            if let _ = KeychainWrapper.standard.integer(forKey: .apiFamilyId) {
-                                self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
-                            } else {
-                                self.performSegue(withIdentifier: MovetoView.registrationGuide.rawValue, sender: nil)
-                            }
-
-                        } else {
-                            self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
-                        }
-                    }
+                    self.goToCorrectSceneForKeychain()
                     
                 case Statuscode.notFound.rawValue:
                     print("아이디를 확인해주세요")
@@ -176,15 +161,15 @@ class LoginViewController: UIViewController {
                         self.idInputField.becomeFirstResponder()
                         self.presentOneButtonAlert(alertTitle: "알림", message: "존재하지 않는 이메일입니다.", actionTitle: "확인")
                     }
-                  
+                    
                 case Statuscode.fail.rawValue:
                     print("비밀번호가 틀렸습니다.")
-
+                    
                     DispatchQueue.main.async {
                         self.passwordInputField.becomeFirstResponder()
                         self.presentOneButtonAlert(alertTitle: "알림", message: "비밀번호가 틀렸습니다.", actionTitle: "확인")
                     }
-                  
+                    
                 case Statuscode.tokenError.rawValue:
                     fallthrough
                     

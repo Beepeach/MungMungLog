@@ -43,10 +43,8 @@ struct LoginResponseModel: Codable {
     let code: Int
     let message: String?
     let email: String?
-    let userId: String?
     let token: String?
-    let nickname: String?
-    let familyId: Int?
+    let user: User?
 }
 
 struct SNSLoginRequestModel: Codable {
