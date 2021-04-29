@@ -20,9 +20,13 @@ struct User: Codable {
 
 
 extension CoreDataManager {
+    func upsertUser(target: UserEntity, dto: User) {
+        
+    }
     func createNewUser(dto: User) {
         mainContext.perform {
             let newUser = UserEntity.init(context: self.mainContext)
+            newUser.id = dto.id
             newUser.nickname = dto.nickname
             newUser.relationship = dto.relationship
             newUser.gender = dto.gender
@@ -54,6 +58,7 @@ extension CoreDataManager {
     
     func updateUserData(target: UserEntity, dto: User) {
         mainContext.perform {
+            target.id = dto.id
             target.nickname = dto.nickname
             target.relationship = dto.relationship
             target.gender = dto.gender
