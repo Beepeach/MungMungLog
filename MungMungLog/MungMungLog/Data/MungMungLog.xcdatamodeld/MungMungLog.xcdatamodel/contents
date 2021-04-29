@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="History" representedClassName="HistoryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="contents" optional="YES" attributeType="String" maxValueString="1000"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="familyMemberId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fileUrl1" optional="YES" attributeType="String"/>
+        <attribute name="fileUrl2" optional="YES" attributeType="String"/>
+        <attribute name="fileUrl3" optional="YES" attributeType="String"/>
+        <attribute name="fileUrl4" optional="YES" attributeType="String"/>
+        <attribute name="fileUrl5" optional="YES" attributeType="String"/>
+        <attribute name="historyId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="petId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="willBeDeleted" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="histories" inverseEntity="Pet"/>
+    </entity>
     <entity name="Pet" representedClassName="PetEntity" syncable="YES" codeGenerationType="class">
         <attribute name="birthday" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="breed" attributeType="String"/>
@@ -8,6 +23,8 @@
         <attribute name="gender" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String" maxValueString="10"/>
         <attribute name="petId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="histories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="History" inverseName="pet" inverseEntity="History"/>
+        <relationship name="walkhistories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WalkHistory" inverseName="pet" inverseEntity="WalkHistory"/>
     </entity>
     <entity name="User" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
         <attribute name="familyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -17,8 +34,26 @@
         <attribute name="nickname" attributeType="String" maxValueString="15"/>
         <attribute name="relationship" attributeType="String" maxValueString="15"/>
     </entity>
+    <entity name="WalkHistory" representedClassName="WalkHistoryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="contents" optional="YES" attributeType="String" maxValueString="1000"/>
+        <attribute name="distance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="endTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="familyMemberId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fileUrl1" optional="YES" attributeType="String"/>
+        <attribute name="fileUrl2" optional="YES" attributeType="String"/>
+        <attribute name="fileUrl3" optional="YES" attributeType="String"/>
+        <attribute name="fileUrl4" optional="YES" attributeType="String"/>
+        <attribute name="fileUrl5" optional="YES" attributeType="String"/>
+        <attribute name="petId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="walkHistoryId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="willBeDeleted" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="walkhistories" inverseEntity="Pet"/>
+    </entity>
     <elements>
-        <element name="Pet" positionX="-36" positionY="36" width="128" height="14"/>
-        <element name="User" positionX="-54" positionY="-9" width="128" height="119"/>
+        <element name="Pet" positionX="524.50390625" positionY="57.05999755859375" width="128" height="178"/>
+        <element name="User" positionX="225.015625" positionY="62.987548828125" width="128" height="119"/>
+        <element name="History" positionX="357.039794921875" positionY="343.8125610351562" width="128" height="238"/>
+        <element name="WalkHistory" positionX="753.202880859375" positionY="330.9622192382812" width="128" height="253"/>
     </elements>
 </model>
