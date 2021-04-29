@@ -83,7 +83,8 @@ extension OptionListViewController: UITableViewDelegate {
             presentConfigNav(storyboardId: .qna)
         case 4:
             presentTwoButtonAlert(alertTitle: "알림", message: "로그아웃 하시겠습니까??", confirmActionTitle: "로그아웃", cancelActionTitle: "취소") { (_) in
-                    deleteKeychainInfo()
+                deleteKeychainInfo()
+                CoreDataManager.shared.deleteAllEntities()
                     
                 self.performSegue(withIdentifier: MovetoView.login.rawValue, sender: nil)
             }

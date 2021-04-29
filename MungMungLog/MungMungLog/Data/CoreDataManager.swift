@@ -51,6 +51,13 @@ class  CoreDataManager {
         }
     }
     
+    func deleteAllEntities() {
+        deleteEntity(name: EntityName.user.rawValue)
+        deleteEntity(name: EntityName.pet.rawValue)
+        deleteEntity(name: EntityName.familyMember.rawValue)
+        deleteEntity(name: EntityName.history.rawValue)
+        deleteEntity(name: EntityName.walkHistory.rawValue)
+    }
     
     
     func deleteEntity(name: String) {
