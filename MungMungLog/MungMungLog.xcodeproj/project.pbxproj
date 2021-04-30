@@ -96,6 +96,7 @@
 		46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
 		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
 		46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
+		46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */; };
 		46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */; };
 		46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */; };
 		46D4DF1E262D57790016252A /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
@@ -137,6 +138,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		464A5B782621950800BA1DB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 460EB0012557F76B00027376 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 466492B425F372FC00903265;
+			remoteInfo = "MungMungLog Dev";
+		};
+		46BD61B5263C0295001DEC74 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 460EB0012557F76B00027376 /* Project object */;
 			proxyType = 1;
@@ -204,6 +212,7 @@
 		46A025AE2577D7BB0022BDBF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingViewController.swift; sourceTree = "<group>"; };
+		46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		46D0EFFF2619B3A200F117B2 /* MungMungLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MungMungLog.entitlements; sourceTree = "<group>"; };
 		46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
@@ -550,6 +559,7 @@
 				46F45148262716040025B915 /* PetDtoTests.swift */,
 				46F4516C262722310025B915 /* FamilyDtoTests.swift */,
 				46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */,
+				46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */,
 			);
 			path = TestCases;
 			sourceTree = "<group>";
@@ -662,6 +672,7 @@
 			);
 			dependencies = (
 				46F450B2262596CA0025B915 /* PBXTargetDependency */,
+				46BD61B6263C0295001DEC74 /* PBXTargetDependency */,
 			);
 			name = MungMungLogUITests;
 			productName = MungMungLogUITests;
@@ -687,7 +698,7 @@
 					};
 					46F450AB262596CA0025B915 = {
 						CreatedOnToolsVersion = 12.4;
-						TestTargetID = 460EB0082557F76B00027376;
+						TestTargetID = 466492B425F372FC00903265;
 					};
 				};
 			};
@@ -903,6 +914,7 @@
 				46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */,
 				46F4517D262724D20025B915 /* FamilyMemberDtoTests.swift in Sources */,
 				46F45133262713340025B915 /* CommonDecodableTests.swift in Sources */,
+				46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */,
 				46F45149262716040025B915 /* PetDtoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -984,6 +996,11 @@
 			isa = PBXTargetDependency;
 			target = 466492B425F372FC00903265 /* MungMungLog Dev */;
 			targetProxy = 464A5B782621950800BA1DB7 /* PBXContainerItemProxy */;
+		};
+		46BD61B6263C0295001DEC74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 466492B425F372FC00903265 /* MungMungLog Dev */;
+			targetProxy = 46BD61B5263C0295001DEC74 /* PBXContainerItemProxy */;
 		};
 		46F450B2262596CA0025B915 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1193,7 +1210,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MungMungLog Dev.app/MungMungLog Dev";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MungMungLog.app/MungMungLog";
 			};
 			name = Debug;
 		};
@@ -1215,7 +1232,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MungMungLog Dev.app/MungMungLog Dev";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MungMungLog.app/MungMungLog";
 			};
 			name = Release;
 		};
@@ -1281,7 +1298,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MungMungLog;
+				TEST_TARGET_NAME = "MungMungLog Dev";
 			};
 			name = Debug;
 		};
@@ -1301,7 +1318,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = MungMungLog;
+				TEST_TARGET_NAME = "MungMungLog Dev";
 			};
 			name = Release;
 		};

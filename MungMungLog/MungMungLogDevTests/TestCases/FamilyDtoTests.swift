@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import MungMungLog_Dev
+@testable import MungMungLog
 
 class FamilyDtoTests: CommonDecodableTests<FamilyDto> {
 

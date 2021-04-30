@@ -1865,7 +1865,7 @@
         <!--Login View Controller-->
         <scene sceneID="sOw-cK-fxb">
             <objects>
-                <viewController id="LQF-VB-7aJ" customClass="LoginViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="LQF-VB-7aJ" customClass="LoginViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kIa-Pe-nwf">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
