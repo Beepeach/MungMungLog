@@ -25,8 +25,17 @@ extension CoreDataManager {
             newFamilyMember.userId = dto.userId
             newFamilyMember.status = Int16(dto.status)
             newFamilyMember.isMaster = dto.isMaster
-            newFamilyMember.histories = NSSet(array: dto.histories ?? [HistoryDto]())
-            newFamilyMember.walkHistories = NSSet(array: dto.walkHistories ?? [WalkHistoryDto]())
+            
+            if let histories = dto.histories {
+                newFamilyMember.histories = NSSet(array: histories)
+            }
+            
+            if let walkHistories = dto.walkHistories {
+                newFamilyMember.walkHistories = NSSet(array: walkHistories)
+            }
+            
+            self.saveMainContext()
+           
         }
     }
 }

@@ -90,10 +90,34 @@ class HomeViewController: UIViewController {
         
         menuStack = createMenuStackView()
         
-        fetchData()
+        if let familyId = KeychainWrapper.standard.integer(forKey: KeychainWrapper.Key.apiFamilyId) {
+            fetchFamilyMembersData(familyId: familyId)
+        }
+        
+        fetchPetData()
     }
     
-    func fetchData() {
+    func fetchFamilyMembersData(familyId: Int) {
+        let urlStr = ApiManager.getFamilyMembers + "/\(familyId)"
+        
+        ApiManager.shared.fetch(urlStr: urlStr) { (result: Result<ListResponse<FamilyMemberDto>, Error>) in
+            switch result {
+            case .success(let responseData):
+                switch responseData.code {
+                case Statuscode.ok.rawValue:
+                    responseData.list.forEach { familyMember in
+                        CoreDataManager.shared.createNewFamilyMember(dto: familyMember)
+                    }
+                default:
+                    break
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func fetchPetData() {
         ApiManager.shared.fetch(urlStr: ApiManager.getPetList) { (result: Result<ListResponse<PetDto>, Error>) in
             switch result {
             case .success(let responseData):

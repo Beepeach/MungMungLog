@@ -2214,7 +2214,7 @@
                         <outlet property="loginButtonContainerView" destination="oLf-KZ-FlA" id="rHn-0Y-ZEW"/>
                         <outlet property="loginContainerView" destination="k8l-6K-tGt" id="kCw-Ie-gHK"/>
                         <outlet property="loginScrollView" destination="aGc-nF-QLp" id="XM4-hb-TQ9"/>
-                        <outlet property="loginWithSnsStackView" destination="iSw-yL-IhT" id="Tt8-1p-Bxb"/>
+                        <outlet property="loginWithSnsStackView" destination="iSw-yL-IhT" id="NUq-EO-CaL"/>
                         <outlet property="logoImageView" destination="BzI-yU-t0g" id="wPr-H7-WDo"/>
                         <outlet property="passwordFindingView" destination="gvb-BU-dBv" id="Xj7-K1-5CN"/>
                         <outlet property="passwordInputField" destination="zr8-vB-ySs" id="C7R-J0-oUY"/>
