@@ -215,6 +215,7 @@
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingViewController.swift; sourceTree = "<group>"; };
 		46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
+		46C4B23B263C7E0200431973 /* MungMungLogVer2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLogVer2.xcdatamodel; sourceTree = "<group>"; };
 		46D0EFFF2619B3A200F117B2 /* MungMungLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MungMungLog.entitlements; sourceTree = "<group>"; };
 		46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
@@ -1388,9 +1389,10 @@
 		4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				46C4B23B263C7E0200431973 /* MungMungLogVer2.xcdatamodel */,
 				4615F41D263C17100099E8CF /* MungMungLog.xcdatamodel */,
 			);
-			currentVersion = 4615F41D263C17100099E8CF /* MungMungLog.xcdatamodel */;
+			currentVersion = 46C4B23B263C7E0200431973 /* MungMungLogVer2.xcdatamodel */;
 			path = MungMungLog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

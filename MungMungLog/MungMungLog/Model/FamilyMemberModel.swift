@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import CoreData
 
 struct FamilyMemberDto: Codable {
+    let familyMemberId: Int
     let isMaster: Bool
     let status: Int
     let userId: String
@@ -22,6 +24,7 @@ extension CoreDataManager {
         mainContext.perform {
             let newFamilyMember = FamilyMemberEntity.init(context: self.mainContext)
             
+            newFamilyMember.familyMemberId = Int64(dto.familyMemberId)
             newFamilyMember.userId = dto.userId
             newFamilyMember.status = Int16(dto.status)
             newFamilyMember.isMaster = dto.isMaster
@@ -42,6 +45,25 @@ extension CoreDataManager {
             self.saveMainContext()
            
         }
+    }
+    
+    func fetchFamilyMemeberData(with familyMemeberId: Int) -> [FamilyMemberEntity] {
+        var list: [FamilyMemberEntity] = []
+        
+        self.mainContext.performAndWait {
+            let request: NSFetchRequest<FamilyMemberEntity> = FamilyMemberEntity.fetchRequest()
+            let predicate = NSPredicate(format: "familyMemberId == %d", familyMemeberId)
+            request.predicate = predicate
+            request.fetchLimit = 1
+            
+            do {
+                list = try mainContext.fetch(request)
+            } catch {
+                print(error)
+            }
+        }
+        
+        return list
     }
 }
 

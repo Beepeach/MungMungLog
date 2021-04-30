@@ -8,6 +8,7 @@
 import Foundation
 
 struct FamilyDto: Codable {
+    let familyId: Int
     let invitationCode: String
     let codeExpirationDate: Double
     let familyMembers: [FamilyMemberDto]?

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct HistoryDto: Codable {
     let historyId: Int
@@ -61,5 +62,24 @@ extension CoreDataManager {
             
             self.saveMainContext()
         }
+    }
+    
+    func fetchLatestHistoryData() -> [HistoryEntity] {
+        var list: [HistoryEntity] = []
+        
+        mainContext.performAndWait {
+            let request: NSFetchRequest<HistoryEntity> = HistoryEntity.fetchRequest()
+            let sortByDateDESC: NSSortDescriptor = NSSortDescriptor(key: #keyPath(HistoryEntity.date), ascending: false)
+            request.sortDescriptors = [sortByDateDESC]
+            request.fetchOffset = 1
+            
+            do {
+                list = try mainContext.fetch(request)
+            } catch {
+                print(error)
+            }
+        }
+        
+        return list
     }
 }

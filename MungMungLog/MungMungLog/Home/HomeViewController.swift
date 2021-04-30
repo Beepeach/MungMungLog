@@ -219,16 +219,19 @@ extension HomeViewController: UICollectionViewDelegate {
                 
                 if let latestHistory = historyList?.filter({ $0.type == selectedItemIndex }).first {
                     
-                    ApiManager.shared.fetch(urlStr: ApiManager.getUser + "/\(latestHistory.familyMemberId)") { (result: Result<SingleResponse<User>, Error>) in
-                        switch result {
-                        case .success(let responseData):
-                            self.showLatestHistory(responsedata: responseData, latestHistory: latestHistory)
-                            
-                        case .failure(let error):
-                            self.showHistoryDataIfDataIsNil()
-                            print(#function, error)
-                        }
-                    }
+                    self.showLatestHistory(latestHistory: latestHistory)
+                    
+                    
+                    //                    ApiManager.shared.fetch(urlStr: ApiManager.getUser + "/\(latestHistory.familyMemberId)") { (result: Result<SingleResponse<User>, Error>) in
+                    //                        switch result {
+                    //                        case .success(let responseData):
+                    //                            self.showLatestHistory(responsedata: responseData, latestHistory: latestHistory)
+                    //
+                    //                        case .failure(let error):
+                    //                            self.showHistoryDataIfDataIsNil()
+                    //                            print(#function, error)
+                    //                        }
+                    //                    }
                 }
             } else {
                 DispatchQueue.main.async {
@@ -238,10 +241,21 @@ extension HomeViewController: UICollectionViewDelegate {
         }
     }
     
+    func showLatestHistory(latestHistory: HistoryDto) {
+        if let writerUserId = CoreDataManager.shared.fetchFamilyMemeberData(with: latestHistory.familyMemberId).first?.userId {
+            if let writer = CoreDataManager.shared.fetchUserData(with: writerUserId).first {
+                self.writerNicknameLabel.text = writer.nickname
+            }
+        }
+        
+        self.latestHistroyLabel.text = latestHistory.contents
+        self.latestHistoryDateLabel.text = koreaFullDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
+    }
+    
     func showLatestHistory(responsedata: SingleResponse<User>, latestHistory: HistoryDto) {
-            self.writerNicknameLabel.text = responsedata.data?.nickname
-            self.latestHistroyLabel.text = latestHistory.contents
-            self.latestHistoryDateLabel.text = koreaFullDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
+        self.writerNicknameLabel.text = responsedata.data?.nickname
+        self.latestHistroyLabel.text = latestHistory.contents
+        self.latestHistoryDateLabel.text = koreaFullDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
     }
     
     func moveUp(to cell: RecordContentsCollectionViewCell) {

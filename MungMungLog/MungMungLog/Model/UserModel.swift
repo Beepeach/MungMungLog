@@ -67,6 +67,24 @@ extension CoreDataManager {
         return list
     }
     
+    func fetchUserData(with userId: String) -> [UserEntity] {
+        var list: [UserEntity] = [UserEntity]()
+        
+        mainContext.performAndWait {
+            let request: NSFetchRequest<UserEntity> = UserEntity.fetchRequest()
+            let predicate = NSPredicate(format: "id == %@", userId)
+            request.predicate = predicate
+            
+            do {
+                list = try mainContext.fetch(request)
+            } catch {
+                print(error)
+            }
+        }
+        
+        return list
+    }
+    
     func updateUserData(target: UserEntity, dto: User) {
         mainContext.perform {
             target.id = dto.id
