@@ -30,6 +30,7 @@
 		460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02825582EEF00027376 /* UIViewController+alert.swift */; };
 		4615F41E263C17100099E8CF /* MungMungLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */; };
 		4615F41F263C17100099E8CF /* MungMungLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */; };
+		4615F423263C2F310099E8CF /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615F422263C2F310099E8CF /* MockSession.swift */; };
 		461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */; };
 		461E3129259CC9E900AE8011 /* WalkDateAndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */; };
 		464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */; };
@@ -182,6 +183,7 @@
 		460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dateFormatter.swift"; sourceTree = "<group>"; };
 		460EB02825582EEF00027376 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		4615F41D263C17100099E8CF /* MungMungLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLog.xcdatamodel; sourceTree = "<group>"; };
+		4615F422263C2F310099E8CF /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
 		461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipRegistrationViewController.swift; sourceTree = "<group>"; };
 		461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkDateAndTimeViewController.swift; sourceTree = "<group>"; };
 		464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTimeAndDistanceDataCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -373,6 +375,14 @@
 			path = MungMungLog;
 			sourceTree = "<group>";
 		};
+		4615F421263C2F1D0099E8CF /* TestClasses */ = {
+			isa = PBXGroup;
+			children = (
+				4615F422263C2F310099E8CF /* MockSession.swift */,
+			);
+			path = TestClasses;
+			sourceTree = "<group>";
+		};
 		464092DA258E2EE100C85524 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +402,7 @@
 		464A5B742621950800BA1DB7 /* MungMungLogDevTests */ = {
 			isa = PBXGroup;
 			children = (
+				4615F421263C2F1D0099E8CF /* TestClasses */,
 				46F45147262715F00025B915 /* TestCases */,
 				46F45138262714830025B915 /* TestAssets */,
 				464A5B772621950800BA1DB7 /* Info.plist */,
@@ -911,6 +922,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4615F423263C2F310099E8CF /* MockSession.swift in Sources */,
 				46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */,
 				46F4517D262724D20025B915 /* FamilyMemberDtoTests.swift in Sources */,
 				46F45133262713340025B915 /* CommonDecodableTests.swift in Sources */,

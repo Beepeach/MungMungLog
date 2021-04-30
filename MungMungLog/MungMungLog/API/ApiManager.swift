@@ -27,6 +27,7 @@ class ApiManager {
         case getPetList = "/api/pet/list"
         case requestInvitation = "/api/family/invitation"
         case getUser = "/api/user"
+        case getFamilyMemebers = "api/familyMember/"
     }
     
     static var emailLogin: String {

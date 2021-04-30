@@ -43,7 +43,6 @@ class LoginViewController: UIViewController {
             print(error)
         }
         
-        
         ApiManager.shared.fetch(urlStr: ApiManager.snsLogin, httpMethod: "Post", body: data) { (result: Result<LoginResponseModel, Error>) in
             switch result {
             case .success(let responseData):
@@ -54,6 +53,14 @@ class LoginViewController: UIViewController {
                     
                     print("=======로그인 성공========")
                     print(responseData)
+                    
+                    // 여기에 family의 정보를 coredata에 저장후 화면 전환!?!
+                    
+//                    if let familyId = responseData.user?.familyId {
+//                        func fetchFamilyData(familyId: Int) {
+//                            ApiManager.shared.fetch(urlStr: ApiManager., completion: <#T##(Result<Decodable & Encodable, Error>) -> ()#>)
+//                        }
+//                    }
                     
                     self.goToCorrectSceneForKeychain()
                     
@@ -101,9 +108,7 @@ class LoginViewController: UIViewController {
         // 서버에 성공했으면 userDto를 coredata에 저장
         if let user = responseData.user {
             CoreDataManager.shared.createNewUser(dto: user)
-            
         }
-        
         
     }
     
@@ -154,6 +159,8 @@ class LoginViewController: UIViewController {
                     
                     print("=======로그인 성공========")
                     print(responseData)
+                    
+                    
                     
                 
                     self.goToCorrectSceneForKeychain()
