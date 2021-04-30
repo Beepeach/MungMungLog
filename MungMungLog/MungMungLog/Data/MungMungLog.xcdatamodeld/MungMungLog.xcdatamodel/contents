@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FamilyMember" representedClassName="FamilyMemberEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="familyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="familyId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isMaster" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="status" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="userId" attributeType="String"/>
+        <attribute name="uerId" attributeType="String"/>
         <relationship name="histories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="History" inverseName="familyMember" inverseEntity="History"/>
         <relationship name="walkHistories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WalkHistory" inverseName="familyMember" inverseEntity="WalkHistory"/>
     </entity>
@@ -30,23 +30,23 @@
         <attribute name="familyId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="fileUrl" optional="YES" attributeType="String"/>
         <attribute name="gender" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="name" attributeType="String" maxValueString="10"/>
+        <attribute name="name" attributeType="String"/>
         <attribute name="petId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="histories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="History" inverseName="pet" inverseEntity="History"/>
-        <relationship name="walkhistories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WalkHistory" inverseName="pet" inverseEntity="WalkHistory"/>
+        <relationship name="walkHistories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WalkHistory" inverseName="pet" inverseEntity="WalkHistory"/>
     </entity>
     <entity name="User" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
         <attribute name="familyId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="fileUrl" optional="YES" attributeType="String"/>
         <attribute name="gender" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" attributeType="String"/>
-        <attribute name="nickname" attributeType="String" maxValueString="15"/>
-        <attribute name="relationship" attributeType="String" maxValueString="15"/>
+        <attribute name="nickname" attributeType="String"/>
+        <attribute name="relationship" attributeType="String"/>
     </entity>
     <entity name="WalkHistory" representedClassName="WalkHistoryEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="contents" optional="YES" attributeType="String" maxValueString="1000"/>
-        <attribute name="distance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="endTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="contents" optional="YES" attributeType="String"/>
+        <attribute name="distance" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="familyMemberId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="fileUrl1" optional="YES" attributeType="String"/>
         <attribute name="fileUrl2" optional="YES" attributeType="String"/>
@@ -54,17 +54,17 @@
         <attribute name="fileUrl4" optional="YES" attributeType="String"/>
         <attribute name="fileUrl5" optional="YES" attributeType="String"/>
         <attribute name="petId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="startTime" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="walkHistoryId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="willBeDeleted" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="familyMember" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FamilyMember" inverseName="walkHistories" inverseEntity="FamilyMember"/>
-        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="walkhistories" inverseEntity="Pet"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="walkHistories" inverseEntity="Pet"/>
     </entity>
     <elements>
-        <element name="Pet" positionX="524.50390625" positionY="57.05999755859375" width="128" height="178"/>
-        <element name="User" positionX="225.015625" positionY="62.987548828125" width="128" height="119"/>
-        <element name="History" positionX="357.039794921875" positionY="343.8125610351562" width="128" height="253"/>
-        <element name="WalkHistory" positionX="753.202880859375" positionY="330.9622192382812" width="128" height="268"/>
-        <element name="FamilyMember" positionX="504" positionY="333" width="128" height="119"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="Pet" positionX="-54" positionY="36" width="128" height="164"/>
+        <element name="FamilyMember" positionX="-36" positionY="81" width="128" height="119"/>
+        <element name="History" positionX="-18" positionY="90" width="128" height="239"/>
+        <element name="WalkHistory" positionX="0" positionY="162" width="128" height="254"/>
     </elements>
 </model>

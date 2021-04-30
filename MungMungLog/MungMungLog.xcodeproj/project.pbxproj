@@ -28,6 +28,8 @@
 		460EB0192557F76B00027376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0172557F76B00027376 /* LaunchScreen.storyboard */; };
 		460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */; };
 		460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB02825582EEF00027376 /* UIViewController+alert.swift */; };
+		4615F41E263C17100099E8CF /* MungMungLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */; };
+		4615F41F263C17100099E8CF /* MungMungLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */; };
 		461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */; };
 		461E3129259CC9E900AE8011 /* WalkDateAndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */; };
 		464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */; };
@@ -72,8 +74,6 @@
 		466492D825F372FC00903265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0122557F76B00027376 /* Main.storyboard */; };
 		466686762638017C00F77084 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466686752638017C00F77084 /* CoreDataManager.swift */; };
 		466686772638017C00F77084 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466686752638017C00F77084 /* CoreDataManager.swift */; };
-		46668682263801D700F77084 /* MungMungLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46668680263801D700F77084 /* MungMungLog.xcdatamodeld */; };
-		46668683263801D700F77084 /* MungMungLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 46668680263801D700F77084 /* MungMungLog.xcdatamodeld */; };
 		466D8DB72638086600B356F9 /* OptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D8DB62638086600B356F9 /* OptionListViewController.swift */; };
 		466D8DB82638086600B356F9 /* OptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D8DB62638086600B356F9 /* OptionListViewController.swift */; };
 		4674C6BB26318FEB004C9182 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674C6BA26318FEB004C9182 /* UserModel.swift */; };
@@ -181,6 +181,7 @@
 		460EB01A2557F76B00027376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dateFormatter.swift"; sourceTree = "<group>"; };
 		460EB02825582EEF00027376 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
+		4615F41D263C17100099E8CF /* MungMungLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLog.xcdatamodel; sourceTree = "<group>"; };
 		461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipRegistrationViewController.swift; sourceTree = "<group>"; };
 		461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkDateAndTimeViewController.swift; sourceTree = "<group>"; };
 		464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTimeAndDistanceDataCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -195,7 +196,6 @@
 		4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEndingViewController.swift; sourceTree = "<group>"; };
 		466492DC25F372FC00903265 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466686752638017C00F77084 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		46668681263801D700F77084 /* MungMungLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLog.xcdatamodel; sourceTree = "<group>"; };
 		466D8DB62638086600B356F9 /* OptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionListViewController.swift; sourceTree = "<group>"; };
 		466E3AE3261B13AC0077B3F2 /* MungMungLog Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "MungMungLog Dev.entitlements"; sourceTree = "<group>"; };
 		4674C6BA26318FEB004C9182 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 				46DBEA8726288B2200B07EC1 /* UserDefault.swift */,
 				46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */,
 				466686752638017C00F77084 /* CoreDataManager.swift */,
-				46668680263801D700F77084 /* MungMungLog.xcdatamodeld */,
+				4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -900,8 +900,8 @@
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 				464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */,
 				46DBEA8F262896EE00B07EC1 /* KeychainWrapper.swift in Sources */,
+				4615F41E263C17100099E8CF /* MungMungLog.xcdatamodeld in Sources */,
 				46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */,
-				46668682263801D700F77084 /* MungMungLog.xcdatamodeld in Sources */,
 				46F54564262DEDCD00FBDBA0 /* HistoryModel.swift in Sources */,
 				469497A226186A200049D7FE /* Product.swift in Sources */,
 			);
@@ -974,8 +974,8 @@
 				466492D025F372FC00903265 /* RecordItemTableViewCell.swift in Sources */,
 				466492D125F372FC00903265 /* UIViewController+alert.swift in Sources */,
 				46DBEA90262896EE00B07EC1 /* KeychainWrapper.swift in Sources */,
+				4615F41F263C17100099E8CF /* MungMungLog.xcdatamodeld in Sources */,
 				466492D225F372FC00903265 /* DateSelectCollectionViewCell.swift in Sources */,
-				46668683263801D700F77084 /* MungMungLog.xcdatamodeld in Sources */,
 				46F54565262DEDCD00FBDBA0 /* HistoryModel.swift in Sources */,
 				466492D325F372FC00903265 /* RoundedStackView.swift in Sources */,
 			);
@@ -1373,12 +1373,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		46668680263801D700F77084 /* MungMungLog.xcdatamodeld */ = {
+		4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				46668681263801D700F77084 /* MungMungLog.xcdatamodel */,
+				4615F41D263C17100099E8CF /* MungMungLog.xcdatamodel */,
 			);
-			currentVersion = 46668681263801D700F77084 /* MungMungLog.xcdatamodel */;
+			currentVersion = 4615F41D263C17100099E8CF /* MungMungLog.xcdatamodel */;
 			path = MungMungLog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
