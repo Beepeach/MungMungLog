@@ -4,7 +4,7 @@
         <attribute name="familyId" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isMaster" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="status" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="uerId" attributeType="String"/>
+        <attribute name="userId" attributeType="String"/>
         <relationship name="histories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="History" inverseName="familyMember" inverseEntity="History"/>
         <relationship name="walkHistories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WalkHistory" inverseName="familyMember" inverseEntity="WalkHistory"/>
     </entity>
@@ -61,10 +61,10 @@
         <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pet" inverseName="walkHistories" inverseEntity="Pet"/>
     </entity>
     <elements>
-        <element name="User" positionX="-63" positionY="-18" width="128" height="119"/>
-        <element name="Pet" positionX="-54" positionY="36" width="128" height="164"/>
         <element name="FamilyMember" positionX="-36" positionY="81" width="128" height="119"/>
         <element name="History" positionX="-18" positionY="90" width="128" height="239"/>
+        <element name="Pet" positionX="-54" positionY="36" width="128" height="164"/>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="119"/>
         <element name="WalkHistory" positionX="0" positionY="162" width="128" height="254"/>
     </elements>
 </model>

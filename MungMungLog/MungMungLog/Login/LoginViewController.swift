@@ -56,11 +56,11 @@ class LoginViewController: UIViewController {
                     
                     // 여기에 family의 정보를 coredata에 저장후 화면 전환!?!
                     
-//                    if let familyId = responseData.user?.familyId {
-//                        func fetchFamilyData(familyId: Int) {
-//                            ApiManager.shared.fetch(urlStr: ApiManager., completion: <#T##(Result<Decodable & Encodable, Error>) -> ()#>)
-//                        }
-//                    }
+                    if let familyId = responseData.user?.familyId {
+                        self.fetchFamilyMembersData(familyId: familyId)
+                    }
+                    
+                    // 중간에 돌돌이
                     
                     self.goToCorrectSceneForKeychain()
                     
@@ -125,6 +125,26 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
             }
             
+        }
+    }
+    
+    func fetchFamilyMembersData(familyId: Int) {
+        let urlStr = ApiManager.getFamilyMembers + "/\(familyId)"
+        
+        ApiManager.shared.fetch(urlStr: urlStr) { (result: Result<ListResponse<FamilyMemberDto>, Error>) in
+            switch result {
+            case .success(let responseData):
+                switch responseData.code {
+                case Statuscode.ok.rawValue:
+                    responseData.list.forEach { familyMember in
+                        CoreDataManager.shared.createNewFamilyMember(dto: familyMember)
+                    }
+                default:
+                    break
+                }
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     

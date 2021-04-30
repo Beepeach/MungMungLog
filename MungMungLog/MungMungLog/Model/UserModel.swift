@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftKeychainWrapper
 
 struct User: Codable {
     let id: String
@@ -21,8 +22,15 @@ struct User: Codable {
 
 extension CoreDataManager {
     func upsertUser(target: UserEntity, dto: User) {
-        
+        if let userId = KeychainWrapper.standard.string(forKey: KeychainWrapper.Key.apiUserId.rawValue) {
+            if userId == target.id {
+                updateUserData(target: target, dto: dto)
+            } // 혹시 안맞으면 지우고 다시 생성??
+        } else {
+            createNewUser(dto: dto)
+        }
     }
+    
     func createNewUser(dto: User) {
         mainContext.perform {
             let newUser = UserEntity.init(context: self.mainContext)

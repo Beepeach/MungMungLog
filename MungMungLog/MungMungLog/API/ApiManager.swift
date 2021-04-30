@@ -27,7 +27,7 @@ class ApiManager {
         case getPetList = "/api/pet/list"
         case requestInvitation = "/api/family/invitation"
         case getUser = "/api/user"
-        case getFamilyMemebers = "api/familyMember/"
+        case getFamilyMemebers = "api/familyMember"
     }
     
     static var emailLogin: String {
@@ -65,6 +65,11 @@ class ApiManager {
         return "\(host)\(Path.getUser.rawValue)"
     }
     
+    static var getFamilyMembers: String {
+        
+        
+        return "\(host)\(Path.getFamilyMemebers.rawValue)"
+    }
     
     
      func fetch<T: Codable> (urlStr: String, httpMethod: String = "Get", body: Data? = nil, completion: @escaping (Result<T, Error>) -> ()) {
