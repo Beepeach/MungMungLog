@@ -38,8 +38,11 @@ extension CoreDataManager {
             newUser.nickname = dto.nickname
             newUser.relationship = dto.relationship
             newUser.gender = dto.gender
-            newUser.fileUrl = dto.fileUrl
             
+            if let fileUrl = dto.fileUrl {
+                newUser.fileUrl = fileUrl
+            }
+           
             if let familyId = dto.familyId {
                 newUser.familyId = Int64(familyId)
             }

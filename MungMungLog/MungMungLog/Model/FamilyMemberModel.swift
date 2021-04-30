@@ -27,11 +27,16 @@ extension CoreDataManager {
             newFamilyMember.isMaster = dto.isMaster
             
             if let histories = dto.histories {
-                newFamilyMember.histories = NSSet(array: histories)
+                histories.forEach {
+                    CoreDataManager.shared.createNewHistory(dto: $0)
+                }
             }
             
             if let walkHistories = dto.walkHistories {
-                newFamilyMember.walkHistories = NSSet(array: walkHistories)
+                walkHistories.forEach {
+                    CoreDataManager.shared.createNewWalkHistory(dto: $0)
+                }
+                // newFamilyMember.walkHistories = NSSet(array: walkHistories)
             }
             
             self.saveMainContext()
