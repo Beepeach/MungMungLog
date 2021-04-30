@@ -15,7 +15,7 @@ struct User: Codable {
     let gender: Bool
     let fileUrl: String?
     let familyId: Int?
-    let family: Family?
+    let family: FamilyDto?
 }
 
 

@@ -8,7 +8,8 @@
 import UIKit
 import SwiftKeychainWrapper
 
-struct Family: Codable {
+// 임시 구조체일뿐
+struct DummyFamily {
     var isFamilyHead: Bool = false
     var nickname: String
     var relationship: String
@@ -19,9 +20,9 @@ struct Family: Codable {
 class MyPageViewController: UIViewController {
     
     var familyList = [
-        Family(isFamilyHead: true, nickname: "아빠", relationship: "돈줄", totalWalkDistance: 100, profileImage: "Test"),
-        Family(nickname: "엄마", relationship: "돈줄2", totalWalkDistance: 110, profileImage: "Test2"),
-        Family(nickname: "셔틀", relationship: "팝콘셔틀", totalWalkDistance: 12, profileImage: "Test3")
+        DummyFamily(isFamilyHead: true, nickname: "아빠", relationship: "돈줄", totalWalkDistance: 100, profileImage: "Test"),
+        DummyFamily(nickname: "엄마", relationship: "돈줄2", totalWalkDistance: 110, profileImage: "Test2"),
+        DummyFamily(nickname: "셔틀", relationship: "팝콘셔틀", totalWalkDistance: 12, profileImage: "Test3")
     ].sorted { (lhs, rhs) -> Bool in
         return lhs.totalWalkDistance > rhs.totalWalkDistance
     }

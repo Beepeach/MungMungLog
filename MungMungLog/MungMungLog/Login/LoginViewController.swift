@@ -101,7 +101,10 @@ class LoginViewController: UIViewController {
         // 서버에 성공했으면 userDto를 coredata에 저장
         if let user = responseData.user {
             CoreDataManager.shared.createNewUser(dto: user)
+            
         }
+        
+        
     }
     
     func goToCorrectSceneForKeychain() {
@@ -152,6 +155,7 @@ class LoginViewController: UIViewController {
                     print("=======로그인 성공========")
                     print(responseData)
                     
+                
                     self.goToCorrectSceneForKeychain()
                     
                 case Statuscode.notFound.rawValue:
