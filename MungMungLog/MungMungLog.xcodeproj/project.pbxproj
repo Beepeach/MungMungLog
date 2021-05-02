@@ -31,6 +31,8 @@
 		4615F41E263C17100099E8CF /* MungMungLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */; };
 		4615F41F263C17100099E8CF /* MungMungLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */; };
 		4615F423263C2F310099E8CF /* MockSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4615F422263C2F310099E8CF /* MockSession.swift */; };
+		461A11DC263E810C00AC0F69 /* CodeButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A11DB263E810C00AC0F69 /* CodeButtonTableViewCell.swift */; };
+		461A11DD263E810C00AC0F69 /* CodeButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A11DB263E810C00AC0F69 /* CodeButtonTableViewCell.swift */; };
 		461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */; };
 		461E3129259CC9E900AE8011 /* WalkDateAndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */; };
 		464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */; };
@@ -184,6 +186,7 @@
 		460EB02825582EEF00027376 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		4615F41D263C17100099E8CF /* MungMungLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLog.xcdatamodel; sourceTree = "<group>"; };
 		4615F422263C2F310099E8CF /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
+		461A11DB263E810C00AC0F69 /* CodeButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeButtonTableViewCell.swift; sourceTree = "<group>"; };
 		461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipRegistrationViewController.swift; sourceTree = "<group>"; };
 		461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkDateAndTimeViewController.swift; sourceTree = "<group>"; };
 		464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTimeAndDistanceDataCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -310,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				460C4EA625F3ECC900D4E58D /* FamilyTableViewCell.swift */,
+				461A11DB263E810C00AC0F69 /* CodeButtonTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -871,6 +875,7 @@
 				460EB02425582BF800027376 /* UIViewController+dateFormatter.swift in Sources */,
 				46E1BA352616CB4400AAC75A /* EmailJoinViewController.swift in Sources */,
 				467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */,
+				461A11DC263E810C00AC0F69 /* CodeButtonTableViewCell.swift in Sources */,
 				461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */,
 				460C4EAE25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
@@ -946,6 +951,7 @@
 				466492B825F372FC00903265 /* ViewController.swift in Sources */,
 				466492B925F372FC00903265 /* UIViewController+dateFormatter.swift in Sources */,
 				46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */,
+				461A11DD263E810C00AC0F69 /* CodeButtonTableViewCell.swift in Sources */,
 				466492BA25F372FC00903265 /* CircleWithShadowView.swift in Sources */,
 				466492BB25F372FC00903265 /* MembershipRegistrationViewController.swift in Sources */,
 				460C4EAF25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,

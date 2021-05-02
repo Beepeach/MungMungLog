@@ -47,6 +47,22 @@ extension CoreDataManager {
         }
     }
     
+    func fetchFamilyMemberData() -> [FamilyMemberEntity] {
+        var list: [FamilyMemberEntity] = []
+        
+        self.mainContext.performAndWait {
+            let request: NSFetchRequest<FamilyMemberEntity> = FamilyMemberEntity.fetchRequest()
+            
+            do {
+                list = try mainContext.fetch(request)
+            } catch {
+                print(error)
+            }
+        }
+        
+        return list
+    }
+    
     func fetchFamilyMemeberData(with familyMemeberId: Int) -> [FamilyMemberEntity] {
         var list: [FamilyMemberEntity] = []
         
