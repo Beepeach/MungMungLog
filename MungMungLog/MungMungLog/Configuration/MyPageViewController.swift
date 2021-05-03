@@ -84,6 +84,22 @@ class MyPageViewController: UIViewController {
            let user = CoreDataManager.shared.fetchUserData(with: userId).first {
             userNicknameLabel.text = user.nickname
             userRelationshipLabel.text = user.relationship
+            
+            if let urlStr = user.fileUrl,
+               let url = URL(string: urlStr) {
+                if let fileName = url.absoluteString.components(separatedBy: "/").last {
+                    if let localUrl = FileManager.cacheDirectoryUrl?.appendingPathComponent(fileName) {
+                        do {
+                            let data = try Data(contentsOf: localUrl)
+                            let img = UIImage(data: data)
+                            userProfileImageView.image = img
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+            }
+          
         }
         
         if let _ = KeychainWrapper.standard.integer(forKey: KeychainWrapper.Key.apiFamilyId) {

@@ -1557,10 +1557,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y4h-sL-lIz" userLabel="Contents View">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="853.33333333333337"/>
                                         <subviews>
-                                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT3-9m-suR">
-                                                <rect key="frame" x="0.0" y="10.333333333333314" width="428" height="843"/>
-                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pnl-dO-DZT" userLabel="Image Container View">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="379.33333333333331"/>
                                                 <subviews>
@@ -1838,8 +1834,12 @@
                                                     <action selector="showOptionList:" destination="CFr-HF-ErC" eventType="touchUpInside" id="618-ny-Hg6"/>
                                                 </connections>
                                             </button>
+                                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT3-9m-suR">
+                                                <rect key="frame" x="0.0" y="10" width="428" height="843"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIO-9Y-vvf">
-                                                <rect key="frame" x="214" y="10.333333333333314" width="214" height="843"/>
+                                                <rect key="frame" x="214" y="10" width="214" height="843"/>
                                                 <connections>
                                                     <segue destination="yO2-4k-BaU" kind="embed" id="WQi-tL-wXu"/>
                                                 </connections>

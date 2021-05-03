@@ -31,7 +31,24 @@ class  CoreDataManager {
     }
     
     func setup(modelName: String) {
-        container = NSPersistentContainer(name: modelName)
+//        container = NSPersistentContainer(name: modelName)
+        
+        if #available(iOS 13.0, *) {
+            container = NSPersistentContainer(name: modelName)
+        } else {
+            var modelURL = Bundle(for: type(of: self)).url(forResource: modelName, withExtension: "momd")!
+            let versionInfoURL = modelURL.appendingPathComponent("VersionInfo.plist")
+            if let versionInfoNSDictionary = NSDictionary(contentsOf: versionInfoURL),
+                let version = versionInfoNSDictionary.object(forKey: "NSManagedObjectModel_CurrentVersionName") as? String {
+                modelURL.appendPathComponent("\(version).mom")
+                let managedObjectModel = NSManagedObjectModel(contentsOf: modelURL)
+                container = NSPersistentContainer(name: modelName, managedObjectModel: managedObjectModel!)
+            } else {
+                //fall back solution; runs fine despite "Failed to load optimized model" warning
+                container = NSPersistentContainer(name: modelName)
+            }
+        }
+        
         container?.loadPersistentStores(completionHandler: { (description, error) in
             if let error = error {
                 print(error)
@@ -71,6 +88,24 @@ class  CoreDataManager {
             print(error)
         }
         
+    }
+    
+    func downloadImages(url: URL) {
+        if let fileName = url.absoluteString.components(separatedBy: "/").last {
+            if var localUrl = FileManager.cacheDirectoryUrl?.appendingPathComponent(fileName) {
+                do {
+                    let exist = FileManager.default.fileExists(atPath: localUrl.absoluteString)
+                    if !exist {
+                        let data = try Data(contentsOf: url)
+                        try data.write(to: localUrl)
+                        
+                        localUrl.excludedFromBackup()
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
     
 }
