@@ -13,6 +13,24 @@ extension FileManager {
         
         return urls.last
     }
+    
+    static func downloadImages(url: URL) {
+        if let fileName = url.absoluteString.components(separatedBy: "/").last {
+            if var localUrl = FileManager.cacheDirectoryUrl?.appendingPathComponent(fileName) {
+                do {
+                    let exist = FileManager.default.fileExists(atPath: localUrl.absoluteString)
+                    if !exist {
+                        let data = try Data(contentsOf: url)
+                        try data.write(to: localUrl)
+                        
+                        localUrl.excludedFromBackup()
+                    }
+                } catch {
+                    print(error)
+                }
+            }
+        }
+    }
 }
 
 extension URL {

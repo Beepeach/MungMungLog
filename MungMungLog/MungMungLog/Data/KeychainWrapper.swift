@@ -15,6 +15,8 @@ extension KeychainWrapper.Key {
     static let apiEmail: KeychainWrapper.Key = "apiEmail"
     static let apiNickname: KeychainWrapper.Key = "apiNickname"
     static let appleUserEmail: KeychainWrapper.Key = "appleUserEmail"
+    static let userImageDirectoryURL: KeychainWrapper.Key = "userImageDirectoryURL"
+    static let petImageDirectoryURL: KeychainWrapper.Key = "petImageDirectoryURL"
 }
 
 public func deleteKeychainInfo() {
@@ -23,4 +25,6 @@ public func deleteKeychainInfo() {
     KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiNickname.rawValue)
     KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiUserId.rawValue)
     KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
+    KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.userImageDirectoryURL.rawValue)
+    KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.Key.petImageDirectoryURL.rawValue)
 }

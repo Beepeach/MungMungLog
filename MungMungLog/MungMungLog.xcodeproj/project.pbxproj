@@ -35,6 +35,8 @@
 		461A11DD263E810C00AC0F69 /* CodeButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A11DB263E810C00AC0F69 /* CodeButtonTableViewCell.swift */; };
 		461A11DF263ED1CC00AC0F69 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A11DE263ED1CC00AC0F69 /* FileManager.swift */; };
 		461A11E0263ED1CC00AC0F69 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461A11DE263ED1CC00AC0F69 /* FileManager.swift */; };
+		461A1206263FE24F00AC0F69 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466686752638017C00F77084 /* CoreDataManager.swift */; };
+		461A1207263FE25000AC0F69 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466686752638017C00F77084 /* CoreDataManager.swift */; };
 		461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */; };
 		461E3129259CC9E900AE8011 /* WalkDateAndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */; };
 		464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */; };
@@ -77,8 +79,6 @@
 		466492D625F372FC00903265 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0172557F76B00027376 /* LaunchScreen.storyboard */; };
 		466492D725F372FC00903265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0152557F76B00027376 /* Assets.xcassets */; };
 		466492D825F372FC00903265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0122557F76B00027376 /* Main.storyboard */; };
-		466686762638017C00F77084 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466686752638017C00F77084 /* CoreDataManager.swift */; };
-		466686772638017C00F77084 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466686752638017C00F77084 /* CoreDataManager.swift */; };
 		466D8DB72638086600B356F9 /* OptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D8DB62638086600B356F9 /* OptionListViewController.swift */; };
 		466D8DB82638086600B356F9 /* OptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466D8DB62638086600B356F9 /* OptionListViewController.swift */; };
 		4674C6BB26318FEB004C9182 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4674C6BA26318FEB004C9182 /* UserModel.swift */; };
@@ -869,10 +869,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466686762638017C00F77084 /* CoreDataManager.swift in Sources */,
 				460C4EB825F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
 				4694977626184F520049D7FE /* ApiModel.swift in Sources */,
 				464092CE258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift in Sources */,
+				461A1206263FE24F00AC0F69 /* CoreDataManager.swift in Sources */,
 				461E3129259CC9E900AE8011 /* WalkDateAndTimeViewController.swift in Sources */,
 				460C4ED625F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */,
 				460EB0112557F76B00027376 /* ViewController.swift in Sources */,
@@ -946,10 +946,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				466686772638017C00F77084 /* CoreDataManager.swift in Sources */,
 				460C4EB925F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
 				4694977726184F520049D7FE /* ApiModel.swift in Sources */,
 				466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */,
+				461A1207263FE25000AC0F69 /* CoreDataManager.swift in Sources */,
 				466492B725F372FC00903265 /* WalkDateAndTimeViewController.swift in Sources */,
 				460C4ED725F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */,
 				46D4DF1E262D57790016252A /* EditingProfileViewController.swift in Sources */,

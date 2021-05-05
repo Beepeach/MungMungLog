@@ -51,6 +51,32 @@ extension CoreDataManager {
             newPet.fileUrl = dto.fileUrl
             
             self.saveMainContext()
+            
+            DispatchQueue.global().async {
+                if let url = URL(string: dto.fileUrl ?? "") {
+                    FileManager.downloadImages(url: url)
+                }
+                
+            }
+        }
+    }
+    
+    func updatePet(target: PetEntity, dto: PetDto) {
+        mainContext.perform {
+            target.name = dto.name
+            target.birthday = Date(timeIntervalSinceReferenceDate: dto.birthday)
+            target.breed = dto.breed
+            target.gender = dto.gender
+            target.fileUrl = dto.fileUrl
+            
+            self.saveMainContext()
+            
+            DispatchQueue.global().async {
+                if let url = URL(string: dto.fileUrl ?? "") {
+                    FileManager.downloadImages(url: url)
+                }
+                
+            }
         }
     }
 }

@@ -90,11 +90,35 @@ class HomeViewController: UIViewController {
         
         menuStack = createMenuStackView()
         
-        if let familyId = KeychainWrapper.standard.integer(forKey: KeychainWrapper.Key.apiFamilyId) {
-            fetchFamilyMembersData(familyId: familyId)
+        
+        if let userId = KeychainWrapper.standard.string(forKey: KeychainWrapper.Key.apiUserId),
+           let user = CoreDataManager.shared.fetchUserData(with: userId).first,
+           let urlStr = user.fileUrl,
+           let url = URL(string: urlStr) {
+            
+            if let fileName = url.absoluteString.components(separatedBy: "/").last {
+                if let localUrl = FileManager.cacheDirectoryUrl?.appendingPathComponent(fileName) {
+                    KeychainWrapper.standard.set("\(localUrl)", forKey: KeychainWrapper.Key.userImageDirectoryURL.rawValue)
+                }
+            }
         }
         
-        fetchPetData()
+        
+        if let familyId = KeychainWrapper.standard.integer(forKey: KeychainWrapper.Key.apiFamilyId) {
+            fetchFamilyMembersData(familyId: familyId)
+            
+            fetchPetData()
+        } else {
+            if let urlStr = KeychainWrapper.standard.string(forKey: .userImageDirectoryURL),
+               let url = URL(string: urlStr) {
+                do {
+                    let data = try Data(contentsOf: url)
+                    writerProfileImageView.image = UIImage(data: data)
+                } catch {
+                    print(error)
+                }
+            }
+        }
     }
     
     func fetchFamilyMembersData(familyId: Int) {

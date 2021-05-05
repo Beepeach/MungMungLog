@@ -51,7 +51,7 @@ extension CoreDataManager {
             
             DispatchQueue.global().async {
                 if let url = URL(string: dto.fileUrl ?? "") {
-                    self.downloadImages(url: url)
+                    FileManager.downloadImages(url: url)
                 }
             }
             
@@ -105,6 +105,12 @@ extension CoreDataManager {
             }
             
             self.saveMainContext()
+            
+            DispatchQueue.global().async {
+                if let url = URL(string: dto.fileUrl ?? "") {
+                    FileManager.downloadImages(url: url)
+                }
+            }
         }
     }
     

@@ -59,7 +59,6 @@ extension CoreDataManager {
                 newHistory.fileUrl5 = fileUrl5
             }
 
-            
             self.saveMainContext()
         }
     }
