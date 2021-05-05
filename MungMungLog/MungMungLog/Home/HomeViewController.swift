@@ -164,6 +164,21 @@ class HomeViewController: UIViewController {
         
         petNameLabel.text = firstPet.name
         petBreedLabel.text = firstPet.breed
+        
+        guard let urlStr = firstPet.fileUrl,
+              let url = URL(string: urlStr),
+              let fileName = url.absoluteString.components(separatedBy: "/").last,
+              let localURL = FileManager.cacheDirectoryUrl?.appendingPathComponent(fileName) else  {
+          return
+        }
+        KeychainWrapper.standard.set("\(localURL)", forKey: KeychainWrapper.Key.petImageDirectoryURL.rawValue)
+        
+        do {
+            let data = try Data(contentsOf: localURL)
+            petProfileImageView.image = UIImage(data: data)
+        } catch {
+            print(error)
+        }
     }
     
     func showHistoryDataWhenFirst() {
