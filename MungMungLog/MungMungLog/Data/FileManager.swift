@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftKeychainWrapper
 
 extension FileManager {
     static var cacheDirectoryUrl: URL? {
@@ -30,6 +31,17 @@ extension FileManager {
                 }
             }
         }
+    }
+    
+    func getLocalURLStrOfUserImage(from user: UserEntity) -> String? {
+        guard let urlStr = user.fileUrl,
+              let url = URL(string: urlStr),
+              let fileName = url.absoluteString.components(separatedBy: "/").last,
+              let localUrl = FileManager.cacheDirectoryUrl?.appendingPathComponent(fileName) else {
+            return ""
+        }
+        
+        return "\(localUrl)"
     }
 }
 
