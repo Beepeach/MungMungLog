@@ -21,8 +21,9 @@ struct User: Codable {
 
 
 extension CoreDataManager {
-    func upsertUser(target: UserEntity, dto: User) {
-        if let userId = KeychainWrapper.standard.string(forKey: KeychainWrapper.Key.apiUserId.rawValue) {
+    func upsertUser(target: UserEntity?, dto: User) {
+        if let userId = KeychainWrapper.standard.string(forKey: KeychainWrapper.Key.apiUserId.rawValue),
+           let target = target {
             if userId == target.id {
                 updateUserData(target: target, dto: dto)
             } // 혹시 안맞으면 지우고 다시 생성??

@@ -90,19 +90,16 @@ class HomeViewController: UIViewController {
         
         menuStack = createMenuStackView()
         
-        
         if let userId = KeychainWrapper.standard.string(forKey: KeychainWrapper.Key.apiUserId),
-           let user = CoreDataManager.shared.fetchUserData(with: userId).first,
-           let urlStr = user.fileUrl,
-           let url = URL(string: urlStr) {
-            
-            if let fileName = url.absoluteString.components(separatedBy: "/").last {
-                if let localUrl = FileManager.cacheDirectoryUrl?.appendingPathComponent(fileName) {
-                    KeychainWrapper.standard.set("\(localUrl)", forKey: KeychainWrapper.Key.userImageDirectoryURL.rawValue)
-                }
+           let user = CoreDataManager.shared.fetchUserData(with: userId).first {
+            if let urlStr = user.fileUrl,
+               let url = URL(string: urlStr),
+               let fileName = url.absoluteString.components(separatedBy: "/").last,
+               let localUrl = FileManager.cacheDirectoryUrl?.appendingPathComponent(fileName){
+                KeychainWrapper.standard.set("\(localUrl)", forKey: KeychainWrapper.Key.userImageDirectoryURL.rawValue)
             }
+            
         }
-        
         
         if let familyId = KeychainWrapper.standard.integer(forKey: KeychainWrapper.Key.apiFamilyId) {
             fetchFamilyMembersData(familyId: familyId)
@@ -114,9 +111,12 @@ class HomeViewController: UIViewController {
                 do {
                     let data = try Data(contentsOf: url)
                     writerProfileImageView.image = UIImage(data: data)
+                    writerNicknameLabel.text = KeychainWrapper.standard.string(forKey: .apiNickname)
                 } catch {
                     print(error)
                 }
+            } else {
+                writerNicknameLabel.text = KeychainWrapper.standard.string(forKey: .apiNickname)
             }
         }
     }
@@ -169,7 +169,7 @@ class HomeViewController: UIViewController {
               let url = URL(string: urlStr),
               let fileName = url.absoluteString.components(separatedBy: "/").last,
               let localURL = FileManager.cacheDirectoryUrl?.appendingPathComponent(fileName) else  {
-          return
+            return
         }
         KeychainWrapper.standard.set("\(localURL)", forKey: KeychainWrapper.Key.petImageDirectoryURL.rawValue)
         

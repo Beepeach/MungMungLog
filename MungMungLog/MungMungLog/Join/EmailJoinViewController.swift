@@ -71,13 +71,15 @@ class EmailJoinViewController: UIViewController {
                         KeychainWrapper.standard.set(token, forKey: KeychainWrapper.Key.apiToken.rawValue)
                     }
                     
-                    if let userId = responseData.userId {
+                    if let userId = responseData.user?.id {
                         KeychainWrapper.standard.set(userId, forKey: KeychainWrapper.Key.apiUserId.rawValue)
                     }
                     
                     if let email = responseData.email {
                         KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.apiEmail.rawValue)
                     }
+                    
+                    
                     
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)

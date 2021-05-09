@@ -136,7 +136,9 @@ class MembershipRegistrationViewController: UIViewController {
         }
         
         if let img = membershipImageView.image {
-           requestJoinWithImage(email: email, nickname: nickname, relationship: relationship, gender: gender, img: img)
+            requestJoinWithImage(email: email, nickname: nickname, relationship: relationship, gender: gender, img: img) {
+                
+            }
         } else {
             requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender)
         }
@@ -182,9 +184,7 @@ class MembershipRegistrationViewController: UIViewController {
                 let responseData = try decoder.decode(JoinResponseModel.self, from: data)
                 
                 if responseData.code == Statuscode.ok.rawValue {
-                    if let nickname = responseData.nickname {
-                        KeychainWrapper.standard.set(nickname, forKey: KeychainWrapper.Key.apiNickname.rawValue)
-                    }
+                    self.saveUserDataInKeychainAndCoreData(with: responseData)
                     
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: MovetoView.registrationGuide.rawValue, sender: nil)
@@ -203,7 +203,7 @@ class MembershipRegistrationViewController: UIViewController {
         task.resume()
     }
     
-    func requestJoinWithImage(email: String, nickname: String, relationship: String, gender: Bool, img: UIImage ) {
+    func requestJoinWithImage(email: String, nickname: String, relationship: String, gender: Bool, img: UIImage, completion: (() -> ())? ) {
         BlobManager.shared.upload(image: img) { (reutrnUrl) in
             if let imageUrl = reutrnUrl {
                 self.requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender, fileUrl: imageUrl)

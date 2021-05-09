@@ -39,12 +39,20 @@ struct EmailLoginRequestModel: Codable {
     let password: String
 }
 
-struct LoginResponseModel: Codable {
-    let code: Int
-    let message: String?
-    let email: String?
-    let token: String?
-    let user: User?
+protocol LoginAndJoinResponseModel:Codable {
+    var code: Int { get set }
+    var message: String? { get set }
+    var email: String? { get set }
+    var token: String? { get set }
+    var user: User? { get set }
+}
+
+struct LoginResponseModel: LoginAndJoinResponseModel, Codable {
+    var code: Int
+    var message: String?
+    var email: String?
+    var token: String?
+    var user: User?
 }
 
 struct SNSLoginRequestModel: Codable {
@@ -58,13 +66,12 @@ struct EmailJoinRequestModel: Codable {
     let password: String
 }
 
-struct JoinResponseModel: Codable {
-    let code: Int
-    let message: String?
-    let email: String?
-    let nickname: String?
-    let userId: String?
-    let token: String?
+struct JoinResponseModel: LoginAndJoinResponseModel, Codable {
+    var code: Int
+    var message: String?
+    var email: String?
+    var token: String?
+    var user: User?
 }
 
 struct JoinInfoRequestModel: Codable {
