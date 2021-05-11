@@ -171,7 +171,7 @@ class HomeViewController: UIViewController {
               let localURL = FileManager.cacheDirectoryUrl?.appendingPathComponent(fileName) else  {
             return
         }
-        KeychainWrapper.standard.set("\(localURL)", forKey: KeychainWrapper.Key.petImageDirectoryURL.rawValue)
+        KeychainWrapper.standard.set(localURL.absoluteString, forKey: KeychainWrapper.Key.petImageDirectoryURL.rawValue)
         
         do {
             let data = try Data(contentsOf: localURL)

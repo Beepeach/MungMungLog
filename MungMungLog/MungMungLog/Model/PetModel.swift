@@ -56,7 +56,6 @@ extension CoreDataManager {
                 if let url = URL(string: dto.fileUrl ?? "") {
                     FileManager.downloadImages(url: url)
                 }
-                
             }
         }
     }

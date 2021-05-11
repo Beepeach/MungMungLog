@@ -145,7 +145,7 @@ class EditingProfileViewController: UIViewController {
         let birthdayInterval = DateInterval(start: baseDate, end: birthdayDatePicker.date).duration
         
         if let img = petImageView.image {
-            requestCreatePetWithImage(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender, img: img)
+            requestToCreatePetWithImage(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender, img: img)
         } else {
             requestCreatePet(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender)
         }
@@ -153,21 +153,12 @@ class EditingProfileViewController: UIViewController {
     
     func requestCreatePet(email: String, name: String, birthdayInterval: Double, breed: String, gender: Bool, fileUrl: String? = nil) {
         
-        guard let url = URL(string: ApiManager.createPet) else {
-            print(ApiError.invalidURL)
-            return
-        }
-        
-        let session = URLSession.shared
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "Post"
-        request.addValue("application/json", forHTTPHeaderField: "content-type")
+        var data: Data? = nil
         
         do {
             let encoder = JSONEncoder()
             
-            request.httpBody = try encoder.encode(PetPostModel(
+           data = try encoder.encode(PetPostModel(
                                                     email: email,
                                                     name: name,
                                                     birthday: birthdayInterval,
@@ -178,35 +169,27 @@ class EditingProfileViewController: UIViewController {
             print(error.localizedDescription)
         }
         
-        let task = session.dataTask(with: request) { (data, response, error) in
-            if let error = error {
-                print(error)
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse,
-                  httpResponse.statusCode == 200 else {
-                print(ApiError.failed(0))
-                DispatchQueue.main.async {
-                    self.presentOneButtonAlert(alertTitle: "알림", message: "네트워크 오류가 발생했습니다.", actionTitle: "확인")
-                }
-                
-                return
-            }
-            
-            guard let data = data else {
-                print(ApiError.emptyData)
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let responseData = try decoder.decode(SingleResponse<PetDto>.self, from: data)
-                
+        ApiManager.shared.fetch(urlStr: ApiManager.createPet, httpMethod: "Post", body: data) { (result: Result<SingleResponse<PetDto>, Error>) in
+            switch result {
+            case .success(let responseData):
                 switch responseData.code {
                 case Statuscode.ok.rawValue:
+                    guard let petDTO = responseData.data else {
+                        return
+                    }
+                    
                     if let familyId = responseData.data?.familyId {
                         KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
+                        if let userId = KeychainWrapper.standard.string(forKey: .apiUserId),
+                           let user = CoreDataManager.shared.fetchUserData(with: userId).first {
+                            CoreDataManager.shared.updateUserData(target: user, familyId: familyId)
+                        }
+                        
+                        CoreDataManager.shared.createNewPet(dto: petDTO)
                     }
+                    
+                    
+                    
                     
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
@@ -220,16 +203,13 @@ class EditingProfileViewController: UIViewController {
                     }
                     
                 }
-                
-            } catch {
-                print(error.localizedDescription)
+            case .failure(let error):
+                print(error)
             }
         }
-        
-        task.resume()
     }
     
-    func requestCreatePetWithImage(email: String, name: String, birthdayInterval: Double, breed: String, gender: Bool, img: UIImage) {
+    func requestToCreatePetWithImage(email: String, name: String, birthdayInterval: Double, breed: String, gender: Bool, img: UIImage) {
         BlobManager.shared.upload(image: img) { (reutrnUrl) in
             if let imageUrl = reutrnUrl {
                 self.requestCreatePet(email: email, name: name, birthdayInterval: birthdayInterval, breed: breed, gender: gender, fileUrl: imageUrl)

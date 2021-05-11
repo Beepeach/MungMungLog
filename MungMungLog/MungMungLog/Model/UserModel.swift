@@ -115,6 +115,14 @@ extension CoreDataManager {
         }
     }
     
+    func updateUserData(target: UserEntity, familyId: Int) {
+        mainContext.perform {
+            target.familyId = Int64(familyId)
+        }
+        
+        self.saveMainContext()
+    }
+    
     func deleteUserData(target: UserEntity) {
         mainContext.perform {
             self.mainContext.delete(target)

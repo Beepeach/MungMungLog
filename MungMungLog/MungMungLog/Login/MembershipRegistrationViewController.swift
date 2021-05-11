@@ -136,9 +136,7 @@ class MembershipRegistrationViewController: UIViewController {
         }
         
         if let img = membershipImageView.image {
-            requestJoinWithImage(email: email, nickname: nickname, relationship: relationship, gender: gender, img: img) {
-                
-            }
+            requestJoinWithImage(email: email, nickname: nickname, relationship: relationship, gender: gender, img: img)
         } else {
             requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender)
         }
@@ -203,7 +201,7 @@ class MembershipRegistrationViewController: UIViewController {
         task.resume()
     }
     
-    func requestJoinWithImage(email: String, nickname: String, relationship: String, gender: Bool, img: UIImage, completion: (() -> ())? ) {
+    func requestJoinWithImage(email: String, nickname: String, relationship: String, gender: Bool, img: UIImage) {
         BlobManager.shared.upload(image: img) { (reutrnUrl) in
             if let imageUrl = reutrnUrl {
                 self.requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender, fileUrl: imageUrl)

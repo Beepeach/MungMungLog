@@ -123,9 +123,6 @@ class LoginViewController: UIViewController {
                     print("=======로그인 성공========")
                     print(responseData)
                     
-                    
-                    
-                
                     self.goToCorrectSceneForKeychain()
                     
                 case Statuscode.notFound.rawValue:
