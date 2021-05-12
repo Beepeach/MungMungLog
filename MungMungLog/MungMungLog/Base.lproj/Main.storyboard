@@ -584,7 +584,7 @@
         <!--산책-->
         <scene sceneID="3u0-SP-zcN">
             <objects>
-                <viewController id="gVC-LS-XyK" customClass="WalkRecordStartingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkRecordStartingViewController" id="gVC-LS-XyK" customClass="WalkRecordStartingViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bzu-dq-5Rm">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -603,7 +603,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         <accessibility key="accessibilityConfiguration" identifier="startButton"/>
                                         <connections>
-                                            <segue destination="ztx-uR-1Kk" kind="presentation" modalPresentationStyle="fullScreen" id="SyK-Tl-BIu"/>
+                                            <action selector="startWalkRecord:" destination="gVC-LS-XyK" eventType="touchUpInside" id="q9o-Bp-Ht9"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -630,10 +630,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="산책" id="Meh-Lc-6me"/>
+                    <connections>
+                        <segue destination="tYH-Ve-D1q" kind="custom" identifier="moveToWalkRecode" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="39V-HD-nOm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ip8-9B-3Ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6674" y="-519"/>
+            <point key="canvasLocation" x="5808" y="-687"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gMs-83-jED">
@@ -803,7 +806,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWS-gu-IWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6858" y="-1282"/>
+            <point key="canvasLocation" x="6698" y="-687"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="f9J-N3-VTa">
@@ -1247,7 +1250,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9K-Dh-dQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7765" y="-519"/>
+            <point key="canvasLocation" x="8757" y="-1214"/>
         </scene>
         <!--산책 기록-->
         <scene sceneID="9lW-Yi-N9P">
@@ -4980,7 +4983,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="0Ma-Gb-q2e"/>
-        <segue reference="D3k-F6-iaw"/>
+        <segue reference="5ZM-Ic-1F1"/>
         <segue reference="fSx-LO-08t"/>
         <segue reference="TmC-yD-XV5"/>
     </inferredMetricsTieBreakers>

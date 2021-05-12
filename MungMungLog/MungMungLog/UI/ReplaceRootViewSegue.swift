@@ -12,6 +12,7 @@ enum MovetoView: String {
     case membershipRegistration = "moveToMembershipRegistrationView"
     case registrationGuide = "moveToRegistrationGuideView"
     case home = "moveToHome"
+    case walkRecode = "moveToWalkRecode"
     
 }
 

@@ -92,6 +92,9 @@
 		467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */; };
 		468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEF13263854D9003A7FF0 /* QnaViewController.swift */; };
 		468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEF13263854D9003A7FF0 /* QnaViewController.swift */; };
+		468FCF79264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF78264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift */; };
+		468FCF7B264C1043001DB81E /* WalkRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */; };
+		468FCF7C264C1043001DB81E /* WalkRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */; };
 		468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
 		4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
 		4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
@@ -109,6 +112,7 @@
 		46D4DF1E262D57790016252A /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
 		46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */; };
 		46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */; };
+		46DA9020264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA901F264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift */; };
 		46DBEA8026283EA000B07EC1 /* BlobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA7F26283EA000B07EC1 /* BlobManager.swift */; };
 		46DBEA8126283EA000B07EC1 /* BlobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA7F26283EA000B07EC1 /* BlobManager.swift */; };
 		46DBEA8826288B2200B07EC1 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA8726288B2200B07EC1 /* UserDefault.swift */; };
@@ -119,7 +123,6 @@
 		46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */; };
 		46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */; };
-		46F450AF262596CA0025B915 /* MungMungLogUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450AE262596CA0025B915 /* MungMungLogUITests.swift */; };
 		46F450BB2625EDCE0025B915 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450BA2625EDCE0025B915 /* FamilyModel.swift */; };
 		46F450BC2625EDCE0025B915 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450BA2625EDCE0025B915 /* FamilyModel.swift */; };
 		46F450C22625F1BC0025B915 /* FamilyMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */; };
@@ -151,19 +154,12 @@
 			remoteGlobalIDString = 466492B425F372FC00903265;
 			remoteInfo = "MungMungLog Dev";
 		};
-		46BD61B5263C0295001DEC74 /* PBXContainerItemProxy */ = {
+		46DA9018264BFD6500CCFB6A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 460EB0012557F76B00027376 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 466492B425F372FC00903265;
 			remoteInfo = "MungMungLog Dev";
-		};
-		46F450B1262596CA0025B915 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 460EB0012557F76B00027376 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 460EB0082557F76B00027376;
-			remoteInfo = MungMungLog;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -214,6 +210,8 @@
 		467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		468EEF13263854D9003A7FF0 /* QnaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnaViewController.swift; sourceTree = "<group>"; };
+		468FCF78264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingVCUnitTests.swift; sourceTree = "<group>"; };
+		468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordViewController.swift; sourceTree = "<group>"; };
 		468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileViewController.swift; sourceTree = "<group>"; };
 		4694976D26184E6D0049D7FE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		4694977526184F520049D7FE /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
@@ -230,15 +228,15 @@
 		46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
 		46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+dateComponentsFormatter.swift"; sourceTree = "<group>"; };
 		46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderWithShadowView.swift; sourceTree = "<group>"; };
+		46DA9013264BFD6500CCFB6A /* MungMungLogDevUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MungMungLogDevUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		46DA9017264BFD6500CCFB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46DA901F264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingVCUITests.swift; sourceTree = "<group>"; };
 		46DBEA7F26283EA000B07EC1 /* BlobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobManager.swift; sourceTree = "<group>"; };
 		46DBEA8726288B2200B07EC1 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailJoinViewController.swift; sourceTree = "<group>"; };
 		46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditingViewController.swift; sourceTree = "<group>"; };
 		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
-		46F450AC262596CA0025B915 /* MungMungLogUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MungMungLogUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		46F450AE262596CA0025B915 /* MungMungLogUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MungMungLogUITests.swift; sourceTree = "<group>"; };
-		46F450B0262596CA0025B915 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46F450BA2625EDCE0025B915 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
 		46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemberModel.swift; sourceTree = "<group>"; };
 		46F45132262713340025B915 /* CommonDecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDecodableTests.swift; sourceTree = "<group>"; };
@@ -282,7 +280,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46F450A9262596CA0025B915 /* Frameworks */ = {
+		46DA9010264BFD6500CCFB6A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -338,7 +336,7 @@
 			children = (
 				460EB00B2557F76B00027376 /* MungMungLog */,
 				464A5B742621950800BA1DB7 /* MungMungLogDevTests */,
-				46F450AD262596CA0025B915 /* MungMungLogUITests */,
+				46DA9014264BFD6500CCFB6A /* MungMungLogDevUITests */,
 				460EB00A2557F76B00027376 /* Products */,
 				29201029F4F659AB26538FC6 /* Pods */,
 				A6FCC250A69EA7AC54BAD613 /* Frameworks */,
@@ -351,7 +349,7 @@
 				460EB0092557F76B00027376 /* MungMungLog.app */,
 				466492DC25F372FC00903265 /* MungMungLog.app */,
 				464A5B732621950800BA1DB7 /* MungMungLogDevTests.xctest */,
-				46F450AC262596CA0025B915 /* MungMungLogUITests.xctest */,
+				46DA9013264BFD6500CCFB6A /* MungMungLogDevUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -529,6 +527,31 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		46DA9014264BFD6500CCFB6A /* MungMungLogDevUITests */ = {
+			isa = PBXGroup;
+			children = (
+				46DA901E264BFDAF00CCFB6A /* TestCases */,
+				46DA9017264BFD6500CCFB6A /* Info.plist */,
+			);
+			path = MungMungLogDevUITests;
+			sourceTree = "<group>";
+		};
+		46DA901E264BFDAF00CCFB6A /* TestCases */ = {
+			isa = PBXGroup;
+			children = (
+				46DA901F264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift */,
+			);
+			path = TestCases;
+			sourceTree = "<group>";
+		};
+		46DA9021264C022100CCFB6A /* WalkTab */ = {
+			isa = PBXGroup;
+			children = (
+				468FCF78264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift */,
+			);
+			path = WalkTab;
+			sourceTree = "<group>";
+		};
 		46E1BA332616CB2300AAC75A /* Join */ = {
 			isa = PBXGroup;
 			children = (
@@ -542,20 +565,12 @@
 			children = (
 				46D1AF5A258205D300DF7B2A /* Cell */,
 				46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */,
+				468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */,
 				4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */,
 				46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */,
 				461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */,
 			);
 			path = Walk;
-			sourceTree = "<group>";
-		};
-		46F450AD262596CA0025B915 /* MungMungLogUITests */ = {
-			isa = PBXGroup;
-			children = (
-				46F450AE262596CA0025B915 /* MungMungLogUITests.swift */,
-				46F450B0262596CA0025B915 /* Info.plist */,
-			);
-			path = MungMungLogUITests;
 			sourceTree = "<group>";
 		};
 		46F45115262711F30025B915 /* TestClasses */ = {
@@ -580,6 +595,7 @@
 		46F45147262715F00025B915 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				46DA9021264C022100CCFB6A /* WalkTab */,
 				46F45148262716040025B915 /* PetDtoTests.swift */,
 				46F4516C262722310025B915 /* FamilyDtoTests.swift */,
 				46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */,
@@ -684,23 +700,22 @@
 			productReference = 466492DC25F372FC00903265 /* MungMungLog.app */;
 			productType = "com.apple.product-type.application";
 		};
-		46F450AB262596CA0025B915 /* MungMungLogUITests */ = {
+		46DA9012264BFD6500CCFB6A /* MungMungLogDevUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46F450B5262596CA0025B915 /* Build configuration list for PBXNativeTarget "MungMungLogUITests" */;
+			buildConfigurationList = 46DA901A264BFD6500CCFB6A /* Build configuration list for PBXNativeTarget "MungMungLogDevUITests" */;
 			buildPhases = (
-				46F450A8262596CA0025B915 /* Sources */,
-				46F450A9262596CA0025B915 /* Frameworks */,
-				46F450AA262596CA0025B915 /* Resources */,
+				46DA900F264BFD6500CCFB6A /* Sources */,
+				46DA9010264BFD6500CCFB6A /* Frameworks */,
+				46DA9011264BFD6500CCFB6A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				46F450B2262596CA0025B915 /* PBXTargetDependency */,
-				46BD61B6263C0295001DEC74 /* PBXTargetDependency */,
+				46DA9019264BFD6500CCFB6A /* PBXTargetDependency */,
 			);
-			name = MungMungLogUITests;
-			productName = MungMungLogUITests;
-			productReference = 46F450AC262596CA0025B915 /* MungMungLogUITests.xctest */;
+			name = MungMungLogDevUITests;
+			productName = MungMungLogDevUITests;
+			productReference = 46DA9013264BFD6500CCFB6A /* MungMungLogDevUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -709,7 +724,7 @@
 		460EB0012557F76B00027376 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					460EB0082557F76B00027376 = {
@@ -720,8 +735,9 @@
 						LastSwiftMigration = 1240;
 						TestTargetID = 466492B425F372FC00903265;
 					};
-					46F450AB262596CA0025B915 = {
-						CreatedOnToolsVersion = 12.4;
+					46DA9012264BFD6500CCFB6A = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 						TestTargetID = 466492B425F372FC00903265;
 					};
 				};
@@ -742,7 +758,7 @@
 				460EB0082557F76B00027376 /* MungMungLog */,
 				466492B425F372FC00903265 /* MungMungLog Dev */,
 				464A5B722621950800BA1DB7 /* MungMungLogDevTests */,
-				46F450AB262596CA0025B915 /* MungMungLogUITests */,
+				46DA9012264BFD6500CCFB6A /* MungMungLogDevUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -778,7 +794,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46F450AA262596CA0025B915 /* Resources */ = {
+		46DA9011264BFD6500CCFB6A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -905,6 +921,7 @@
 				464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */,
 				4674C6BB26318FEB004C9182 /* UserModel.swift in Sources */,
 				46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */,
+				468FCF7B264C1043001DB81E /* WalkRecordViewController.swift in Sources */,
 				46042BF4264800F5008E65FE /* UIViewController+KeychainWrapper.swift in Sources */,
 				46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */,
 				46D7CE082597843600134271 /* UIViewController+dateComponentsFormatter.swift in Sources */,
@@ -941,6 +958,7 @@
 				4615F423263C2F310099E8CF /* MockSession.swift in Sources */,
 				46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */,
 				46F4517D262724D20025B915 /* FamilyMemberDtoTests.swift in Sources */,
+				468FCF79264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift in Sources */,
 				46F45133262713340025B915 /* CommonDecodableTests.swift in Sources */,
 				46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */,
 				46F45149262716040025B915 /* PetDtoTests.swift in Sources */,
@@ -983,6 +1001,7 @@
 				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,
 				4674C6BC26318FEB004C9182 /* UserModel.swift in Sources */,
 				46F54579262FF88900FBDBA0 /* HomeViewController.swift in Sources */,
+				468FCF7C264C1043001DB81E /* WalkRecordViewController.swift in Sources */,
 				46042BF5264800F5008E65FE /* UIViewController+KeychainWrapper.swift in Sources */,
 				466492C725F372FC00903265 /* RecordDetailViewController.swift in Sources */,
 				469497A826186A4C0049D7FE /* Staging.swift in Sources */,
@@ -1012,11 +1031,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46F450A8262596CA0025B915 /* Sources */ = {
+		46DA900F264BFD6500CCFB6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46F450AF262596CA0025B915 /* MungMungLogUITests.swift in Sources */,
+				46DA9020264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1028,15 +1047,10 @@
 			target = 466492B425F372FC00903265 /* MungMungLog Dev */;
 			targetProxy = 464A5B782621950800BA1DB7 /* PBXContainerItemProxy */;
 		};
-		46BD61B6263C0295001DEC74 /* PBXTargetDependency */ = {
+		46DA9019264BFD6500CCFB6A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 466492B425F372FC00903265 /* MungMungLog Dev */;
-			targetProxy = 46BD61B5263C0295001DEC74 /* PBXContainerItemProxy */;
-		};
-		46F450B2262596CA0025B915 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 460EB0082557F76B00027376 /* MungMungLog */;
-			targetProxy = 46F450B1262596CA0025B915 /* PBXContainerItemProxy */;
+			targetProxy = 46DA9018264BFD6500CCFB6A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1313,39 +1327,42 @@
 			};
 			name = Release;
 		};
-		46F450B3262596CA0025B915 /* Debug */ = {
+		46DA901B264BFD6500CCFB6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
-				INFOPLIST_FILE = MungMungLogUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				INFOPLIST_FILE = MungMungLogDevUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLogUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLogDevUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "MungMungLog Dev";
 			};
 			name = Debug;
 		};
-		46F450B4262596CA0025B915 /* Release */ = {
+		46DA901C264BFD6500CCFB6A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
-				INFOPLIST_FILE = MungMungLogUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				INFOPLIST_FILE = MungMungLogDevUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLogUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beepeachstudio.MungMungLogDevUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1392,11 +1409,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46F450B5262596CA0025B915 /* Build configuration list for PBXNativeTarget "MungMungLogUITests" */ = {
+		46DA901A264BFD6500CCFB6A /* Build configuration list for PBXNativeTarget "MungMungLogDevUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				46F450B3262596CA0025B915 /* Debug */,
-				46F450B4262596CA0025B915 /* Release */,
+				46DA901B264BFD6500CCFB6A /* Debug */,
+				46DA901C264BFD6500CCFB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
