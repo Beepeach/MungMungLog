@@ -21,4 +21,12 @@ class WalkRecordStartingVCUnitTests: XCTestCase {
     override func tearDownWithError() throws {
         sut = nil
     }
+    
+    func testStartWalk_WhenPetIsEmpty_showAlert() {
+        // Given
+        
+        // When
+        
+        // Then
+    }
 }

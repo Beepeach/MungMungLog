@@ -95,6 +95,7 @@
 		468FCF79264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF78264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift */; };
 		468FCF7B264C1043001DB81E /* WalkRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */; };
 		468FCF7C264C1043001DB81E /* WalkRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */; };
+		468FCF7E264C2581001DB81E /* WalkRecordVCUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF7D264C2581001DB81E /* WalkRecordVCUnitTests.swift */; };
 		468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
 		4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
 		4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
@@ -212,6 +213,7 @@
 		468EEF13263854D9003A7FF0 /* QnaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnaViewController.swift; sourceTree = "<group>"; };
 		468FCF78264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingVCUnitTests.swift; sourceTree = "<group>"; };
 		468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordViewController.swift; sourceTree = "<group>"; };
+		468FCF7D264C2581001DB81E /* WalkRecordVCUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordVCUnitTests.swift; sourceTree = "<group>"; };
 		468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileViewController.swift; sourceTree = "<group>"; };
 		4694976D26184E6D0049D7FE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		4694977526184F520049D7FE /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
@@ -548,6 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				468FCF78264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift */,
+				468FCF7D264C2581001DB81E /* WalkRecordVCUnitTests.swift */,
 			);
 			path = WalkTab;
 			sourceTree = "<group>";
@@ -955,6 +958,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				468FCF7E264C2581001DB81E /* WalkRecordVCUnitTests.swift in Sources */,
 				4615F423263C2F310099E8CF /* MockSession.swift in Sources */,
 				46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */,
 				46F4517D262724D20025B915 /* FamilyMemberDtoTests.swift in Sources */,

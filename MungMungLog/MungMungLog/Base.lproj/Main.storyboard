@@ -638,10 +638,10 @@
             </objects>
             <point key="canvasLocation" x="5808" y="-687"/>
         </scene>
-        <!--View Controller-->
+        <!--Walk Record View Controller-->
         <scene sceneID="gMs-83-jED">
             <objects>
-                <viewController id="tYH-Ve-D1q" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkRecordViewController" id="tYH-Ve-D1q" customClass="WalkRecordViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BWp-te-LBG">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -803,6 +803,13 @@
                             <constraint firstItem="0WJ-Ln-Olz" firstAttribute="trailing" secondItem="BWp-te-LBG" secondAttribute="trailing" id="wGY-NQ-DfQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraButton" destination="Z5x-EB-DLY" id="XOH-sS-2L9"/>
+                        <outlet property="distanceLabel" destination="PAB-c3-9ME" id="DOy-Ih-UFx"/>
+                        <outlet property="mapView" destination="0WJ-Ln-Olz" id="1VH-Wq-4Gl"/>
+                        <outlet property="pauseAndStartButton" destination="wUz-4H-oDe" id="gDJ-Om-njw"/>
+                        <outlet property="timeLabel" destination="q20-9L-mMv" id="59e-It-IJV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWS-gu-IWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4982,10 +4989,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0Ma-Gb-q2e"/>
+        <segue reference="oEs-uz-L4I"/>
         <segue reference="5ZM-Ic-1F1"/>
-        <segue reference="fSx-LO-08t"/>
-        <segue reference="TmC-yD-XV5"/>
+        <segue reference="iF4-f1-o8r"/>
+        <segue reference="cYL-UJ-6AL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Test" width="1411" height="1411"/>

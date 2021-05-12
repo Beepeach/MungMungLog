@@ -19,5 +19,7 @@ class WalkRecordStartingViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
 }
