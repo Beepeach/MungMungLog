@@ -180,16 +180,9 @@ class EditingProfileViewController: UIViewController {
                     
                     if let familyId = responseData.data?.familyId {
                         KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
-                        if let userId = KeychainWrapper.standard.string(forKey: .apiUserId),
-                           let user = CoreDataManager.shared.fetchUserData(with: userId).first {
-                            CoreDataManager.shared.updateUserData(target: user, familyId: familyId)
-                        }
                         
                         CoreDataManager.shared.createNewPet(dto: petDTO)
                     }
-                    
-                    
-                    
                     
                     DispatchQueue.main.async {
                         self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)

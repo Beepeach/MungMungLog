@@ -15,8 +15,6 @@ struct User: Codable {
     let relationship: String
     let gender: Bool
     let fileUrl: String?
-    let familyId: Int?
-    let family: FamilyDto?
 }
 
 
@@ -42,10 +40,6 @@ extension CoreDataManager {
             
             if let fileUrl = dto.fileUrl {
                 newUser.fileUrl = fileUrl
-            }
-           
-            if let familyId = dto.familyId {
-                newUser.familyId = Int64(familyId)
             }
             
             self.saveMainContext()
@@ -101,10 +95,6 @@ extension CoreDataManager {
             target.gender = dto.gender
             target.fileUrl = dto.fileUrl
             
-            if let familyId = dto.familyId {
-                target.familyId = Int64(familyId)
-            }
-            
             self.saveMainContext()
             
             DispatchQueue.global().async {
@@ -113,14 +103,6 @@ extension CoreDataManager {
                 }
             }
         }
-    }
-    
-    func updateUserData(target: UserEntity, familyId: Int) {
-        mainContext.perform {
-            target.familyId = Int64(familyId)
-        }
-        
-        self.saveMainContext()
     }
     
     func deleteUserData(target: UserEntity) {

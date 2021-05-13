@@ -202,6 +202,7 @@
 		464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationGuideViewController.swift; sourceTree = "<group>"; };
 		4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEndingViewController.swift; sourceTree = "<group>"; };
+		4663FDD8264D520300A1D7CF /* MungMungLogVer 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MungMungLogVer 3.xcdatamodel"; sourceTree = "<group>"; };
 		466492DC25F372FC00903265 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466686752638017C00F77084 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		466D8DB62638086600B356F9 /* OptionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionListViewController.swift; sourceTree = "<group>"; };
@@ -310,8 +311,8 @@
 				46DBEA8726288B2200B07EC1 /* UserDefault.swift */,
 				46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */,
 				466686752638017C00F77084 /* CoreDataManager.swift */,
-				4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */,
 				461A11DE263ED1CC00AC0F69 /* FileManager.swift */,
+				4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1428,10 +1429,11 @@
 		4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				4663FDD8264D520300A1D7CF /* MungMungLogVer 3.xcdatamodel */,
 				46C4B23B263C7E0200431973 /* MungMungLogVer2.xcdatamodel */,
 				4615F41D263C17100099E8CF /* MungMungLog.xcdatamodel */,
 			);
-			currentVersion = 46C4B23B263C7E0200431973 /* MungMungLogVer2.xcdatamodel */;
+			currentVersion = 4663FDD8264D520300A1D7CF /* MungMungLogVer 3.xcdatamodel */;
 			path = MungMungLog.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

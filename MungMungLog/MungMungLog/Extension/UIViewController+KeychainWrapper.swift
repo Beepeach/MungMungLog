@@ -29,7 +29,7 @@ extension UIViewController {
             KeychainWrapper.standard.set(nickname, forKey: KeychainWrapper.Key.apiNickname.rawValue)
         }
         
-        if let familyId = responseData.user?.familyId {
+        if let familyId = responseData.familyMember?.familyId {
             KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
         }
         

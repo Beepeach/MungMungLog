@@ -45,6 +45,7 @@ protocol LoginAndJoinResponseModel:Codable {
     var email: String? { get set }
     var token: String? { get set }
     var user: User? { get set }
+    var familyMember: FamilyMemberDto? { get set }
 }
 
 struct LoginResponseModel: LoginAndJoinResponseModel, Codable {
@@ -53,6 +54,7 @@ struct LoginResponseModel: LoginAndJoinResponseModel, Codable {
     var email: String?
     var token: String?
     var user: User?
+    var familyMember: FamilyMemberDto?
 }
 
 struct SNSLoginRequestModel: Codable {
@@ -72,6 +74,7 @@ struct JoinResponseModel: LoginAndJoinResponseModel, Codable {
     var email: String?
     var token: String?
     var user: User?
+    var familyMember: FamilyMemberDto?
 }
 
 struct JoinInfoRequestModel: Codable {

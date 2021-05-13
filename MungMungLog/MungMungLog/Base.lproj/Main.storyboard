@@ -723,6 +723,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="7Yv-5H-dtk"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="pause"/>
+                                                <connections>
+                                                    <action selector="pauseOrStart:" destination="tYH-Ve-D1q" eventType="touchUpInside" id="K8r-cf-l3p"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8MK-Qy-S8u" customClass="CircleWithShadowView" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="164" y="21" width="100" height="100"/>
@@ -738,6 +741,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o84-qM-Rdx">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                                        <connections>
+                                                            <action selector="stopWalk:" destination="tYH-Ve-D1q" eventType="touchUpInside" id="QYu-1s-FOh"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -807,7 +813,7 @@
                         <outlet property="cameraButton" destination="Z5x-EB-DLY" id="XOH-sS-2L9"/>
                         <outlet property="distanceLabel" destination="PAB-c3-9ME" id="DOy-Ih-UFx"/>
                         <outlet property="mapView" destination="0WJ-Ln-Olz" id="1VH-Wq-4Gl"/>
-                        <outlet property="pauseAndStartButton" destination="wUz-4H-oDe" id="gDJ-Om-njw"/>
+                        <outlet property="pauseOrStartButton" destination="wUz-4H-oDe" id="gDJ-Om-njw"/>
                         <outlet property="timeLabel" destination="q20-9L-mMv" id="59e-It-IJV"/>
                     </connections>
                 </viewController>

@@ -6,12 +6,11 @@
 //
 
 import XCTest
-//@testable import MungMungLog
 
 class WalkRecordStartingVCUITests: XCTestCase {
 
     var app: XCUIApplication!
-
+    
     override func setUpWithError() throws {
 
         app = XCUIApplication()
