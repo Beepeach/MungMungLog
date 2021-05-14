@@ -23,5 +23,9 @@ class WalkRecordVCUnitTests: XCTestCase {
         sut = nil
     }
     
+    func testTimer_whenViewDidLoad_TimerNotNil() {
+        XCTAssertNotNil(sut.timer)
+    }
+    
     
 }

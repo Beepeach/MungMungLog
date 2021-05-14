@@ -9,11 +9,47 @@ import UIKit
 import MapKit
 import CoreLocation
 
+class TimerManager {
+    var mainTimer: Timer?
+    var timeCount: Int
+    
+    init(timeCount: Int = 0) {
+        self.timeCount = timeCount
+    }
+    
+    func returnTimeCount() -> Int {
+        return timeCount
+    }
+    
+    func startRecordingTimeCount() {
+            mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+                DispatchQueue.global().async {
+                    self.timeCount += 1
+                    print(self.timeCount)
+                }
+            })
+    }
+    
+    func stopRecording() {
+            mainTimer?.invalidate()
+            mainTimer = nil
+    }
+    
+    func addBackgroundTime(time: Int) {
+        timeCount += time
+    }
+    
+    func resetTimeCount() {
+        timeCount = 0
+    }
+}
+
 class WalkRecordViewController: UIViewController {
     
-    var mainTimer: Timer?
-    var timeCount = 0
-    var pause = true
+    var pause: Bool = false
+    var refreshTimer: Timer?
+    var timer: TimerManager = TimerManager(timeCount: 0)
+    
     var totalDistance: Double = 0.0
     
     @IBOutlet weak var mapView: MKMapView!
@@ -26,19 +62,20 @@ class WalkRecordViewController: UIViewController {
         if pause == true {
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
-                self.pauseOrStartButton.imageView?.image = UIImage(named: "start")
+                self.pauseOrStartButton.setImage(UIImage(named: "pause"), for: .normal)
             }
-            
+
+            timer.startRecordingTimeCount()
             pause = false
-            stopTimer()
+            
         } else {
             UIView.animate(withDuration: 0.3) {
                 self.view.layoutIfNeeded()
-                self.pauseOrStartButton.imageView?.image = UIImage(named: "pause")
+                self.pauseOrStartButton.setImage(UIImage(named: "start"), for: .normal)
             }
             
+            timer.stopRecording()
             pause = true
-            startTimer()
         }
     }
     
@@ -49,7 +86,7 @@ class WalkRecordViewController: UIViewController {
             
             guard let editingViewController = editingNavigationController.topViewController as? WalkRecordEditingViewController else { return }
             
-            editingViewController.walkRecordTime = self.timeCount
+//            editingViewController.walkRecordTime = self.timeCount
             
             editingNavigationController.modalPresentationStyle = .fullScreen
             self.present(editingNavigationController, animated: true, completion: nil)
@@ -59,7 +96,34 @@ class WalkRecordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startTimer()
+        timer.startRecordingTimeCount()
+        
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            DispatchQueue.global().async {
+                DispatchQueue.main.async {
+                    self.timeLabel.text = self.timerStringFormatter.string(from: Double(self.timer.returnTimeCount()))
+                }
+            }
+        })
+        
+        NotificationCenter.default.addObserver(forName: .sceneWillEnterForeground, object: nil, queue: .main) { noti in
+            guard let userInfo = noti.userInfo else {
+                return
+            }
+            
+            guard let elaspedTime = userInfo["elaspedTime"] as? Int else {
+                return
+            }
+            
+            if self.pause == false {
+                self.timer.addBackgroundTime(time: elaspedTime)
+            }
+        }
+        
+        NotificationCenter.default.addObserver(forName: .sceneDidEnterBackground, object: nil, queue: .main) { _ in
+            print(#function)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,24 +133,6 @@ class WalkRecordViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        stopTimer()
-    }
-    
-    
-    func startTimer() {
-        mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _IOFBF in
-            DispatchQueue.global().async {
-                self.timeCount += 1
-                print(self.timeCount)
-                DispatchQueue.main.async {
-                    self.timeLabel.text = self.timerStringFormatter.string(from: Double(self.timeCount))
-                }
-            }
-        })
-    }
-    
-    func stopTimer() {
-        mainTimer?.invalidate()
-        mainTimer = nil
+        timer.stopRecording()
     }
 }

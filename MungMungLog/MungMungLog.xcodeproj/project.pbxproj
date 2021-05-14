@@ -50,6 +50,9 @@
 		464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */; };
 		46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */; };
 		4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */; };
+		465A57E4264E7CC4006683D5 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A57E3264E7CC4006683D5 /* NotificationName.swift */; };
+		465A57E5264E7CC4006683D5 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A57E3264E7CC4006683D5 /* NotificationName.swift */; };
+		465A57E7264E905D006683D5 /* TimerManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A57E6264E905D006683D5 /* TimerManagerTests.swift */; };
 		466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */; };
 		466492B725F372FC00903265 /* WalkDateAndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */; };
 		466492B825F372FC00903265 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB0102557F76B00027376 /* ViewController.swift */; };
@@ -202,6 +205,8 @@
 		464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationGuideViewController.swift; sourceTree = "<group>"; };
 		4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEndingViewController.swift; sourceTree = "<group>"; };
+		465A57E3264E7CC4006683D5 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		465A57E6264E905D006683D5 /* TimerManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManagerTests.swift; sourceTree = "<group>"; };
 		4663FDD8264D520300A1D7CF /* MungMungLogVer 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MungMungLogVer 3.xcdatamodel"; sourceTree = "<group>"; };
 		466492DC25F372FC00903265 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466686752638017C00F77084 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -526,6 +531,7 @@
 				460EB02825582EEF00027376 /* UIViewController+alert.swift */,
 				46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */,
 				46042BF3264800F5008E65FE /* UIViewController+KeychainWrapper.swift */,
+				465A57E3264E7CC4006683D5 /* NotificationName.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 				46F4516C262722310025B915 /* FamilyDtoTests.swift */,
 				46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */,
 				46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */,
+				465A57E6264E905D006683D5 /* TimerManagerTests.swift */,
 			);
 			path = TestCases;
 			sourceTree = "<group>";
@@ -906,6 +913,7 @@
 				467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */,
 				461A11DC263E810C00AC0F69 /* CodeButtonTableViewCell.swift in Sources */,
 				461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */,
+				465A57E4264E7CC4006683D5 /* NotificationName.swift in Sources */,
 				460C4EAE25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				466D8DB72638086600B356F9 /* OptionListViewController.swift in Sources */,
@@ -962,6 +970,7 @@
 				468FCF7E264C2581001DB81E /* WalkRecordVCUnitTests.swift in Sources */,
 				4615F423263C2F310099E8CF /* MockSession.swift in Sources */,
 				46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */,
+				465A57E7264E905D006683D5 /* TimerManagerTests.swift in Sources */,
 				46F4517D262724D20025B915 /* FamilyMemberDtoTests.swift in Sources */,
 				468FCF79264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift in Sources */,
 				46F45133262713340025B915 /* CommonDecodableTests.swift in Sources */,
@@ -987,6 +996,7 @@
 				46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */,
 				461A11DD263E810C00AC0F69 /* CodeButtonTableViewCell.swift in Sources */,
 				466492BA25F372FC00903265 /* CircleWithShadowView.swift in Sources */,
+				465A57E5264E7CC4006683D5 /* NotificationName.swift in Sources */,
 				466492BB25F372FC00903265 /* MembershipRegistrationViewController.swift in Sources */,
 				460C4EAF25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				466D8DB82638086600B356F9 /* OptionListViewController.swift in Sources */,

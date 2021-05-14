@@ -47,14 +47,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        // Called as the scene transitions from the background to the foreground.
-        // Use this method to undo the changes made on entering the background.
+        guard let sceneEnterBackgroundTime = UserDefaults.standard.object(forKey: "sceneDidEnterBackground") as? Date else {
+            return
+        }
+        
+        let elaspedTime = Int(Date().timeIntervalSince(sceneEnterBackgroundTime))
+        
+        NotificationCenter.default.post(name: .sceneWillEnterForeground, object: nil, userInfo: ["elaspedTime": elaspedTime])
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
-        // Called as the scene transitions from the foreground to the background.
-        // Use this method to save data, release shared resources, and store enough scene-specific state information
-        // to restore the scene back to its current state.
+        NotificationCenter.default.post(name: .sceneDidEnterBackground, object: nil)
+        UserDefaults.standard.setValue(Date(), forKey: "sceneDidEnterBackground")
     }
 
 
