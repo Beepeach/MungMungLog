@@ -528,8 +528,8 @@
 			isa = PBXGroup;
 			children = (
 				460EB02325582BF800027376 /* UIViewController+dateFormatter.swift */,
-				460EB02825582EEF00027376 /* UIViewController+alert.swift */,
 				46D7CE072597843600134271 /* UIViewController+dateComponentsFormatter.swift */,
+				460EB02825582EEF00027376 /* UIViewController+alert.swift */,
 				46042BF3264800F5008E65FE /* UIViewController+KeychainWrapper.swift */,
 				465A57E3264E7CC4006683D5 /* NotificationName.swift */,
 			);
@@ -1302,7 +1302,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "MungMungLog Dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "MungMungLog/MungMungLog Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
 				INFOPLIST_FILE = MungMungLog/Info.plist;
@@ -1325,7 +1325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "MungMungLog Dev.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "MungMungLog/MungMungLog Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
 				INFOPLIST_FILE = MungMungLog/Info.plist;

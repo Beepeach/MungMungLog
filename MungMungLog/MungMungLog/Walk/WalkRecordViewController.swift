@@ -47,10 +47,21 @@ class TimerManager {
 class WalkRecordViewController: UIViewController {
     
     var pause: Bool = false
-    var refreshTimer: Timer?
+    var labelRefreshTimer: Timer?
     var timer: TimerManager = TimerManager(timeCount: 0)
     
     var totalDistance: Double = 0.0
+    var prevLocation: CLLocation?
+    var currentLocation: CLLocation?
+    
+    lazy var locationManager: CLLocationManager = {
+        let manager = CLLocationManager()
+        manager.delegate = self
+        manager.activityType = .fitness
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        return manager
+    }()
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var timeLabel: UILabel!
@@ -98,7 +109,8 @@ class WalkRecordViewController: UIViewController {
         
         timer.startRecordingTimeCount()
         
-        refreshTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+        // Timer가 따로 안돌도록 하는 방법은??
+        labelRefreshTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
             DispatchQueue.global().async {
                 DispatchQueue.main.async {
                     self.timeLabel.text = self.timerStringFormatter.string(from: Double(self.timer.returnTimeCount()))
@@ -124,10 +136,47 @@ class WalkRecordViewController: UIViewController {
             print(#function)
         }
         
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        if CLLocationManager.locationServicesEnabled() {
+            var status: CLAuthorizationStatus
+            
+            if #available(iOS 14.0, *) {
+                status = locationManager.authorizationStatus
+            } else {
+                status = CLLocationManager.authorizationStatus()
+            }
+            
+            switch status {
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            case .authorizedAlways, .authorizedWhenInUse:
+                updateLocation()
+            case .denied, .restricted:
+                presentNotUsingLocationServiceAlert()
+            @unknown default:
+                presentNotUsingLocationServiceAlert()
+            }
+        } else {
+            presentNotUsingLocationServiceAlert()
+        }
+    }
+    
+    func presentNotUsingLocationServiceAlert() {
+        self.presentOneButtonAlert(alertTitle: "알림", message: "위치서비스를 사용할 수 없습니다.", actionTitle: "확인")
+    }
+    
+    func moveToCurrentLocation(location: CLLocation) {
+        let span = CLLocationDistance(500)
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: span, longitudinalMeters: span)
+        
+        mapView.setRegion(region, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -135,4 +184,56 @@ class WalkRecordViewController: UIViewController {
         
         timer.stopRecording()
     }
+}
+
+
+extension WalkRecordViewController: CLLocationManagerDelegate {
+    func updateLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    @available(iOS 14.0, *)
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            updateLocation()
+        default:
+            self.presentNotUsingLocationServiceAlert()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedAlways, .authorizedWhenInUse:
+            updateLocation()
+        default:
+            self.presentNotUsingLocationServiceAlert()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(#function, error)
+        locationManager.stopUpdatingLocation()
+        presentNotUsingLocationServiceAlert()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        
+        currentLocation = location
+        
+        if let prevLocation = prevLocation {
+            totalDistance += prevLocation.distance(from: location)
+        }
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.roundingMode = .floor
+        numberFormatter.maximumSignificantDigits = 2
+        
+        self.distanceLabel.text = numberFormatter.string(for: totalDistance)
+        prevLocation = location
+        
+//        moveToCurrentLocation(location: location)
+    }
+    
 }
