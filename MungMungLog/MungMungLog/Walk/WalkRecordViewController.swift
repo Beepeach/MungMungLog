@@ -22,17 +22,17 @@ class TimerManager {
     }
     
     func startRecordingTimeCount() {
-            mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-                DispatchQueue.global().async {
-                    self.timeCount += 1
-                    print(self.timeCount)
-                }
-            })
+        mainTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            DispatchQueue.global().async {
+                self.timeCount += 1
+                print(self.timeCount)
+            }
+        })
     }
     
     func stopRecording() {
-            mainTimer?.invalidate()
-            mainTimer = nil
+        mainTimer?.invalidate()
+        mainTimer = nil
     }
     
     func addBackgroundTime(time: Int) {
@@ -51,6 +51,7 @@ class WalkRecordViewController: UIViewController {
     var timer: TimerManager = TimerManager(timeCount: 0)
     
     var totalDistance: Double = 0.0
+    var isRefreshTotalDistance: Bool = true
     var prevLocation: CLLocation?
     var currentLocation: CLLocation?
     
@@ -75,9 +76,10 @@ class WalkRecordViewController: UIViewController {
                 self.view.layoutIfNeeded()
                 self.pauseOrStartButton.setImage(UIImage(named: "pause"), for: .normal)
             }
-
+            
             timer.startRecordingTimeCount()
             pause = false
+            isRefreshTotalDistance = true
             
         } else {
             UIView.animate(withDuration: 0.3) {
@@ -87,6 +89,7 @@ class WalkRecordViewController: UIViewController {
             
             timer.stopRecording()
             pause = true
+            isRefreshTotalDistance = false
         }
     }
     
@@ -111,7 +114,7 @@ class WalkRecordViewController: UIViewController {
             
             guard let editingViewController = editingNavigationController.topViewController as? WalkRecordEditingViewController else { return }
             
-//            editingViewController.walkRecordTime = self.timeCount
+            //            editingViewController.walkRecordTime = self.timeCount
             
             editingNavigationController.modalPresentationStyle = .fullScreen
             self.present(editingNavigationController, animated: true, completion: nil)
@@ -189,7 +192,7 @@ class WalkRecordViewController: UIViewController {
         self.presentOneButtonAlert(alertTitle: "알림", message: "위치서비스를 사용할 수 없습니다.", actionTitle: "확인")
     }
     
-
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -231,28 +234,24 @@ extension WalkRecordViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        // 첫 실행시 지도가 움직여 distance가 급격히 증가하는 경우를 방지하기 위해
-        if locations.count == 0 {
-            DispatchQueue.global().asyncAfter(deadline: .now() + 1) { [self] in
-                guard let location = locations.last else { return }
-                currentLocation = location
-            }
-        } else {
-            guard let location = locations.last else { return }
-            currentLocation = location
-            
-            if let prevLocation = prevLocation {
+        // 첫 실행시 지도가 움직여 distance가 급격히 증가하는 경우를 방지하기 위해 어떻게 해야할까
+        
+        guard let location = locations.last else { return }
+        currentLocation = location
+        
+        if let prevLocation = prevLocation {
+            if isRefreshTotalDistance == true {
                 totalDistance += prevLocation.distance(from: location)
             }
-            
-            let totalDistanceConvertedKilometer = Measurement(value: (totalDistance / 1000), unit: UnitLength.kilometers)
-            
-            DispatchQueue.main.async {
-                self.distanceLabel.text = totalDistanceConvertedKilometer.kilometerFormatted
-            }
-          
-            prevLocation = location
         }
+        
+        let totalDistanceConvertedKilometer = Measurement(value: (totalDistance / 1000), unit: UnitLength.kilometers)
+        
+        DispatchQueue.main.async {
+            self.distanceLabel.text = totalDistanceConvertedKilometer.kilometerFormatted
+        }
+        
+        prevLocation = location
     }
     
 }
