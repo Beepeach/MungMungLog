@@ -90,6 +90,20 @@ class WalkRecordViewController: UIViewController {
         }
     }
     
+    @IBAction func moveToCurrentLocation(_ sender: Any) {
+        if let currentLocation = currentLocation {
+            self.moveToCurrentLocation(location: currentLocation)
+        }
+    }
+    
+    func moveToCurrentLocation(location: CLLocation) {
+        let span = CLLocationDistance(500)
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: span, longitudinalMeters: span)
+        
+        mapView.setRegion(region, animated: true)
+        mapView.setUserTrackingMode(.follow, animated: true)
+    }
+    
     @IBAction func stopWalk(_ sender: Any) {
         presentTwoButtonAlert(alertTitle: "산책을 마치셨나요?", message: "지금까지의 기록을 저장하시려면 저장을 눌러주세요.", confirmActionTitle: "저장", cancelActionTitle: "취소") { _ in
             
@@ -175,12 +189,7 @@ class WalkRecordViewController: UIViewController {
         self.presentOneButtonAlert(alertTitle: "알림", message: "위치서비스를 사용할 수 없습니다.", actionTitle: "확인")
     }
     
-    func moveToCurrentLocation(location: CLLocation) {
-        let span = CLLocationDistance(500)
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: span, longitudinalMeters: span)
-        
-        mapView.setRegion(region, animated: true)
-    }
+
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -244,10 +253,6 @@ extension WalkRecordViewController: CLLocationManagerDelegate {
           
             prevLocation = location
         }
-     
-        
-        //        moveToCurrentLocation(location: location)
-        
     }
     
 }

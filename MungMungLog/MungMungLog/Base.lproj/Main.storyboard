@@ -795,6 +795,17 @@
                                     <constraint firstItem="Isg-DZ-ZTB" firstAttribute="top" secondItem="37F-oW-hAh" secondAttribute="bottom" id="rcs-9e-AtG"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07d-A5-pX3">
+                                <rect key="frame" x="364" y="550" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="eLa-5P-QHk"/>
+                                    <constraint firstAttribute="height" constant="44" id="efI-zp-X5n"/>
+                                </constraints>
+                                <state key="normal" image="location"/>
+                                <connections>
+                                    <action selector="moveToCurrentLocation:" destination="tYH-Ve-D1q" eventType="touchUpInside" id="QDi-yF-UvC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xVH-Gv-DLg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -803,7 +814,9 @@
                             <constraint firstItem="0WJ-Ln-Olz" firstAttribute="leading" secondItem="BWp-te-LBG" secondAttribute="leading" id="IBS-lz-Pcx"/>
                             <constraint firstItem="0WJ-Ln-Olz" firstAttribute="top" secondItem="BWp-te-LBG" secondAttribute="top" id="KA4-Sj-iPw"/>
                             <constraint firstAttribute="bottom" secondItem="0WJ-Ln-Olz" secondAttribute="bottom" id="RG7-gZ-nrO"/>
+                            <constraint firstItem="ywL-vh-9xr" firstAttribute="top" secondItem="07d-A5-pX3" secondAttribute="bottom" constant="8" symbolic="YES" id="YlX-kp-zsM"/>
                             <constraint firstItem="ywL-vh-9xr" firstAttribute="leading" secondItem="xVH-Gv-DLg" secondAttribute="leading" id="cxG-30-ER6"/>
+                            <constraint firstItem="xVH-Gv-DLg" firstAttribute="trailing" secondItem="07d-A5-pX3" secondAttribute="trailing" constant="20" id="f1q-ju-KsR"/>
                             <constraint firstItem="ywL-vh-9xr" firstAttribute="trailing" secondItem="xVH-Gv-DLg" secondAttribute="trailing" id="glQ-MT-Z96"/>
                             <constraint firstAttribute="bottom" secondItem="ywL-vh-9xr" secondAttribute="bottom" id="r7E-on-1B3"/>
                             <constraint firstItem="0WJ-Ln-Olz" firstAttribute="trailing" secondItem="BWp-te-LBG" secondAttribute="trailing" id="wGY-NQ-DfQ"/>
@@ -5012,6 +5025,7 @@
         <image name="female" width="256" height="256"/>
         <image name="homeDefault" width="1000" height="1000"/>
         <image name="kakao" width="256" height="256"/>
+        <image name="location" width="256" height="256"/>
         <image name="male" width="256" height="256"/>
         <image name="more" width="256" height="256"/>
         <image name="pause" width="256" height="256"/>
