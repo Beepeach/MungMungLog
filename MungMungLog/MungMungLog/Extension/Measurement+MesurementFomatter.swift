@@ -22,3 +22,7 @@ extension Measurement where UnitType == UnitLength {
         Measurement.kilometerFomatted.string(from: self)
     }
 }
+
+extension Measurement where UnitType == Unit {
+    
+}

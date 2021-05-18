@@ -49,6 +49,7 @@ class WalkRecordViewController: UIViewController {
     var pause: Bool = false
     var labelRefreshTimer: Timer?
     var timer: TimerManager = TimerManager(timeCount: 0)
+    var walkStartDate: Date?
     
     var totalDistance: Double = 0.0
     var isRefreshTotalDistance: Bool = true
@@ -69,6 +70,20 @@ class WalkRecordViewController: UIViewController {
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var pauseOrStartButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
+    
+    @IBAction func moveToCurrentLocation(_ sender: Any) {
+        if let currentLocation = currentLocation {
+            self.moveToCurrentLocation(location: currentLocation)
+        }
+    }
+    
+    func moveToCurrentLocation(location: CLLocation) {
+        let span = CLLocationDistance(500)
+        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: span, longitudinalMeters: span)
+        
+        mapView.setRegion(region, animated: true)
+        mapView.setUserTrackingMode(.follow, animated: true)
+    }
     
     @IBAction func pauseOrStart(_ sender: Any) {
         if pause == true {
@@ -93,31 +108,27 @@ class WalkRecordViewController: UIViewController {
         }
     }
     
-    @IBAction func moveToCurrentLocation(_ sender: Any) {
-        if let currentLocation = currentLocation {
-            self.moveToCurrentLocation(location: currentLocation)
-        }
-    }
-    
-    func moveToCurrentLocation(location: CLLocation) {
-        let span = CLLocationDistance(500)
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: span, longitudinalMeters: span)
-        
-        mapView.setRegion(region, animated: true)
-        mapView.setUserTrackingMode(.follow, animated: true)
-    }
-    
     @IBAction func stopWalk(_ sender: Any) {
         presentTwoButtonAlert(alertTitle: "산책을 마치셨나요?", message: "지금까지의 기록을 저장하시려면 저장을 눌러주세요.", confirmActionTitle: "저장", cancelActionTitle: "취소") { _ in
             
-            guard let editingNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "walkRecordEditingNavigationController") as? UINavigationController else { return }
+            let walkEndDate: Date = Date()
+            let finalWalkStartDate: Date = self.walkStartDate ?? Date(timeInterval: Double(self.timer.returnTimeCount()), since: walkEndDate)
+           
             
-            guard let editingViewController = editingNavigationController.topViewController as? WalkRecordEditingViewController else { return }
+            guard let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "WalkRecordEditViewController") as? WalkRecordEditViewController else {
+                return
+            }
             
-            //            editingViewController.walkRecordTime = self.timeCount
+            editViewController.modalPresentationStyle = .fullScreen
             
-            editingNavigationController.modalPresentationStyle = .fullScreen
-            self.present(editingNavigationController, animated: true, completion: nil)
+            self.present(editViewController, animated: true) {
+                NotificationCenter.default.post(name: .willEndRecodingWalkRecord, object: nil, userInfo: [
+                    "totalWalkTime": self.timer.returnTimeCount(),
+                    "totalWalkDistance": self.totalDistance,
+                    "walkStartDate": finalWalkStartDate,
+                    "walkEndDate": walkEndDate
+                ])
+            }
         }
     }
     
@@ -126,6 +137,7 @@ class WalkRecordViewController: UIViewController {
         
         // reset prevLocation
         prevLocation = nil
+        walkStartDate = Date()
         
         timer.startRecordingTimeCount()
         

@@ -95,6 +95,8 @@
 		467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */; };
 		468D19C026539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */; };
 		468D19C126539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */; };
+		468D19C32653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19C22653E5B2008281BF /* WalkRecordEditViewController.swift */; };
+		468D19C42653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19C22653E5B2008281BF /* WalkRecordEditViewController.swift */; };
 		468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEF13263854D9003A7FF0 /* QnaViewController.swift */; };
 		468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEF13263854D9003A7FF0 /* QnaViewController.swift */; };
 		468FCF79264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF78264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift */; };
@@ -219,6 +221,7 @@
 		467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Measurement+MesurementFomatter.swift"; sourceTree = "<group>"; };
+		468D19C22653E5B2008281BF /* WalkRecordEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditViewController.swift; sourceTree = "<group>"; };
 		468EEF13263854D9003A7FF0 /* QnaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnaViewController.swift; sourceTree = "<group>"; };
 		468FCF78264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingVCUnitTests.swift; sourceTree = "<group>"; };
 		468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordViewController.swift; sourceTree = "<group>"; };
@@ -580,9 +583,10 @@
 				46D1AF5A258205D300DF7B2A /* Cell */,
 				46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */,
 				468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */,
-				4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */,
+				468D19C22653E5B2008281BF /* WalkRecordEditViewController.swift */,
 				46E69AC8258069FB00019FD9 /* WalkRecordEditingViewController.swift */,
 				461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */,
+				4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */,
 			);
 			path = Walk;
 			sourceTree = "<group>";
@@ -932,6 +936,7 @@
 				468D19C026539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */,
 				46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */,
 				464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
+				468D19C32653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */,
 				468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
 				464A5B68261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
@@ -1016,6 +1021,7 @@
 				468D19C126539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */,
 				466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
 				466492C425F372FC00903265 /* SceneDelegate.swift in Sources */,
+				468D19C42653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */,
 				468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
 				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
