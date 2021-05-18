@@ -107,6 +107,9 @@ class WalkRecordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // reset prevLocation
+        prevLocation = nil
+        
         timer.startRecordingTimeCount()
         
         // Timer가 따로 안돌도록 하는 방법은??
@@ -218,22 +221,33 @@ extension WalkRecordViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
         
-        currentLocation = location
-        
-        if let prevLocation = prevLocation {
-            totalDistance += prevLocation.distance(from: location)
+        // 첫 실행시 지도가 움직여 distance가 급격히 증가하는 경우를 방지하기 위해
+        if locations.count == 0 {
+            DispatchQueue.global().asyncAfter(deadline: .now() + 1) { [self] in
+                guard let location = locations.last else { return }
+                currentLocation = location
+            }
+        } else {
+            guard let location = locations.last else { return }
+            currentLocation = location
+            
+            if let prevLocation = prevLocation {
+                totalDistance += prevLocation.distance(from: location)
+            }
+            
+            let totalDistanceConvertedKilometer = Measurement(value: (totalDistance / 1000), unit: UnitLength.kilometers)
+            
+            DispatchQueue.main.async {
+                self.distanceLabel.text = totalDistanceConvertedKilometer.kilometerFormatted
+            }
+          
+            prevLocation = location
         }
+     
         
-        let numberFormatter = NumberFormatter()
-        numberFormatter.roundingMode = .floor
-        numberFormatter.maximumSignificantDigits = 2
+        //        moveToCurrentLocation(location: location)
         
-        self.distanceLabel.text = numberFormatter.string(for: totalDistance)
-        prevLocation = location
-        
-//        moveToCurrentLocation(location: location)
     }
     
 }

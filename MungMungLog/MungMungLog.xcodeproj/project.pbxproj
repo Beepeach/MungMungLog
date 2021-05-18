@@ -93,6 +93,8 @@
 		467EF92825F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */; };
 		467EF92E25F3C51700AC8F88 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */; };
 		467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */; };
+		468D19C026539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */; };
+		468D19C126539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */; };
 		468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEF13263854D9003A7FF0 /* QnaViewController.swift */; };
 		468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468EEF13263854D9003A7FF0 /* QnaViewController.swift */; };
 		468FCF79264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF78264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift */; };
@@ -216,6 +218,7 @@
 		467BF53625748F8900511451 /* CircleWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithShadowView.swift; sourceTree = "<group>"; };
 		467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Measurement+MesurementFomatter.swift"; sourceTree = "<group>"; };
 		468EEF13263854D9003A7FF0 /* QnaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnaViewController.swift; sourceTree = "<group>"; };
 		468FCF78264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingVCUnitTests.swift; sourceTree = "<group>"; };
 		468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordViewController.swift; sourceTree = "<group>"; };
@@ -532,6 +535,7 @@
 				460EB02825582EEF00027376 /* UIViewController+alert.swift */,
 				46042BF3264800F5008E65FE /* UIViewController+KeychainWrapper.swift */,
 				465A57E3264E7CC4006683D5 /* NotificationName.swift */,
+				468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -925,6 +929,7 @@
 				4605D1D625CECC69001C6815 /* Breeds.swift in Sources */,
 				468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */,
 				46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */,
+				468D19C026539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */,
 				46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */,
 				464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
 				468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */,
@@ -1008,6 +1013,7 @@
 				460C4ED225F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */,
 				466492BF25F372FC00903265 /* Breeds.swift in Sources */,
 				466492C225F372FC00903265 /* WalkRecordStartingViewController.swift in Sources */,
+				468D19C126539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */,
 				466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
 				466492C425F372FC00903265 /* SceneDelegate.swift in Sources */,
 				468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */,

@@ -10,7 +10,6 @@ import CoreLocation
 import SwiftKeychainWrapper
 
 class WalkRecordStartingViewController: UIViewController {
-    
    
     @IBAction func startWalkRecord(_ sender: Any) {
         if let _ = KeychainWrapper.standard.integer(forKey: .apiFamilyId) {
@@ -26,14 +25,10 @@ class WalkRecordStartingViewController: UIViewController {
         
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//
-//        if CLLocationManager.locationServicesEnabled() {
-//            var status: CLAuthorizationStatus
-//
-//            status = locationma
-//        }
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // 지도를 사용할건지 묻는걸 여기에서 물어보자.
+    }
     
 }

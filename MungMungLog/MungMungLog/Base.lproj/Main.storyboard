@@ -646,7 +646,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0WJ-Ln-Olz">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0WJ-Ln-Olz">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </mapView>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywL-vh-9xr" customClass="PartialRoundedView" customModule="MungMungLog" customModuleProvider="target">
@@ -674,8 +674,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lfp-Ug-flw" userLabel="Half Width Right View">
                                                 <rect key="frame" x="214" y="0.0" width="214" height="162"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.3Km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAB-c3-9ME">
-                                                        <rect key="frame" x="73.333333333333314" y="76" width="67.333333333333314" height="30"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAB-c3-9ME">
+                                                        <rect key="frame" x="65" y="76" width="84.333333333333314" height="30"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -819,7 +819,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWS-gu-IWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6698" y="-687"/>
+            <point key="canvasLocation" x="6696.728971962616" y="-687.47300215982727"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="f9J-N3-VTa">
@@ -1111,7 +1111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mt1-d6-CVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7893" y="-1399"/>
+            <point key="canvasLocation" x="7886" y="-687"/>
         </scene>
         <!--Walk Record Ending View Controller-->
         <scene sceneID="oZu-ej-9LS">
@@ -1481,7 +1481,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcw-Je-3zk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="2iv-X0-47R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="9809" y="-519"/>
+            <point key="canvasLocation" x="11013" y="-502"/>
         </scene>
         <!--산책 날짜-->
         <scene sceneID="IYq-tl-7m7">
@@ -1557,7 +1557,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oc9-2o-oZb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11805" y="-520"/>
+            <point key="canvasLocation" x="13008" y="-503"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="72s-P6-kZt">
@@ -3791,7 +3791,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eBg-of-Xfu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8881" y="-519"/>
+            <point key="canvasLocation" x="10085" y="-502"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="auT-Sh-2aS">
@@ -3809,7 +3809,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pvy-q6-eIs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10876" y="-520"/>
+            <point key="canvasLocation" x="12080" y="-503"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yh8-IY-XSk">
