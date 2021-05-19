@@ -29,19 +29,18 @@ class WalkRecordEditViewController: UIViewController {
             }
             
             if let walkStartDate = userInfo["walkStartDate"] as? Date {
-                self.walkStartDateLabel.text = "\(walkStartDate)"
-                self.walkStartTimeLabel.text = "\(walkStartDate)"
+                self.walkStartDateLabel.text = walkStartDate.monthAndDayFormatted
+                self.walkStartTimeLabel.text = walkStartDate.hourAndMinuteFormatted
             }
             
             if let walkEndDate = userInfo["walkEndDate"] as? Date {
-                self.walkEndDateLabel.text = "\(walkEndDate)"
-                self.walkEndTimeLabel.text = "\(walkEndDate)"
+                self.walkEndDateLabel.text = walkEndDate.monthAndDayFormatted
+                self.walkEndTimeLabel.text = walkEndDate.hourAndMinuteFormatted
             }
             
-            if let totalWalkTime = userInfo["totalWalkTime"] as? Int
+            if let totalWalkTime = userInfo["totalWalkTime"] as? Double
             {
-                let totalWalkTimeInterval = Double(totalWalkTime)
-                self.totalWalkTimeLabel.text = self.timerStringFormatter.string(from: totalWalkTimeInterval)
+                self.totalWalkTimeLabel.text = totalWalkTime.timerFormattedWithKoreaHourAndMin
             }
             
             if let totalWalkDistance = userInfo["totalWalkDistance"] as? Double {

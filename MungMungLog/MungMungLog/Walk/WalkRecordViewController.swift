@@ -11,13 +11,13 @@ import CoreLocation
 
 class TimerManager {
     var mainTimer: Timer?
-    var timeCount: Int
+    var timeCount: Double
     
-    init(timeCount: Int = 0) {
+    init(timeCount: Double = 0.0) {
         self.timeCount = timeCount
     }
     
-    func returnTimeCount() -> Int {
+    func returnTimeCount() -> Double {
         return timeCount
     }
     
@@ -35,7 +35,7 @@ class TimerManager {
         mainTimer = nil
     }
     
-    func addBackgroundTime(time: Int) {
+    func addBackgroundTime(time: Double) {
         timeCount += time
     }
     
@@ -48,7 +48,7 @@ class WalkRecordViewController: UIViewController {
     
     var pause: Bool = false
     var labelRefreshTimer: Timer?
-    var timer: TimerManager = TimerManager(timeCount: 0)
+    var timer: TimerManager = TimerManager(timeCount: 0.0)
     var walkStartDate: Date?
     
     var totalDistance: Double = 0.0
@@ -145,7 +145,7 @@ class WalkRecordViewController: UIViewController {
         labelRefreshTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
             DispatchQueue.global().async {
                 DispatchQueue.main.async {
-                    self.timeLabel.text = self.timerStringFormatter.string(from: Double(self.timer.returnTimeCount()))
+                    self.timeLabel.text = self.timer.returnTimeCount().timerFormatted
                 }
             }
         })
@@ -155,7 +155,7 @@ class WalkRecordViewController: UIViewController {
                 return
             }
             
-            guard let elaspedTime = userInfo["elaspedTime"] as? Int else {
+            guard let elaspedTime = userInfo["elaspedTime"] as? Double else {
                 return
             }
             

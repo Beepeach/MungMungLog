@@ -63,7 +63,7 @@ class WalkRecordEndingViewController: UIViewController {
                 self.timeCount += 1
                 print(self.timeCount)
                 DispatchQueue.main.async {
-                    self.timeLabel.text = self.timerStringFormatter.string(from: Double(self.timeCount))
+//                    self.timeLabel.text = self.timerStringFormatter.string(from: Double(self.timeCount))
                 }
             }
         })

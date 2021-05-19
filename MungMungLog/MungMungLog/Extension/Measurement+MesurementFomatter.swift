@@ -19,10 +19,6 @@ extension Measurement where UnitType == UnitLength {
     }()
     
     var kilometerFormatted: String {
-        Measurement.kilometerFomatted.string(from: self)
+        return Measurement.kilometerFomatted.string(from: self)
     }
-}
-
-extension Measurement where UnitType == Unit {
-    
 }

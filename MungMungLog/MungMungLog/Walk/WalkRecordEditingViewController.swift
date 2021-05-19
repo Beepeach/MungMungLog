@@ -95,9 +95,9 @@ class WalkRecordEditingViewController: UIViewController {
         
         imagePicker.delegate = self
         
-        if let formattedWalkingTime = timerStringFormatter.string(from: Double(walkRecordTime)) {
-            walkRecordTimeLabel.text = "산책 시간: \(formattedWalkingTime)"
-        }
+//        if let formattedWalkingTime = timerStringFormatter.string(from: Double(walkRecordTime)) {
+//            walkRecordTimeLabel.text = "산책 시간: \(formattedWalkingTime)"
+//        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(changeWalkDateAndTimeLabel(notification:)), name: NSNotification.Name.DateValueDidChange, object: nil)
     }

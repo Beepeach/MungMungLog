@@ -51,7 +51,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         
-        let elaspedTime = Int(Date().timeIntervalSince(sceneEnterBackgroundTime))
+        let elaspedTime: Double = Date().timeIntervalSince(sceneEnterBackgroundTime)
         
         NotificationCenter.default.post(name: .sceneWillEnterForeground, object: nil, userInfo: ["elaspedTime": elaspedTime])
     }
