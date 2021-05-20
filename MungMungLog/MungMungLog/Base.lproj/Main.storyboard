@@ -1125,6 +1125,7 @@
                     </view>
                     <size key="freeformSize" width="428" height="1500"/>
                     <connections>
+                        <outlet property="scrollView" destination="vup-ck-TT9" id="nfz-ya-ela"/>
                         <outlet property="totalWalkDistanceLabel" destination="Xrh-70-ocE" id="Aee-lM-2ed"/>
                         <outlet property="totalWalkTimeLabel" destination="5Ot-xl-9x6" id="m5d-7L-kWp"/>
                         <outlet property="walkEndDateLabel" destination="QC0-2r-2TX" id="Uxt-1t-Klp"/>

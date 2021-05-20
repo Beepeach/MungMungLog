@@ -17,6 +17,7 @@ class WalkRecordEditViewController: UIViewController {
     @IBOutlet weak var walkEndTimeLabel: UILabel!
     
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var walkRecordTitleField: UITextField!
     @IBOutlet weak var walkRecordContentsTextView: UITextView!
     
@@ -29,6 +30,18 @@ class WalkRecordEditViewController: UIViewController {
         super.viewDidLoad()
         
         setWalkRecordContentsTextViewToPlaceHolder()
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { noti in
+            guard let userInfo = noti.userInfo else { return }
+            guard let keyboardBound = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+            
+            self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardBound.height, right: 0)
+        }
+        
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
+            self.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        }
+        
     
         NotificationCenter.default.addObserver(forName: .willEndRecodingWalkRecord, object: nil, queue: .main) { noti in
             guard let userInfo = noti.userInfo else {
