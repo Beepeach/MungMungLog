@@ -1003,7 +1003,7 @@
                                                             <constraint firstAttribute="height" constant="1" id="0EF-Xw-LbE"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="여기에 내용을 입력을 하면 된다" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yfp-bn-szh">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="오늘 산책을 기록해 보세요." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yfp-bn-szh">
                                                         <rect key="frame" x="24" y="54.666666666666742" width="308" height="200"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
@@ -1012,6 +1012,9 @@
                                                         <color key="textColor" systemColor="labelColor"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="f1o-DZ-Q5P" id="TVc-nl-vxD"/>
+                                                        </connections>
                                                     </textView>
                                                 </subviews>
                                                 <constraints>

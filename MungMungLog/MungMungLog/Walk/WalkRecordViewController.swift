@@ -114,7 +114,6 @@ class WalkRecordViewController: UIViewController {
             let walkEndDate: Date = Date()
             let finalWalkStartDate: Date = self.walkStartDate ?? Date(timeInterval: Double(self.timer.returnTimeCount()), since: walkEndDate)
            
-            
             guard let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "WalkRecordEditViewController") as? WalkRecordEditViewController else {
                 return
             }

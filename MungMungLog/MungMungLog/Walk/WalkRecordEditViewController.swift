@@ -20,9 +20,16 @@ class WalkRecordEditViewController: UIViewController {
     @IBOutlet weak var walkRecordTitleField: UITextField!
     @IBOutlet weak var walkRecordContentsTextView: UITextView!
     
+    func setWalkRecordContentsTextViewToPlaceHolder() {
+        walkRecordContentsTextView.text = "오늘 산책을 기록해 보세요."
+        walkRecordContentsTextView.textColor = .lightGray
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setWalkRecordContentsTextViewToPlaceHolder()
+    
         NotificationCenter.default.addObserver(forName: .willEndRecodingWalkRecord, object: nil, queue: .main) { noti in
             guard let userInfo = noti.userInfo else {
                 return
@@ -46,6 +53,29 @@ class WalkRecordEditViewController: UIViewController {
             if let totalWalkDistance = userInfo["totalWalkDistance"] as? Double {
                 self.totalWalkDistanceLabel.text = Measurement(value: totalWalkDistance / 1000, unit: UnitLength.kilometers).kilometerFormatted
             }
+        }
+    }
+}
+
+
+extension WalkRecordEditViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if walkRecordContentsTextView.textColor == .lightGray {
+            walkRecordContentsTextView.text = nil
+            
+            if #available(iOS 12.0, *) {
+                walkRecordContentsTextView.textColor = self.traitCollection.userInterfaceStyle == .dark ? .white : .black
+            } else {
+                walkRecordContentsTextView.textColor = .black
+            }
+            
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if walkRecordContentsTextView.text.isEmpty {
+            setWalkRecordContentsTextViewToPlaceHolder()
         }
     }
 }
