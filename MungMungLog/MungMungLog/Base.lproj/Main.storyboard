@@ -1051,6 +1051,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="356" height="47"/>
                                                         <connections>
                                                             <action selector="enterCode:" destination="2dp-RH-dQm" eventType="touchUpInside" id="uDU-Q0-pJ3"/>
+                                                            <action selector="saveWalkRecord:" destination="f1o-DZ-Q5P" eventType="touchUpInside" id="zIm-R7-bIR"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1134,6 +1135,7 @@
                         <outlet property="walkRecordTitleField" destination="5z9-ZY-a4U" id="fxT-2W-3ry"/>
                         <outlet property="walkStartDateLabel" destination="sVr-NV-J61" id="5KW-uo-HRm"/>
                         <outlet property="walkStartTimeLabel" destination="YDb-Ha-Je7" id="oJm-Jr-bXT"/>
+                        <segue destination="IDg-gl-8Cr" kind="custom" identifier="moveToHome" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="fnT-fs-FxQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mt1-d6-CVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -4871,7 +4873,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="oEs-uz-L4I"/>
-        <segue reference="5ZM-Ic-1F1"/>
+        <segue reference="fnT-fs-FxQ"/>
         <segue reference="iF4-f1-o8r"/>
         <segue reference="cYL-UJ-6AL"/>
     </inferredMetricsTieBreakers>

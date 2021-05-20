@@ -26,6 +26,27 @@ class WalkRecordEditViewController: UIViewController {
         walkRecordContentsTextView.textColor = .lightGray
     }
     
+    @IBAction func saveWalkRecord(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "알림", message: "산책기록을 저장하시겠습니까?", preferredStyle: .actionSheet)
+        
+        let save = UIAlertAction(title: "저장", style: .default) { _ in
+            
+        }
+        actionSheet.addAction(save)
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        actionSheet.addAction(cancel)
+        
+        let delete = UIAlertAction(title: "기록 삭제", style: .destructive) { _ in
+            self.presentTwoButtonAlert(alertTitle: "알림", message: "정말 기록을 삭제하시겠어요??\n확인을 누르시면 기록이 삭제됩니다.", confirmActionTitle: "확인", cancelActionTitle: "취소") { _ in
+                self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
+            }
+        }
+        actionSheet.addAction(delete)
+        
+        present(actionSheet, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
