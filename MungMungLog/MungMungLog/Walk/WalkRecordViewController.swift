@@ -62,6 +62,9 @@ class WalkRecordViewController: UIViewController {
         manager.activityType = .fitness
         manager.desiredAccuracy = kCLLocationAccuracyBest
         
+        manager.allowsBackgroundLocationUpdates = true
+        manager.showsBackgroundLocationIndicator = true
+        
         return manager
     }()
     
@@ -174,36 +177,7 @@ class WalkRecordViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if CLLocationManager.locationServicesEnabled() {
-            var status: CLAuthorizationStatus
-            
-            if #available(iOS 14.0, *) {
-                status = locationManager.authorizationStatus
-            } else {
-                status = CLLocationManager.authorizationStatus()
-            }
-            
-            switch status {
-            case .notDetermined:
-                locationManager.requestWhenInUseAuthorization()
-            case .authorizedAlways, .authorizedWhenInUse:
-                updateLocation()
-            case .denied, .restricted:
-                presentNotUsingLocationServiceAlert()
-            @unknown default:
-                presentNotUsingLocationServiceAlert()
-            }
-        } else {
-            presentNotUsingLocationServiceAlert()
-        }
     }
-    
-    func presentNotUsingLocationServiceAlert() {
-        self.presentOneButtonAlert(alertTitle: "알림", message: "위치서비스를 사용할 수 없습니다.", actionTitle: "확인")
-    }
-    
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -226,6 +200,10 @@ extension WalkRecordViewController: CLLocationManagerDelegate {
         default:
             self.presentNotUsingLocationServiceAlert()
         }
+    }
+    
+    private func presentNotUsingLocationServiceAlert() {
+        self.presentOneButtonAlert(alertTitle: "알림", message: "위치 서비스를 사용할 수 없습니다.\n위치 서비스 허용 여부를 확인해주세요.", actionTitle: "확인")
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
