@@ -12,13 +12,14 @@ import SwiftKeychainWrapper
 class WalkRecordStartingViewController: UIViewController {
     lazy var locationManager: CLLocationManager = {
         let manager: CLLocationManager = CLLocationManager()
+        manager.delegate = self
         
         return manager
     }()
     
     @IBAction func startWalkRecord(_ sender: Any) {
         if let _ = KeychainWrapper.standard.integer(forKey: .apiFamilyId) {
-            performSegue(withIdentifier: MovetoView.walkRecode.rawValue, sender: nil)
+            performSegue(withIdentifier: MovetoView.walkRecord.rawValue, sender: nil)
         } else {
             presentOneButtonAlert(alertTitle: "알림", message: "반려견을 등록해주세요.", actionTitle: "확인")
         }
@@ -66,4 +67,34 @@ class WalkRecordStartingViewController: UIViewController {
         self.presentOneButtonAlert(alertTitle: "알림", message: "위치 서비스를 제공하지 않는 기기입니다.", actionTitle: "확인")
     }
     
+}
+
+
+extension WalkRecordStartingViewController: CLLocationManagerDelegate {
+    @available(iOS 14.0, *)
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .denied, .restricted:
+            presentNotUsingLocationServiceAlert()
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        default:
+            break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .denied, .restricted:
+            presentNotUsingLocationServiceAlert()
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        default:
+            break
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        presentNotUsingLocationServiceAlert()
+    }
 }

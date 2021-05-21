@@ -631,7 +631,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="산책" id="Meh-Lc-6me"/>
                     <connections>
-                        <segue destination="tYH-Ve-D1q" kind="custom" identifier="moveToWalkRecode" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="39V-HD-nOm"/>
+                        <segue destination="tYH-Ve-D1q" kind="custom" identifier="moveToWalkRecordView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="39V-HD-nOm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ip8-9B-3Ub" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -742,7 +742,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                         <connections>
-                                                            <action selector="stopWalk:" destination="tYH-Ve-D1q" eventType="touchUpInside" id="QYu-1s-FOh"/>
+                                                            <action selector="finishWalk:" destination="tYH-Ve-D1q" eventType="touchUpInside" id="QYu-1s-FOh"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -828,6 +828,7 @@
                         <outlet property="mapView" destination="0WJ-Ln-Olz" id="1VH-Wq-4Gl"/>
                         <outlet property="pauseOrStartButton" destination="wUz-4H-oDe" id="gDJ-Om-njw"/>
                         <outlet property="timeLabel" destination="q20-9L-mMv" id="59e-It-IJV"/>
+                        <segue destination="f1o-DZ-Q5P" kind="custom" identifier="MoveToWalkRecordEditView" customClass="ReplaceRootViewSegue" customModule="MungMungLog" customModuleProvider="target" id="AxG-We-r0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWS-gu-IWK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -848,8 +849,11 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="emZ-LU-NIm" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="428" height="1415.6666666666667"/>
                                         <subviews>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="fMg-IF-8F0">
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMg-IF-8F0">
                                                 <rect key="frame" x="0.0" y="0.0" width="428" height="450"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="f1o-DZ-Q5P" id="voG-Yd-2Zo"/>
+                                                </connections>
                                             </mapView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요약" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aN-Gq-lVd">
                                                 <rect key="frame" x="199.33333333333334" y="465" width="29.666666666666657" height="20.333333333333314"/>
@@ -1126,6 +1130,7 @@
                     </view>
                     <size key="freeformSize" width="428" height="1500"/>
                     <connections>
+                        <outlet property="mapView" destination="fMg-IF-8F0" id="Anl-ed-m7E"/>
                         <outlet property="scrollView" destination="vup-ck-TT9" id="nfz-ya-ela"/>
                         <outlet property="totalWalkDistanceLabel" destination="Xrh-70-ocE" id="Aee-lM-2ed"/>
                         <outlet property="totalWalkTimeLabel" destination="5Ot-xl-9x6" id="m5d-7L-kWp"/>

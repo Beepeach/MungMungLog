@@ -55,6 +55,7 @@ class WalkRecordViewController: UIViewController {
     var isRefreshTotalDistance: Bool = true
     var prevLocation: CLLocation?
     var currentLocation: CLLocation?
+    var walkCoordinateList: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
     
     lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -74,6 +75,79 @@ class WalkRecordViewController: UIViewController {
     @IBOutlet weak var pauseOrStartButton: UIButton!
     @IBOutlet weak var cameraButton: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // reset prevLocation
+        prevLocation = nil
+        walkStartDate = Date()
+        timer.startRecordingTimeCount()
+        mapView.showsUserLocation = true
+        mapView.userTrackingMode = .follow
+        
+        // Timer가 따로 안돌도록 하는 방법은??
+        labelRefreshTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            DispatchQueue.global().async {
+                DispatchQueue.main.async {
+                    self.timeLabel.text = self.timer.returnTimeCount().timerFormatted
+                }
+            }
+        })
+        
+        NotificationCenter.default.addObserver(forName: .sceneWillEnterForeground, object: nil, queue: .main) { noti in
+            guard let userInfo = noti.userInfo else {
+                return
+            }
+            
+            guard let elaspedTime = userInfo["elaspedTime"] as? Double else {
+                return
+            }
+            
+            if self.pause == false {
+                self.timer.addBackgroundTime(time: elaspedTime)
+            }
+        }
+        
+        NotificationCenter.default.addObserver(forName: .sceneDidEnterBackground, object: nil, queue: .main) { _ in
+            print(#function)
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let status: CLAuthorizationStatus
+        
+        if CLLocationManager.locationServicesEnabled() {
+            if #available(iOS 14.0, *) {
+                status = locationManager.authorizationStatus
+            } else {
+                status = CLLocationManager.authorizationStatus()
+            }
+            
+            switch status {
+            case .authorizedAlways, .authorizedWhenInUse:
+                updateLocation()
+            case .denied, .restricted:
+                locationManager.startUpdatingLocation()
+                presentNotUsingLocationServiceAlert()
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+                
+            @unknown default:
+                presentNotUsingLocationServiceAlert()
+            }
+        } else {
+            presentNotProvideLocationServiceInDeviceAlert()
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        timer.stopRecording()
+    }
+    
     @IBAction func moveToCurrentLocation(_ sender: Any) {
         if let currentLocation = currentLocation {
             self.moveToCurrentLocation(location: currentLocation)
@@ -81,7 +155,7 @@ class WalkRecordViewController: UIViewController {
     }
     
     func moveToCurrentLocation(location: CLLocation) {
-        let span = CLLocationDistance(500)
+        let span = CLLocationDistance(1000)
         let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: span, longitudinalMeters: span)
         
         mapView.setRegion(region, animated: true)
@@ -111,78 +185,24 @@ class WalkRecordViewController: UIViewController {
         }
     }
     
-    @IBAction func stopWalk(_ sender: Any) {
+    @IBAction func finishWalk(_ sender: Any) {
         presentTwoButtonAlert(alertTitle: "산책을 마치셨나요?", message: "지금까지의 기록을 저장하시려면 저장을 눌러주세요.", confirmActionTitle: "저장", cancelActionTitle: "취소") { _ in
+            
+            self.locationManager.stopUpdatingLocation()
             
             let walkEndDate: Date = Date()
             let finalWalkStartDate: Date = self.walkStartDate ?? Date(timeInterval: Double(self.timer.returnTimeCount()), since: walkEndDate)
+            
+            self.performSegue(withIdentifier: MovetoView.walkRecordEdit.rawValue, sender: nil)
            
-            guard let editViewController = self.storyboard?.instantiateViewController(withIdentifier: "WalkRecordEditViewController") as? WalkRecordEditViewController else {
-                return
-            }
-            
-            editViewController.modalPresentationStyle = .fullScreen
-            
-            self.present(editViewController, animated: true) {
-                NotificationCenter.default.post(name: .willEndRecodingWalkRecord, object: nil, userInfo: [
-                    "totalWalkTime": self.timer.returnTimeCount(),
-                    "totalWalkDistance": self.totalDistance,
-                    "walkStartDate": finalWalkStartDate,
-                    "walkEndDate": walkEndDate
-                ])
-            }
+            NotificationCenter.default.post(name: .willEndRecodingWalkRecord, object: nil, userInfo: [
+                "totalWalkTime": self.timer.returnTimeCount(),
+                "totalWalkDistance": self.totalDistance,
+                "walkStartDate": finalWalkStartDate,
+                "walkEndDate": walkEndDate,
+                "walkCoordinateList": self.walkCoordinateList
+            ])
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // reset prevLocation
-        prevLocation = nil
-        walkStartDate = Date()
-        
-        timer.startRecordingTimeCount()
-        
-        // Timer가 따로 안돌도록 하는 방법은??
-        labelRefreshTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            DispatchQueue.global().async {
-                DispatchQueue.main.async {
-                    self.timeLabel.text = self.timer.returnTimeCount().timerFormatted
-                }
-            }
-        })
-        
-        NotificationCenter.default.addObserver(forName: .sceneWillEnterForeground, object: nil, queue: .main) { noti in
-            guard let userInfo = noti.userInfo else {
-                return
-            }
-            
-            guard let elaspedTime = userInfo["elaspedTime"] as? Double else {
-                return
-            }
-            
-            if self.pause == false {
-                self.timer.addBackgroundTime(time: elaspedTime)
-            }
-        }
-        
-        NotificationCenter.default.addObserver(forName: .sceneDidEnterBackground, object: nil, queue: .main) { _ in
-            print(#function)
-        }
-        
-        mapView.showsUserLocation = true
-        mapView.userTrackingMode = .follow
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        timer.stopRecording()
     }
 }
 
@@ -197,6 +217,8 @@ extension WalkRecordViewController: CLLocationManagerDelegate {
         switch manager.authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
             updateLocation()
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
         default:
             self.presentNotUsingLocationServiceAlert()
         }
@@ -206,10 +228,16 @@ extension WalkRecordViewController: CLLocationManagerDelegate {
         self.presentOneButtonAlert(alertTitle: "알림", message: "위치 서비스를 사용할 수 없습니다.\n위치 서비스 허용 여부를 확인해주세요.", actionTitle: "확인")
     }
     
+    private func presentNotProvideLocationServiceInDeviceAlert() {
+        self.presentOneButtonAlert(alertTitle: "알림", message: "위치 서비스를 제공하지 않는 기기입니다.", actionTitle: "확인")
+    }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .authorizedAlways, .authorizedWhenInUse:
             updateLocation()
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
         default:
             self.presentNotUsingLocationServiceAlert()
         }
@@ -224,6 +252,7 @@ extension WalkRecordViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         // 첫 실행시 지도가 움직여 distance가 급격히 증가하는 경우를 방지하기 위해 어떻게 해야할까
+        // 백그라운드에서 location이 제대로 저장이 되나??
         
         guard let location = locations.last else { return }
         currentLocation = location
@@ -241,6 +270,8 @@ extension WalkRecordViewController: CLLocationManagerDelegate {
         }
         
         prevLocation = location
+        
+        walkCoordinateList.append(location.coordinate)
     }
     
 }
