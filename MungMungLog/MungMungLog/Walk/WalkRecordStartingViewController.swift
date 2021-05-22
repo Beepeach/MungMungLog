@@ -46,7 +46,7 @@ class WalkRecordStartingViewController: UIViewController {
             
             switch status {
             case .notDetermined:
-                locationManager.requestWhenInUseAuthorization()
+                locationManager.requestAlwaysAuthorization()
             case .restricted, .denied:
                 presentNotUsingLocationServiceAlert()
             case .authorizedAlways, .authorizedWhenInUse:
@@ -77,7 +77,7 @@ extension WalkRecordStartingViewController: CLLocationManagerDelegate {
         case .denied, .restricted:
             presentNotUsingLocationServiceAlert()
         case .notDetermined:
-            manager.requestWhenInUseAuthorization()
+            manager.requestAlwaysAuthorization()
         default:
             break
         }
@@ -88,7 +88,7 @@ extension WalkRecordStartingViewController: CLLocationManagerDelegate {
         case .denied, .restricted:
             presentNotUsingLocationServiceAlert()
         case .notDetermined:
-            manager.requestWhenInUseAuthorization()
+            manager.requestAlwaysAuthorization()
         default:
             break
         }

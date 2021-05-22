@@ -132,7 +132,7 @@ class WalkRecordViewController: UIViewController {
                 locationManager.startUpdatingLocation()
                 presentNotUsingLocationServiceAlert()
             case .notDetermined:
-                locationManager.requestWhenInUseAuthorization()
+                locationManager.requestAlwaysAuthorization()
                 
             @unknown default:
                 presentNotUsingLocationServiceAlert()
@@ -218,7 +218,7 @@ extension WalkRecordViewController: CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             updateLocation()
         case .notDetermined:
-            manager.requestWhenInUseAuthorization()
+            manager.requestAlwaysAuthorization()
         default:
             self.presentNotUsingLocationServiceAlert()
         }
@@ -237,7 +237,7 @@ extension WalkRecordViewController: CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             updateLocation()
         case .notDetermined:
-            manager.requestWhenInUseAuthorization()
+            manager.requestAlwaysAuthorization()
         default:
             self.presentNotUsingLocationServiceAlert()
         }
