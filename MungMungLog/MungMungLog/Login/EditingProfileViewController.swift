@@ -178,8 +178,10 @@ class EditingProfileViewController: UIViewController {
                         return
                     }
                     
-                    if let familyId = responseData.data?.familyId {
+                    if let familyId = responseData.data?.familyId,
+                       let petId = responseData.data?.petId {
                         KeychainWrapper.standard.set(familyId, forKey: KeychainWrapper.Key.apiFamilyId.rawValue)
+                        KeychainWrapper.standard.set(petId, forKey: KeychainWrapper.Key.apiPetId.rawValue)
                         
                         CoreDataManager.shared.createNewPet(dto: petDTO)
                     }
@@ -192,7 +194,7 @@ class EditingProfileViewController: UIViewController {
                 default:
                     print(responseData)
                     DispatchQueue.main.async {
-                        self.presentOneButtonAlert(alertTitle: "알림", message: "오류 발생", actionTitle: "확인")
+                        self.presentOneButtonAlert(alertTitle: "알림", message: "네트워크 오류 발생", actionTitle: "확인")
                     }
                     
                 }

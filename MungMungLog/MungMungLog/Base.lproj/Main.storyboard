@@ -1136,6 +1136,7 @@
                         <outlet property="totalWalkTimeLabel" destination="5Ot-xl-9x6" id="m5d-7L-kWp"/>
                         <outlet property="walkEndDateLabel" destination="QC0-2r-2TX" id="Uxt-1t-Klp"/>
                         <outlet property="walkEndTimeLabel" destination="Mwd-hc-8up" id="boc-UE-gut"/>
+                        <outlet property="walkImageView" destination="TuC-wm-Hao" id="ez8-9m-i6W"/>
                         <outlet property="walkRecordContentsTextView" destination="yfp-bn-szh" id="jPX-8e-CpL"/>
                         <outlet property="walkRecordTitleField" destination="5z9-ZY-a4U" id="fxT-2W-3ry"/>
                         <outlet property="walkStartDateLabel" destination="sVr-NV-J61" id="5KW-uo-HRm"/>

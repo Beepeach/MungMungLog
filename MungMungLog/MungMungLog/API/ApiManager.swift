@@ -24,10 +24,11 @@ class ApiManager {
         case emailJoin = "/api/join/email"
         case joinWithInfo = "/api/join/info"
         case createPet = "/api/pet"
-        case getPetList = "/api/pet/list"
         case requestInvitation = "/api/family/invitation"
         case getUser = "/api/user"
+        case getPetList = "/api/pet/list"
         case getFamilyMemebers = "/api/familyMember"
+        case createWalkHistory = "/api/walkHistory"
     }
     
     static var emailLogin: String {
@@ -69,6 +70,10 @@ class ApiManager {
         
         
         return "\(host)\(Path.getFamilyMemebers.rawValue)"
+    }
+    
+    static var createWalkHistory: String {
+        return "\(host)\(Path.createWalkHistory.rawValue)"
     }
     
     

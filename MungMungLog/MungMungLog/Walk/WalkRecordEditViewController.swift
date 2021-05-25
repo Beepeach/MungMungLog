@@ -8,8 +8,13 @@
 import UIKit
 import CoreLocation
 import MapKit
+import SwiftKeychainWrapper
 
 class WalkRecordEditViewController: UIViewController {
+    var StartDate: Double?
+    var EndDate: Double?
+    var WalkTime: Double?
+    var WalkDistance: Double?
     var coordinateList: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
     
     @IBOutlet weak var totalWalkTimeLabel: UILabel!
@@ -21,6 +26,7 @@ class WalkRecordEditViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var walkImageView: UIImageView!
     @IBOutlet weak var walkRecordTitleField: UITextField!
     @IBOutlet weak var walkRecordContentsTextView: UITextView!
     
@@ -49,20 +55,28 @@ class WalkRecordEditViewController: UIViewController {
             if let walkStartDate = userInfo["walkStartDate"] as? Date {
                 self.walkStartDateLabel.text = walkStartDate.monthAndDayFormatted
                 self.walkStartTimeLabel.text = walkStartDate.hourAndMinuteFormatted
+                
+                self.StartDate = walkStartDate.timeIntervalSinceReferenceDate
             }
             
             if let walkEndDate = userInfo["walkEndDate"] as? Date {
                 self.walkEndDateLabel.text = walkEndDate.monthAndDayFormatted
                 self.walkEndTimeLabel.text = walkEndDate.hourAndMinuteFormatted
+                
+                self.EndDate = walkEndDate.timeIntervalSinceReferenceDate
             }
             
             if let totalWalkTime = userInfo["totalWalkTime"] as? Double
             {
                 self.totalWalkTimeLabel.text = totalWalkTime.timerFormattedWithKoreaHourAndMin
+                
+                self.WalkTime = totalWalkTime
             }
             
             if let totalWalkDistance = userInfo["totalWalkDistance"] as? Double {
                 self.totalWalkDistanceLabel.text = Measurement(value: totalWalkDistance / 1000, unit: UnitLength.kilometers).kilometerFormatted
+                
+                self.WalkDistance = totalWalkDistance
             }
             
             if let walkCoordinateList = userInfo["walkCoordinateList"] as? [CLLocationCoordinate2D] {
@@ -96,6 +110,77 @@ class WalkRecordEditViewController: UIViewController {
         
         let save = UIAlertAction(title: "저장", style: .default) { _ in
             
+            guard let petId = KeychainWrapper.standard.integer(forKey: .apiPetId) else {
+                self.presentOneButtonAlert(alertTitle: "알림", message: "펫 정보를 불러오는데 오류가 발생했습니다.", actionTitle: "확인")
+                return
+            }
+            
+            guard let familyMemberId = KeychainWrapper.standard.integer(forKey: .apiFamilyMemberId) else {
+                self.presentOneButtonAlert(alertTitle: "알림", message: "유저 정보를 불러오는데 오류가 발생했습니다.", actionTitle: "확인")
+                return
+            }
+            
+            let startTime: Double = self.StartDate ?? Date().timeIntervalSinceReferenceDate
+            let endTime: Double = self.EndDate ?? Date().timeIntervalSinceReferenceDate
+            
+            let distance: Double = self.WalkDistance ?? 0.0
+            let contents: String = self.walkRecordContentsTextView.text ?? "오늘의 산책 끝!"
+            
+            if let image = self.walkImageView.image {
+                BlobManager.shared.upload(image: image) { (returnURL) in
+                    if let imageURL = returnURL {
+                        // 이미지를 넣은 data
+                    }
+                }
+            }
+            
+            var data: Data? = nil
+            let encoder: JSONEncoder = JSONEncoder()
+            
+            do {
+                data = try encoder.encode(WalkHistoryPostModel(
+                                        petId: petId,
+                                        familyMemberId: familyMemberId,
+                                        startTime: startTime,
+                                        endTime: endTime,
+                                        distance: distance,
+                                        contents: contents,
+                                        fileUrl1: "",
+                                        fileUrl2: "",
+                                        fileUrl3: "",
+                                        fileUrl4: "",
+                                        fileUrl5: ""))
+            } catch {
+                print(error)
+            }
+            
+            
+            ApiManager.shared.fetch(urlStr: ApiManager.createWalkHistory, httpMethod: "Post", body: data) { (result: Result<SingleResponse<WalkHistoryDto>, Error>) in
+                switch result {
+                case .success(let responseData):
+                    switch responseData.code {
+                    case Statuscode.ok.rawValue:
+                        guard let walkHistoryDto = responseData.data else { return }
+                        
+                        // Coredata저장
+                        CoreDataManager.shared.createNewWalkHistory(dto: walkHistoryDto)
+                        
+                        // 완료메세지?(필요한가?) 및 화면 이동
+                        self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
+                    default:
+                        print(responseData)
+                        DispatchQueue.main.async {
+                            self.presentOneButtonAlert(alertTitle: "알림", message: "네트워크 오류 발생", actionTitle: "확인")
+                        }
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+               
+                }
+            }
+            
+            self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
         }
         actionSheet.addAction(save)
         

@@ -36,6 +36,7 @@ class  CoreDataManager {
         if #available(iOS 13.0, *) {
             container = NSPersistentContainer(name: modelName)
         } else {
+            // 경고가 발생해서 추가한 코드
             // 아직 이해가 되지않는 코드..
             var modelURL = Bundle(for: type(of: self)).url(forResource: modelName, withExtension: "momd")!
             let versionInfoURL = modelURL.appendingPathComponent("VersionInfo.plist")

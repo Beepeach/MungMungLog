@@ -23,6 +23,20 @@ struct WalkHistoryDto: Codable {
     let familyMemberId: Int
 }
 
+struct WalkHistoryPostModel: Codable {
+    let petId: Int
+    let familyMemberId: Int
+    let startTime: Double
+    let endTime: Double
+    let distance: Double
+    let contents: String?
+    let fileUrl1: String?
+    let fileUrl2: String?
+    let fileUrl3: String?
+    let fileUrl4: String?
+    let fileUrl5: String?
+}
+
 extension CoreDataManager {
     func createNewWalkHistory(dto: WalkHistoryDto) {
         mainContext.perform {
