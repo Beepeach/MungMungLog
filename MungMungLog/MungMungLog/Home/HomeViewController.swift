@@ -22,7 +22,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var petBreedLabel: UILabel!
     @IBOutlet weak var petProfileImageView: UIImageView!
     
-    
     @IBOutlet weak var historyContentsContainerView: UIView!
     @IBOutlet weak var contentsCollectionView: UICollectionView!
     
@@ -31,64 +30,17 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var latestHistroyLabel: UILabel!
     @IBOutlet weak var latestHistoryDateLabel: UILabel!
     
-    @IBOutlet weak var floatingButtonContainerView: UIView!
-    
-    @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
-    }
-    
-    @IBAction func showFloatingButton(_ sender: Any) {
-        UIView.animate(withDuration: 0.3,
-                       delay: 0,
-                       usingSpringWithDamping: 0.3,
-                       initialSpringVelocity: 0.3,
-                       options: [],
-                       animations: { [self] in
-                        menuStack?.arrangedSubviews.forEach({ (button) in
-                            button.isHidden = button.isHidden ? false : true
-                        })
-                        
-                        menuStack?.layoutIfNeeded()
-                       }, completion: nil)
-    }
-    
-    func createMenuStackView() -> UIStackView {
-        let stack = UIStackView()
-        stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.axis = .vertical
-        stack.spacing = 10
-        
-        buttonImageNames.forEach { (imageName) in
-            let button = UIButton(type: .system)
-            let image = UIImage(named: imageName)
-            button.setImage(image, for: .normal)
-            stack.addArrangedSubview(button)
-            
-            button.translatesAutoresizingMaskIntoConstraints = false
-            button.widthAnchor.constraint(equalToConstant: 50).isActive = true
-            button.heightAnchor.constraint(equalTo: button.widthAnchor).isActive = true
-            button.isHidden = true
-        }
-        
-        floatingButtonContainerView.addSubview(stack)
-        
-        stack.trailingAnchor.constraint(equalTo: floatingButtonContainerView.trailingAnchor).isActive = true
-        
-        let floatingButtonTopConstaint = stack.topAnchor.constraint(equalTo: floatingButtonContainerView.topAnchor)
-        floatingButtonTopConstaint.priority = .defaultHigh
-        floatingButtonTopConstaint.isActive = true
-        
-        
-        stack.bottomAnchor.constraint(equalTo: floatingButtonContainerView.topAnchor, constant: -10).isActive = true
-        
-        return stack
-    }
-    
+    @IBOutlet weak var historyMenuFloatingButtonStackView: UIStackView!
+    @IBOutlet weak var dimmingView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         writerProfileImageView.layer.cornerRadius = writerProfileImageView.frame.height / 2
-        
-        menuStack = createMenuStackView()
+        historyMenuFloatingButtonStackView.arrangedSubviews.forEach { button in
+            button.isHidden = true
+            button.alpha = 0.0
+        }
+        dimmingView.isHidden = true
         
         if let userId = KeychainWrapper.standard.string(forKey: KeychainWrapper.Key.apiUserId),
            let user = CoreDataManager.shared.fetchUserData(with: userId).first {
@@ -193,6 +145,43 @@ class HomeViewController: UIViewController {
         // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
         latestHistoryDateLabel.text = koreaFullDateFormatter.string(for: Date())
         latestHistroyLabel.text = "저장된 기록이 없어요😭\n기록을 남겨보시겠어요?"
+    }
+    
+    @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
+    }
+    
+    @IBAction func showFloatingButton(_ sender: Any) {
+        UIView.animate(withDuration: 0.3,
+                       delay: 0.1,
+                       options: [.curveEaseInOut],
+                       animations: { [self] in
+                         historyMenuFloatingButtonStackView.arrangedSubviews.forEach({ (button) in
+                             button.isHidden = button.isHidden ? false : true
+                             button.alpha = button.isHidden ? 0.0 : 1.0
+                         })
+                        
+                        dimmingView.isHidden = dimmingView.isHidden ? false : true
+                        
+//                        menuStack?.layoutIfNeeded()
+                       },
+                       completion: nil)
+        
+        
+//        UIView.animate(withDuration: 0.3,
+//                       delay: 0.5,
+//                       usingSpringWithDamping: 0.3,
+//                       initialSpringVelocity: 0.3,
+//                       options: [],
+//                       animations: { [self] in
+//                        historyMenuFloatingButtonStackView.arrangedSubviews.forEach({ (button) in
+//                            button.isHidden = button.isHidden ? false : true
+//                            button.alpha = button.isHidden ? 0.0 : 1.0
+//                        })
+//
+//                        dimmingView.isHidden = dimmingView.isHidden ? false : true
+//
+//                        menuStack?.layoutIfNeeded()
+//                       }, completion: nil)
     }
     
 }
