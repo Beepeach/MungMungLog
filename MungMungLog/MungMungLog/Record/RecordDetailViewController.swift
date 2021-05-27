@@ -12,8 +12,15 @@ struct PhotoItem {
     let photoName: String
 }
 
+enum HistoryType: String {
+    case meal = "식사"
+    case snack = "간식"
+    case pill = "약"
+    case hospital = "병원"
+    case walk = "산책"
+}
+
 class RecordDetailViewController: UIViewController {
-    
     // 더미데이터
     var photoList: [PhotoItem] = [
         PhotoItem(photoName: "Test"),
@@ -22,10 +29,29 @@ class RecordDetailViewController: UIViewController {
         PhotoItem(photoName: "Test")
     ]
     
+    var historyType: HistoryType?
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentsTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        contentsTextView.textColor = .lightGray
         
+        setNavTitleAndContentsTitle()
+    }
+    
+    func setNavTitleAndContentsTitle() {
+        self.title = "\(historyType?.rawValue ?? "") 기록"
+        titleLabel.text = "오늘의 \(historyType?.rawValue ?? "") 기록"
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func saveHistory(_ sender: Any) {
+        // API호출
     }
     
 }
@@ -71,3 +97,24 @@ extension RecordDetailViewController: UICollectionViewDataSource {
 //
 //    }
 //}
+
+extension RecordDetailViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            
+            if #available(iOS 12.0, *) {
+                textView.textColor = traitCollection.userInterfaceStyle == .dark ? .white : .black
+            } else {
+                textView.textColor = .black
+            }
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.textColor = .lightGray
+            textView.text = "오늘의 기록을 남겨보세요."
+        }
+    }
+}

@@ -262,6 +262,9 @@
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7r-8K-9ju">
                                                                 <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="50"/>
+                                                                <connections>
+                                                                    <action selector="moveToWalkVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tZU-1Z-SfJ"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -296,6 +299,9 @@
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dI-62-lBw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="50"/>
+                                                                <connections>
+                                                                    <action selector="moveToHospitalVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xcy-ou-AB9"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -330,6 +336,9 @@
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nk-Da-spm">
                                                                 <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="50"/>
+                                                                <connections>
+                                                                    <action selector="moveToPillVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aCi-7S-LAH"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -364,6 +373,9 @@
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60R-Va-YHh">
                                                                 <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="50"/>
+                                                                <connections>
+                                                                    <action selector="moveToSnackVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kqj-E8-wpd"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -398,6 +410,9 @@
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEh-Xn-zJe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="117.33333333333333" height="50"/>
+                                                                <connections>
+                                                                    <action selector="moveToMealVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zzo-yn-Q1J"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -426,7 +441,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Button" image="plusbox"/>
                                                 <connections>
-                                                    <action selector="showFloatingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RIR-RQ-Cep"/>
+                                                    <action selector="toggleFloatingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RIR-RQ-Cep"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -505,7 +520,7 @@
         <!--기록-->
         <scene sceneID="OOT-lC-ce1">
             <objects>
-                <viewController id="Taw-27-gQx" customClass="RecordDetailViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecordDetailVC" id="Taw-27-gQx" customClass="RecordDetailViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lhb-wS-Tpa">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -572,7 +587,7 @@
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xou-o8-VXx">
-                                                                            <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                         </imageView>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r48-wB-HpO">
                                                                             <rect key="frame" x="43" y="2" width="15" height="15"/>
@@ -585,11 +600,11 @@
                                                                     </subviews>
                                                                     <constraints>
                                                                         <constraint firstAttribute="trailing" secondItem="r48-wB-HpO" secondAttribute="trailing" constant="2" id="98J-GJ-WqN"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="xou-o8-VXx" secondAttribute="trailing" constant="5" id="9gT-Y8-bFe"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="xou-o8-VXx" secondAttribute="trailing" id="9gT-Y8-bFe"/>
                                                                         <constraint firstItem="r48-wB-HpO" firstAttribute="top" secondItem="MXF-Wg-vD3" secondAttribute="top" constant="2" id="IQW-0R-KO1"/>
-                                                                        <constraint firstItem="xou-o8-VXx" firstAttribute="leading" secondItem="MXF-Wg-vD3" secondAttribute="leading" constant="5" id="Rmy-hQ-Fo5"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="xou-o8-VXx" secondAttribute="bottom" constant="5" id="UEp-8y-TAc"/>
-                                                                        <constraint firstItem="xou-o8-VXx" firstAttribute="top" secondItem="MXF-Wg-vD3" secondAttribute="top" constant="5" id="asZ-5R-Soo"/>
+                                                                        <constraint firstItem="xou-o8-VXx" firstAttribute="leading" secondItem="MXF-Wg-vD3" secondAttribute="leading" id="Rmy-hQ-Fo5"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="xou-o8-VXx" secondAttribute="bottom" id="UEp-8y-TAc"/>
+                                                                        <constraint firstItem="xou-o8-VXx" firstAttribute="top" secondItem="MXF-Wg-vD3" secondAttribute="top" id="asZ-5R-Soo"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -645,7 +660,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOc-ya-RGJ" userLabel="Contents Container VIew" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="36" y="308" width="356" height="477"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="본문" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qel-dM-IkU">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 기록" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qel-dM-IkU">
                                                         <rect key="frame" x="12" y="12" width="332" height="23"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                         <nil key="textColor"/>
@@ -658,17 +673,19 @@
                                                             <constraint firstAttribute="height" constant="1" id="lxd-PL-i1d"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-iA-EbX">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="오늘의 기록을 남겨보세요." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Qb6-iA-EbX">
                                                         <rect key="frame" x="12" y="65" width="332" height="400"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="Gl8-2p-lay"/>
                                                             <constraint firstAttribute="height" priority="250" constant="400" id="M0y-HJ-nxZ"/>
                                                         </constraints>
-                                                        <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                                        <color key="textColor" systemColor="labelColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Taw-27-gQx" id="Ndo-Dn-tBS"/>
+                                                        </connections>
                                                     </textView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -723,9 +740,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="기록" id="CYu-kS-XkV">
-                        <barButtonItem key="leftBarButtonItem" title="닫기" id="bJ9-Cf-Jjd"/>
-                        <barButtonItem key="rightBarButtonItem" title="저장" id="zO7-Eu-YT1"/>
+                        <barButtonItem key="leftBarButtonItem" title="닫기" id="bJ9-Cf-Jjd">
+                            <connections>
+                                <action selector="cancel:" destination="Taw-27-gQx" id="l33-sU-13E"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="zO7-Eu-YT1">
+                            <connections>
+                                <action selector="saveHistory:" destination="Taw-27-gQx" id="sT8-hn-F8n"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentsTextView" destination="Qb6-iA-EbX" id="n0H-tl-8IC"/>
+                        <outlet property="titleLabel" destination="qel-dM-IkU" id="adT-Bz-QsP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkK-39-7dn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -888,7 +917,7 @@
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="DGI-dM-IJx"/>
                                                         <constraint firstAttribute="height" priority="250" constant="400" id="tCw-Fs-dWf"/>
                                                     </constraints>
-                                                    <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -4103,7 +4132,7 @@
         <!--Navigation Controller-->
         <scene sceneID="NUv-l7-nOh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zcD-ga-S2z" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="RecordDetailNav" automaticallyAdjustsScrollViewInsets="NO" id="zcD-ga-S2z" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vK2-Cb-nMN">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
@@ -5266,7 +5295,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sT9-E8-9d9"/>
         <segue reference="oEs-uz-L4I"/>
         <segue reference="fnT-fs-FxQ"/>
         <segue reference="4EU-Gb-ReR"/>
