@@ -7,6 +7,14 @@
 
 import Foundation
 
+extension DateFormatter {
+    public static let koreanDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_kr")
+        
+        return formatter
+    }()
+}
 
 extension Date {
     private static let monthAndDayFormatter: DateFormatter = {
@@ -33,5 +41,17 @@ extension Date {
     // 17시 17분
     public var hourAndMinuteFormatted: String {
         return Date.hourAndMinuteFormatter.string(from: self)
+    }
+    
+    private static let FullTimeKoreanDateFormatter: DateFormatter = {
+        let formatter: DateFormatter = DateFormatter.koreanDateFormatter
+        formatter.dateFormat = "YYYY년 MMM dd일 HH시 mm분"
+        
+        return formatter
+    }()
+    
+    // 2021년 5월 19일 17시 17분
+    public var FullTimeKoreanDateFormatted: String {
+        return Date.FullTimeKoreanDateFormatter.string(from: self)
     }
 }

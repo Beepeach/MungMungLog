@@ -21,7 +21,8 @@ enum HistoryType: String {
 }
 
 class RecordDetailViewController: UIViewController {
-    // 더미데이터
+    
+    // MARK: - DummyData
     var photoList: [PhotoItem] = [
         PhotoItem(photoName: "Test"),
         PhotoItem(photoName: "enroll"),
@@ -29,22 +30,40 @@ class RecordDetailViewController: UIViewController {
         PhotoItem(photoName: "Test")
     ]
     
+    // MARK: - Properties
     var historyType: HistoryType?
     
+    // MARK: - @IBOutlet
+    @IBOutlet weak var historyDateField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentsTextView: UITextView!
     
+    @IBOutlet var historyDateInputView: UIView!
+    @IBOutlet var historyDateDoneButtonToolbar: UIToolbar!
+    
+    // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentsTextView.textColor = .lightGray
         
-        setNavTitleAndContentsTitle()
+        setNavTitleAndContentsTitleAsDefault()
+        setHistoryDateFieldAsDefault()
     }
     
-    func setNavTitleAndContentsTitle() {
+    private func setNavTitleAndContentsTitleAsDefault() {
+        contentsTextView.textColor = .lightGray
         self.title = "\(historyType?.rawValue ?? "") 기록"
         titleLabel.text = "오늘의 \(historyType?.rawValue ?? "") 기록"
     }
+    
+    private func setHistoryDateFieldAsDefault() {
+        historyDateField.inputView = historyDateInputView
+        historyDateField.inputAccessoryView = historyDateDoneButtonToolbar
+        historyDateField.tintColor = .clear
+        historyDateField.textColor = .lightGray
+        historyDateField.text = "날짜를 선택해주세요."
+    }
+    
+    // MARK: - @IBAction
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -54,8 +73,23 @@ class RecordDetailViewController: UIViewController {
         // API호출
     }
     
+    @IBAction func selectHistoryDate(_ sender: Any) {
+        guard let historyDatePicker = historyDateInputView.subviews.first as? UIDatePicker else { return }
+        
+        if #available(iOS 12.0, *) {
+            historyDateField.textColor = traitCollection.userInterfaceStyle == .dark ? .white : .black
+        } else {
+            historyDateField.textColor = .black
+        }
+    
+        historyDateField.text = historyDatePicker.date.FullTimeKoreanDateFormatted
+        historyDateField.resignFirstResponder()
+    }
+    
 }
 
+
+// MARK: - UICollectionViewDataSource
 extension RecordDetailViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 2
@@ -98,6 +132,8 @@ extension RecordDetailViewController: UICollectionViewDataSource {
 //    }
 //}
 
+
+// MARK: - UITextViewDelegate
 extension RecordDetailViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == .lightGray {
@@ -115,6 +151,19 @@ extension RecordDetailViewController: UITextViewDelegate {
         if textView.text.isEmpty {
             textView.textColor = .lightGray
             textView.text = "오늘의 기록을 남겨보세요."
+        }
+    }
+}
+
+
+// MARK: - UITextFieldDelegate
+extension RecordDetailViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField {
+        case historyDateField:
+            return false
+        default:
+            return true
         }
     }
 }

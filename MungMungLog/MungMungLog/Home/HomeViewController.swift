@@ -9,6 +9,8 @@ import UIKit
 import SwiftKeychainWrapper
 
 class HomeViewController: UIViewController {
+    
+    // MARK: - Properties
     var menuStack: UIStackView?
     
     let buttonImageNames = ["rice", "snack", "pill", "hospital", "walk"]
@@ -18,6 +20,7 @@ class HomeViewController: UIViewController {
     var historyList: [HistoryDto]?
     var walkHistoryList: [WalkHistoryDto]?
     
+    // MARK: - @IBOutlet
     @IBOutlet weak var petNameLabel: UILabel!
     @IBOutlet weak var petBreedLabel: UILabel!
     @IBOutlet weak var petProfileImageView: UIImageView!
@@ -33,6 +36,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var historyMenuFloatingButtonStackView: UIStackView!
     @IBOutlet weak var dimmingView: UIView!
     
+    // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         writerProfileImageView.layer.cornerRadius = writerProfileImageView.frame.height / 2
@@ -147,9 +151,7 @@ class HomeViewController: UIViewController {
         latestHistroyLabel.text = "저장된 기록이 없어요😭\n기록을 남겨보시겠어요?"
     }
     
-    @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
-    }
-    
+    // MARK: - @IBAction
     @IBAction func toggleFloatingButton(_ sender: Any) {
         UIView.animate(withDuration: 0.3,
                        delay: 0.1,
@@ -209,6 +211,7 @@ class HomeViewController: UIViewController {
 }
 
 
+// MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return buttonImageNames.count
@@ -251,6 +254,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(#function, indexPath)

@@ -639,22 +639,22 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FLb-TO-Mrq" userLabel="Date Container View" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
                                                 <rect key="frame" x="36" y="172" width="356" height="100"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021 / 01 / 19   19: 47" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ic2-gJ-HLH">
-                                                        <rect key="frame" x="89.333333333333329" y="38.666666666666686" width="177.33333333333337" height="23"/>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2021년 06월 03일 16:00 " borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U9x-Ua-lme">
+                                                        <rect key="frame" x="12" y="0.0" width="332" height="100"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="Taw-27-gQx" id="YC4-Ud-W3C"/>
+                                                        </connections>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="Ic2-gJ-HLH" firstAttribute="centerX" secondItem="FLb-TO-Mrq" secondAttribute="centerX" id="BUD-hp-DFQ"/>
-                                                    <constraint firstItem="Ic2-gJ-HLH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FLb-TO-Mrq" secondAttribute="leading" constant="10" id="FEP-jX-dZV"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ic2-gJ-HLH" secondAttribute="trailing" constant="10" id="ITf-ZC-aCY"/>
-                                                    <constraint firstItem="Ic2-gJ-HLH" firstAttribute="centerY" secondItem="FLb-TO-Mrq" secondAttribute="centerY" id="PBT-zs-6zB"/>
                                                     <constraint firstAttribute="height" constant="100" id="TF7-nB-OFh"/>
-                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ic2-gJ-HLH" secondAttribute="bottom" constant="10" id="bFv-yt-blh"/>
-                                                    <constraint firstItem="Ic2-gJ-HLH" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FLb-TO-Mrq" secondAttribute="top" constant="10" id="sOJ-aB-Tbj"/>
+                                                    <constraint firstItem="U9x-Ua-lme" firstAttribute="leading" secondItem="FLb-TO-Mrq" secondAttribute="leading" constant="12" id="VrR-jC-ekL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="U9x-Ua-lme" secondAttribute="trailing" constant="12" id="eog-oQ-eP3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="U9x-Ua-lme" secondAttribute="bottom" id="oDm-zV-piL"/>
+                                                    <constraint firstItem="U9x-Ua-lme" firstAttribute="top" secondItem="FLb-TO-Mrq" secondAttribute="top" id="qUm-aJ-Z1p"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOc-ya-RGJ" userLabel="Contents Container VIew" customClass="RoundedBorderWithShadowView" customModule="MungMungLog" customModuleProvider="target">
@@ -753,10 +753,43 @@
                     </navigationItem>
                     <connections>
                         <outlet property="contentsTextView" destination="Qb6-iA-EbX" id="n0H-tl-8IC"/>
+                        <outlet property="historyDateDoneButtonToolbar" destination="LUM-SU-GuN" id="eXB-NR-g1J"/>
+                        <outlet property="historyDateField" destination="U9x-Ua-lme" id="OLW-19-pMx"/>
+                        <outlet property="historyDateInputView" destination="xLQ-D4-4J0" id="ehe-PA-BaQ"/>
                         <outlet property="titleLabel" destination="qel-dM-IkU" id="adT-Bz-QsP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkK-39-7dn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="LUM-SU-GuN">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="XXa-m5-xA0"/>
+                        <barButtonItem title="확인" id="XSW-KW-gti">
+                            <connections>
+                                <action selector="selectHistoryDate:" destination="Taw-27-gQx" id="3X7-p8-2Cf"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
+                <view contentMode="scaleToFill" id="xLQ-D4-4J0">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="c3j-id-Epy">
+                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <locale key="locale" localeIdentifier="ko_KR"/>
+                        </datePicker>
+                    </subviews>
+                    <viewLayoutGuide key="safeArea" id="DWq-jv-JCn"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="c3j-id-Epy" firstAttribute="leading" secondItem="xLQ-D4-4J0" secondAttribute="leading" id="38x-Z1-7f9"/>
+                        <constraint firstAttribute="trailing" secondItem="c3j-id-Epy" secondAttribute="trailing" id="E73-9G-eQr"/>
+                        <constraint firstItem="c3j-id-Epy" firstAttribute="top" secondItem="xLQ-D4-4J0" secondAttribute="top" id="XmO-3O-auM"/>
+                        <constraint firstAttribute="bottom" secondItem="c3j-id-Epy" secondAttribute="bottom" id="g4V-0z-MzW"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="7866" y="-2252"/>
         </scene>
@@ -888,18 +921,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="428" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021 / 01 / 19   19: 47" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eh-XQ-OnY">
-                                                    <rect key="frame" x="32" y="11" width="364" height="68"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pea-1I-ddq">
+                                                    <rect key="frame" x="48" y="23" width="332" height="44"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="5eh-XQ-OnY" secondAttribute="trailing" constant="12" id="ME5-3l-lpa"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="5eh-XQ-OnY" secondAttribute="bottom" id="NJy-IA-VK9"/>
-                                                <constraint firstItem="5eh-XQ-OnY" firstAttribute="top" secondItem="1zL-07-glR" secondAttribute="topMargin" id="O2P-EQ-nuy"/>
-                                                <constraint firstItem="5eh-XQ-OnY" firstAttribute="leading" secondItem="1zL-07-glR" secondAttribute="leadingMargin" constant="12" id="QWs-zj-euY"/>
+                                                <constraint firstItem="Pea-1I-ddq" firstAttribute="top" secondItem="1zL-07-glR" secondAttribute="topMargin" constant="12" id="6Kh-fg-p60"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Pea-1I-ddq" secondAttribute="trailing" constant="28" id="LLc-eX-Ys0"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Pea-1I-ddq" secondAttribute="bottom" constant="12" id="qlH-1M-POZ"/>
+                                                <constraint firstItem="Pea-1I-ddq" firstAttribute="leading" secondItem="1zL-07-glR" secondAttribute="leadingMargin" constant="28" id="yVd-Bb-Ebx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -5296,8 +5328,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="oEs-uz-L4I"/>
-        <segue reference="fnT-fs-FxQ"/>
-        <segue reference="4EU-Gb-ReR"/>
+        <segue reference="5ZM-Ic-1F1"/>
+        <segue reference="iF4-f1-o8r"/>
         <segue reference="cYL-UJ-6AL"/>
     </inferredMetricsTieBreakers>
     <resources>

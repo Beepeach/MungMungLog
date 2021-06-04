@@ -10,10 +10,12 @@ import SwiftKeychainWrapper
 
 class EditingProfileViewController: UIViewController {
     
+    //MARK: - Properties
     let imagePicker = UIImagePickerController()
     
     var isMale: Bool?
     
+    // MARK: - @IBOutlet
     @IBOutlet var birthdayPickerContainerView: UIView!
     @IBOutlet weak var birthdayDatePicker: UIDatePicker!
     @IBOutlet var breedsContainerView: UIView!
@@ -29,6 +31,50 @@ class EditingProfileViewController: UIViewController {
     @IBOutlet weak var petImageView: UIImageView!
     @IBOutlet weak var petImageAddButton: UIButton!
     
+    //MARK: - ViewLifeCycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        imagePicker.delegate = self
+        
+        maleContainerView.backgroundColor = .none
+        femaleContainerView.backgroundColor = .none
+        
+        setScreenWhenShowKeyboard()
+        setScreenWhenHideKeyboard()
+        
+        birthdayField.inputView = birthdayPickerContainerView
+        birthdayField.inputAccessoryView = doneAccessoryBar
+        birthdayField.tintColor = .clear
+        birthdayDatePicker.maximumDate = Date()
+        birthdayDatePicker.minimumDate = Date(timeIntervalSince1970: 0)
+        
+        breedField.inputView = breedsContainerView
+        breedField.inputAccessoryView = doneAccessoryBar
+        breedField.tintColor = .clear
+    }
+    
+    private func setScreenWhenShowKeyboard() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { [self] (noti) in
+            guard let userInfo = noti.userInfo else {
+                return
+            }
+            
+            guard let keyboardBounds = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
+                return
+            }
+            
+            editingProfileScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardBounds.height, right: 0)
+        }
+    }
+    
+    private func setScreenWhenHideKeyboard() {
+        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { [self] (_) in
+            editingProfileScrollView.contentInset = .zero
+        }
+    }
+    
+    // MARK: - @IBAction
     @IBAction func cancelEditing(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -64,7 +110,7 @@ class EditingProfileViewController: UIViewController {
         
     }
     
-    // ToDo: 중복되는 코드이므로 줄일 방법 생각해보기
+    // TODO: - 중복되는 코드이므로 줄일 방법 생각해보기
     @IBAction func selectPhoto(_ sender: Any) {
         let alert = UIAlertController(title: "프로필 사진을 골라주세요.", message: "어디서 가져올까요??", preferredStyle: .actionSheet)
         
@@ -224,51 +270,10 @@ class EditingProfileViewController: UIViewController {
     //            }
     //        }
     //    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        imagePicker.delegate = self
-        
-        maleContainerView.backgroundColor = .none
-        femaleContainerView.backgroundColor = .none
-        
-        setScreenWhenShowKeyboard()
-        setScreenWhenHideKeyboard()
-        
-        birthdayField.inputView = birthdayPickerContainerView
-        birthdayField.inputAccessoryView = doneAccessoryBar
-        birthdayField.tintColor = .clear
-        birthdayDatePicker.maximumDate = Date()
-        birthdayDatePicker.minimumDate = Date(timeIntervalSince1970: 0)
-        
-        breedField.inputView = breedsContainerView
-        breedField.inputAccessoryView = doneAccessoryBar
-        breedField.tintColor = .clear
-    }
-    
-    func setScreenWhenShowKeyboard() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { [self] (noti) in
-            guard let userInfo = noti.userInfo else {
-                return
-            }
-            
-            guard let keyboardBounds = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
-                return
-            }
-            
-            editingProfileScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardBounds.height, right: 0)
-        }
-    }
-    
-    func setScreenWhenHideKeyboard() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { [self] (_) in
-            editingProfileScrollView.contentInset = .zero
-        }
-    }
 }
 
 
+// MARK: - UITextFieldDelegate
 extension EditingProfileViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -288,6 +293,7 @@ extension EditingProfileViewController: UITextFieldDelegate {
 }
 
 
+// MARK: - UIImagePickerControllerDelegate
 extension EditingProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
@@ -307,6 +313,7 @@ extension EditingProfileViewController: UIImagePickerControllerDelegate, UINavig
     }
 }
 
+// MARK: - UIPickerViewDataSource
 extension EditingProfileViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -317,7 +324,7 @@ extension EditingProfileViewController: UIPickerViewDataSource {
     }
 }
 
-
+// MARK: - UIPickerViewDelegate
 extension EditingProfileViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return breeds[row]
