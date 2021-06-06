@@ -12,13 +12,13 @@ struct PhotoItem {
     let photoName: String
 }
 
-enum HistoryType: String {
-    case meal = "식사"
-    case snack = "간식"
-    case pill = "약"
-    case hospital = "병원"
-    case walk = "산책"
-}
+//enum HistoryType: String {
+//    case meal = "식사"
+//    case snack = "간식"
+//    case pill = "약"
+//    case hospital = "병원"
+//    case walk = "산책"
+//}
 
 class RecordDetailViewController: UIViewController {
     
@@ -71,6 +71,7 @@ class RecordDetailViewController: UIViewController {
     
     @IBAction func saveHistory(_ sender: Any) {
         // API호출
+        
     }
     
     @IBAction func selectHistoryDate(_ sender: Any) {
