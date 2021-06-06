@@ -68,6 +68,7 @@
 		466492C425F372FC00903265 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00E2557F76B00027376 /* SceneDelegate.swift */; };
 		466492C525F372FC00903265 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */; };
 		466492C625F372FC00903265 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
+		466492C725F372FC00903265 /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */; };
 		466492C925F372FC00903265 /* RoundedBorderWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */; };
 		466492CA25F372FC00903265 /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */; };
 		466492CB25F372FC00903265 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B7B25EBA4A400D161F5 /* CodeInputViewController.swift */; };
@@ -108,20 +109,13 @@
 		4694977726184F520049D7FE /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694977526184F520049D7FE /* ApiModel.swift */; };
 		469497A226186A200049D7FE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469497A126186A200049D7FE /* Product.swift */; };
 		469497A826186A4C0049D7FE /* Staging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469497A726186A4C0049D7FE /* Staging.swift */; };
-		4695EAF7266A5B5A000AE7B1 /* RecordHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695EAF6266A5B5A000AE7B1 /* RecordHistoryDetailViewController.swift */; };
-		4695EAF8266A5B5A000AE7B1 /* RecordHistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695EAF6266A5B5A000AE7B1 /* RecordHistoryDetailViewController.swift */; };
-		4695EAFB266A64A3000AE7B1 /* HistoryImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695EAFA266A64A3000AE7B1 /* HistoryImageTableViewCell.swift */; };
-		4695EAFC266A64A3000AE7B1 /* HistoryImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695EAFA266A64A3000AE7B1 /* HistoryImageTableViewCell.swift */; };
-		4695EAFE266A64AF000AE7B1 /* HistoryDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695EAFD266A64AF000AE7B1 /* HistoryDateTableViewCell.swift */; };
-		4695EAFF266A64AF000AE7B1 /* HistoryDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695EAFD266A64AF000AE7B1 /* HistoryDateTableViewCell.swift */; };
-		4695EB01266A64BB000AE7B1 /* HistoryContentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695EB00266A64BB000AE7B1 /* HistoryContentsTableViewCell.swift */; };
-		4695EB02266A64BB000AE7B1 /* HistoryContentsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4695EB00266A64BB000AE7B1 /* HistoryContentsTableViewCell.swift */; };
 		46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
 		46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
 		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
 		46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
 		46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */; };
 		46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */; };
+		46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */; };
 		46D4DF1E262D57790016252A /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
 		46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */; };
 		46DA9020264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA901F264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift */; };
@@ -239,10 +233,6 @@
 		4694977526184F520049D7FE /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		469497A126186A200049D7FE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		469497A726186A4C0049D7FE /* Staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staging.swift; sourceTree = "<group>"; };
-		4695EAF6266A5B5A000AE7B1 /* RecordHistoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordHistoryDetailViewController.swift; sourceTree = "<group>"; };
-		4695EAFA266A64A3000AE7B1 /* HistoryImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryImageTableViewCell.swift; sourceTree = "<group>"; };
-		4695EAFD266A64AF000AE7B1 /* HistoryDateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDateTableViewCell.swift; sourceTree = "<group>"; };
-		4695EB00266A64BB000AE7B1 /* HistoryContentsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryContentsTableViewCell.swift; sourceTree = "<group>"; };
 		46A025AA2577D17D0022BDBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		46A025AE2577D7BB0022BDBF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -425,9 +415,6 @@
 			children = (
 				464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */,
 				467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */,
-				4695EAFA266A64A3000AE7B1 /* HistoryImageTableViewCell.swift */,
-				4695EAFD266A64AF000AE7B1 /* HistoryDateTableViewCell.swift */,
-				4695EB00266A64BB000AE7B1 /* HistoryContentsTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -531,7 +518,6 @@
 			children = (
 				464092DA258E2EE100C85524 /* Cell */,
 				46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */,
-				4695EAF6266A5B5A000AE7B1 /* RecordHistoryDetailViewController.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -944,7 +930,6 @@
 				460C4EAE25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				466D8DB72638086600B356F9 /* OptionListViewController.swift in Sources */,
-				4695EAFB266A64A3000AE7B1 /* HistoryImageTableViewCell.swift in Sources */,
 				460C4EA725F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				46F5456B262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */,
 				4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */,
@@ -960,13 +945,12 @@
 				468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
 				464A5B68261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
-				4695EB01266A64BB000AE7B1 /* HistoryContentsTableViewCell.swift in Sources */,
 				464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */,
 				4674C6BB26318FEB004C9182 /* UserModel.swift in Sources */,
 				46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */,
 				468FCF7B264C1043001DB81E /* WalkRecordViewController.swift in Sources */,
-				4695EAF7266A5B5A000AE7B1 /* RecordHistoryDetailViewController.swift in Sources */,
 				46042BF4264800F5008E65FE /* UIViewController+KeychainWrapper.swift in Sources */,
+				46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */,
 				46F7BB762654F3EA00134059 /* TimeInterval+DateComponentFormatter.swift in Sources */,
 				46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */,
 				46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */,
@@ -983,7 +967,6 @@
 				460C4EDB25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
 				46DBEA8826288B2200B07EC1 /* UserDefault.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
-				4695EAFE266A64AF000AE7B1 /* HistoryDateTableViewCell.swift in Sources */,
 				464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */,
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 				464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */,
@@ -1033,7 +1016,6 @@
 				466492BB25F372FC00903265 /* MembershipRegistrationViewController.swift in Sources */,
 				460C4EAF25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				466D8DB82638086600B356F9 /* OptionListViewController.swift in Sources */,
-				4695EAFC266A64A3000AE7B1 /* HistoryImageTableViewCell.swift in Sources */,
 				466492BC25F372FC00903265 /* AppDelegate.swift in Sources */,
 				46F5456C262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */,
 				460C4EA825F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
@@ -1049,13 +1031,12 @@
 				468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
 				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
-				4695EB02266A64BB000AE7B1 /* HistoryContentsTableViewCell.swift in Sources */,
 				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,
 				4674C6BC26318FEB004C9182 /* UserModel.swift in Sources */,
 				46F54579262FF88900FBDBA0 /* HomeViewController.swift in Sources */,
 				468FCF7C264C1043001DB81E /* WalkRecordViewController.swift in Sources */,
-				4695EAF8266A5B5A000AE7B1 /* RecordHistoryDetailViewController.swift in Sources */,
 				46042BF5264800F5008E65FE /* UIViewController+KeychainWrapper.swift in Sources */,
+				466492C725F372FC00903265 /* RecordDetailViewController.swift in Sources */,
 				469497A826186A4C0049D7FE /* Staging.swift in Sources */,
 				46F7BB772654F3EA00134059 /* TimeInterval+DateComponentFormatter.swift in Sources */,
 				466492C925F372FC00903265 /* RoundedBorderWithShadowView.swift in Sources */,
@@ -1072,7 +1053,6 @@
 				466492CE25F372FC00903265 /* RegistrationGuideViewController.swift in Sources */,
 				46DBEA8926288B2200B07EC1 /* UserDefault.swift in Sources */,
 				460C4EDC25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
-				4695EAFF266A64AF000AE7B1 /* HistoryDateTableViewCell.swift in Sources */,
 				466492CF25F372FC00903265 /* RoundedView.swift in Sources */,
 				466492D025F372FC00903265 /* RecordItemTableViewCell.swift in Sources */,
 				466492D125F372FC00903265 /* UIViewController+alert.swift in Sources */,

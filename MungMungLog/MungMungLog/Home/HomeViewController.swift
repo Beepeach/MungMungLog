@@ -196,7 +196,7 @@ class HomeViewController: UIViewController {
             return UINavigationController()
         }
         
-        guard let recordDetailVC = recordDetailNav.topViewController as? RecordHistoryDetailViewController else {
+        guard let recordDetailVC = recordDetailNav.topViewController as? RecordDetailViewController else {
             return UINavigationController()
         }
         
