@@ -7,11 +7,6 @@
 
 import UIKit
 
-
-struct PhotoItem {
-    let photoName: String
-}
-
 enum HistoryType: String {
     case meal = "식사"
     case snack = "간식"
@@ -21,14 +16,11 @@ enum HistoryType: String {
 }
 
 class RecordDetailViewController: UIViewController {
+    // TODO: - ScrollView로 되어있는 화면을 TableView로 바꾸자.
+    
     
     // MARK: - DummyData
-    var photoList: [PhotoItem] = [
-        PhotoItem(photoName: "Test"),
-        PhotoItem(photoName: "enroll"),
-        PhotoItem(photoName: "Test"),
-        PhotoItem(photoName: "Test")
-    ]
+    var historyPhotos: [UIImage] = [UIImage]()
     
     // MARK: - Properties
     var historyType: HistoryType?
@@ -45,6 +37,7 @@ class RecordDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        historyDateField.borderStyle = .
         setNavTitleAndContentsTitleAsDefault()
         setHistoryDateFieldAsDefault()
     }
@@ -97,7 +90,7 @@ extension RecordDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return section == 0 ? 1 : photoList.count
+        return section == 0 ? 1 : historyPhotos.count
         
     }
     
@@ -111,7 +104,7 @@ extension RecordDetailViewController: UICollectionViewDataSource {
         case 1:
             guard let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
             
-            photoCell.photoImageView.image = UIImage(named: photoList[indexPath.row].photoName)
+            photoCell.photoImageView.image = historyPhotos[indexPath.row]
             
             return photoCell
             
@@ -120,17 +113,6 @@ extension RecordDetailViewController: UICollectionViewDataSource {
         }
     }
 }
-
-
-//extension RecordDetailViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//
-//        let safeAreaHeight = self.view.safeAreaLayoutGuide.layoutFrame.height
-//
-//        return safeAreaHeight / 5
-//
-//    }
-//}
 
 
 // MARK: - UITextViewDelegate
