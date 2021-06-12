@@ -31,17 +31,17 @@ class RecordDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setNavTitleAndContentsTitleAsDefault()
-        setHistoryDateFieldAsDefault()
+        configureNavTitleAndContentsTitleAsDefault()
+        configureHistoryDateFieldAsDefault()
     }
     
-    private func setNavTitleAndContentsTitleAsDefault() {
+    private func configureNavTitleAndContentsTitleAsDefault() {
         contentsTextView.textColor = .lightGray
         self.title = "\(historyType?.rawValue ?? "") 기록"
         titleLabel.text = "오늘의 \(historyType?.rawValue ?? "") 기록"
     }
     
-    private func setHistoryDateFieldAsDefault() {
+    private func configureHistoryDateFieldAsDefault() {
         historyDateField.inputView = historyDateInputView
         historyDateField.inputAccessoryView = historyDateDoneButtonToolbar
         historyDateField.tintColor = .clear
@@ -53,8 +53,9 @@ class RecordDetailViewController: UIViewController {
     @IBAction func presentPicker(_ sender: Any) {
         if #available(iOS 14, *) {
             let pickerConfiguration: PHPickerConfiguration = creatingPHPickerConfiguration()
-            let pickerVC: PHPickerViewController = setPhPickerVC(configuration: pickerConfiguration)
+            let pickerVC: PHPickerViewController = creatingPHPickerVC(configuration: pickerConfiguration)
             
+            pickerVC.modalPresentationStyle = .fullScreen
             present(pickerVC, animated: true)
         }
     }
@@ -69,11 +70,10 @@ class RecordDetailViewController: UIViewController {
     }
     
     @available(iOS 14, *)
-    private func setPhPickerVC(configuration: PHPickerConfiguration) -> PHPickerViewController {
+    private func creatingPHPickerVC(configuration: PHPickerConfiguration) -> PHPickerViewController {
         let pickerVC: PHPickerViewController = PHPickerViewController(configuration: configuration)
         pickerVC.delegate = self
-        pickerVC.modalPresentationStyle = .fullScreen
-        
+   
         return pickerVC
     }
     
