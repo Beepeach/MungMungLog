@@ -18,7 +18,12 @@ enum HistoryType: String {
 
 class RecordDetailViewController: UIViewController {
     // TODO: - ScrollView로 되어있는 화면을 TableView로 바꾸자.
-    var historyType: HistoryType?
+    private enum PhotoCollectionViewIdentifier: String {
+        case pickerPresentingButtonCell
+        case photoCell
+    }
+    
+    private var historyType: HistoryType?
     private var historyPhotos: [UIImage] = []
     private var itemProviders: [NSItemProvider] = []
     
@@ -94,6 +99,9 @@ class RecordDetailViewController: UIViewController {
         historyDateField.resignFirstResponder()
     }
     
+    public func setHistoryType(to type: HistoryType) {
+        self.historyType = type
+    }
 }
 
 
@@ -118,13 +126,13 @@ extension RecordDetailViewController: UICollectionViewDataSource {
     }
     
     private func dequeuePickerPresentingButtonCell(_ collectionView: UICollectionView , indexPath: IndexPath) -> UICollectionViewCell {
-        let addPhotoButtonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addPhotoButtonCell", for: indexPath)
+        let addPhotoButtonCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewIdentifier.pickerPresentingButtonCell.rawValue, for: indexPath)
         
         return addPhotoButtonCell
     }
     
     private func dequeuePhotoCell(_ collectionView: UICollectionView , indexPath: IndexPath) -> UICollectionViewCell {
-        guard let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
+        guard let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewIdentifier.photoCell.rawValue, for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
         
         addDeselectPhotoButton(photoCell: photoCell, indexPath: indexPath)
         photoCell.photoImageView.image = historyPhotos[indexPath.row]

@@ -203,7 +203,7 @@ class HomeViewController: UIViewController {
         toggleFloatingButton(self)
         
         recordDetailNav.modalPresentationStyle = .fullScreen
-        recordDetailVC.historyType = type
+        recordDetailVC.setHistoryType(to: type)
         
         return recordDetailNav
     }
