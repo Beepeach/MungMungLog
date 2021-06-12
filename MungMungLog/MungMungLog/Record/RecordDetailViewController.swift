@@ -200,7 +200,6 @@ extension RecordDetailViewController: PHPickerViewControllerDelegate {
             }
         }
         
-        // TODO: 왜 처음에는 reload가 잘 안될까??
         dismiss(animated: true) {
             self.photoCollectionView.reloadData()
         }
