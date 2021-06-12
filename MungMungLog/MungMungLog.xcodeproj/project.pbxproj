@@ -48,6 +48,8 @@
 		464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A5B67261F5D8E00BA1DB7 /* PetModel.swift */; };
 		464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */; };
 		464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */; };
+		4652F7252674F113009FC105 /* HistoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4652F7242674F113009FC105 /* HistoryType.swift */; };
+		4652F7262674F113009FC105 /* HistoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4652F7242674F113009FC105 /* HistoryType.swift */; };
 		46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */; };
 		4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */; };
 		465A57E4264E7CC4006683D5 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A57E3264E7CC4006683D5 /* NotificationName.swift */; };
@@ -209,6 +211,7 @@
 		464A5B772621950800BA1DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectCollectionViewCell.swift; sourceTree = "<group>"; };
+		4652F7242674F113009FC105 /* HistoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryType.swift; sourceTree = "<group>"; };
 		46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationGuideViewController.swift; sourceTree = "<group>"; };
 		4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEndingViewController.swift; sourceTree = "<group>"; };
 		465A57E3264E7CC4006683D5 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
@@ -449,6 +452,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		4652F7232674F107009FC105 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				4652F7242674F113009FC105 /* HistoryType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		4656860925766C8900088513 /* ViewShapeClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,6 +527,7 @@
 		46A5749E25729B3D00B7ADF5 /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				4652F7232674F107009FC105 /* Enum */,
 				464092DA258E2EE100C85524 /* Cell */,
 				46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */,
 			);
@@ -912,6 +924,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4652F7252674F113009FC105 /* HistoryType.swift in Sources */,
 				460C4EB825F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
 				4694977626184F520049D7FE /* ApiModel.swift in Sources */,
 				464092CE258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift in Sources */,
@@ -998,6 +1011,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4652F7262674F113009FC105 /* HistoryType.swift in Sources */,
 				460C4EB925F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
 				4694977726184F520049D7FE /* ApiModel.swift in Sources */,
 				466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */,

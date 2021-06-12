@@ -8,14 +8,6 @@
 import UIKit
 import PhotosUI
 
-enum HistoryType: String {
-    case meal = "식사"
-    case snack = "간식"
-    case pill = "약"
-    case hospital = "병원"
-    case walk = "산책"
-}
-
 class RecordDetailViewController: UIViewController {
     // TODO: - ScrollView로 되어있는 화면을 TableView로 바꾸자.
     private enum PhotoCollectionViewIdentifier: String {
@@ -60,22 +52,29 @@ class RecordDetailViewController: UIViewController {
     // MARK: @IBAction
     @IBAction func presentPicker(_ sender: Any) {
         if #available(iOS 14, *) {
-            let configuration: PHPickerConfiguration = setPHPicker()
-            let picker: PHPickerViewController = PHPickerViewController(configuration: configuration)
-            picker.delegate = self
+            let pickerConfiguration: PHPickerConfiguration = creatingPHPickerConfiguration()
+            let pickerVC: PHPickerViewController = setPhPickerVC(configuration: pickerConfiguration)
             
-            picker.modalPresentationStyle = .fullScreen
-            present(picker, animated: true)
+            present(pickerVC, animated: true)
         }
     }
     
     @available(iOS 14, *)
-    private func setPHPicker() -> PHPickerConfiguration {
+    private func creatingPHPickerConfiguration() -> PHPickerConfiguration {
         var configuration: PHPickerConfiguration = PHPickerConfiguration()
         configuration.filter = .images
         configuration.selectionLimit = 5
         
         return configuration
+    }
+    
+    @available(iOS 14, *)
+    private func setPhPickerVC(configuration: PHPickerConfiguration) -> PHPickerViewController {
+        let pickerVC: PHPickerViewController = PHPickerViewController(configuration: configuration)
+        pickerVC.delegate = self
+        pickerVC.modalPresentationStyle = .fullScreen
+        
+        return pickerVC
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -99,6 +98,7 @@ class RecordDetailViewController: UIViewController {
         historyDateField.resignFirstResponder()
     }
     
+    // MARK: Interface
     public func setHistoryType(to type: HistoryType) {
         self.historyType = type
     }
