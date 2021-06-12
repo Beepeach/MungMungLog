@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 enum HistoryType: String {
     case meal = "식사"
@@ -17,27 +18,22 @@ enum HistoryType: String {
 
 class RecordDetailViewController: UIViewController {
     // TODO: - ScrollView로 되어있는 화면을 TableView로 바꾸자.
-    
-    
-    // MARK: - DummyData
-    var historyPhotos: [UIImage] = [UIImage]()
-    
-    // MARK: - Properties
     var historyType: HistoryType?
+    private var historyPhotos: [UIImage] = []
+    private var itemProviders: [NSItemProvider] = []
     
-    // MARK: - @IBOutlet
+    // MARK: @IBOutlet
+    @IBOutlet weak var photoCollectionView: UICollectionView!
     @IBOutlet weak var historyDateField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentsTextView: UITextView!
-    
     @IBOutlet var historyDateInputView: UIView!
     @IBOutlet var historyDateDoneButtonToolbar: UIToolbar!
     
-    // MARK: - ViewLifeCycle
+    // MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        historyDateField.borderStyle = .
         setNavTitleAndContentsTitleAsDefault()
         setHistoryDateFieldAsDefault()
     }
@@ -56,7 +52,26 @@ class RecordDetailViewController: UIViewController {
         historyDateField.text = "날짜를 선택해주세요."
     }
     
-    // MARK: - @IBAction
+    // MARK: @IBAction
+    @IBAction func presentPicker(_ sender: Any) {
+        if #available(iOS 14, *) {
+            let configuration: PHPickerConfiguration = setPHPicker()
+            let picker: PHPickerViewController = PHPickerViewController(configuration: configuration)
+            picker.delegate = self
+            
+            picker.modalPresentationStyle = .fullScreen
+            present(picker, animated: true)
+        }
+    }
+    
+    @available(iOS 14, *)
+    private func setPHPicker() -> PHPickerConfiguration {
+        var configuration: PHPickerConfiguration = PHPickerConfiguration()
+        configuration.filter = .images
+        configuration.selectionLimit = 5
+        
+        return configuration
+    }
     
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -95,22 +110,36 @@ extension RecordDetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch indexPath.section {
-        case 0:
-            let addPhotoButtonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addPhotoButtonCell", for: indexPath)
-            
-            return addPhotoButtonCell
-            
-        case 1:
-            guard let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
-            
-            photoCell.photoImageView.image = historyPhotos[indexPath.row]
-            
-            return photoCell
-            
-        default:
-            return UICollectionViewCell()
+        if indexPath.section == 0 {
+            return dequeuePickerPresentingButtonCell(collectionView, indexPath: indexPath)
+        } else {
+           return dequeuePhotoCell(collectionView, indexPath: indexPath)
         }
+    }
+    
+    private func dequeuePickerPresentingButtonCell(_ collectionView: UICollectionView , indexPath: IndexPath) -> UICollectionViewCell {
+        let addPhotoButtonCell = collectionView.dequeueReusableCell(withReuseIdentifier: "addPhotoButtonCell", for: indexPath)
+        
+        return addPhotoButtonCell
+    }
+    
+    private func dequeuePhotoCell(_ collectionView: UICollectionView , indexPath: IndexPath) -> UICollectionViewCell {
+        guard let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
+        
+        addDeselectPhotoButton(photoCell: photoCell, indexPath: indexPath)
+        photoCell.photoImageView.image = historyPhotos[indexPath.row]
+        
+        return photoCell
+    }
+    
+    private func addDeselectPhotoButton(photoCell: PhotoCollectionViewCell, indexPath: IndexPath) {
+        photoCell.deselectPhotoButton.tag = indexPath.item
+        photoCell.deselectPhotoButton.addTarget(self, action: #selector(deselectTargetPhoto(sender:)), for: .touchUpInside)
+    }
+    
+    @objc private func deselectTargetPhoto(sender: UIButton) {
+        historyPhotos.remove(at: sender.tag)
+        photoCollectionView.reloadData()
     }
 }
 
@@ -146,6 +175,35 @@ extension RecordDetailViewController: UITextFieldDelegate {
             return false
         default:
             return true
+        }
+    }
+}
+
+
+// MARK: PHPickerViewControllerDelegate
+// TODO: 5개 이상이라면 photos의 이전것을 없애고 최근것 5개를 유지시켜야한다. 지금은 계속 누르고 계속 추가하면 5개이상 추가가 된다.
+@available(iOS 14, *)
+extension RecordDetailViewController: PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        itemProviders = results.map(\.itemProvider)
+        itemProviders.forEach { itemProvider in
+            if itemProvider.canLoadObject(ofClass: UIImage.self) {
+                appendInHistoryPhotos(itemProvider: itemProvider)
+            }
+        }
+        
+        // TODO: 왜 처음에는 reload가 잘 안될까??
+        dismiss(animated: true) {
+            self.photoCollectionView.reloadData()
+        }
+    }
+    
+    private func appendInHistoryPhotos(itemProvider: NSItemProvider) {
+        itemProvider.loadObject(ofClass: UIImage.self) { image, error in
+            guard let image = image as? UIImage else {
+                return
+            }
+            self.historyPhotos.append(image)
         }
     }
 }
