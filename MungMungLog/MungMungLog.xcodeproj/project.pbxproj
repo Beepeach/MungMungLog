@@ -50,6 +50,10 @@
 		464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */; };
 		4652F7252674F113009FC105 /* HistoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4652F7242674F113009FC105 /* HistoryType.swift */; };
 		4652F7262674F113009FC105 /* HistoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4652F7242674F113009FC105 /* HistoryType.swift */; };
+		4652F75226772AC6009FC105 /* HistoryImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4652F75126772AC6009FC105 /* HistoryImagePickerViewController.swift */; };
+		4652F75326772AC6009FC105 /* HistoryImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4652F75126772AC6009FC105 /* HistoryImagePickerViewController.swift */; };
+		4652F75526773605009FC105 /* PickerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4652F75426773605009FC105 /* PickerImageCollectionViewCell.swift */; };
+		4652F75626773605009FC105 /* PickerImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4652F75426773605009FC105 /* PickerImageCollectionViewCell.swift */; };
 		46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */; };
 		4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */; };
 		465A57E4264E7CC4006683D5 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A57E3264E7CC4006683D5 /* NotificationName.swift */; };
@@ -212,6 +216,8 @@
 		464A6B7D25AAED6100E56ED9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		464B574925860EFF00D2774B /* DateSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		4652F7242674F113009FC105 /* HistoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryType.swift; sourceTree = "<group>"; };
+		4652F75126772AC6009FC105 /* HistoryImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryImagePickerViewController.swift; sourceTree = "<group>"; };
+		4652F75426773605009FC105 /* PickerImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		46536DA025AF544600C60BD8 /* RegistrationGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationGuideViewController.swift; sourceTree = "<group>"; };
 		4656860C25766DCE00088513 /* WalkRecordEndingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEndingViewController.swift; sourceTree = "<group>"; };
 		465A57E3264E7CC4006683D5 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
@@ -418,6 +424,7 @@
 			children = (
 				464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */,
 				467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */,
+				4652F75426773605009FC105 /* PickerImageCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -530,6 +537,7 @@
 				4652F7232674F107009FC105 /* Enum */,
 				464092DA258E2EE100C85524 /* Cell */,
 				46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */,
+				4652F75126772AC6009FC105 /* HistoryImagePickerViewController.swift */,
 			);
 			path = Record;
 			sourceTree = "<group>";
@@ -944,6 +952,7 @@
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				466D8DB72638086600B356F9 /* OptionListViewController.swift in Sources */,
 				460C4EA725F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
+				4652F75226772AC6009FC105 /* HistoryImagePickerViewController.swift in Sources */,
 				46F5456B262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */,
 				4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */,
 				46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */,
@@ -979,6 +988,7 @@
 				46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */,
 				460C4EDB25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
 				46DBEA8826288B2200B07EC1 /* UserDefault.swift in Sources */,
+				4652F75526773605009FC105 /* PickerImageCollectionViewCell.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
 				464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */,
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
@@ -1031,6 +1041,7 @@
 				460C4EAF25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				466D8DB82638086600B356F9 /* OptionListViewController.swift in Sources */,
 				466492BC25F372FC00903265 /* AppDelegate.swift in Sources */,
+				4652F75326772AC6009FC105 /* HistoryImagePickerViewController.swift in Sources */,
 				46F5456C262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */,
 				460C4EA825F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				466492BD25F372FC00903265 /* WalkRecordEndingViewController.swift in Sources */,
@@ -1066,6 +1077,7 @@
 				4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */,
 				466492CE25F372FC00903265 /* RegistrationGuideViewController.swift in Sources */,
 				46DBEA8926288B2200B07EC1 /* UserDefault.swift in Sources */,
+				4652F75626773605009FC105 /* PickerImageCollectionViewCell.swift in Sources */,
 				460C4EDC25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
 				466492CF25F372FC00903265 /* RoundedView.swift in Sources */,
 				466492D025F372FC00903265 /* RecordItemTableViewCell.swift in Sources */,

@@ -57,6 +57,26 @@ class RecordDetailViewController: UIViewController {
             
             pickerVC.modalPresentationStyle = .fullScreen
             present(pickerVC, animated: true)
+        } else {
+            let alert: UIAlertController = UIAlertController(title: "알림", message: "어디서 사진을 가져올까요?", preferredStyle: .actionSheet)
+            let camera: UIAlertAction = UIAlertAction(title: "카메라", style: .default, handler: { _ in
+                // TODO: presentCamera with ImagePickerViewController
+            })
+            let library: UIAlertAction = UIAlertAction(title: "앨범", style: .default, handler: {_ in
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "HistoryImagePickerViewController") as? HistoryImagePickerViewController else {
+                    return
+                }
+                
+                self.present(vc, animated: true)
+                
+            })
+            let cancel: UIAlertAction = UIAlertAction(title: "취소", style: .destructive)
+            
+            alert.addAction(camera)
+            alert.addAction(library)
+            alert.addAction(cancel)
+            
+            present(alert, animated: true)
         }
     }
     

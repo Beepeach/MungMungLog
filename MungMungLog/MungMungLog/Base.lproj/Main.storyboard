@@ -796,7 +796,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="7866" y="-2252"/>
+            <point key="canvasLocation" x="7665" y="-2270"/>
         </scene>
         <!--OO 기록-->
         <scene sceneID="7Lw-Ia-aWB">
@@ -987,7 +987,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KbO-2d-g9Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10082.242990654206" y="-2252.9157667386612"/>
+            <point key="canvasLocation" x="10707" y="-2256"/>
         </scene>
         <!--다이어리-->
         <scene sceneID="v6Y-zS-beT">
@@ -4182,7 +4182,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bpg-61-bMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6966" y="-2252"/>
+            <point key="canvasLocation" x="6904" y="-2270"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="ypc-kC-hpl">
@@ -5312,6 +5312,66 @@
             </objects>
             <point key="canvasLocation" x="6866" y="3701"/>
         </scene>
+        <!--History Image Picker View Controller-->
+        <scene sceneID="TXb-QA-TDp">
+            <objects>
+                <viewController storyboardIdentifier="HistoryImagePickerViewController" id="a6s-lT-9Y8" customClass="HistoryImagePickerViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SC0-vl-jPv">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mye-DU-9qg">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4R9-se-Bb7">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="iN2-jv-btB" customClass="PickerImageCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Fic-7Q-XAq">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tzu-KL-oMP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Tzu-KL-oMP" firstAttribute="leading" secondItem="Fic-7Q-XAq" secondAttribute="leading" id="LTK-Ks-d0p"/>
+                                                <constraint firstAttribute="bottom" secondItem="Tzu-KL-oMP" secondAttribute="bottom" id="QbZ-lk-U5P"/>
+                                                <constraint firstItem="Tzu-KL-oMP" firstAttribute="top" secondItem="Fic-7Q-XAq" secondAttribute="top" id="mfI-iH-RFz"/>
+                                                <constraint firstAttribute="trailing" secondItem="Tzu-KL-oMP" secondAttribute="trailing" id="xd6-P5-P2H"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="Tzu-KL-oMP" id="fMo-4g-tFH"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c4s-aR-XEh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Mye-DU-9qg" secondAttribute="bottom" id="ED5-MT-pKy"/>
+                            <constraint firstItem="Mye-DU-9qg" firstAttribute="top" secondItem="SC0-vl-jPv" secondAttribute="top" id="Iaa-tO-KoV"/>
+                            <constraint firstItem="Mye-DU-9qg" firstAttribute="trailing" secondItem="c4s-aR-XEh" secondAttribute="trailing" id="gVs-Ct-czy"/>
+                            <constraint firstItem="Mye-DU-9qg" firstAttribute="leading" secondItem="c4s-aR-XEh" secondAttribute="leading" id="ko4-ke-tPC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Mye-DU-9qg" id="tLr-qW-xNL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0lh-0j-OAv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8426.6355140186915" y="-2270.4103671706266"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="mUH-v2-khH">
             <objects>
@@ -5328,7 +5388,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8r-Gt-AEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9184" y="-2252"/>
+            <point key="canvasLocation" x="9838" y="-2263"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
