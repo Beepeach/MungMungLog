@@ -63,7 +63,7 @@ class RecordDetailViewController: UIViewController {
                 // TODO: presentCamera with ImagePickerViewController
             })
             let library: UIAlertAction = UIAlertAction(title: "앨범", style: .default, handler: {_ in
-                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "HistoryImagePickerViewController") as? HistoryImagePickerViewController else {
+                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "HistoryImagePickerNav") as? UINavigationController else {
                     return
                 }
                 

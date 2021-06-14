@@ -987,7 +987,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KbO-2d-g9Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10707" y="-2256"/>
+            <point key="canvasLocation" x="11606.074766355139" y="-2256.1555075593956"/>
         </scene>
         <!--다이어리-->
         <scene sceneID="v6Y-zS-beT">
@@ -5364,13 +5364,25 @@
                             <constraint firstItem="Mye-DU-9qg" firstAttribute="leading" secondItem="c4s-aR-XEh" secondAttribute="leading" id="ko4-ke-tPC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="3yL-Ne-BAh">
+                        <barButtonItem key="leftBarButtonItem" title="취소" id="EqS-Ch-hc1">
+                            <connections>
+                                <action selector="cancel:" destination="a6s-lT-9Y8" id="SeS-d1-azc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="선택" id="poP-Bm-euj">
+                            <connections>
+                                <action selector="selectImages:" destination="a6s-lT-9Y8" id="llQ-nC-1ZT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Mye-DU-9qg" id="tLr-qW-xNL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lh-0j-OAv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8426.6355140186915" y="-2270.4103671706266"/>
+            <point key="canvasLocation" x="9394" y="-2270"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mUH-v2-khH">
@@ -5388,7 +5400,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8r-Gt-AEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9838" y="-2263"/>
+            <point key="canvasLocation" x="10736.915887850466" y="-2263.2829373650111"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CpR-bh-gTa">
+            <objects>
+                <navigationController storyboardIdentifier="HistoryImagePickerNav" automaticallyAdjustsScrollViewInsets="NO" id="gzF-RD-uh6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Yd-8v-9n4">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a6s-lT-9Y8" kind="relationship" relationship="rootViewController" id="6fx-GA-QOB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0g-hi-coZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8522" y="-2270"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
