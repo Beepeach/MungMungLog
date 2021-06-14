@@ -83,7 +83,7 @@ extension HistoryImagePickerViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        let maximumSelectedCount:Int = 5
+        let maximumSelectedCount: Int = 5
         if selectedImageCount >= maximumSelectedCount {
             return false
         }
