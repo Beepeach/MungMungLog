@@ -27,28 +27,11 @@ class RecordDetailViewController: UIViewController {
     @IBOutlet var historyDateInputView: UIView!
     @IBOutlet var historyDateDoneButtonToolbar: UIToolbar!
     
-    // MARK: ViewLifeCycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configureNavTitleAndContentsTitleAsDefault()
-        configureHistoryDateFieldAsDefault()
+    // MARK: Interface
+    public func setHistoryType(to type: HistoryType) {
+        self.historyType = type
     }
-    
-    private func configureNavTitleAndContentsTitleAsDefault() {
-        contentsTextView.textColor = .lightGray
-        self.title = "\(historyType?.rawValue ?? "") 기록"
-        titleLabel.text = "오늘의 \(historyType?.rawValue ?? "") 기록"
-    }
-    
-    private func configureHistoryDateFieldAsDefault() {
-        historyDateField.inputView = historyDateInputView
-        historyDateField.inputAccessoryView = historyDateDoneButtonToolbar
-        historyDateField.tintColor = .clear
-        historyDateField.textColor = .lightGray
-        historyDateField.text = "날짜를 선택해주세요."
-    }
-    
+ 
     // MARK: @IBAction
     @IBAction func presentPicker(_ sender: Any) {
         if #available(iOS 14, *) {
@@ -117,10 +100,27 @@ class RecordDetailViewController: UIViewController {
         historyDateField.text = historyDatePicker.date.FullTimeKoreanDateFormatted
         historyDateField.resignFirstResponder()
     }
+
+    // MARK: ViewLifeCycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configureNavTitleAndContentsTitleAsDefault()
+        configureHistoryDateFieldAsDefault()
+    }
     
-    // MARK: Interface
-    public func setHistoryType(to type: HistoryType) {
-        self.historyType = type
+    private func configureNavTitleAndContentsTitleAsDefault() {
+        contentsTextView.textColor = .lightGray
+        self.title = "\(historyType?.rawValue ?? "") 기록"
+        titleLabel.text = "오늘의 \(historyType?.rawValue ?? "") 기록"
+    }
+    
+    private func configureHistoryDateFieldAsDefault() {
+        historyDateField.inputView = historyDateInputView
+        historyDateField.inputAccessoryView = historyDateDoneButtonToolbar
+        historyDateField.tintColor = .clear
+        historyDateField.textColor = .lightGray
+        historyDateField.text = "날짜를 선택해주세요."
     }
 }
 

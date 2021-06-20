@@ -97,30 +97,35 @@ extension HistoryImagePickerViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let layout: UICollectionViewFlowLayout = collectionViewLayout as? UICollectionViewFlowLayout else { return CGSize.zero }
         
+        let expectedHorizonCellCount: CGFloat = 3
+        let expectedVerticalCellCount: CGFloat = 5
+        
+        let otherHorizonInset: CGFloat = calculateOtherHorizonInset(layout: layout, cellCount: expectedHorizonCellCount)
+        let otherVerticalInset: CGFloat = calculateOtherVerticalInset(layout: layout, cellCount: expectedHorizonCellCount)
+        
         let collectionViewWidth: CGFloat = collectionView.bounds.width
         let collectionViewHeight: CGFloat = collectionView.bounds.height + collectionView.bounds.origin.y
         
-        let otherHorizonInset: CGFloat = calculateOtherHorizonInset(layout: layout)
-        let otherVerticalInset: CGFloat = calculateOtherVerticalInset(layout: layout)
         
-        let expectedCellWidth: CGFloat = (collectionViewWidth - otherHorizonInset)  / 3
-        let exptectedCellHeigth: CGFloat = (collectionViewHeight - otherVerticalInset) / 5
+        
+        let expectedCellWidth: CGFloat = (collectionViewWidth - otherHorizonInset)  / expectedHorizonCellCount
+        let exptectedCellHeigth: CGFloat = (collectionViewHeight - otherVerticalInset) / expectedVerticalCellCount
         
         return CGSize(width: expectedCellWidth.rounded(.down), height: exptectedCellHeigth.rounded(.down))
     }
     
-    private func calculateOtherHorizonInset(layout: UICollectionViewFlowLayout) -> CGFloat {
+    private func calculateOtherHorizonInset(layout: UICollectionViewFlowLayout, cellCount: CGFloat) -> CGFloat {
         let sectionHorizonInset: CGFloat = layout.sectionInset.left + layout.sectionInset.right
-        let itemInset: CGFloat = layout.minimumInteritemSpacing
-        let lineInset: CGFloat = layout.minimumLineSpacing
-        let otherHorizonInset:CGFloat = sectionHorizonInset + itemInset + lineInset
+        let itemInset: CGFloat = layout.minimumInteritemSpacing * (cellCount - 1)
+        let otherHorizonInset: CGFloat = sectionHorizonInset + itemInset
         
         return otherHorizonInset
     }
     
-    private func calculateOtherVerticalInset(layout: UICollectionViewFlowLayout) -> CGFloat {
+    private func calculateOtherVerticalInset(layout: UICollectionViewFlowLayout, cellCount: CGFloat) -> CGFloat {
         let sectionVerticalInset: CGFloat = layout.sectionInset.top + layout.sectionInset.bottom
-        let otherVerticalInset: CGFloat = sectionVerticalInset
+        let lineInset: CGFloat = layout.minimumLineSpacing * (cellCount - 1)
+        let otherVerticalInset: CGFloat = sectionVerticalInset + lineInset
         
         return otherVerticalInset
     }
