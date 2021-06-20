@@ -41,6 +41,8 @@
 		461A1207263FE25000AC0F69 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466686752638017C00F77084 /* CoreDataManager.swift */; };
 		461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */; };
 		461E3129259CC9E900AE8011 /* WalkDateAndTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */; };
+		46292E40267F7C4200CCA05B /* SelectedPHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46292E3F267F7C4200CCA05B /* SelectedPHAsset.swift */; };
+		46292E41267F7C4200CCA05B /* SelectedPHAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46292E3F267F7C4200CCA05B /* SelectedPHAsset.swift */; };
 		464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */; };
 		464092CE258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */; };
 		464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */; };
@@ -207,6 +209,7 @@
 		461A11DE263ED1CC00AC0F69 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembershipRegistrationViewController.swift; sourceTree = "<group>"; };
 		461E3128259CC9E900AE8011 /* WalkDateAndTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkDateAndTimeViewController.swift; sourceTree = "<group>"; };
+		46292E3F267F7C4200CCA05B /* SelectedPHAsset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPHAsset.swift; sourceTree = "<group>"; };
 		464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTimeAndDistanceDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRecodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -419,6 +422,14 @@
 			path = TestClasses;
 			sourceTree = "<group>";
 		};
+		46292E3E267F7B4400CCA05B /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				46292E3F267F7C4200CCA05B /* SelectedPHAsset.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		464092DA258E2EE100C85524 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +545,7 @@
 		46A5749E25729B3D00B7ADF5 /* Record */ = {
 			isa = PBXGroup;
 			children = (
+				46292E3E267F7B4400CCA05B /* Class */,
 				4652F7232674F107009FC105 /* Enum */,
 				464092DA258E2EE100C85524 /* Cell */,
 				46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */,
@@ -944,6 +956,7 @@
 				46E1BA352616CB4400AAC75A /* EmailJoinViewController.swift in Sources */,
 				461A11DF263ED1CC00AC0F69 /* FileManager.swift in Sources */,
 				467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */,
+				46292E40267F7C4200CCA05B /* SelectedPHAsset.swift in Sources */,
 				461A11DC263E810C00AC0F69 /* CodeButtonTableViewCell.swift in Sources */,
 				461CAF9125B2FAB900339EFC /* MembershipRegistrationViewController.swift in Sources */,
 				465A57E4264E7CC4006683D5 /* NotificationName.swift in Sources */,
@@ -1033,6 +1046,7 @@
 				466492B925F372FC00903265 /* UIViewController+dateFormatter.swift in Sources */,
 				461A11E0263ED1CC00AC0F69 /* FileManager.swift in Sources */,
 				46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */,
+				46292E41267F7C4200CCA05B /* SelectedPHAsset.swift in Sources */,
 				461A11DD263E810C00AC0F69 /* CodeButtonTableViewCell.swift in Sources */,
 				466492BA25F372FC00903265 /* CircleWithShadowView.swift in Sources */,
 				465A57E5264E7CC4006683D5 /* NotificationName.swift in Sources */,

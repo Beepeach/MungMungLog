@@ -10,11 +10,21 @@ import Photos
 
 class HistoryImagePickerViewController: UIViewController {
     private let pickerImageCellIdentifier: String = "cell"
+    private var allUserImages: PHFetchResult<PHAsset>? = nil
+    private var selectedImages: [SelectedPHAsset] = []
     private var selectedImageCount: Int = 0
-    
     // MARK: @IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
-
+    
+    // MARK: @IBAction
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func selectImages(_ sender: Any) {
+        
+    }
+    
     // MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +33,10 @@ class HistoryImagePickerViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.allowsMultipleSelection = true
         configureToDefaultLayout()
+        
+        let allPhotoOptions: PHFetchOptions = PHFetchOptions()
+        allPhotoOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        allUserImages = PHAsset.fetchAssets(with: allPhotoOptions)
     }
     
     private func configureToDefaultLayout() {
@@ -33,22 +47,13 @@ class HistoryImagePickerViewController: UIViewController {
             flowLayout.sectionInset = UIEdgeInsets.zero
         }
     }
-    
-    // MARK: @IBAction
-    @IBAction func cancel(_ sender: Any) {
-        dismiss(animated: true)
-    }
-    
-    @IBAction func selectImages(_ sender: Any) {
-        
-    }
 }
 
 
 // MARK: - UICollectionViewDataSource
 extension HistoryImagePickerViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        return allUserImages?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -56,39 +61,53 @@ extension HistoryImagePickerViewController: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
+        guard let asset = allUserImages?.object(at: indexPath.row) else {
+            return UICollectionViewCell()
+        }
+        
+        PHCachingImageManager.default().requestImage(for: asset, targetSize: cell.imageView.bounds.size, contentMode: .aspectFill, options: nil, resultHandler: { image, _ in
+            guard let image = image else { return }
+            cell.imageView.image = image
+        })
+        
         return cell
     }
 }
 
 // MARK: - UICollectionViewDelegate
 extension HistoryImagePickerViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.selectedImageCount += 1
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let maxSelectedCount: Int = 5
         
-        guard let seletedCell = collectionView.cellForItem(at: indexPath) as? PickerImageCollectionViewCell else {
+        return selectedImageCount >= maxSelectedCount ? false : true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let selectedCell = collectionView.cellForItem(at: indexPath) as? PickerImageCollectionViewCell else {
             return
         }
         
-        seletedCell.layer.borderColor = UIColor.systemPink.cgColor
+        if let asset = allUserImages?.object(at: indexPath.item) {
+            selectedCell.layer.borderColor = UIColor.systemPink.cgColor
+            selectedCell.layer.borderWidth = 1
+            self.selectedImageCount += 1
+            
+            selectedImages.append(SelectedPHAsset(asset: asset, indexPath: indexPath))
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        self.selectedImageCount -= 1
-        
-        guard let seletedCell = collectionView.cellForItem(at: indexPath) as? PickerImageCollectionViewCell else {
+        guard let selectedCell = collectionView.cellForItem(at: indexPath) as? PickerImageCollectionViewCell else {
             return
         }
         
-        seletedCell.layer.borderColor = UIColor.black.cgColor
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        let maximumSelectedCount: Int = 5
-        if selectedImageCount >= maximumSelectedCount {
-            return false
+        if let deletedIndex = selectedImages.firstIndex(where: { $0.getIndexPath() == indexPath }) {
+            selectedCell.layer.borderColor = UIColor.black.cgColor
+            selectedCell.layer.borderWidth = .zero
+            
+            self.selectedImageCount -= 1
+            selectedImages.remove(at: deletedIndex)
         }
-        
-        return true
     }
 }
 
