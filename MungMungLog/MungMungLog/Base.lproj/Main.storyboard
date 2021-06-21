@@ -5339,15 +5339,39 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tzu-KL-oMP">
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                 </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sH-O8-wvf">
+                                                    <rect key="frame" x="103" y="5" width="20" height="20"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ey4-lY-vgd">
+                                                            <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Ey4-lY-vgd" firstAttribute="top" secondItem="2sH-O8-wvf" secondAttribute="top" id="4Gf-iQ-2qL"/>
+                                                        <constraint firstItem="Ey4-lY-vgd" firstAttribute="leading" secondItem="2sH-O8-wvf" secondAttribute="leading" id="EED-hn-OYa"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Ey4-lY-vgd" secondAttribute="trailing" id="EnY-ba-Trv"/>
+                                                        <constraint firstAttribute="width" constant="20" id="aba-vy-EHT"/>
+                                                        <constraint firstAttribute="height" constant="20" id="kMA-ww-ssU"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Ey4-lY-vgd" secondAttribute="bottom" id="tLX-uF-3kX"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Tzu-KL-oMP" firstAttribute="leading" secondItem="Fic-7Q-XAq" secondAttribute="leading" id="LTK-Ks-d0p"/>
+                                                <constraint firstItem="2sH-O8-wvf" firstAttribute="top" secondItem="Fic-7Q-XAq" secondAttribute="top" constant="5" id="Nnu-gy-TQf"/>
                                                 <constraint firstAttribute="bottom" secondItem="Tzu-KL-oMP" secondAttribute="bottom" id="QbZ-lk-U5P"/>
+                                                <constraint firstAttribute="trailing" secondItem="2sH-O8-wvf" secondAttribute="trailing" constant="5" id="SDJ-QE-7vx"/>
                                                 <constraint firstItem="Tzu-KL-oMP" firstAttribute="top" secondItem="Fic-7Q-XAq" secondAttribute="top" id="mfI-iH-RFz"/>
                                                 <constraint firstAttribute="trailing" secondItem="Tzu-KL-oMP" secondAttribute="trailing" id="xd6-P5-P2H"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <connections>
+                                            <outlet property="countLable" destination="Ey4-lY-vgd" id="Bd0-DC-BTw"/>
+                                            <outlet property="imageCountContainerView" destination="2sH-O8-wvf" id="I3b-zz-fc7"/>
                                             <outlet property="imageView" destination="Tzu-KL-oMP" id="fMo-4g-tFH"/>
                                         </connections>
                                     </collectionViewCell>
@@ -5381,7 +5405,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lh-0j-OAv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9394" y="-2270"/>
+            <point key="canvasLocation" x="9393.925233644859" y="-2270.4103671706266"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mUH-v2-khH">

@@ -82,6 +82,7 @@ extension HistoryImagePickerViewController: UICollectionViewDelegate {
         return selectedImageCount >= maxSelectedCount ? false : true
     }
     
+    // TODO: 어떻게해야 선택된 Label을 제대로 표현할 수 있을까???
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let selectedCell = collectionView.cellForItem(at: indexPath) as? PickerImageCollectionViewCell else {
             return
@@ -93,6 +94,10 @@ extension HistoryImagePickerViewController: UICollectionViewDelegate {
             self.selectedImageCount += 1
             
             selectedImages.append(SelectedPHAsset(asset: asset, indexPath: indexPath))
+            
+            selectedCell.imageCountContainerView.backgroundColor = .systemTeal
+            selectedCell.imageCountContainerView.isHidden = false
+            selectedCell.countLable.text = "\(selectedImageCount)"
         }
     }
     
@@ -107,6 +112,9 @@ extension HistoryImagePickerViewController: UICollectionViewDelegate {
             
             self.selectedImageCount -= 1
             selectedImages.remove(at: deletedIndex)
+            
+            selectedCell.imageCountContainerView.backgroundColor = .clear
+            selectedCell.imageCountContainerView.isHidden = true
         }
     }
 }
