@@ -5395,7 +5395,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="선택" id="poP-Bm-euj">
                             <connections>
-                                <action selector="selectImages:" destination="a6s-lT-9Y8" id="llQ-nC-1ZT"/>
+                                <segue destination="RRr-hD-sDH" kind="unwind" unwindAction="unwindToRecordDetailVC:" id="B3R-kD-jr8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -5404,6 +5404,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lh-0j-OAv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="RRr-hD-sDH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="9393.925233644859" y="-2270.4103671706266"/>
         </scene>

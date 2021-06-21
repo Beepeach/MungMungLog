@@ -18,3 +18,8 @@ extension Notification.Name {
 extension Notification.Name {
     static let willEndRecodingWalkRecord = Notification.Name("willEndRecodingWalkRecord")
 }
+
+// 기록상세 화면에서 이미지를 선택하고 확인을 누를때
+extension Notification.Name {
+    static let didSelectHistoryImage = Self("didSelectHistoryImage")
+}

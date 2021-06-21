@@ -13,16 +13,25 @@ class HistoryImagePickerViewController: UIViewController {
     private var allUserImages: PHFetchResult<PHAsset>? = nil
     private var selectedImages: [SelectedPHAsset] = []
     private var selectedImageCount: Int = 0
+    
     // MARK: @IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    // MARK: Method
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let recordDetailVC = segue.destination as? RecordDetailViewController else { return }
+        
+        let imageCellSize: CGSize = recordDetailVC.getImageCellSize()
+        let convertedImages: [UIImage] = SelectedAssetConverter().convertToImage(from: selectedImages, size: imageCellSize)
+      
+        recordDetailVC.setHistoryImages(images: convertedImages)
+        
+        NotificationCenter.default.post(name: .didSelectHistoryImage, object: nil)
+    }
     
     // MARK: @IBAction
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true)
-    }
-    
-    @IBAction func selectImages(_ sender: Any) {
-        
     }
     
     // MARK: ViewLifeCycle

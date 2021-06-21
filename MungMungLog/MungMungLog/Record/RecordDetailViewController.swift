@@ -8,15 +8,17 @@
 import UIKit
 import PhotosUI
 
+// TODO: - ScrollView로 되어있는 화면을 TableView로 바꾸자.
+// TODO: - 이미지를 다시 선택하면 이전 이미지를 없애는게 좋을까? 추가하는게 좋을까?
 class RecordDetailViewController: UIViewController {
-    // TODO: - ScrollView로 되어있는 화면을 TableView로 바꾸자.
     private enum PhotoCollectionViewIdentifier: String {
         case pickerPresentingButtonCell
         case photoCell
     }
     
+    // MARK: Properties
     private var historyType: HistoryType?
-    private var historyPhotos: [UIImage] = []
+    private var historyImages: [UIImage] = []
     private var itemProviders: [NSItemProvider] = []
     
     // MARK: @IBOutlet
@@ -31,8 +33,23 @@ class RecordDetailViewController: UIViewController {
     public func setHistoryType(to type: HistoryType) {
         self.historyType = type
     }
+    
+    public func setHistoryImages(images: [UIImage]) {
+        self.historyImages = images
+    }
+    
+    public func getImageCellSize() -> CGSize {
+        if let layout = photoCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            return layout.itemSize
+        }
+        
+        return .zero
+    }
  
     // MARK: @IBAction
+    @IBAction func unwindToRecordDetailVC (_ unwindSegue: UIStoryboardSegue) {
+    }
+    
     @IBAction func presentPicker(_ sender: Any) {
         if #available(iOS 14, *) {
             let pickerConfiguration: PHPickerConfiguration = creatingPHPickerConfiguration()
@@ -107,6 +124,10 @@ class RecordDetailViewController: UIViewController {
         
         configureNavTitleAndContentsTitleAsDefault()
         configureHistoryDateFieldAsDefault()
+        
+        NotificationCenter.default.addObserver(forName: .didSelectHistoryImage, object: nil, queue: .main) { _ in
+            self.photoCollectionView.reloadData()
+        }
     }
     
     private func configureNavTitleAndContentsTitleAsDefault() {
@@ -133,7 +154,7 @@ extension RecordDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return section == 0 ? 1 : historyPhotos.count
+        return section == 0 ? 1 : historyImages.count
         
     }
     
@@ -155,7 +176,7 @@ extension RecordDetailViewController: UICollectionViewDataSource {
         guard let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewIdentifier.photoCell.rawValue, for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell() }
         
         addDeselectPhotoButton(photoCell: photoCell, indexPath: indexPath)
-        photoCell.photoImageView.image = historyPhotos[indexPath.row]
+        photoCell.photoImageView.image = historyImages[indexPath.row]
         
         return photoCell
     }
@@ -166,7 +187,7 @@ extension RecordDetailViewController: UICollectionViewDataSource {
     }
     
     @objc private func deselectTargetPhoto(sender: UIButton) {
-        historyPhotos.remove(at: sender.tag)
+        historyImages.remove(at: sender.tag)
         photoCollectionView.reloadData()
     }
 }
@@ -216,7 +237,7 @@ extension RecordDetailViewController: PHPickerViewControllerDelegate {
         itemProviders = results.map(\.itemProvider)
         itemProviders.forEach { itemProvider in
             if itemProvider.canLoadObject(ofClass: UIImage.self) {
-                appendInHistoryPhotos(itemProvider: itemProvider)
+                appendInHistoryImages(itemProvider: itemProvider)
             }
         }
         
@@ -225,12 +246,12 @@ extension RecordDetailViewController: PHPickerViewControllerDelegate {
         }
     }
     
-    private func appendInHistoryPhotos(itemProvider: NSItemProvider) {
+    private func appendInHistoryImages(itemProvider: NSItemProvider) {
         itemProvider.loadObject(ofClass: UIImage.self) { image, error in
             guard let image = image as? UIImage else {
                 return
             }
-            self.historyPhotos.append(image)
+            self.historyImages.append(image)
         }
     }
 }
