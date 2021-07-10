@@ -113,6 +113,14 @@
 		468FCF7C264C1043001DB81E /* WalkRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */; };
 		468FCF7E264C2581001DB81E /* WalkRecordVCUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FCF7D264C2581001DB81E /* WalkRecordVCUnitTests.swift */; };
 		468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
+		4693214F269861740052E74E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693214E269861740052E74E /* CalendarViewController.swift */; };
+		46932150269861740052E74E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693214E269861740052E74E /* CalendarViewController.swift */; };
+		46932153269861D10052E74E /* CalendarViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46932152269861D10052E74E /* CalendarViewControllerTests.swift */; };
+		4693215726998C9B0052E74E /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693215626998C9B0052E74E /* CalendarHelper.swift */; };
+		4693215826998C9B0052E74E /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693215626998C9B0052E74E /* CalendarHelper.swift */; };
+		4693215C2699A8740052E74E /* MonthChangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693215B2699A8740052E74E /* MonthChangerTests.swift */; };
+		4693215E2699A8C00052E74E /* MonthChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693215D2699A8C00052E74E /* MonthChanger.swift */; };
+		4693215F2699A8C00052E74E /* MonthChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693215D2699A8C00052E74E /* MonthChanger.swift */; };
 		4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
 		4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
 		4694977626184F520049D7FE /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694977526184F520049D7FE /* ApiModel.swift */; };
@@ -244,6 +252,11 @@
 		468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordViewController.swift; sourceTree = "<group>"; };
 		468FCF7D264C2581001DB81E /* WalkRecordVCUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordVCUnitTests.swift; sourceTree = "<group>"; };
 		468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingProfileViewController.swift; sourceTree = "<group>"; };
+		4693214E269861740052E74E /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		46932152269861D10052E74E /* CalendarViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewControllerTests.swift; sourceTree = "<group>"; };
+		4693215626998C9B0052E74E /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		4693215B2699A8740052E74E /* MonthChangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthChangerTests.swift; sourceTree = "<group>"; };
+		4693215D2699A8C00052E74E /* MonthChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthChanger.swift; sourceTree = "<group>"; };
 		4694976D26184E6D0049D7FE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		4694977526184F520049D7FE /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		469497A126186A200049D7FE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -333,6 +346,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4602C3B32688BD0700F53373 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				4693215526998BD20052E74E /* Stuct */,
+				4693215426998BCD0052E74E /* Cell */,
+				4693214E269861740052E74E /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 		4605D1D425CECC4F001C6815 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +427,7 @@
 				46A025A92577D1530022BDBF /* Home */,
 				46A5749E25729B3D00B7ADF5 /* Record */,
 				46E69ACC25806FC200019FD9 /* Walk */,
+				4602C3B32688BD0700F53373 /* Calendar */,
 				467EF92C25F3C47B00AC8F88 /* Configuration */,
 				460EB00C2557F76B00027376 /* AppDelegate.swift */,
 				460EB00E2557F76B00027376 /* SceneDelegate.swift */,
@@ -503,6 +527,31 @@
 				466D8DB62638086600B356F9 /* OptionListViewController.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		46932151269861AF0052E74E /* CalendarTab */ = {
+			isa = PBXGroup;
+			children = (
+				46932152269861D10052E74E /* CalendarViewControllerTests.swift */,
+				4693215B2699A8740052E74E /* MonthChangerTests.swift */,
+			);
+			path = CalendarTab;
+			sourceTree = "<group>";
+		};
+		4693215426998BCD0052E74E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4693215526998BD20052E74E /* Stuct */ = {
+			isa = PBXGroup;
+			children = (
+				4693215626998C9B0052E74E /* CalendarHelper.swift */,
+				4693215D2699A8C00052E74E /* MonthChanger.swift */,
+			);
+			path = Stuct;
 			sourceTree = "<group>";
 		};
 		4694976C26184E560049D7FE /* API */ = {
@@ -653,6 +702,7 @@
 		46F45147262715F00025B915 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				46932151269861AF0052E74E /* CalendarTab */,
 				46DA9021264C022100CCFB6A /* WalkTab */,
 				46F45148262716040025B915 /* PetDtoTests.swift */,
 				46F4516C262722310025B915 /* FamilyDtoTests.swift */,
@@ -968,6 +1018,7 @@
 				460C4EAE25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */,
 				466D8DB72638086600B356F9 /* OptionListViewController.swift in Sources */,
+				4693215E2699A8C00052E74E /* MonthChanger.swift in Sources */,
 				46292E432680639C00CCA05B /* SelectedAssetConverter.swift in Sources */,
 				460C4EA725F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				4652F75226772AC6009FC105 /* HistoryImagePickerViewController.swift in Sources */,
@@ -975,6 +1026,7 @@
 				4656860D25766DCE00088513 /* WalkRecordEndingViewController.swift in Sources */,
 				46E69AC9258069FB00019FD9 /* WalkRecordEditingViewController.swift in Sources */,
 				460C4ED125F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */,
+				4693214F269861740052E74E /* CalendarViewController.swift in Sources */,
 				4605D1D625CECC69001C6815 /* Breeds.swift in Sources */,
 				468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */,
 				46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */,
@@ -1002,6 +1054,7 @@
 				46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */,
 				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
 				4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */,
+				4693215726998C9B0052E74E /* CalendarHelper.swift in Sources */,
 				46F450BB2625EDCE0025B915 /* FamilyModel.swift in Sources */,
 				46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */,
 				460C4EDB25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
@@ -1023,6 +1076,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46932153269861D10052E74E /* CalendarViewControllerTests.swift in Sources */,
 				468FCF7E264C2581001DB81E /* WalkRecordVCUnitTests.swift in Sources */,
 				4615F423263C2F310099E8CF /* MockSession.swift in Sources */,
 				46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */,
@@ -1031,6 +1085,7 @@
 				468FCF79264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift in Sources */,
 				46F45133262713340025B915 /* CommonDecodableTests.swift in Sources */,
 				46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */,
+				4693215C2699A8740052E74E /* MonthChangerTests.swift in Sources */,
 				46F45149262716040025B915 /* PetDtoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1059,6 +1114,7 @@
 				466492BB25F372FC00903265 /* MembershipRegistrationViewController.swift in Sources */,
 				460C4EAF25F4B8FC00D4E58D /* IntroViewController.swift in Sources */,
 				466D8DB82638086600B356F9 /* OptionListViewController.swift in Sources */,
+				4693215F2699A8C00052E74E /* MonthChanger.swift in Sources */,
 				46292E442680639C00CCA05B /* SelectedAssetConverter.swift in Sources */,
 				466492BC25F372FC00903265 /* AppDelegate.swift in Sources */,
 				4652F75326772AC6009FC105 /* HistoryImagePickerViewController.swift in Sources */,
@@ -1066,6 +1122,7 @@
 				460C4EA825F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				466492BD25F372FC00903265 /* WalkRecordEndingViewController.swift in Sources */,
 				466492BE25F372FC00903265 /* WalkRecordEditingViewController.swift in Sources */,
+				46932150269861740052E74E /* CalendarViewController.swift in Sources */,
 				460C4ED225F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */,
 				466492BF25F372FC00903265 /* Breeds.swift in Sources */,
 				466492C225F372FC00903265 /* WalkRecordStartingViewController.swift in Sources */,
@@ -1093,6 +1150,7 @@
 				467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */,
 				466492CC25F372FC00903265 /* PartialRoundedView.swift in Sources */,
 				466492CD25F372FC00903265 /* RecordContentsCollectionViewCell.swift in Sources */,
+				4693215826998C9B0052E74E /* CalendarHelper.swift in Sources */,
 				46F450BC2625EDCE0025B915 /* FamilyModel.swift in Sources */,
 				4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */,
 				466492CE25F372FC00903265 /* RegistrationGuideViewController.swift in Sources */,
@@ -1370,7 +1428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
 				INFOPLIST_FILE = MungMungLog/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1393,7 +1451,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
 				INFOPLIST_FILE = MungMungLog/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
