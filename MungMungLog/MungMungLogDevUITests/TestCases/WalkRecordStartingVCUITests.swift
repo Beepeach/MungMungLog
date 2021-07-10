@@ -24,12 +24,12 @@ class WalkRecordStartingVCUITests: XCTestCase {
     }
 
     //HomeVC에서 검사를 해야하나??
-    func testViewController_whenTapTapbar_moveToWalkRecordSTartingViewController() {
-        app.tabBars.buttons.element(boundBy: 1).tap()
-        
-//        let tabBar = app.tabBars["산책"].firstMatch
-        let startingWalk = app.staticTexts["산책 시작"].firstMatch
-        
-        XCTAssertTrue(startingWalk.waitForExistence(timeout: 30))
-    }
+//    func testViewController_whenTapTapbar_moveToWalkRecordSTartingViewController() {
+//        app.tabBars.buttons.element(boundBy: 1).tap()
+//        
+////        let tabBar = app.tabBars["산책"].firstMatch
+//        let startingWalk = app.staticTexts["산책 시작"].firstMatch
+//        
+//        XCTAssertTrue(startingWalk.waitForExistence(timeout: 30))
+//    }
 }

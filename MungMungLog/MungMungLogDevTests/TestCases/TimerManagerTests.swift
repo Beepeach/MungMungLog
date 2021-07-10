@@ -25,20 +25,20 @@ class TimerManagerTests: XCTestCase {
     
     func testInit_whenInputTimeCountPrams_timeCountIsCollectTime() {
         let randomNum: Int = Int.random(in: 1 ... 1000)
-        sut = TimerManager(timeCount: randomNum)
+        sut = TimerManager(timeCount: Double(randomNum))
         
-        XCTAssertEqual(sut.timeCount, randomNum)
+        XCTAssertEqual(sut.timeCount, Double(randomNum))
     }
     
     func testResetTimeCount_timeCountIsZero() {
-        sut.timeCount = Int.random(in: 1 ... 1000)
+        sut.timeCount = Double(Int.random(in: 1 ... 1000))
         sut.resetTimeCount()
         
         XCTAssertEqual(sut.timeCount, 0)
     }
     
     func testReturnTimeCount_returnCollectTimeCount() {
-        sut.timeCount = Int.random(in: 1 ... 1000)
+        sut.timeCount = Double(Int.random(in: 1 ... 1000))
         let returnTimeCount = sut.returnTimeCount()
         
         XCTAssertEqual(sut.timeCount, returnTimeCount)
@@ -65,10 +65,10 @@ class TimerManagerTests: XCTestCase {
         let randomBackgroundTimeCount: Int = Int.random(in: 1 ... 1000)
         let totalTimeCount: Int = randomStartTimeCount + randomBackgroundTimeCount
         
-        sut.timeCount = randomStartTimeCount
-        sut.addBackgroundTime(time: randomBackgroundTimeCount)
+        sut.timeCount = Double(randomStartTimeCount)
+        sut.addBackgroundTime(time: Double(randomBackgroundTimeCount))
         
-        XCTAssertEqual(sut.timeCount, totalTimeCount)
+        XCTAssertEqual(sut.timeCount, Double(totalTimeCount))
     }
     
 }

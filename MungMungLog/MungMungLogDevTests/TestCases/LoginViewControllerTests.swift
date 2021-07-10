@@ -14,7 +14,7 @@ class LoginViewControllerTests: XCTestCase {
 
     override func setUpWithError() throws {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = (storyboard.instantiateViewController(identifier: "LoginViewController") as! LoginViewController)
+        sut = (storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController)
         
         sut.loadViewIfNeeded()
     }

@@ -13,7 +13,7 @@ class WalkRecordStartingVCUnitTests: XCTestCase {
     
     override func setUpWithError() throws {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        sut = (storyboard.instantiateViewController(identifier: "WalkRecordStartingViewController") as! WalkRecordStartingViewController)
+        sut = (storyboard.instantiateViewController(withIdentifier: "WalkRecordStartingViewController") as! WalkRecordStartingViewController)
         
         sut.loadViewIfNeeded()
     }

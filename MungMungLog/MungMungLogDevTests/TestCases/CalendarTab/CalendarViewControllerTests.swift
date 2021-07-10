@@ -14,7 +14,7 @@ class CalendarViewControllerTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: <#T##Bundle?#>)
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     }
 
     override func tearDownWithError() throws {
