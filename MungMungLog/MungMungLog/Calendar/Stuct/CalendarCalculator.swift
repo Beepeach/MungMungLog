@@ -37,4 +37,11 @@ struct CalendarCalculator: CalendarHelper {
         
         return firstDate
     }
+    
+    // 21.07.10 -> 7(sat)
+    public func calculateWeekday(date: Date) -> Int {
+        let weekday: Int = calendar.component(.weekday, from: date)
+        
+        return weekday
+    }
 }

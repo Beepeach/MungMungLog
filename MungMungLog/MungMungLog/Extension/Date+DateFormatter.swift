@@ -71,7 +71,7 @@ extension Date {
         return formatter
     }()
     
-    // Date -> 7월
+    // Date -> 07월
     public var monthFormatted: String {
         return Date.monthFormatter.string(from: self)
     }
@@ -82,5 +82,4 @@ extension Date {
         
         return formatter
     }()
-    
 }

@@ -61,5 +61,13 @@ class CalendarCalculatorTests: XCTestCase {
         
         XCTAssertEqual(date20210701, firstDate)
     }
+    
+    func test_calculateWeekday_whenCalled_shoudReturnWeekday() {
+        let date20210710: Date = givenCretaDate(year: 2021, month: 7, day: 10)
+        
+        let weekday: Int = sut.calculateWeekday(date: date20210710)
+        
+        XCTAssertEqual(7, weekday)
+    }
 
 }
