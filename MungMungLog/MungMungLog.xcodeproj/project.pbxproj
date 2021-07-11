@@ -48,6 +48,7 @@
 		463272C3269AD20900B18108 /* CalendarCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463272C2269AD20900B18108 /* CalendarCalculatorTests.swift */; };
 		463272C5269AD27800B18108 /* CalendarCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463272C4269AD27800B18108 /* CalendarCalculator.swift */; };
 		463272C6269AD27800B18108 /* CalendarCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463272C4269AD27800B18108 /* CalendarCalculator.swift */; };
+		463272CA269AFB0B00B18108 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463272C9269AFB0B00B18108 /* DateTests.swift */; };
 		464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */; };
 		464092CE258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */; };
 		464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */; };
@@ -226,6 +227,7 @@
 		46292E422680639C00CCA05B /* SelectedAssetConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAssetConverter.swift; sourceTree = "<group>"; };
 		463272C2269AD20900B18108 /* CalendarCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCalculatorTests.swift; sourceTree = "<group>"; };
 		463272C4269AD27800B18108 /* CalendarCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCalculator.swift; sourceTree = "<group>"; };
+		463272C9269AFB0B00B18108 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		464092CA258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkTimeAndDistanceDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRecodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		464092DB258E2EF700C85524 /* RecordItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 		4602C3B32688BD0700F53373 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				463272C7269AF95100B18108 /* Extension */,
 				4693215526998BD20052E74E /* Stuct */,
 				4693215426998BCD0052E74E /* Cell */,
 				4693214E269861740052E74E /* CalendarViewController.swift */,
@@ -461,6 +464,21 @@
 				46292E422680639C00CCA05B /* SelectedAssetConverter.swift */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		463272C7269AF95100B18108 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		463272C8269AFAEB00B18108 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				463272C9269AFB0B00B18108 /* DateTests.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		464092DA258E2EE100C85524 /* Cell */ = {
@@ -709,6 +727,7 @@
 		46F45147262715F00025B915 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				463272C8269AFAEB00B18108 /* Extension */,
 				46932151269861AF0052E74E /* CalendarTab */,
 				46DA9021264C022100CCFB6A /* WalkTab */,
 				46F45148262716040025B915 /* PetDtoTests.swift */,
@@ -1094,6 +1113,7 @@
 				463272C3269AD20900B18108 /* CalendarCalculatorTests.swift in Sources */,
 				46F45133262713340025B915 /* CommonDecodableTests.swift in Sources */,
 				46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */,
+				463272CA269AFB0B00B18108 /* DateTests.swift in Sources */,
 				4693215C2699A8740052E74E /* MonthChangerTests.swift in Sources */,
 				46F45149262716040025B915 /* PetDtoTests.swift in Sources */,
 			);

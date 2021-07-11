@@ -17,6 +17,11 @@ extension DateFormatter {
 }
 
 extension Date {
+    // 5월 19일
+    public var monthAndDayFormatted: String {
+        return Date.monthAndDayFormatter.string(from: self)
+    }
+    
     private static let monthAndDayFormatter: DateFormatter = {
         let formatter: DateFormatter = DateFormatter()
         formatter.locale = Locale(identifier: "ko_kr")
@@ -25,9 +30,11 @@ extension Date {
         return formatter
     }()
     
-    // 5월 19일
-    public var monthAndDayFormatted: String {
-        return Date.monthAndDayFormatter.string(from: self)
+
+    
+    // 17시 17분
+    public var hourAndMinuteFormatted: String {
+        return Date.hourAndMinuteFormatter.string(from: self)
     }
     
     private static let hourAndMinuteFormatter: DateFormatter = {
@@ -38,9 +45,11 @@ extension Date {
         return formatter
     }()
     
-    // 17시 17분
-    public var hourAndMinuteFormatted: String {
-        return Date.hourAndMinuteFormatter.string(from: self)
+
+    
+    // 2021년 5월 19일 17시 17분
+    public var FullTimeKoreanDateFormatted: String {
+        return Date.FullTimeKoreanDateFormatter.string(from: self)
     }
     
     private static let FullTimeKoreanDateFormatter: DateFormatter = {
@@ -50,8 +59,28 @@ extension Date {
         return formatter
     }()
     
-    // 2021년 5월 19일 17시 17분
-    public var FullTimeKoreanDateFormatted: String {
-        return Date.FullTimeKoreanDateFormatter.string(from: self)
+    // Date -> 2021년
+    public var yearFormatted: String {
+        return Date.yearFormatter.string(from: self)
     }
+    
+    private static let yearFormatter: DateFormatter = {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateFormat = "yyyy년"
+        
+        return formatter
+    }()
+    
+    // Date -> 7월
+    public var monthFormatted: String {
+        return Date.monthFormatter.string(from: self)
+    }
+    
+    private static let monthFormatter: DateFormatter = {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.dateFormat = "MM월"
+        
+        return formatter
+    }()
+    
 }
