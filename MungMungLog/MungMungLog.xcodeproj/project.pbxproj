@@ -139,6 +139,8 @@
 		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
 		46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
 		46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */; };
+		46CD1EA0269D941000EECA2D /* DaySquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */; };
+		46CD1EA1269D941000EECA2D /* DaySquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */; };
 		46D1AF5D2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */; };
 		46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */; };
 		46D4DF1E262D57790016252A /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
@@ -279,6 +281,7 @@
 		46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingViewController.swift; sourceTree = "<group>"; };
 		46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		46C4B23B263C7E0200431973 /* MungMungLogVer2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLogVer2.xcdatamodel; sourceTree = "<group>"; };
+		46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySquareCollectionViewCell.swift; sourceTree = "<group>"; };
 		46D0EFFF2619B3A200F117B2 /* MungMungLog.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MungMungLog.entitlements; sourceTree = "<group>"; };
 		46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
@@ -563,6 +566,7 @@
 		4693215426998BCD0052E74E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1053,6 +1057,7 @@
 				460C4ED125F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */,
 				4693214F269861740052E74E /* CalendarViewController.swift in Sources */,
 				4605D1D625CECC69001C6815 /* Breeds.swift in Sources */,
+				46CD1EA0269D941000EECA2D /* DaySquareCollectionViewCell.swift in Sources */,
 				468FFA0F25B037E7005E1E35 /* EditingProfileViewController.swift in Sources */,
 				46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */,
 				468D19C026539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */,
@@ -1154,6 +1159,7 @@
 				466492BE25F372FC00903265 /* WalkRecordEditingViewController.swift in Sources */,
 				46932150269861740052E74E /* CalendarViewController.swift in Sources */,
 				460C4ED225F51C9D00D4E58D /* FamilyConfigViewController.swift in Sources */,
+				46CD1EA1269D941000EECA2D /* DaySquareCollectionViewCell.swift in Sources */,
 				466492BF25F372FC00903265 /* Breeds.swift in Sources */,
 				466492C225F372FC00903265 /* WalkRecordStartingViewController.swift in Sources */,
 				468D19C126539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */,
