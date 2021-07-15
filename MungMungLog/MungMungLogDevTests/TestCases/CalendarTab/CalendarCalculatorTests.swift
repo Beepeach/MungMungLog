@@ -52,6 +52,22 @@ class CalendarCalculatorTests: XCTestCase {
         
         XCTAssertEqual(10, day)
     }
+    
+    func test_extractYearComponent_shouldReturnYear() {
+        let date20210710: Date = givenCretaDate(year: 2021, month: 07, day: 10)
+        
+        let year: Int = sut.extractYearComponent(date: date20210710).year!
+        
+        XCTAssertEqual(2021, year)
+    }
+    
+    func test_extractMonthComponent_shouldReturnMonth() {
+        let date20210710: Date = givenCretaDate(year: 2021, month: 07, day: 10)
+        
+        let month: Int = sut.extractMonthComponent(date: date20210710).month!
+        
+        XCTAssertEqual(7, month)
+    }
 
     func test_createFirstDateOfMonth_whenCalled_shouldReturnFirstdateOfMonth() {
         let date20210701: Date = givenCretaDate(year: 2021, month: 07, day: 01)

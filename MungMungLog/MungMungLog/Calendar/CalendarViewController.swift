@@ -24,7 +24,7 @@ class CalendarViewController: UIViewController {
         selectedDate = MonthChanger().minusOneMonth(date: selectedDate)
         createMonthCalendar()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +65,7 @@ class CalendarViewController: UIViewController {
     private func configureMonthLabel() {
         monthLabel.text = selectedDate.yearFormatted + "" + selectedDate.monthFormatted
     }
-
+    
     public func getSelectedDate() -> Date {
         return self.selectedDate
     }
@@ -89,6 +89,17 @@ extension CalendarViewController: UICollectionViewDataSource {
         
         cell.dayOfMonthLabel.text = daySquares[indexPath.item]
         
+        guard let year: Int = CalendarCalculator().extractYearComponent(date: selectedDate).year,
+              let month: Int = CalendarCalculator().extractMonthComponent(date: selectedDate).month else {
+            return cell
+        }
+        
+        
+        if let day: Int = Int(daySquares[indexPath.item]) {
+            let date: Date = DateGenerator().create(year: year, month: month, day: day) ?? Date()
+            cell.setDate(date: date)
+        }
+        
         return cell
     }
 }
@@ -104,6 +115,6 @@ extension CalendarViewController: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.item)
+        guard let cell = collectionView.cellForItem(at: indexPath) as? DaySquareCollectionViewCell else { return }
     }
 }

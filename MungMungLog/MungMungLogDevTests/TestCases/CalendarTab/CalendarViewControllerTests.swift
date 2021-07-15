@@ -72,6 +72,7 @@ class CalendarViewControllerTests: XCTestCase {
     
     func givenDate20210701() -> Date {
         var datecomponent: DateComponents = DateComponents()
+        datecomponent.timeZone = TimeZone(abbreviation: "UTC")
         datecomponent.year = 2021
         datecomponent.month = 7
         
@@ -96,5 +97,14 @@ class CalendarViewControllerTests: XCTestCase {
         sut.setSelectedDate(date: date)
         
         XCTAssertTrue(sut.collectionView.delegate!.collectionView!(sut.collectionView, shouldSelectItemAt: indexPath))
+    }
+    
+    func test_cell_whenInit_shouldHaveCollectDate() {
+        let date: Date = givenDate20210701()
+        let indexPath: IndexPath = IndexPath(item: 4, section: 0)
+        
+        let cell: DaySquareCollectionViewCell = sut.collectionView.dataSource?.collectionView(sut.collectionView, cellForItemAt: indexPath) as! DaySquareCollectionViewCell
+        
+        XCTAssertEqual(date, cell.getDate())
     }
 }
