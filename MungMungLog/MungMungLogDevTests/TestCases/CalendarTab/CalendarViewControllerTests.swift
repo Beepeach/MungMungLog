@@ -24,6 +24,14 @@ class CalendarViewControllerTests: XCTestCase {
         try super.tearDownWithError()
     }
     
+    func test_selectedDate_shouldSetAndReturn() {
+        let date: Date = Date()
+        
+        sut.setSelectedDate(date: date)
+        
+        XCTAssertEqual(date, sut.getSelectedDate())
+    }
+    
     func test_datasoure_whenViewDidLoad_shouldSet() {
         sut.viewDidLoad()
         XCTAssertTrue(sut.collectionView.dataSource === sut)
@@ -60,5 +68,33 @@ class CalendarViewControllerTests: XCTestCase {
         let afterDate: Date = sut.getSelectedDate()
         
         XCTAssertLessThan(afterDate, beforeDate)
+    }
+    
+    func givenDate20210701() -> Date {
+        var datecomponent: DateComponents = DateComponents()
+        datecomponent.year = 2021
+        datecomponent.month = 7
+        
+        let date: Date = Calendar.current.date(from: datecomponent
+        )!
+        
+        return date
+    }
+    
+    func test_cell_whenDateisEmpty_shouldNotSelected() {
+        let date: Date = givenDate20210701()
+        let indexPath: IndexPath = IndexPath(item: 0, section: 0)
+        sut.setSelectedDate(date: date)
+        
+        XCTAssertFalse(sut.collectionView.delegate!.collectionView!(sut.collectionView, shouldSelectItemAt: indexPath))
+    }
+    
+    func test_cell_whenDateisVaild_shouldSelected() {
+        let date: Date = givenDate20210701()
+        let indexPath: IndexPath = IndexPath(item: 5, section: 0)
+        
+        sut.setSelectedDate(date: date)
+        
+        XCTAssertTrue(sut.collectionView.delegate!.collectionView!(sut.collectionView, shouldSelectItemAt: indexPath))
     }
 }

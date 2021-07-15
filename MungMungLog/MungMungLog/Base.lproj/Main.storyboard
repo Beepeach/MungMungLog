@@ -997,70 +997,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xva-jK-dKi">
-                                <rect key="frame" x="0.0" y="157.33333333333331" width="428" height="685.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="lRb-2L-WBN">
-                                    <size key="itemSize" width="300" height="261"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DaySquareCollectionViewCell" id="3DD-fg-FYe" customClass="DaySquareCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
-                                        <rect key="frame" x="64" y="0.0" width="300" height="261"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="H6Y-UC-w0b">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="261"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFZ-r9-2l3">
-                                                    <rect key="frame" x="145" y="52.666666666666664" width="10.333333333333343" height="25.333333333333336"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-l3-3on">
-                                                    <rect key="frame" x="8" y="86" width="284" height="167"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DuN-tW-QCn">
-                                                        <size key="itemSize" width="128" height="128"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <cells>
-                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="v7b-FY-ozg">
-                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AZp-pw-DCs">
-                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                                                <autoresizingMask key="autoresizingMask"/>
-                                                            </collectionViewCellContentView>
-                                                        </collectionViewCell>
-                                                    </cells>
-                                                </collectionView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="fFZ-r9-2l3" firstAttribute="centerY" secondItem="H6Y-UC-w0b" secondAttribute="centerY" multiplier="0.5" id="211-W4-caj"/>
-                                                <constraint firstItem="WKv-l3-3on" firstAttribute="top" secondItem="fFZ-r9-2l3" secondAttribute="bottom" constant="8" id="CXw-bh-bXZ"/>
-                                                <constraint firstAttribute="trailing" secondItem="WKv-l3-3on" secondAttribute="trailing" constant="8" id="NP0-pl-YeR"/>
-                                                <constraint firstItem="fFZ-r9-2l3" firstAttribute="centerX" secondItem="H6Y-UC-w0b" secondAttribute="centerX" id="U1c-nP-sC5"/>
-                                                <constraint firstAttribute="bottom" secondItem="WKv-l3-3on" secondAttribute="bottom" constant="8" id="bUQ-Ew-7XJ"/>
-                                                <constraint firstItem="WKv-l3-3on" firstAttribute="leading" secondItem="H6Y-UC-w0b" secondAttribute="leading" constant="8" id="xoj-YL-Uk3"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="300" height="261"/>
-                                        <connections>
-                                            <outlet property="dayOfMonthLabel" destination="fFZ-r9-2l3" id="d8W-Vy-3pN"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="s0x-rX-LNG" id="ip7-cP-8aq"/>
-                                    <outlet property="delegate" destination="s0x-rX-LNG" id="xa1-qQ-MS1"/>
-                                </connections>
-                            </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 06월" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iT-9i-10x">
                                 <rect key="frame" x="140.66666666666666" y="56.000000000000007" width="146.99999999999997" height="31.333333333333336"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
@@ -1139,6 +1075,70 @@
                                     <action selector="increaseMonth:" destination="s0x-rX-LNG" eventType="touchUpInside" id="6nx-1q-tJM"/>
                                 </connections>
                             </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xva-jK-dKi">
+                                <rect key="frame" x="0.0" y="157" width="428" height="685.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="lRb-2L-WBN">
+                                    <size key="itemSize" width="300" height="261"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DaySquareCollectionViewCell" id="3DD-fg-FYe" customClass="DaySquareCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                        <rect key="frame" x="64" y="0.0" width="300" height="261"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="H6Y-UC-w0b">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="261"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFZ-r9-2l3">
+                                                    <rect key="frame" x="145" y="52.666666666666664" width="10.333333333333343" height="25.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-l3-3on">
+                                                    <rect key="frame" x="8" y="86" width="284" height="167"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DuN-tW-QCn">
+                                                        <size key="itemSize" width="128" height="128"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="v7b-FY-ozg">
+                                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AZp-pw-DCs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                            </collectionViewCellContentView>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fFZ-r9-2l3" firstAttribute="centerY" secondItem="H6Y-UC-w0b" secondAttribute="centerY" multiplier="0.5" id="211-W4-caj"/>
+                                                <constraint firstItem="WKv-l3-3on" firstAttribute="top" secondItem="fFZ-r9-2l3" secondAttribute="bottom" constant="8" id="CXw-bh-bXZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="WKv-l3-3on" secondAttribute="trailing" constant="8" id="NP0-pl-YeR"/>
+                                                <constraint firstItem="fFZ-r9-2l3" firstAttribute="centerX" secondItem="H6Y-UC-w0b" secondAttribute="centerX" id="U1c-nP-sC5"/>
+                                                <constraint firstAttribute="bottom" secondItem="WKv-l3-3on" secondAttribute="bottom" constant="8" id="bUQ-Ew-7XJ"/>
+                                                <constraint firstItem="WKv-l3-3on" firstAttribute="leading" secondItem="H6Y-UC-w0b" secondAttribute="leading" constant="8" id="xoj-YL-Uk3"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="300" height="261"/>
+                                        <connections>
+                                            <outlet property="dayOfMonthLabel" destination="fFZ-r9-2l3" id="d8W-Vy-3pN"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="s0x-rX-LNG" id="ip7-cP-8aq"/>
+                                    <outlet property="delegate" destination="s0x-rX-LNG" id="xa1-qQ-MS1"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jwO-mC-1bp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

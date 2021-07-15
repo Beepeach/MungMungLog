@@ -65,8 +65,13 @@ class CalendarViewController: UIViewController {
     private func configureMonthLabel() {
         monthLabel.text = selectedDate.yearFormatted + "" + selectedDate.monthFormatted
     }
+
     public func getSelectedDate() -> Date {
         return self.selectedDate
+    }
+    
+    public func setSelectedDate(date: Date) {
+        selectedDate = date
     }
 }
 
@@ -90,5 +95,15 @@ extension CalendarViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension CalendarViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        if daySquares[indexPath.item] == "" {
+            return false
+        }
+        
+        return true
+    }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.item)
+    }
 }
