@@ -1051,6 +1051,9 @@
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="300" height="261"/>
+                                        <connections>
+                                            <outlet property="dayOfMonthLabel" destination="fFZ-r9-2l3" id="d8W-Vy-3pN"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

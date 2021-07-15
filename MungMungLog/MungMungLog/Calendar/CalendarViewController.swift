@@ -76,6 +76,8 @@ extension CalendarViewController: UICollectionViewDataSource {
             return DaySquareCollectionViewCell()
         }
         
+        cell.dayOfMonthLabel.text = daySquares[indexPath.item]
+        
         return cell
     }
 }
