@@ -25,6 +25,17 @@ class CalendarViewController: UIViewController {
         createMonthCalendar()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let sender: UICollectionViewCell = sender as? UICollectionViewCell else { return }
+        guard let indexPath: IndexPath = collectionView.indexPath(for: sender) else { return }
+        guard let targetCell: DaySquareCollectionViewCell = collectionView.cellForItem(at: indexPath) as? DaySquareCollectionViewCell else { return }
+        
+        guard let nav: UINavigationController = segue.destination as? UINavigationController else { return }
+        guard let vc: DetailDateViewController =  nav.children.first as? DetailDateViewController else { return }
+        
+        vc.setDate(date: targetCell.getDate() ?? Date())
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -42,4 +42,10 @@ class DateTests: XCTestCase {
         
         XCTAssertEqual("07월", month)
     }
+    
+    func test_koreanDateFormatter_shouldRetrunKoreanDateString() {
+        let date: String = sut.koreanDateFormatted
+        
+        XCTAssertEqual("2021년 07월 10일", date)
+    }
 }

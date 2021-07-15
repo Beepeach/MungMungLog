@@ -27,12 +27,14 @@ struct CalendarCalculator: CalendarHelper {
         return day
     }
     
+    // 21.07.10 -> 2021
     public func extractYearComponent(date: Date) -> DateComponents {
         let year: DateComponents = calendar.dateComponents([.year], from: date)
         
         return year
     }
     
+    // 21.07.10 -> 7
     public func extractMonthComponent(date: Date) -> DateComponents {
         let month: DateComponents = calendar.dateComponents([.month], from: date)
         

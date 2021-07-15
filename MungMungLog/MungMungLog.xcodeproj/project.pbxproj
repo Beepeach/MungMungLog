@@ -134,6 +134,9 @@
 		4694977726184F520049D7FE /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694977526184F520049D7FE /* ApiModel.swift */; };
 		469497A226186A200049D7FE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469497A126186A200049D7FE /* Product.swift */; };
 		469497A826186A4C0049D7FE /* Staging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469497A726186A4C0049D7FE /* Staging.swift */; };
+		469E015626A05B9D00DFD6C7 /* DetailDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E015526A05B9D00DFD6C7 /* DetailDateViewController.swift */; };
+		469E015726A05B9D00DFD6C7 /* DetailDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E015526A05B9D00DFD6C7 /* DetailDateViewController.swift */; };
+		469E015926A05C0000DFD6C7 /* DetailDateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E015826A05C0000DFD6C7 /* DetailDateViewControllerTests.swift */; };
 		46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
 		46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
 		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
@@ -278,6 +281,8 @@
 		4694977526184F520049D7FE /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		469497A126186A200049D7FE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		469497A726186A4C0049D7FE /* Staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staging.swift; sourceTree = "<group>"; };
+		469E015526A05B9D00DFD6C7 /* DetailDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDateViewController.swift; sourceTree = "<group>"; };
+		469E015826A05C0000DFD6C7 /* DetailDateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDateViewControllerTests.swift; sourceTree = "<group>"; };
 		46A025AA2577D17D0022BDBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		46A025AE2577D7BB0022BDBF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -372,6 +377,7 @@
 				4693215526998BD20052E74E /* Stuct */,
 				4693215426998BCD0052E74E /* Cell */,
 				4693214E269861740052E74E /* CalendarViewController.swift */,
+				469E015526A05B9D00DFD6C7 /* DetailDateViewController.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -565,6 +571,7 @@
 				463272C2269AD20900B18108 /* CalendarCalculatorTests.swift */,
 				463272CB269B285D00B18108 /* DaySquareGeneratorTests.swift */,
 				46CD1EA226A01AC700EECA2D /* DateGeneratorTests.swift */,
+				469E015826A05C0000DFD6C7 /* DetailDateViewControllerTests.swift */,
 			);
 			path = CalendarTab;
 			sourceTree = "<group>";
@@ -1071,6 +1078,7 @@
 				468D19C026539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */,
 				46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */,
 				464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
+				469E015626A05B9D00DFD6C7 /* DetailDateViewController.swift in Sources */,
 				468D19C32653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */,
 				468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
@@ -1125,6 +1133,7 @@
 				468FCF79264C0D09001DB81E /* WalkRecordStartingVCUnitTests.swift in Sources */,
 				463272C3269AD20900B18108 /* CalendarCalculatorTests.swift in Sources */,
 				46F45133262713340025B915 /* CommonDecodableTests.swift in Sources */,
+				469E015926A05C0000DFD6C7 /* DetailDateViewControllerTests.swift in Sources */,
 				46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */,
 				463272CA269AFB0B00B18108 /* DateTests.swift in Sources */,
 				46CD1EA326A01AC700EECA2D /* DateGeneratorTests.swift in Sources */,
@@ -1175,6 +1184,7 @@
 				468D19C126539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */,
 				466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
 				466492C425F372FC00903265 /* SceneDelegate.swift in Sources */,
+				469E015726A05B9D00DFD6C7 /* DetailDateViewController.swift in Sources */,
 				468D19C42653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */,
 				468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */,

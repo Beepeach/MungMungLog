@@ -59,6 +59,19 @@ extension Date {
         return formatter
     }()
     
+    // 2021년 07월 10일
+    public var koreanDateFormatted: String {
+        return Date.koreanDateFormatter.string(from: self)
+    }
+    
+    private static let koreanDateFormatter: DateFormatter = {
+        let formatter: DateFormatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ko_kr")
+        formatter.dateFormat = "yyyy년 MM월 dd일"
+        
+        return formatter
+    }()
+    
     // Date -> 2021년
     public var yearFormatted: String {
         return Date.yearFormatter.string(from: self)
