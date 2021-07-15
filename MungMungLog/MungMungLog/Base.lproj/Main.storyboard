@@ -1074,6 +1074,9 @@
                                     <constraint firstAttribute="height" constant="26" id="tsb-nY-PFu"/>
                                 </constraints>
                                 <state key="normal" image="leftArrow"/>
+                                <connections>
+                                    <action selector="decreaseMonth:" destination="s0x-rX-LNG" eventType="touchUpInside" id="nhD-LF-cKY"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SXn-Eg-upU">
                                 <rect key="frame" x="0.0" y="107.33333333333331" width="428" height="50"/>
@@ -1132,6 +1135,9 @@
                                     <constraint firstAttribute="width" constant="26" id="sEV-7f-qpW"/>
                                 </constraints>
                                 <state key="normal" image="rightArrow"/>
+                                <connections>
+                                    <action selector="increaseMonth:" destination="s0x-rX-LNG" eventType="touchUpInside" id="6nx-1q-tJM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jwO-mC-1bp"/>

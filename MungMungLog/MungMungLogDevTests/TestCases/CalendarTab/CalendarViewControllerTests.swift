@@ -41,4 +41,24 @@ class CalendarViewControllerTests: XCTestCase {
         
         XCTAssertEqual(42, count)
     }
+    
+    func test_increaseMonthbutton_whenTap_shouldIncreaseSelectedDate() {
+        let beforeDate: Date = sut.getSelectedDate()
+        
+        sut.increaseMonth(sut as Any)
+        
+        let afterDate: Date = sut.getSelectedDate()
+        
+        XCTAssertGreaterThan(afterDate, beforeDate)
+    }
+    
+    func test_decreaseMonthButton_whenTap_shouldDecreaseSelectedDate() {
+        let beforeDate: Date = sut.getSelectedDate()
+        
+        sut.decreaseMonth(sut as Any)
+        
+        let afterDate: Date = sut.getSelectedDate()
+        
+        XCTAssertLessThan(afterDate, beforeDate)
+    }
 }

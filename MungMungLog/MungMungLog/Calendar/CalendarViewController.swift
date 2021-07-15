@@ -16,11 +16,13 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func increaseMonth(_ sender: Any) {
-        
+        selectedDate = MonthChanger().plusOneMonth(date: selectedDate)
+        createMonthCalendar()
     }
     
     @IBAction func decreaseMonth(_ sender: Any) {
-        
+        selectedDate = MonthChanger().minusOneMonth(date: selectedDate)
+        createMonthCalendar()
     }
 
     override func viewDidLoad() {
@@ -55,6 +57,10 @@ class CalendarViewController: UIViewController {
         
         var daySquaresGenerator: DaySquareGenerator = DaySquareGenerator()
         daySquares = daySquaresGenerator.create(date: selectedDate)
+        
+        monthLabel.text = selectedDate.yearFormatted + "" + selectedDate.monthFormatted
+        
+        collectionView.reloadData()
     }
     
     public func getSelectedDate() -> Date {
