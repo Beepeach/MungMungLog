@@ -56,18 +56,18 @@ class CalendarViewController: UIViewController {
         daySquares.removeAll()
         
         var daySquaresGenerator: DaySquareGenerator = DaySquareGenerator()
+        
         daySquares = daySquaresGenerator.create(date: selectedDate)
-        
-        monthLabel.text = selectedDate.yearFormatted + "" + selectedDate.monthFormatted
-        
+        configureMonthLabel()
         collectionView.reloadData()
     }
     
+    private func configureMonthLabel() {
+        monthLabel.text = selectedDate.yearFormatted + "" + selectedDate.monthFormatted
+    }
     public func getSelectedDate() -> Date {
         return self.selectedDate
     }
-    
-    
 }
 
 
