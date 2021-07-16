@@ -16,6 +16,7 @@ class DetailDateViewControllerTests: XCTestCase {
         try? super.setUpWithError()
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         sut = (storyboard.instantiateViewController(withIdentifier: "DetailDateViewController") as! DetailDateViewController)
+        sut.loadViewIfNeeded()
         
         nav = UINavigationController(rootViewController: sut)
         
