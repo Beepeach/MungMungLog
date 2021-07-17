@@ -140,14 +140,14 @@ class HomeViewController: UIViewController {
     func showHistoryDataWhenFirst() {
         // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
         // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
-        latestHistoryDateLabel.text = koreaFullDateFormatter.string(for: Date())
+        latestHistoryDateLabel.text = Date().FullTimeKoreanDateFormatted
         latestHistroyLabel.text = "아이콘을 선택해서 가장 최근에 기록한 정보를 확인하세요."
     }
     
     func showHistoryDataIfDataIsNil() {
         // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
         // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
-        latestHistoryDateLabel.text = koreaFullDateFormatter.string(for: Date())
+        latestHistoryDateLabel.text = Date().FullTimeKoreanDateFormatted
         latestHistroyLabel.text = "저장된 기록이 없어요😭\n기록을 남겨보시겠어요?"
     }
     
@@ -303,13 +303,13 @@ extension HomeViewController: UICollectionViewDelegate {
         }
         
         self.latestHistroyLabel.text = latestHistory.contents
-        self.latestHistoryDateLabel.text = koreaFullDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
+        self.latestHistoryDateLabel.text = Date(timeIntervalSinceReferenceDate: latestHistory.date).FullTimeKoreanDateFormatted
     }
     
     func showLatestHistory(responsedata: SingleResponse<User>, latestHistory: HistoryDto) {
         self.writerNicknameLabel.text = responsedata.data?.nickname
         self.latestHistroyLabel.text = latestHistory.contents
-        self.latestHistoryDateLabel.text = koreaFullDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: latestHistory.date))
+        self.latestHistoryDateLabel.text = Date(timeIntervalSinceReferenceDate: latestHistory.date).FullTimeKoreanDateFormatted
     }
     
     func moveUp(to cell: RecordContentsCollectionViewCell) {

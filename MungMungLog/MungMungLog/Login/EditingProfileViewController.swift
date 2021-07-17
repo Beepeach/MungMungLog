@@ -101,7 +101,7 @@ class EditingProfileViewController: UIViewController {
     
     @IBAction func selectBirthdayOrBreeds(_ sender: Any) {
         if birthdayField.isFirstResponder {
-            birthdayField.text = koreaDateFormatter.string(from: birthdayDatePicker.date)
+            birthdayField.text = birthdayDatePicker.date.koreanDateFormatted
             birthdayField.resignFirstResponder()
         } else if breedField.isFirstResponder {
             breedField.text = breeds[breedsPickerView.selectedRow(inComponent: 0)]
