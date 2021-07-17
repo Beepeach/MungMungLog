@@ -431,7 +431,6 @@
 			children = (
 				466E3AE3261B13AC0077B3F2 /* MungMungLog Dev.entitlements */,
 				46D0EFFF2619B3A200F117B2 /* MungMungLog.entitlements */,
-				464A5B6E2621949B00BA1DB7 /* Test */,
 				46D7CE062597840400134271 /* Extension */,
 				469497A026186A000049D7FE /* Common */,
 				4694977426184F3E0049D7FE /* Model */,
@@ -491,13 +490,6 @@
 				4652F75426773605009FC105 /* PickerImageCollectionViewCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		464A5B6E2621949B00BA1DB7 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Test;
 			sourceTree = "<group>";
 		};
 		464A5B742621950800BA1DB7 /* MungMungLogDevTests */ = {
