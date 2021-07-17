@@ -2038,6 +2038,10 @@
                                                     <outlet property="delegate" destination="CFr-HF-ErC" id="Bwb-bP-5XY"/>
                                                 </connections>
                                             </tableView>
+                                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT3-9m-suR">
+                                                <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
+                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W2c-l3-ofC">
                                                 <rect key="frame" x="20" y="35" width="33" height="33"/>
                                                 <constraints>
@@ -2049,10 +2053,6 @@
                                                     <action selector="showOptionList:" destination="CFr-HF-ErC" eventType="touchUpInside" id="618-ny-Hg6"/>
                                                 </connections>
                                             </button>
-                                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KT3-9m-suR">
-                                                <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
-                                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HIO-9Y-vvf">
                                                 <rect key="frame" x="214" y="0.0" width="214" height="843"/>
                                                 <connections>
@@ -5311,7 +5311,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="oEs-uz-L4I"/>
         <segue reference="Azu-Sb-ycS"/>
-        <segue reference="fSx-LO-08t"/>
+        <segue reference="4EU-Gb-ReR"/>
         <segue reference="yGo-5l-hNg"/>
     </inferredMetricsTieBreakers>
     <resources>
