@@ -31,6 +31,30 @@ class DateTests: XCTestCase {
         try super.tearDownWithError()
     }
     
+    func test_monthAndDayFormatter_shouldReturnMonthAndDayString() {
+        let monthAndDay: String = sut.monthAndDayFormatted
+        
+        XCTAssertEqual("7월 10일", monthAndDay)
+    }
+    
+    func test_hourAndMinFormatter_shouldReturnHourAndMinString() {
+        let hourAndMin: String = sut.hourAndMinuteFormatted
+        
+        XCTAssertEqual("00시 00분", hourAndMin)
+    }
+    
+    func test_fullTimeKoreanDateFormatter_shouldReturnFullTimeString() {
+        let fullTimeDate: String = sut.FullTimeKoreanDateFormatted
+        
+        XCTAssertEqual("2021년 7월 10일 00시 00분", fullTimeDate)
+    }
+    
+    func test_koreanDateFormatter_shouldReturnKoreanDate() {
+        let koreanDate: String = sut.koreanDateFormatted
+        
+        XCTAssertEqual("2021년 07월 10일", koreanDate)
+    }
+    
     func test_yearFormatter_shouldReturnYearString() {
         let year: String = sut.yearFormatted
         

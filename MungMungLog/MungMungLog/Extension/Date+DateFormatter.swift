@@ -23,8 +23,7 @@ extension Date {
     }
     
     private static let monthAndDayFormatter: DateFormatter = {
-        let formatter: DateFormatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ko_kr")
+        let formatter: DateFormatter = DateFormatter.koreanDateFormatter
         formatter.dateFormat = "MMM dd일"
         
         return formatter
@@ -38,8 +37,7 @@ extension Date {
     }
     
     private static let hourAndMinuteFormatter: DateFormatter = {
-        let formatter: DateFormatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ko_kr")
+        let formatter: DateFormatter = DateFormatter.koreanDateFormatter
         formatter.dateFormat = "HH시 mm분"
         
         return formatter
@@ -65,8 +63,7 @@ extension Date {
     }
     
     private static let koreanDateFormatter: DateFormatter = {
-        let formatter: DateFormatter = DateFormatter()
-        formatter.locale = Locale(identifier: "ko_kr")
+        let formatter: DateFormatter = DateFormatter.koreanDateFormatter
         formatter.dateFormat = "yyyy년 MM월 dd일"
         
         return formatter
@@ -78,7 +75,7 @@ extension Date {
     }
     
     private static let yearFormatter: DateFormatter = {
-        let formatter: DateFormatter = DateFormatter()
+        let formatter: DateFormatter = DateFormatter.koreanDateFormatter
         formatter.dateFormat = "yyyy년"
         
         return formatter
@@ -90,7 +87,7 @@ extension Date {
     }
     
     private static let monthFormatter: DateFormatter = {
-        let formatter: DateFormatter = DateFormatter()
+        let formatter: DateFormatter = DateFormatter.koreanDateFormatter
         formatter.dateFormat = "MM월"
         
         return formatter
