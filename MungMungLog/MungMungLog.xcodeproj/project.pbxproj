@@ -130,6 +130,8 @@
 		469E015626A05B9D00DFD6C7 /* DetailDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E015526A05B9D00DFD6C7 /* DetailDateViewController.swift */; };
 		469E015726A05B9D00DFD6C7 /* DetailDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E015526A05B9D00DFD6C7 /* DetailDateViewController.swift */; };
 		469E015926A05C0000DFD6C7 /* DetailDateViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E015826A05C0000DFD6C7 /* DetailDateViewControllerTests.swift */; };
+		469E015E26A2AF0B00DFD6C7 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E015D26A2AF0B00DFD6C7 /* TimerManager.swift */; };
+		469E015F26A2AF0B00DFD6C7 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E015D26A2AF0B00DFD6C7 /* TimerManager.swift */; };
 		46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
 		46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
 		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
@@ -272,6 +274,7 @@
 		469497A726186A4C0049D7FE /* Staging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Staging.swift; sourceTree = "<group>"; };
 		469E015526A05B9D00DFD6C7 /* DetailDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDateViewController.swift; sourceTree = "<group>"; };
 		469E015826A05C0000DFD6C7 /* DetailDateViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDateViewControllerTests.swift; sourceTree = "<group>"; };
+		469E015D26A2AF0B00DFD6C7 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		46A025AA2577D17D0022BDBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		46A025AE2577D7BB0022BDBF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -616,6 +619,33 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		469E015A26A2AE9F00DFD6C7 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				469E015B26A2AEB700DFD6C7 /* LoginTab */,
+				46F45148262716040025B915 /* PetDtoTests.swift */,
+				46F4516C262722310025B915 /* FamilyDtoTests.swift */,
+				46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		469E015B26A2AEB700DFD6C7 /* LoginTab */ = {
+			isa = PBXGroup;
+			children = (
+				46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */,
+			);
+			path = LoginTab;
+			sourceTree = "<group>";
+		};
+		469E015C26A2AEFF00DFD6C7 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				469E015D26A2AF0B00DFD6C7 /* TimerManager.swift */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		46A025A92577D1530022BDBF /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +728,7 @@
 		46E69ACC25806FC200019FD9 /* Walk */ = {
 			isa = PBXGroup;
 			children = (
+				469E015C26A2AEFF00DFD6C7 /* Class */,
 				46D1AF5A258205D300DF7B2A /* Cell */,
 				46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */,
 				468FCF7A264C1043001DB81E /* WalkRecordViewController.swift */,
@@ -728,13 +759,10 @@
 		46F45147262715F00025B915 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				469E015A26A2AE9F00DFD6C7 /* DTO */,
 				463272C8269AFAEB00B18108 /* Extension */,
 				46932151269861AF0052E74E /* CalendarTab */,
 				46DA9021264C022100CCFB6A /* WalkTab */,
-				46F45148262716040025B915 /* PetDtoTests.swift */,
-				46F4516C262722310025B915 /* FamilyDtoTests.swift */,
-				46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */,
-				46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */,
 				465A57E6264E905D006683D5 /* TimerManagerTests.swift */,
 			);
 			path = TestCases;
@@ -1062,6 +1090,7 @@
 				468D19C32653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */,
 				468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
+				469E015E26A2AF0B00DFD6C7 /* TimerManager.swift in Sources */,
 				464A5B68261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
 				464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */,
 				4674C6BB26318FEB004C9182 /* UserModel.swift in Sources */,
@@ -1164,6 +1193,7 @@
 				468D19C42653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */,
 				468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
+				469E015F26A2AF0B00DFD6C7 /* TimerManager.swift in Sources */,
 				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
 				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,
 				4674C6BC26318FEB004C9182 /* UserModel.swift in Sources */,
