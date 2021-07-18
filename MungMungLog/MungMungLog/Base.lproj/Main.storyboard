@@ -1098,7 +1098,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-l3-3on">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WKv-l3-3on">
                                                     <rect key="frame" x="8" y="86" width="284" height="167"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DuN-tW-QCn">
@@ -5310,9 +5310,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="oEs-uz-L4I"/>
-        <segue reference="Azu-Sb-ycS"/>
-        <segue reference="4EU-Gb-ReR"/>
-        <segue reference="yGo-5l-hNg"/>
+        <segue reference="5ZM-Ic-1F1"/>
+        <segue reference="iF4-f1-o8r"/>
+        <segue reference="cYL-UJ-6AL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Test" width="1411" height="1411"/>
