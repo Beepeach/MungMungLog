@@ -136,6 +136,8 @@
 		46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
 		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
 		46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
+		46AB228526A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */; };
+		46AB228626A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */; };
 		46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */; };
 		46CD1EA0269D941000EECA2D /* DaySquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */; };
 		46CD1EA1269D941000EECA2D /* DaySquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */; };
@@ -279,6 +281,7 @@
 		46A025AE2577D7BB0022BDBF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingViewController.swift; sourceTree = "<group>"; };
+		46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		46C4B23B263C7E0200431973 /* MungMungLogVer2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLogVer2.xcdatamodel; sourceTree = "<group>"; };
 		46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySquareCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -560,6 +563,7 @@
 			isa = PBXGroup;
 			children = (
 				46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */,
+				46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -639,9 +643,9 @@
 			isa = PBXGroup;
 			children = (
 				460EB0102557F76B00027376 /* ViewController.swift */,
-				460EB00E2557F76B00027376 /* SceneDelegate.swift */,
-				460EB00C2557F76B00027376 /* AppDelegate.swift */,
 				460C4EAD25F4B8FC00D4E58D /* IntroViewController.swift */,
+				460EB00C2557F76B00027376 /* AppDelegate.swift */,
+				460EB00E2557F76B00027376 /* SceneDelegate.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -762,8 +766,8 @@
 			children = (
 				469E015A26A2AE9F00DFD6C7 /* DTO */,
 				463272C8269AFAEB00B18108 /* Extension */,
-				46932151269861AF0052E74E /* CalendarTab */,
 				46DA9021264C022100CCFB6A /* WalkTab */,
+				46932151269861AF0052E74E /* CalendarTab */,
 			);
 			path = TestCases;
 			sourceTree = "<group>";
@@ -1090,6 +1094,7 @@
 				468D19C32653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */,
 				468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */,
+				46AB228526A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */,
 				469E015E26A2AF0B00DFD6C7 /* TimerManager.swift in Sources */,
 				464A5B68261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
 				464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */,
@@ -1193,6 +1198,7 @@
 				468D19C42653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */,
 				468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */,
 				464A5B69261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
+				46AB228626A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */,
 				469E015F26A2AF0B00DFD6C7 /* TimerManager.swift in Sources */,
 				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
 				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,

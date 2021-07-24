@@ -11,14 +11,15 @@ import SwiftKeychainWrapper
 class HomeViewController: UIViewController {
     
     // MARK: - Properties
-    var menuStack: UIStackView?
+    private var menuStack: UIStackView?
     
-    let buttonImageNames = ["rice", "snack", "pill", "hospital", "walk"]
-    var selectedItemIndex = -1
+    private let buttonImageNames = ["rice", "snack", "pill", "hospital", "walk"]
+    private let buttonKoreanNames: [String] = ["식사", "간식", "약", "병원", "산책"]
+    private var selectedItemIndex = -1
     
-    var petList: [PetDto]?
-    var historyList: [HistoryDto]?
-    var walkHistoryList: [WalkHistoryDto]?
+    private var petList: [PetDto]?
+    private var historyList: [HistoryDto]?
+    private var walkHistoryList: [WalkHistoryDto]?
     
     // MARK: - @IBOutlet
     @IBOutlet weak var petNameLabel: UILabel!
@@ -35,6 +36,63 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var historyMenuFloatingButtonStackView: UIStackView!
     @IBOutlet weak var dimmingView: UIView!
+    
+    // MARK: - @IBAction
+    @IBAction func toggleFloatingButton(_ sender: Any) {
+        UIView.animate(withDuration: 0.3,
+                       delay: 0.1,
+                       options: [.curveEaseInOut],
+                       animations: { [self] in
+                         historyMenuFloatingButtonStackView.arrangedSubviews.forEach({ (button) in
+                             button.isHidden = button.isHidden ? false : true
+                             button.alpha = button.isHidden ? 0.0 : 1.0
+                         })
+                        
+                        dimmingView.isHidden = dimmingView.isHidden ? false : true
+                        
+                        menuStack?.layoutIfNeeded()
+                       },
+                       completion: nil)
+    }
+    
+    
+    @IBAction func moveToMealVC(_ sender: Any) {
+        self.present(createHistoryNav(type: .meal), animated: true, completion: nil)
+    }
+    
+    @IBAction func moveToSnackVC(_ sender: Any) {
+        self.present(createHistoryNav(type: .snack), animated: true, completion: nil)
+    }
+    
+    @IBAction func moveToPillVC(_ sender: Any) {
+        self.present(createHistoryNav(type: .pill), animated: true, completion: nil)
+    }
+    
+    @IBAction func moveToHospitalVC(_ sender: Any) {
+        self.present(createHistoryNav(type: .hospital), animated: true, completion: nil)
+    }
+    
+    @IBAction func moveToWalkVC(_ sender: Any) {
+        
+    }
+    
+    private func createHistoryNav(type: HistoryType) -> UINavigationController {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let recordDetailNav = storyboard.instantiateViewController(withIdentifier: "RecordDetailNav") as? UINavigationController else {
+            return UINavigationController()
+        }
+        
+        guard let recordDetailVC = recordDetailNav.topViewController as? RecordDetailViewController else {
+            return UINavigationController()
+        }
+        
+        toggleFloatingButton(self)
+        
+        recordDetailNav.modalPresentationStyle = .fullScreen
+        recordDetailVC.setHistoryType(to: type)
+        
+        return recordDetailNav
+    }
     
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
@@ -77,7 +135,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func fetchFamilyMembersData(familyId: Int) {
+    private func fetchFamilyMembersData(familyId: Int) {
         let urlStr = ApiManager.getFamilyMembers + "/\(familyId)"
         
         ApiManager.shared.fetch(urlStr: urlStr) { (result: Result<ListResponse<FamilyMemberDto>, Error>) in
@@ -97,7 +155,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func fetchPetData() {
+    private func fetchPetData() {
         ApiManager.shared.fetch(urlStr: ApiManager.getPetList) { (result: Result<ListResponse<PetDto>, Error>) in
             switch result {
             case .success(let responseData):
@@ -113,7 +171,7 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func showHomeWithFirstPetData() {
+    private func showHomeWithFirstPetData() {
         guard let firstPet = petList?.first else {
             return
         }
@@ -137,78 +195,34 @@ class HomeViewController: UIViewController {
         }
     }
     
-    func showHistoryDataWhenFirst() {
+    private func showHistoryDataWhenFirst() {
         // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
         // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
         latestHistoryDateLabel.text = Date().FullTimeKoreanDateFormatted
         latestHistroyLabel.text = "아이콘을 선택해서 가장 최근에 기록한 정보를 확인하세요."
     }
     
-    func showHistoryDataIfDataIsNil() {
+    private func showHistoryDataIfDataIsNil() {
         // writerNicknameLabel.text = coredata에서 사용자 사진 가져오기
         // writerProfileImageView.image = coredata에서 사용자 사진 가져오기
         latestHistoryDateLabel.text = Date().FullTimeKoreanDateFormatted
         latestHistroyLabel.text = "저장된 기록이 없어요😭\n기록을 남겨보시겠어요?"
     }
     
-    // MARK: - @IBAction
-    @IBAction func toggleFloatingButton(_ sender: Any) {
-        UIView.animate(withDuration: 0.3,
-                       delay: 0.1,
-                       options: [.curveEaseInOut],
-                       animations: { [self] in
-                         historyMenuFloatingButtonStackView.arrangedSubviews.forEach({ (button) in
-                             button.isHidden = button.isHidden ? false : true
-                             button.alpha = button.isHidden ? 0.0 : 1.0
-                         })
-                        
-                        dimmingView.isHidden = dimmingView.isHidden ? false : true
-                        
-                        menuStack?.layoutIfNeeded()
-                       },
-                       completion: nil)
+    // MARK: Interface
+    public func getButtonImagesCount() -> Int {
+        return buttonImageNames.count
     }
     
-    
-    @IBAction func moveToMealVC(_ sender: Any) {
-        self.present(createHistoryNav(type: .meal), animated: true, completion: nil)
+    public func getButtonImageNames() -> [String] {
+        return buttonImageNames
     }
     
-    @IBAction func moveToSnackVC(_ sender: Any) {
-        self.present(createHistoryNav(type: .snack), animated: true, completion: nil)
+    public func getButtonKoreanNames() -> [String] {
+        return buttonKoreanNames
     }
-    
-    @IBAction func moveToPillVC(_ sender: Any) {
-        self.present(createHistoryNav(type: .pill), animated: true, completion: nil)
-    }
-    
-    @IBAction func moveToHospitalVC(_ sender: Any) {
-        self.present(createHistoryNav(type: .hospital), animated: true, completion: nil)
-    }
-    
-    @IBAction func moveToWalkVC(_ sender: Any) {
-        
-    }
-    
-    func createHistoryNav(type: HistoryType) -> UINavigationController {
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let recordDetailNav = storyboard.instantiateViewController(withIdentifier: "RecordDetailNav") as? UINavigationController else {
-            return UINavigationController()
-        }
-        
-        guard let recordDetailVC = recordDetailNav.topViewController as? RecordDetailViewController else {
-            return UINavigationController()
-        }
-        
-        toggleFloatingButton(self)
-        
-        recordDetailNav.modalPresentationStyle = .fullScreen
-        recordDetailVC.setHistoryType(to: type)
-        
-        return recordDetailNav
-    }
-    
 }
+
 
 
 // MARK: - UICollectionViewDataSource
