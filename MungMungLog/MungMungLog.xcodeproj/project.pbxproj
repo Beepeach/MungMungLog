@@ -121,6 +121,10 @@
 		4693215C2699A8740052E74E /* MonthChangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693215B2699A8740052E74E /* MonthChangerTests.swift */; };
 		4693215E2699A8C00052E74E /* MonthChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693215D2699A8C00052E74E /* MonthChanger.swift */; };
 		4693215F2699A8C00052E74E /* MonthChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693215D2699A8C00052E74E /* MonthChanger.swift */; };
+		4693A01F26AC12BC00F8BC3C /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693A01E26AC12BC00F8BC3C /* ContentCollectionViewCell.swift */; };
+		4693A02026AC12BC00F8BC3C /* ContentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693A01E26AC12BC00F8BC3C /* ContentCollectionViewCell.swift */; };
+		4693A02226AC566C00F8BC3C /* ContentSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693A02126AC566C00F8BC3C /* ContentSummaryTableViewCell.swift */; };
+		4693A02326AC566C00F8BC3C /* ContentSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4693A02126AC566C00F8BC3C /* ContentSummaryTableViewCell.swift */; };
 		4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
 		4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694976D26184E6D0049D7FE /* ApiManager.swift */; };
 		4694977626184F520049D7FE /* ApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4694977526184F520049D7FE /* ApiModel.swift */; };
@@ -270,6 +274,8 @@
 		4693215626998C9B0052E74E /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
 		4693215B2699A8740052E74E /* MonthChangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthChangerTests.swift; sourceTree = "<group>"; };
 		4693215D2699A8C00052E74E /* MonthChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthChanger.swift; sourceTree = "<group>"; };
+		4693A01E26AC12BC00F8BC3C /* ContentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCollectionViewCell.swift; sourceTree = "<group>"; };
+		4693A02126AC566C00F8BC3C /* ContentSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		4694976D26184E6D0049D7FE /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		4694977526184F520049D7FE /* ApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiModel.swift; sourceTree = "<group>"; };
 		469497A126186A200049D7FE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -564,6 +570,8 @@
 			children = (
 				46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */,
 				46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */,
+				4693A01E26AC12BC00F8BC3C /* ContentCollectionViewCell.swift */,
+				4693A02126AC566C00F8BC3C /* ContentSummaryTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1097,6 +1105,7 @@
 				46AB228526A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */,
 				469E015E26A2AF0B00DFD6C7 /* TimerManager.swift in Sources */,
 				464A5B68261F5D8E00BA1DB7 /* PetModel.swift in Sources */,
+				4693A02226AC566C00F8BC3C /* ContentSummaryTableViewCell.swift in Sources */,
 				464A6B7E25AAED6100E56ED9 /* LoginViewController.swift in Sources */,
 				4674C6BB26318FEB004C9182 /* UserModel.swift in Sources */,
 				46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */,
@@ -1116,6 +1125,7 @@
 				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
 				4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */,
 				4693215726998C9B0052E74E /* CalendarHelper.swift in Sources */,
+				4693A01F26AC12BC00F8BC3C /* ContentCollectionViewCell.swift in Sources */,
 				46F450BB2625EDCE0025B915 /* FamilyModel.swift in Sources */,
 				46536DA125AF544600C60BD8 /* RegistrationGuideViewController.swift in Sources */,
 				460C4EDB25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
@@ -1201,6 +1211,7 @@
 				46AB228626A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */,
 				469E015F26A2AF0B00DFD6C7 /* TimerManager.swift in Sources */,
 				466492C525F372FC00903265 /* LoginViewController.swift in Sources */,
+				4693A02326AC566C00F8BC3C /* ContentSummaryTableViewCell.swift in Sources */,
 				466492C625F372FC00903265 /* CircleImageView.swift in Sources */,
 				4674C6BC26318FEB004C9182 /* UserModel.swift in Sources */,
 				46F54579262FF88900FBDBA0 /* HomeViewController.swift in Sources */,
@@ -1220,6 +1231,7 @@
 				466492CC25F372FC00903265 /* PartialRoundedView.swift in Sources */,
 				466492CD25F372FC00903265 /* RecordContentsCollectionViewCell.swift in Sources */,
 				4693215826998C9B0052E74E /* CalendarHelper.swift in Sources */,
+				4693A02026AC12BC00F8BC3C /* ContentCollectionViewCell.swift in Sources */,
 				46F450BC2625EDCE0025B915 /* FamilyModel.swift in Sources */,
 				4694976F26184E6D0049D7FE /* ApiManager.swift in Sources */,
 				466492CE25F372FC00903265 /* RegistrationGuideViewController.swift in Sources */,

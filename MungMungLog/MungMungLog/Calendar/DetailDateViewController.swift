@@ -42,6 +42,8 @@ extension DetailDateViewController: UICollectionViewDataSource {
         switch collectionView {
         case recordCategoryCollectionView:
             return HomeViewController().getButtonImagesCount()
+        case contentCollectionView:
+            return 1
         default:
             return 0
         }
@@ -60,6 +62,10 @@ extension DetailDateViewController: UICollectionViewDataSource {
             // TODO: - 글의 갯수를 받아오는 부분 구현예정
                 
             return cell
+        case contentCollectionView:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath)
+            
+            return cell
         default:
             return UICollectionViewCell()
         }
@@ -73,16 +79,16 @@ extension DetailDateViewController: UICollectionViewDelegateFlowLayout {
         if collectionView == recordCategoryCollectionView {
             return configureCellSize()
         }
-        
-        return CGSize.zero
+
+        return CGSize(width: 400, height: 600)
     }
-    
+
     private func configureCellSize() -> CGSize {
         let recordCollectionViewWidth = view.frame.width - (recordCategoryLeftConstraint.constant * 2)
-        
+
         let exptectCellWidth: CGFloat = recordCollectionViewWidth * (1 / 3.5)
         let exptectCellHeight: CGFloat = 100
-        
+
         return CGSize(width: exptectCellWidth.rounded(.down), height: exptectCellHeight)
     }
 }
