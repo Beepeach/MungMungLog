@@ -102,6 +102,9 @@
 		467EF92825F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */; };
 		467EF92E25F3C51700AC8F88 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */; };
 		467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */; };
+		4680DFF726B58BF00087DC68 /* DetailDiaryContentsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680DFF626B58BF00087DC68 /* DetailDiaryContentsViewControllerTests.swift */; };
+		4680DFF926B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680DFF826B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift */; };
+		4680DFFA26B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680DFF826B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift */; };
 		468D19C026539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */; };
 		468D19C126539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */; };
 		468D19C32653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19C22653E5B2008281BF /* WalkRecordEditViewController.swift */; };
@@ -142,6 +145,8 @@
 		46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
 		46AB228526A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */; };
 		46AB228626A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */; };
+		46AB38C826B5240A00E01745 /* DetailDiaryContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB38C726B5240A00E01745 /* DetailDiaryContentsViewController.swift */; };
+		46AB38C926B5240A00E01745 /* DetailDiaryContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB38C726B5240A00E01745 /* DetailDiaryContentsViewController.swift */; };
 		46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */; };
 		46CD1EA0269D941000EECA2D /* DaySquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */; };
 		46CD1EA1269D941000EECA2D /* DaySquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */; };
@@ -262,6 +267,8 @@
 		467BF53625748F8900511451 /* CircleWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleWithShadowView.swift; sourceTree = "<group>"; };
 		467EF92625F3839E00AC8F88 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		4680DFF626B58BF00087DC68 /* DetailDiaryContentsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiaryContentsViewControllerTests.swift; sourceTree = "<group>"; };
+		4680DFF826B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiaryContentImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Measurement+MesurementFomatter.swift"; sourceTree = "<group>"; };
 		468D19C22653E5B2008281BF /* WalkRecordEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditViewController.swift; sourceTree = "<group>"; };
 		468EEF13263854D9003A7FF0 /* QnaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnaViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +295,7 @@
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingViewController.swift; sourceTree = "<group>"; };
 		46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		46AB38C726B5240A00E01745 /* DetailDiaryContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiaryContentsViewController.swift; sourceTree = "<group>"; };
 		46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		46C4B23B263C7E0200431973 /* MungMungLogVer2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLogVer2.xcdatamodel; sourceTree = "<group>"; };
 		46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySquareCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -378,6 +386,7 @@
 				4693215426998BCD0052E74E /* Cell */,
 				4693214E269861740052E74E /* CalendarViewController.swift */,
 				469E015526A05B9D00DFD6C7 /* DetailDateViewController.swift */,
+				46AB38C726B5240A00E01745 /* DetailDiaryContentsViewController.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -561,6 +570,7 @@
 				463272CB269B285D00B18108 /* DaySquareGeneratorTests.swift */,
 				46CD1EA226A01AC700EECA2D /* DateGeneratorTests.swift */,
 				469E015826A05C0000DFD6C7 /* DetailDateViewControllerTests.swift */,
+				4680DFF626B58BF00087DC68 /* DetailDiaryContentsViewControllerTests.swift */,
 			);
 			path = CalendarTab;
 			sourceTree = "<group>";
@@ -572,6 +582,7 @@
 				46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */,
 				4693A01E26AC12BC00F8BC3C /* ContentCollectionViewCell.swift */,
 				4693A02126AC566C00F8BC3C /* ContentSummaryTableViewCell.swift */,
+				4680DFF826B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1086,6 +1097,7 @@
 				4693215E2699A8C00052E74E /* MonthChanger.swift in Sources */,
 				46292E432680639C00CCA05B /* SelectedAssetConverter.swift in Sources */,
 				46CD1EA826A01B0F00EECA2D /* DateGenerator.swift in Sources */,
+				4680DFF926B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift in Sources */,
 				460C4EA725F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
 				4652F75226772AC6009FC105 /* HistoryImagePickerViewController.swift in Sources */,
 				46F5456B262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */,
@@ -1121,6 +1133,7 @@
 				467EF92725F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */,
 				46F450C22625F1BC0025B915 /* FamilyMemberModel.swift in Sources */,
 				467EF92E25F3C51700AC8F88 /* MyPageViewController.swift in Sources */,
+				46AB38C826B5240A00E01745 /* DetailDiaryContentsViewController.swift in Sources */,
 				46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */,
 				46FC5B7825EA098D00D161F5 /* RecordContentsCollectionViewCell.swift in Sources */,
 				4694976E26184E6D0049D7FE /* ApiManager.swift in Sources */,
@@ -1151,6 +1164,7 @@
 				46932153269861D10052E74E /* CalendarViewControllerTests.swift in Sources */,
 				468FCF7E264C2581001DB81E /* WalkRecordVCUnitTests.swift in Sources */,
 				4615F423263C2F310099E8CF /* MockSession.swift in Sources */,
+				4680DFF726B58BF00087DC68 /* DetailDiaryContentsViewControllerTests.swift in Sources */,
 				46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */,
 				465A57E7264E905D006683D5 /* TimerManagerTests.swift in Sources */,
 				46F4517D262724D20025B915 /* FamilyMemberDtoTests.swift in Sources */,
@@ -1192,6 +1206,7 @@
 				4693215F2699A8C00052E74E /* MonthChanger.swift in Sources */,
 				46292E442680639C00CCA05B /* SelectedAssetConverter.swift in Sources */,
 				46CD1EA926A01B0F00EECA2D /* DateGenerator.swift in Sources */,
+				4680DFFA26B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift in Sources */,
 				466492BC25F372FC00903265 /* AppDelegate.swift in Sources */,
 				4652F75326772AC6009FC105 /* HistoryImagePickerViewController.swift in Sources */,
 				46F5456C262DEE6600FBDBA0 /* WalkHistoryModel.swift in Sources */,
@@ -1227,6 +1242,7 @@
 				466492CB25F372FC00903265 /* CodeInputViewController.swift in Sources */,
 				46F450C32625F1BC0025B915 /* FamilyMemberModel.swift in Sources */,
 				467EF92825F3839E00AC8F88 /* PhotoCollectionViewCell.swift in Sources */,
+				46AB38C926B5240A00E01745 /* DetailDiaryContentsViewController.swift in Sources */,
 				467EF92F25F3C51700AC8F88 /* MyPageViewController.swift in Sources */,
 				466492CC25F372FC00903265 /* PartialRoundedView.swift in Sources */,
 				466492CD25F372FC00903265 /* RecordContentsCollectionViewCell.swift in Sources */,

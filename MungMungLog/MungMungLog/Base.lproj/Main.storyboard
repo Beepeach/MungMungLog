@@ -1259,6 +1259,7 @@
                                                                 <outlet property="contentsLabel" destination="kq1-GQ-xe0" id="djb-4A-4Lb"/>
                                                                 <outlet property="writeTimeLabel" destination="gqJ-d8-t9u" id="t2E-EU-JMI"/>
                                                                 <outlet property="writerLabel" destination="R4b-cJ-ENF" id="JUh-dU-B14"/>
+                                                                <segue destination="ptl-Nn-C6i" kind="show" id="xJr-qW-Lch"/>
                                                             </connections>
                                                         </tableViewCell>
                                                     </prototypes>
@@ -5498,6 +5499,97 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zeW-Bb-u04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6750" y="651.83585313174956"/>
+        </scene>
+        <!--Detail Diary Contents View Controller-->
+        <scene sceneID="cG0-IM-a8I">
+            <objects>
+                <viewController storyboardIdentifier="DetailDiaryContentsViewController" id="ptl-Nn-C6i" customClass="DetailDiaryContentsViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eoV-Df-orb">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XE5-fF-qaX">
+                                <rect key="frame" x="0.0" y="88" width="428" height="428"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="XE5-fF-qaX" secondAttribute="height" multiplier="1:1" id="yfS-3N-euI"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="D2B-1z-qQi">
+                                    <size key="itemSize" width="409" height="380"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DetailDiaryContentImageCollectionViewCell" id="0Si-Ir-EbI" customClass="DetailDiaryContentImageCollectionViewCell" customModule="MungMungLog" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24" width="409" height="380"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3Dn-Mb-S2z">
+                                            <rect key="frame" x="0.0" y="0.0" width="409" height="380"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UZo-Ss-O8b">
+                                                    <rect key="frame" x="0.0" y="0.0" width="409" height="380"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="UZo-Ss-O8b" secondAttribute="trailing" id="1l7-Gf-2Uj"/>
+                                                <constraint firstItem="UZo-Ss-O8b" firstAttribute="top" secondItem="3Dn-Mb-S2z" secondAttribute="top" id="cvn-RS-dwu"/>
+                                                <constraint firstAttribute="bottom" secondItem="UZo-Ss-O8b" secondAttribute="bottom" id="rQz-oS-oMM"/>
+                                                <constraint firstItem="UZo-Ss-O8b" firstAttribute="leading" secondItem="3Dn-Mb-S2z" secondAttribute="leading" id="yc1-bK-Qif"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="409" height="380"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="UZo-Ss-O8b" id="Yk6-ll-xbP"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ptl-Nn-C6i" id="YlQ-re-S9b"/>
+                                    <outlet property="delegate" destination="ptl-Nn-C6i" id="2DS-Tp-b4M"/>
+                                </connections>
+                            </collectionView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CsD-QD-Q0v">
+                                <rect key="frame" x="0.0" y="532" width="428" height="360"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="i3s-Qo-ScV">
+                                <rect key="frame" x="153.66666666666666" y="489" width="120.99999999999997" height="27"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemTealColor"/>
+                                <connections>
+                                    <action selector="changePage:" destination="ptl-Nn-C6i" eventType="valueChanged" id="zTG-rn-YbI"/>
+                                </connections>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bu8-vd-8hi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bu8-vd-8hi" firstAttribute="bottom" secondItem="CsD-QD-Q0v" secondAttribute="bottom" id="1I5-7m-HrI"/>
+                            <constraint firstItem="i3s-Qo-ScV" firstAttribute="bottom" secondItem="XE5-fF-qaX" secondAttribute="bottom" id="6W5-SU-cXO"/>
+                            <constraint firstItem="CsD-QD-Q0v" firstAttribute="top" secondItem="XE5-fF-qaX" secondAttribute="bottom" constant="16" id="JjA-bH-fjg"/>
+                            <constraint firstItem="XE5-fF-qaX" firstAttribute="top" secondItem="bu8-vd-8hi" secondAttribute="top" id="PkD-mF-Kab"/>
+                            <constraint firstItem="CsD-QD-Q0v" firstAttribute="leading" secondItem="bu8-vd-8hi" secondAttribute="leading" id="Uhc-61-asj"/>
+                            <constraint firstItem="XE5-fF-qaX" firstAttribute="trailing" secondItem="bu8-vd-8hi" secondAttribute="trailing" id="jvz-fx-AZD"/>
+                            <constraint firstItem="XE5-fF-qaX" firstAttribute="leading" secondItem="bu8-vd-8hi" secondAttribute="leading" id="nEC-wp-Qk5"/>
+                            <constraint firstItem="bu8-vd-8hi" firstAttribute="trailing" secondItem="CsD-QD-Q0v" secondAttribute="trailing" id="sVf-8u-xNT"/>
+                            <constraint firstItem="i3s-Qo-ScV" firstAttribute="centerX" secondItem="eoV-Df-orb" secondAttribute="centerX" id="smg-Ld-zXv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JUN-aW-dJI"/>
+                    <connections>
+                        <outlet property="contents" destination="CsD-QD-Q0v" id="hyC-ul-htX"/>
+                        <outlet property="imageCollectionView" destination="XE5-fF-qaX" id="HAk-Xt-lyz"/>
+                        <outlet property="pager" destination="i3s-Qo-ScV" id="MHz-40-9Nt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4y0-DZ-2zY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8499.5327102803731" y="651.83585313174956"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
