@@ -8,17 +8,19 @@
 import UIKit
 
 class DetailDiaryContentsViewController: UIViewController {
+    // MARK: Properties
     private let dummyImage: [UIImage?] = [UIImage(named: "Test"),
                                          UIImage(named: "Test2"),
                                          UIImage(named: "Test3")
     ]
-    
     private let cellIdentifier: String = "DetailDiaryContentImageCollectionViewCell"
     
+    // MARK: @IBOutlet
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var pager: UIPageControl!
     @IBOutlet weak var contents: UITextView!
     
+    // MARK: @IBAction
     @IBAction func changePage(_ sender: Any) {
         let currentPage: Int = pager.currentPage
         let targetIndex: IndexPath = IndexPath(item: currentPage, section: 0)
@@ -26,6 +28,7 @@ class DetailDiaryContentsViewController: UIViewController {
         imageCollectionView.scrollToItem(at: targetIndex, at: .centeredHorizontally, animated: true)
     }
 
+    // MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,7 +38,7 @@ class DetailDiaryContentsViewController: UIViewController {
     }
 }
 
-
+// MARK: - UICollectionViewDataSource
 extension DetailDiaryContentsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dummyImage.count
@@ -52,14 +55,14 @@ extension DetailDiaryContentsViewController: UICollectionViewDataSource {
     }
 }
 
-
+// MARK: - UICollectionViewDelegateFlowLayout
 extension DetailDiaryContentsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.frame.size
     }
 }
 
-
+// MARK: - UICollectionViewDelegate
 extension DetailDiaryContentsViewController: UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetOfX: CGFloat = scrollView.contentOffset.x
