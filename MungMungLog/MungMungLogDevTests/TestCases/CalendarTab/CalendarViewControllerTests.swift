@@ -28,6 +28,7 @@ class CalendarViewControllerTests: XCTestCase {
         let date: Date = Date()
         
         sut.setSelectedDate(date: date)
+        sut.viewDidLoad()
         
         XCTAssertEqual(date, sut.getSelectedDate())
     }
@@ -86,6 +87,7 @@ class CalendarViewControllerTests: XCTestCase {
         let date: Date = givenDate20210701()
         let indexPath: IndexPath = IndexPath(item: 0, section: 0)
         sut.setSelectedDate(date: date)
+        sut.viewDidLoad()
         
         XCTAssertFalse(sut.collectionView.delegate!.collectionView!(sut.collectionView, shouldSelectItemAt: indexPath))
     }
@@ -95,6 +97,7 @@ class CalendarViewControllerTests: XCTestCase {
         let indexPath: IndexPath = IndexPath(item: 5, section: 0)
         
         sut.setSelectedDate(date: date)
+        sut.viewDidLoad()
         
         XCTAssertTrue(sut.collectionView.delegate!.collectionView!(sut.collectionView, shouldSelectItemAt: indexPath))
     }
@@ -102,6 +105,9 @@ class CalendarViewControllerTests: XCTestCase {
     func test_cell_whenInit_shouldHaveCollectDate() {
         let date: Date = givenDate20210701()
         let indexPath: IndexPath = IndexPath(item: 4, section: 0)
+        
+        sut.setSelectedDate(date: date)
+        sut.viewDidLoad()
         
         let cell: DaySquareCollectionViewCell = sut.collectionView.dataSource?.collectionView(sut.collectionView, cellForItemAt: indexPath) as! DaySquareCollectionViewCell
         
