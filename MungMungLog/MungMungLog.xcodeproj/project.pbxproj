@@ -105,6 +105,7 @@
 		4680DFF726B58BF00087DC68 /* DetailDiaryContentsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680DFF626B58BF00087DC68 /* DetailDiaryContentsViewControllerTests.swift */; };
 		4680DFF926B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680DFF826B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift */; };
 		4680DFFA26B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680DFF826B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift */; };
+		4680DFFD26B6CDCE0087DC68 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4680DFFC26B6CDCE0087DC68 /* LoginViewControllerTests.swift */; };
 		468D19C026539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */; };
 		468D19C126539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */; };
 		468D19C32653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D19C22653E5B2008281BF /* WalkRecordEditViewController.swift */; };
@@ -147,7 +148,6 @@
 		46AB228626A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */; };
 		46AB38C826B5240A00E01745 /* DetailDiaryContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB38C726B5240A00E01745 /* DetailDiaryContentsViewController.swift */; };
 		46AB38C926B5240A00E01745 /* DetailDiaryContentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB38C726B5240A00E01745 /* DetailDiaryContentsViewController.swift */; };
-		46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */; };
 		46CD1EA0269D941000EECA2D /* DaySquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */; };
 		46CD1EA1269D941000EECA2D /* DaySquareCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */; };
 		46CD1EA326A01AC700EECA2D /* DateGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CD1EA226A01AC700EECA2D /* DateGeneratorTests.swift */; };
@@ -157,6 +157,9 @@
 		46D1AF6025820B6000DF7B2A /* RecordDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */; };
 		46D4DF1E262D57790016252A /* EditingProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468FFA0E25B037E7005E1E35 /* EditingProfileViewController.swift */; };
 		46D7CE0B25979FE600134271 /* RoundedBorderWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */; };
+		46D81F4526B6EA13005DF901 /* AlertCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D81F4426B6EA13005DF901 /* AlertCreator.swift */; };
+		46D81F4626B6EA13005DF901 /* AlertCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D81F4426B6EA13005DF901 /* AlertCreator.swift */; };
+		46D81F4926B6EA6C005DF901 /* AlertCreatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D81F4826B6EA6C005DF901 /* AlertCreatorTests.swift */; };
 		46DA9020264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DA901F264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift */; };
 		46DBEA8026283EA000B07EC1 /* BlobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA7F26283EA000B07EC1 /* BlobManager.swift */; };
 		46DBEA8126283EA000B07EC1 /* BlobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA7F26283EA000B07EC1 /* BlobManager.swift */; };
@@ -269,6 +272,7 @@
 		467EF92D25F3C51700AC8F88 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		4680DFF626B58BF00087DC68 /* DetailDiaryContentsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiaryContentsViewControllerTests.swift; sourceTree = "<group>"; };
 		4680DFF826B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiaryContentImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		4680DFFC26B6CDCE0087DC68 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Measurement+MesurementFomatter.swift"; sourceTree = "<group>"; };
 		468D19C22653E5B2008281BF /* WalkRecordEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordEditViewController.swift; sourceTree = "<group>"; };
 		468EEF13263854D9003A7FF0 /* QnaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QnaViewController.swift; sourceTree = "<group>"; };
@@ -296,7 +300,6 @@
 		46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingViewController.swift; sourceTree = "<group>"; };
 		46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		46AB38C726B5240A00E01745 /* DetailDiaryContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiaryContentsViewController.swift; sourceTree = "<group>"; };
-		46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerTests.swift; sourceTree = "<group>"; };
 		46C4B23B263C7E0200431973 /* MungMungLogVer2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLogVer2.xcdatamodel; sourceTree = "<group>"; };
 		46CD1E9F269D941000EECA2D /* DaySquareCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySquareCollectionViewCell.swift; sourceTree = "<group>"; };
 		46CD1EA226A01AC700EECA2D /* DateGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGeneratorTests.swift; sourceTree = "<group>"; };
@@ -305,6 +308,8 @@
 		46D1AF5C2582062E00DF7B2A /* PhotoSelectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectCollectionViewCell.swift; sourceTree = "<group>"; };
 		46D1AF5F25820B6000DF7B2A /* RecordDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordDetailViewController.swift; sourceTree = "<group>"; };
 		46D7CE0A25979FE600134271 /* RoundedBorderWithShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedBorderWithShadowView.swift; sourceTree = "<group>"; };
+		46D81F4426B6EA13005DF901 /* AlertCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCreator.swift; sourceTree = "<group>"; };
+		46D81F4826B6EA6C005DF901 /* AlertCreatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertCreatorTests.swift; sourceTree = "<group>"; };
 		46DA9013264BFD6500CCFB6A /* MungMungLogDevUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MungMungLogDevUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		46DA9017264BFD6500CCFB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46DA901F264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingVCUITests.swift; sourceTree = "<group>"; };
@@ -561,6 +566,14 @@
 			path = Configuration;
 			sourceTree = "<group>";
 		};
+		4680DFFB26B6CDB70087DC68 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				4680DFFC26B6CDCE0087DC68 /* LoginViewControllerTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		46932151269861AF0052E74E /* CalendarTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,6 +640,7 @@
 			children = (
 				469497A126186A200049D7FE /* Product.swift */,
 				469497A726186A4C0049D7FE /* Staging.swift */,
+				46D81F4426B6EA13005DF901 /* AlertCreator.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -634,20 +648,11 @@
 		469E015A26A2AE9F00DFD6C7 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				469E015B26A2AEB700DFD6C7 /* LoginTab */,
 				46F45148262716040025B915 /* PetDtoTests.swift */,
 				46F4516C262722310025B915 /* FamilyDtoTests.swift */,
 				46F4517C262724D20025B915 /* FamilyMemberDtoTests.swift */,
 			);
 			path = DTO;
-			sourceTree = "<group>";
-		};
-		469E015B26A2AEB700DFD6C7 /* LoginTab */ = {
-			isa = PBXGroup;
-			children = (
-				46BD61B3263BFD02001DEC74 /* LoginViewControllerTests.swift */,
-			);
-			path = LoginTab;
 			sourceTree = "<group>";
 		};
 		469E015C26A2AEFF00DFD6C7 /* Class */ = {
@@ -712,6 +717,14 @@
 				46F7BB752654F3EA00134059 /* TimeInterval+DateComponentFormatter.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		46D81F4726B6EA56005DF901 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				46D81F4826B6EA6C005DF901 /* AlertCreatorTests.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		46DA9014264BFD6500CCFB6A /* MungMungLogDevUITests */ = {
@@ -783,8 +796,10 @@
 		46F45147262715F00025B915 /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				46D81F4726B6EA56005DF901 /* Common */,
 				469E015A26A2AE9F00DFD6C7 /* DTO */,
 				463272C8269AFAEB00B18108 /* Extension */,
+				4680DFFB26B6CDB70087DC68 /* Login */,
 				46DA9021264C022100CCFB6A /* WalkTab */,
 				46932151269861AF0052E74E /* CalendarTab */,
 			);
@@ -1096,6 +1111,7 @@
 				466D8DB72638086600B356F9 /* OptionListViewController.swift in Sources */,
 				4693215E2699A8C00052E74E /* MonthChanger.swift in Sources */,
 				46292E432680639C00CCA05B /* SelectedAssetConverter.swift in Sources */,
+				46D81F4526B6EA13005DF901 /* AlertCreator.swift in Sources */,
 				46CD1EA826A01B0F00EECA2D /* DateGenerator.swift in Sources */,
 				4680DFF926B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift in Sources */,
 				460C4EA725F3ECC900D4E58D /* FamilyTableViewCell.swift in Sources */,
@@ -1161,10 +1177,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4680DFFD26B6CDCE0087DC68 /* LoginViewControllerTests.swift in Sources */,
 				46932153269861D10052E74E /* CalendarViewControllerTests.swift in Sources */,
 				468FCF7E264C2581001DB81E /* WalkRecordVCUnitTests.swift in Sources */,
 				4615F423263C2F310099E8CF /* MockSession.swift in Sources */,
 				4680DFF726B58BF00087DC68 /* DetailDiaryContentsViewControllerTests.swift in Sources */,
+				46D81F4926B6EA6C005DF901 /* AlertCreatorTests.swift in Sources */,
 				46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */,
 				465A57E7264E905D006683D5 /* TimerManagerTests.swift in Sources */,
 				46F4517D262724D20025B915 /* FamilyMemberDtoTests.swift in Sources */,
@@ -1172,7 +1190,6 @@
 				463272C3269AD20900B18108 /* CalendarCalculatorTests.swift in Sources */,
 				46F45133262713340025B915 /* CommonDecodableTests.swift in Sources */,
 				469E015926A05C0000DFD6C7 /* DetailDateViewControllerTests.swift in Sources */,
-				46BD61B4263BFD02001DEC74 /* LoginViewControllerTests.swift in Sources */,
 				463272CA269AFB0B00B18108 /* DateTests.swift in Sources */,
 				46CD1EA326A01AC700EECA2D /* DateGeneratorTests.swift in Sources */,
 				4693215C2699A8740052E74E /* MonthChangerTests.swift in Sources */,
@@ -1205,6 +1222,7 @@
 				466D8DB82638086600B356F9 /* OptionListViewController.swift in Sources */,
 				4693215F2699A8C00052E74E /* MonthChanger.swift in Sources */,
 				46292E442680639C00CCA05B /* SelectedAssetConverter.swift in Sources */,
+				46D81F4626B6EA13005DF901 /* AlertCreator.swift in Sources */,
 				46CD1EA926A01B0F00EECA2D /* DateGenerator.swift in Sources */,
 				4680DFFA26B679760087DC68 /* DetailDiaryContentImageCollectionViewCell.swift in Sources */,
 				466492BC25F372FC00903265 /* AppDelegate.swift in Sources */,

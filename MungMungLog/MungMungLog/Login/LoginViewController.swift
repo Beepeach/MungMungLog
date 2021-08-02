@@ -14,6 +14,12 @@ import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
     
+    // MARK: Properties
+    private var isAccessibleLoginId = false
+    private var isAccessibleLoginPassword = false
+    private let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    
+    // MARK: @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var logoImageView: UIImageView!
     @IBOutlet weak var loginContainerView: UIView!
@@ -25,16 +31,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordFindingView: UIView!
     @IBOutlet weak var loginWithSnsStackView: UIStackView!
     
-    var isAccessibleLoginId = false
-    var isAccessibleLoginPassword = false
-    let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
-    
-    // 이걸 그대로 emailLogin에서 이용할 방법은?? Codable로 하면 encode가 안된다.
-    func login(model: SNSLoginRequestModel) {
+    // TODO: - 이걸 그대로 emailLogin에서 이용할 방법은?? Codable로 하면 encode가 안된다.
+    private func login(model: SNSLoginRequestModel) {
         KeychainWrapper.standard.remove(forKey: .apiToken)
         
         var data: Data? = nil
-        
         let encoder = JSONEncoder()
         
         do {
@@ -47,18 +48,16 @@ class LoginViewController: UIViewController {
             switch result {
             case .success(let responseData):
                 if responseData.code == Statuscode.ok.rawValue {
-                    //                    dump(responseData)
-                    
                     self.saveUserDataInKeychainAndCoreData(with: responseData)
                     
                     print("=======로그인 성공========")
-                    print(responseData)
+                    print(#function, responseData)
                     
                     self.goToCorrectSceneForKeychain()
                     
                 } else {
                     print("========로그인실패===========")
-                    print(responseData)
+                    print(#function, responseData)
                     
                     DispatchQueue.main.async {
                         self.presentOneButtonAlert(alertTitle: "알림", message: "SNS 로그인에 실패했습니다.", actionTitle: "확인")
@@ -75,7 +74,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func goToCorrectSceneForKeychain() {
+    private func goToCorrectSceneForKeychain() {
         DispatchQueue.main.async {
             if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
                nickname.count > 0 {
@@ -87,7 +86,6 @@ class LoginViewController: UIViewController {
             } else {
                 self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
             }
-            
         }
     }
     
@@ -97,13 +95,11 @@ class LoginViewController: UIViewController {
         guard let email = idInputField.text else {
             return
         }
-        
         guard let password = passwordInputField.text else {
             return
         }
         
         var data: Data? = nil
-        
         let encoder = JSONEncoder()
         
         do {
@@ -120,7 +116,7 @@ class LoginViewController: UIViewController {
                     
                     self.saveUserDataInKeychainAndCoreData(with: responseData)
                     
-                    print("=======로그인 성공========")
+                    print(#function, "=======로그인 성공========")
                     print(responseData)
                     
                     self.goToCorrectSceneForKeychain()
@@ -130,7 +126,10 @@ class LoginViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         self.idInputField.becomeFirstResponder()
-                        self.presentOneButtonAlert(alertTitle: "알림", message: "존재하지 않는 이메일입니다.", actionTitle: "확인")
+                        let alert: UIAlertController = AlertCreator().createOneButtonAlert(message: "존재하지 않는 이메일입니다.")
+                        
+                        self.present(alert, animated: true, completion: nil)
+//                        self.presentOneButtonAlert(alertTitle: "알림", message: "존재하지 않는 이메일입니다.", actionTitle: "확인")
                     }
                     
                 case Statuscode.fail.rawValue:

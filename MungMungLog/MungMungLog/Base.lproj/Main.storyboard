@@ -2475,23 +2475,23 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gvb-BU-dBv" userLabel="Password Finding View">
-                                                <rect key="frame" x="147" y="564" width="134.33333333333337" height="30"/>
+                                                <rect key="frame" x="117.66666666666669" y="564" width="193" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호를 잊어버리셨나요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbx-l3-QXU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="134.33333333333334" height="29"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일 혹은 비밀번호를 잊어버리셨나요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbx-l3-QXU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="193" height="29"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                         <color key="textColor" systemColor="systemGray4Color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="afs-9V-AyT">
-                                                        <rect key="frame" x="0.0" y="29" width="134.33333333333334" height="1"/>
+                                                        <rect key="frame" x="0.0" y="29" width="193" height="1"/>
                                                         <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="ccM-uj-Onw"/>
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qti-Ul-wLa">
-                                                        <rect key="frame" x="0.0" y="0.0" width="134.33333333333334" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="193" height="30"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -5593,9 +5593,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oEs-uz-L4I"/>
-        <segue reference="5ZM-Ic-1F1"/>
-        <segue reference="iF4-f1-o8r"/>
+        <segue reference="0Ma-Gb-q2e"/>
+        <segue reference="NJR-zq-Bph"/>
+        <segue reference="AIA-p0-Nox"/>
         <segue reference="cYL-UJ-6AL"/>
     </inferredMetricsTieBreakers>
     <resources>
