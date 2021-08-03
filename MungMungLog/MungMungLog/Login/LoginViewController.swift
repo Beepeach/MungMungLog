@@ -126,10 +126,7 @@ class LoginViewController: UIViewController {
                     
                     DispatchQueue.main.async {
                         self.idInputField.becomeFirstResponder()
-                        let alert: UIAlertController = AlertCreator().createOneButtonAlert(message: "존재하지 않는 이메일입니다.")
-                        
-                        self.present(alert, animated: true, completion: nil)
-//                        self.presentOneButtonAlert(alertTitle: "알림", message: "존재하지 않는 이메일입니다.", actionTitle: "확인")
+                        AlertCreator().createOneButtonAlert(vc: self ,message: "존재하지 않는 이메일입니다.")
                     }
                     
                 case Statuscode.fail.rawValue:
