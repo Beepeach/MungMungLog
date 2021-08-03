@@ -2349,6 +2349,7 @@
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Nzx-qL-hBN">
                                                                 <rect key="frame" x="0.0" y="5" width="380" height="40"/>
+                                                                <accessibility key="accessibilityConfiguration" identifier="IdInputField"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Adj-hO-9pb"/>
                                                                 </constraints>
@@ -2391,6 +2392,7 @@
                                                         <subviews>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zr8-vB-ySs">
                                                                 <rect key="frame" x="0.0" y="5" width="380" height="40"/>
+                                                                <accessibility key="accessibilityConfiguration" identifier="PasswordInputField"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="xyS-Kz-yfh"/>
                                                                 </constraints>
@@ -2439,6 +2441,7 @@
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSR-2d-pNx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="380" height="47"/>
+                                                                <accessibility key="accessibilityConfiguration" identifier="LoginButton"/>
                                                                 <connections>
                                                                     <action selector="loginWithEmail:" destination="LQF-VB-7aJ" eventType="touchUpInside" id="pus-Gr-5KD"/>
                                                                 </connections>

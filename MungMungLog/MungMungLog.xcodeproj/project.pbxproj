@@ -143,6 +143,7 @@
 		46A025AB2577D17D0022BDBF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AA2577D17D0022BDBF /* HomeViewController.swift */; };
 		46A025AF2577D7BB0022BDBF /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025AE2577D7BB0022BDBF /* CircleImageView.swift */; };
 		46A025B22577D9760022BDBF /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A025B12577D9760022BDBF /* RoundedView.swift */; };
+		46A06A4726B92AF5009FD195 /* LoginViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A06A4626B92AF5009FD195 /* LoginViewControllerUITests.swift */; };
 		46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */; };
 		46AB228526A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */; };
 		46AB228626A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */; };
@@ -297,6 +298,7 @@
 		46A025AA2577D17D0022BDBF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		46A025AE2577D7BB0022BDBF /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		46A025B12577D9760022BDBF /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		46A06A4626B92AF5009FD195 /* LoginViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerUITests.swift; sourceTree = "<group>"; };
 		46A5749F25729B6200B7ADF5 /* WalkRecordStartingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkRecordStartingViewController.swift; sourceTree = "<group>"; };
 		46AB228426A47B1500BBE332 /* RecordCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		46AB38C726B5240A00E01745 /* DetailDiaryContentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDiaryContentsViewController.swift; sourceTree = "<group>"; };
@@ -683,6 +685,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		46A06A4526B92ADA009FD195 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				46A06A4626B92AF5009FD195 /* LoginViewControllerUITests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		46A5749E25729B3D00B7ADF5 /* Record */ = {
 			isa = PBXGroup;
 			children = (
@@ -739,6 +749,7 @@
 		46DA901E264BFDAF00CCFB6A /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				46A06A4526B92ADA009FD195 /* Login */,
 				46DA901F264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift */,
 			);
 			path = TestCases;
@@ -1288,6 +1299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46A06A4726B92AF5009FD195 /* LoginViewControllerUITests.swift in Sources */,
 				46DA9020264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
