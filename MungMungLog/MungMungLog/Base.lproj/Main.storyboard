@@ -4227,7 +4227,7 @@
         <!--Intro View Controller-->
         <scene sceneID="ypc-kC-hpl">
             <objects>
-                <viewController id="zva-Vq-R9P" customClass="IntroViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="IntroViewController" id="zva-Vq-R9P" customClass="IntroViewController" customModule="MungMungLog" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ovb-7l-Lmw">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -24,7 +24,6 @@
 		460C4EDC25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C4EDA25F5292700D4E58D /* PetProfileConfigViewController.swift */; };
 		460EB00D2557F76B00027376 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00C2557F76B00027376 /* AppDelegate.swift */; };
 		460EB00F2557F76B00027376 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00E2557F76B00027376 /* SceneDelegate.swift */; };
-		460EB0112557F76B00027376 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB0102557F76B00027376 /* ViewController.swift */; };
 		460EB0142557F76B00027376 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0122557F76B00027376 /* Main.storyboard */; };
 		460EB0162557F76B00027376 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0152557F76B00027376 /* Assets.xcassets */; };
 		460EB0192557F76B00027376 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460EB0172557F76B00027376 /* LaunchScreen.storyboard */; };
@@ -68,7 +67,6 @@
 		465A57E5264E7CC4006683D5 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A57E3264E7CC4006683D5 /* NotificationName.swift */; };
 		465A57E7264E905D006683D5 /* TimerManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465A57E6264E905D006683D5 /* TimerManagerTests.swift */; };
 		466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464092CD258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift */; };
-		466492B825F372FC00903265 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB0102557F76B00027376 /* ViewController.swift */; };
 		466492BA25F372FC00903265 /* CircleWithShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467BF53625748F8900511451 /* CircleWithShadowView.swift */; };
 		466492BB25F372FC00903265 /* MembershipRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461CAF9025B2FAB900339EFC /* MembershipRegistrationViewController.swift */; };
 		466492BC25F372FC00903265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460EB00C2557F76B00027376 /* AppDelegate.swift */; };
@@ -170,6 +168,7 @@
 		46DBEA90262896EE00B07EC1 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */; };
 		46E1BA352616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
+		46EA827126CF9B0200536175 /* IntoViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA827026CF9B0200536175 /* IntoViewControllerTests.swift */; };
 		46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */; };
 		46F450BB2625EDCE0025B915 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450BA2625EDCE0025B915 /* FamilyModel.swift */; };
 		46F450BC2625EDCE0025B915 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450BA2625EDCE0025B915 /* FamilyModel.swift */; };
@@ -230,7 +229,6 @@
 		460EB0092557F76B00027376 /* MungMungLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MungMungLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		460EB00C2557F76B00027376 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		460EB00E2557F76B00027376 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		460EB0102557F76B00027376 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		460EB0132557F76B00027376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		460EB0152557F76B00027376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		460EB0182557F76B00027376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -319,6 +317,7 @@
 		46DBEA8726288B2200B07EC1 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailJoinViewController.swift; sourceTree = "<group>"; };
+		46EA827026CF9B0200536175 /* IntoViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntoViewControllerTests.swift; sourceTree = "<group>"; };
 		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
 		46F450BA2625EDCE0025B915 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
 		46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemberModel.swift; sourceTree = "<group>"; };
@@ -668,7 +667,6 @@
 		469E016026A4210000DFD6C7 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				460EB0102557F76B00027376 /* ViewController.swift */,
 				460C4EAD25F4B8FC00D4E58D /* IntroViewController.swift */,
 				460EB00C2557F76B00027376 /* AppDelegate.swift */,
 				460EB00E2557F76B00027376 /* SceneDelegate.swift */,
@@ -785,6 +783,14 @@
 			path = Walk;
 			sourceTree = "<group>";
 		};
+		46EA826F26CF9AE300536175 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				46EA827026CF9B0200536175 /* IntoViewControllerTests.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 		46F45115262711F30025B915 /* TestClasses */ = {
 			isa = PBXGroup;
 			children = (
@@ -810,6 +816,7 @@
 				46D81F4726B6EA56005DF901 /* Common */,
 				469E015A26A2AE9F00DFD6C7 /* DTO */,
 				463272C8269AFAEB00B18108 /* Extension */,
+				46EA826F26CF9AE300536175 /* Intro */,
 				4680DFFB26B6CDB70087DC68 /* Login */,
 				46DA9021264C022100CCFB6A /* WalkTab */,
 				46932151269861AF0052E74E /* CalendarTab */,
@@ -1108,7 +1115,6 @@
 				464092CE258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift in Sources */,
 				461A1206263FE24F00AC0F69 /* CoreDataManager.swift in Sources */,
 				460C4ED625F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */,
-				460EB0112557F76B00027376 /* ViewController.swift in Sources */,
 				46E1BA352616CB4400AAC75A /* EmailJoinViewController.swift in Sources */,
 				461A11DF263ED1CC00AC0F69 /* FileManager.swift in Sources */,
 				467BF53725748F8900511451 /* CircleWithShadowView.swift in Sources */,
@@ -1192,6 +1198,7 @@
 				46932153269861D10052E74E /* CalendarViewControllerTests.swift in Sources */,
 				468FCF7E264C2581001DB81E /* WalkRecordVCUnitTests.swift in Sources */,
 				4615F423263C2F310099E8CF /* MockSession.swift in Sources */,
+				46EA827126CF9B0200536175 /* IntoViewControllerTests.swift in Sources */,
 				4680DFF726B58BF00087DC68 /* DetailDiaryContentsViewControllerTests.swift in Sources */,
 				46D81F4926B6EA6C005DF901 /* AlertCreatorTests.swift in Sources */,
 				46F4516D262722310025B915 /* FamilyDtoTests.swift in Sources */,
@@ -1220,7 +1227,6 @@
 				461A1207263FE25000AC0F69 /* CoreDataManager.swift in Sources */,
 				460C4ED725F5290A00D4E58D /* UserProfileConfigViewController.swift in Sources */,
 				46D4DF1E262D57790016252A /* EditingProfileViewController.swift in Sources */,
-				466492B825F372FC00903265 /* ViewController.swift in Sources */,
 				461A11E0263ED1CC00AC0F69 /* FileManager.swift in Sources */,
 				46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */,
 				46292E41267F7C4200CCA05B /* SelectedPHAsset.swift in Sources */,

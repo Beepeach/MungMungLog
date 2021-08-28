@@ -13,7 +13,6 @@ import AuthenticationServices
 import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
-    
     // MARK: Properties
     private var isAccessibleLoginId = false
     private var isAccessibleLoginPassword = false
@@ -89,6 +88,7 @@ class LoginViewController: UIViewController {
         }
     }
     
+    // MARK: @IBAction
     @IBAction func loginWithEmail(_ sender: Any) {
         KeychainWrapper.standard.remove(forKey: .apiToken)
         
@@ -196,15 +196,12 @@ class LoginViewController: UIViewController {
         self.login(model: model)
     }
     
-    
-    
+    // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            
         }
         
         setContentsStartPosition()
@@ -227,11 +224,7 @@ class LoginViewController: UIViewController {
         
         if #available(iOS 13.0, *) {
             setupAppple()
-        } else {
-            
         }
-        
-        
     }
     
     @available(iOS 13.0, *)
@@ -255,6 +248,8 @@ class LoginViewController: UIViewController {
     }
     
     func setContentsStartPosition() {
+//        logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
+//        logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -(view.frame.height / 4)).isActive = true
         loginContainerView.alpha = 0
         passwordFindingView.alpha = 0
         loginWithSnsStackView.alpha = 0
