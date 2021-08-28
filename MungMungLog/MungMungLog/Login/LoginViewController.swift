@@ -14,9 +14,10 @@ import SwiftKeychainWrapper
 
 class LoginViewController: UIViewController {
     // MARK: Properties
-    private var isAccessibleLoginId = false
-    private var isAccessibleLoginPassword = false
+    private var isAccessibleId = false
+    private var isAccessiblePassword = false
     private let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+    
     
     // MARK: @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
@@ -29,6 +30,113 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButtonContainerView: RoundedView!
     @IBOutlet weak var passwordFindingView: UIView!
     @IBOutlet weak var loginWithSnsStackView: UIStackView!
+    
+    
+    // MARK: @IBAction
+    @IBAction func loginWithEmail(_ sender: Any) {
+        KeychainWrapper.standard.remove(forKey: .apiToken)
+        
+        guard let email = idInputField.text,
+              let password = passwordInputField.text else {
+            return
+        }
+        
+        var data: Data? = nil
+        let encoder = JSONEncoder()
+        
+        do {
+            data = try encoder.encode(EmailLoginRequestModel(email: email, password: password))
+        } catch {
+            AlertCreator().createOneButtonAlert(vc: self, message: "요청을 실패했습니다.")
+            print(#function, error)
+        }
+        
+        ApiManager.shared.fetch(urlStr: ApiManager.emailLogin, httpMethod: "Post", body: data) { (result: Result<LoginResponseModel, Error>) in
+            switch result{
+            case .success(let responseData):
+                switch responseData.code {
+                case Statuscode.ok.rawValue:
+                    
+                    self.saveUserDataInKeychainAndCoreData(with: responseData)
+                    
+                    print(#function, "=======로그인 성공========")
+                    print(responseData)
+                    
+                    self.goToCorrectSceneForKeychain()
+                    
+                case Statuscode.notFound.rawValue:
+                    DispatchQueue.main.async {
+                        self.idInputField.becomeFirstResponder()
+                        AlertCreator().createOneButtonAlert(vc: self ,message: "존재하지 않는 이메일입니다.")
+                    }
+                    
+                case Statuscode.fail.rawValue:
+                    DispatchQueue.main.async {
+                        self.passwordInputField.becomeFirstResponder()
+                        AlertCreator().createOneButtonAlert(vc: self, message: "비밀번호가 틀렸습니다.")
+                    }
+                    
+                case Statuscode.tokenError.rawValue:
+                    fallthrough
+                    
+                default:
+                    DispatchQueue.main.async {
+                        AlertCreator().createOneButtonAlert(vc: self, message: "로그인에 실패했습니다.")
+                    }
+                }
+                
+            case .failure(let error):
+                print(#function, error)
+                DispatchQueue.main.async {
+                    AlertCreator().createOneButtonAlert(vc: self, message: "로그인에 실패했습니다.")
+                }
+            }
+        }
+    }
+    
+    @IBAction func loginWithKakao(_ sender: Any) {
+        // 카카오톡 설치 여부 확인
+        if UserApi.isKakaoTalkLoginAvailable() {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                
+                print("loginWithKakaoTalk Success.")
+                self.getUserInfoFromKakao()
+            }
+        } else {
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                
+                print("loginWithKakaoAccount Success.")
+                self.getUserInfoFromKakao()
+            }
+        }
+    }
+    
+    private func getUserInfoFromKakao() {
+        UserApi.shared.me { (user, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let id = user?.id else { return }
+            
+            // TODO: - 카카오 email을 받을수 있을때부터는 UUID로 변경
+            let email = user?.kakaoAccount?.email ?? "Test100@test.com" //"\(UUID().uuidString)@empty.com"
+            
+            self.requestKaKaoLogin(id: id, email: email)
+        }
+    }
+    
+    private func requestKaKaoLogin(id: Int64, email: String) {
+        let model = SNSLoginRequestModel(provider: "Kakao", id: "\(id)", email: email)
+        
+        self.login(model: model)
+    }
     
     // TODO: - 이걸 그대로 emailLogin에서 이용할 방법은?? Codable로 하면 encode가 안된다.
     private func login(model: SNSLoginRequestModel) {
@@ -77,165 +185,51 @@ class LoginViewController: UIViewController {
         DispatchQueue.main.async {
             if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
                nickname.count > 0 {
-                if let _ = KeychainWrapper.standard.integer(forKey: .apiFamilyId) {
-                    self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
-                } else {
-                    self.performSegue(withIdentifier: MovetoView.registrationGuide.rawValue, sender: nil)
-                }
+                self.checkFamilyIDKeychain()
             } else {
                 self.performSegue(withIdentifier: MovetoView.membershipRegistration.rawValue, sender: nil)
             }
         }
     }
     
-    // MARK: @IBAction
-    @IBAction func loginWithEmail(_ sender: Any) {
-        KeychainWrapper.standard.remove(forKey: .apiToken)
-        
-        guard let email = idInputField.text else {
-            return
-        }
-        guard let password = passwordInputField.text else {
-            return
-        }
-        
-        var data: Data? = nil
-        let encoder = JSONEncoder()
-        
-        do {
-            data = try encoder.encode(EmailLoginRequestModel(email: email, password: password))
-        } catch {
-            print(error)
-        }
-        
-        ApiManager.shared.fetch(urlStr: ApiManager.emailLogin, httpMethod: "Post", body: data) { (result: Result<LoginResponseModel, Error>) in
-            switch result{
-            case .success(let responseData):
-                switch responseData.code {
-                case Statuscode.ok.rawValue:
-                    
-                    self.saveUserDataInKeychainAndCoreData(with: responseData)
-                    
-                    print(#function, "=======로그인 성공========")
-                    print(responseData)
-                    
-                    self.goToCorrectSceneForKeychain()
-                    
-                case Statuscode.notFound.rawValue:
-                    print("아이디를 확인해주세요")
-                    
-                    DispatchQueue.main.async {
-                        self.idInputField.becomeFirstResponder()
-                        AlertCreator().createOneButtonAlert(vc: self ,message: "존재하지 않는 이메일입니다.")
-                    }
-                    
-                case Statuscode.fail.rawValue:
-                    print("비밀번호가 틀렸습니다.")
-                    
-                    DispatchQueue.main.async {
-                        self.passwordInputField.becomeFirstResponder()
-                        self.presentOneButtonAlert(alertTitle: "알림", message: "비밀번호가 틀렸습니다.", actionTitle: "확인")
-                    }
-                    
-                case Statuscode.tokenError.rawValue:
-                    fallthrough
-                    
-                default:
-                    print("로그인 실패")
-                    DispatchQueue.main.async {
-                        self.presentOneButtonAlert(alertTitle: "알림", message: "로그인에 실패했습니다.", actionTitle: "확인")
-                    }
-                }
-                
-            case .failure(let error):
-                print(error)
-            }
+    private func checkFamilyIDKeychain() {
+        if let _ = KeychainWrapper.standard.integer(forKey: .apiFamilyId) {
+            self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
+        } else {
+            self.performSegue(withIdentifier: MovetoView.registrationGuide.rawValue, sender: nil)
         }
     }
     
-    @IBAction func loginWithKakao(_ sender: Any) {
-        // 카카오톡 설치 여부 확인
-        if UserApi.isKakaoTalkLoginAvailable() {
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                }
-                
-                print("loginWithKakaoTalk() success.")
-                self.getUserInfoFromKakao()
-            }
-        } else { UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-            if let error = error {
-                print(error)
-            }
-            
-            print("loginWithKakaoAccount() success.")
-            self.getUserInfoFromKakao()
-        }
-        }
-    }
-    
-    func getUserInfoFromKakao() {
-        UserApi.shared.me { (user, error) in
-            if let error = error {
-                print(error)
-            }
-            
-            guard let id = user?.id else { return }
-            
-            // 카카오 email을 받을수 있을때부터는 UUID로 변경
-            let email = user?.kakaoAccount?.email ?? "Test100@test.com" //"\(UUID().uuidString)@empty.com"
-            
-            self.requestKaKaoLogin(id: id, email: email)
-        }
-    }
-    
-    func requestKaKaoLogin(id: Int64, email: String) {
-        let model = SNSLoginRequestModel(provider: "Kakao", id: "\(id)", email: email)
-        
-        self.login(model: model)
-    }
     
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
+            setupApppleLogin()
         }
         
-        setContentsStartPosition()
+        hideLoginContents()
         
         DispatchQueue.main.async {
             UIView.animate(withDuration: 0.5) {
-                presentLoginView()
+                self.presentLoginView()
             }
         }
         
-        setScreenWhenShowKeyboard()
-        setScreenWhenHideKeyboard()
-        
-        func presentLoginView() {
-            loginContainerView.alpha = 1.0
-            passwordFindingView.alpha = 1.0
-            passwordFindingView.alpha = 1.0
-            loginWithSnsStackView.alpha = 1.0
-        }
-        
-        if #available(iOS 13.0, *) {
-            setupAppple()
-        }
+        configureScreenWhenKeyboardAppear()
+        configureScreenWhenKeyboardHide()
     }
     
     @available(iOS 13.0, *)
-    func setupAppple() {
+    private func setupApppleLogin() {
         let appleLoginButton = ASAuthorizationAppleIDButton()
         appleLoginButton.addTarget(self, action: #selector(handleAppleLogin), for: .touchUpInside)
         loginWithSnsStackView.addArrangedSubview(appleLoginButton)
     }
     
     @available(iOS 13.0, *)
-    @objc func handleAppleLogin() {
+    @objc private func handleAppleLogin() {
         let appleIdProvider = ASAuthorizationAppleIDProvider()
         let request = appleIdProvider.createRequest()
         request.requestedScopes = [.fullName, .email]
@@ -247,9 +241,7 @@ class LoginViewController: UIViewController {
         authenticationController.performRequests()
     }
     
-    func setContentsStartPosition() {
-//        logoImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
-//        logoImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -(view.frame.height / 4)).isActive = true
+    private func hideLoginContents() {
         loginContainerView.alpha = 0
         passwordFindingView.alpha = 0
         loginWithSnsStackView.alpha = 0
@@ -257,9 +249,15 @@ class LoginViewController: UIViewController {
         incorrectPasswordFormatLabel.alpha = 0
     }
     
-    func setScreenWhenShowKeyboard() {
+    private func presentLoginView() {
+        loginContainerView.alpha = 1.0
+        passwordFindingView.alpha = 1.0
+        passwordFindingView.alpha = 1.0
+        loginWithSnsStackView.alpha = 1.0
+    }
+    
+    private func configureScreenWhenKeyboardAppear() {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
-            
             guard let userInfo = noti.userInfo else {
                 return
             }
@@ -269,18 +267,17 @@ class LoginViewController: UIViewController {
             }
             
             self.loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bounds.height, right: 0)
-            
-            self.moveScreentoFirstResponder()
+            self.moveScreenToFirstResponder()
         }
     }
     
-    func moveScreentoFirstResponder() {
+    private func moveScreenToFirstResponder() {
         if self.idInputField.isFirstResponder == true || self.passwordInputField.isFirstResponder == true {
             self.loginScrollView.scrollRectToVisible(self.loginWithSnsStackView.frame  , animated: true)
         }
     }
     
-    func setScreenWhenHideKeyboard() {
+    private func configureScreenWhenKeyboardHide() {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (_) in
             self.loginScrollView.contentInset = .zero
         }
@@ -292,7 +289,7 @@ class LoginViewController: UIViewController {
     }
 }
 
-
+// MARK: - UIScrollViewDelegate
 extension LoginViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = scrollView.contentOffset.y + scrollView.contentInset.top
@@ -301,7 +298,7 @@ extension LoginViewController: UIScrollViewDelegate {
     }
 }
 
-
+// MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
@@ -310,7 +307,7 @@ extension LoginViewController: UITextFieldDelegate {
                 passwordInputField.becomeFirstResponder()
             } else {
                 idInputField.becomeFirstResponder()
-                presentOneButtonAlert(alertTitle: "알림", message: "아이디를 입력해주세요.", actionTitle: "확인")
+                AlertCreator().createOneButtonAlert(vc: self, message: "아이디를 입력해주세요.")
             }
             
         case passwordInputField:
@@ -318,7 +315,7 @@ extension LoginViewController: UITextFieldDelegate {
                 self.view.endEditing(true)
             } else {
                 passwordInputField.becomeFirstResponder()
-                presentOneButtonAlert(alertTitle: "알림", message: "비밀번호를 입력해주세요.", actionTitle: "확인") 
+                AlertCreator().createOneButtonAlert(vc: self, message: "비밀번호를 입력해주세요.")
             }
             
         default:
@@ -326,7 +323,6 @@ extension LoginViewController: UITextFieldDelegate {
         }
         
         return true
-        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -342,58 +338,60 @@ extension LoginViewController: UITextFieldDelegate {
             guard let range = finalText.range(of: emailRegEx,
                                               options: .regularExpression),
                   range.lowerBound == finalText.startIndex && range.upperBound == finalText.endIndex else {
-                isAccessibleLoginId = false
+                isAccessibleId = false
                 incorrectIdFormatLabel.alpha = 1
                 checkLoginButtonEnable()
                 return true
             }
             
-            isAccessibleLoginId = true
+            isAccessibleId = true
             incorrectIdFormatLabel.alpha = 0
             checkLoginButtonEnable()
-            return true
             
         case passwordInputField:
             guard finalText.count >= 4,
                   finalText.count <= 20 else {
-                isAccessibleLoginPassword = false
+                isAccessiblePassword = false
                 incorrectPasswordFormatLabel.alpha = 1
                 checkLoginButtonEnable()
                 return true
             }
             
-            isAccessibleLoginPassword = true
+            isAccessiblePassword = true
             incorrectPasswordFormatLabel.alpha = 0
             checkLoginButtonEnable()
-            return true
             
         default:
             return true
         }
         
+        return true
     }
     
-    func checkLoginButtonEnable() {
-        if isAccessibleLoginId == true && isAccessibleLoginPassword == true {
+    private func checkLoginButtonEnable() {
+        if isAccessibleId == true && isAccessiblePassword == true {
             loginButtonContainerView.isUserInteractionEnabled = true
             loginButtonContainerView.backgroundColor = .systemTeal
         } else {
             loginButtonContainerView.isUserInteractionEnabled = false
-            if #available(iOS 13.0, *) {
-                loginButtonContainerView.backgroundColor = .systemGray4
-            } else {
-                loginButtonContainerView.backgroundColor = .lightGray
-            }
+            changeLoginButtonBackgroundColorToGray()
         }
     }
     
+    private func changeLoginButtonBackgroundColorToGray() {
+        if #available(iOS 13.0, *) {
+            loginButtonContainerView.backgroundColor = .systemGray4
+        } else {
+            loginButtonContainerView.backgroundColor = .lightGray
+        }
+    }
 }
 
-
+// MARK: - ASAuthorizationControllerDelegate
 @available(iOS 13.0, *)
 extension LoginViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print("==============, \(error.localizedDescription)")
+        print(#function, "\(error.localizedDescription)")
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
@@ -402,25 +400,32 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             
             // email과 name은 첫번째 이후부터 nil을 주므로 따로 저장하는게 좋지만 name은 사용하지 않으므로 저장하지 않았다.
             var email = appleIdCredential.email
-            
-            if let savedEmail = KeychainWrapper.standard.string(forKey: .appleUserEmail) {
-                email = savedEmail
-            } else {
-                if let email = email {
-                    KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.appleUserEmail.rawValue)
-                }
-            }
+            checkEmailKeychain(email: &email)
             
             let appleLoginModel = SNSLoginRequestModel(provider: "Apple", id: userId, email: email ?? "")
             
             self.login(model: appleLoginModel)
         } else {
-            presentOneButtonAlert(alertTitle: "실패", message: "Apple 인증서 오류", actionTitle: "확인")
+            AlertCreator().createOneButtonAlert(vc: self, title: "실패", message: "Apple 인증서 오류", actionTitle: "확인")
+        }
+    }
+    
+    private func checkEmailKeychain(email: inout String?) {
+        if let savedEmail = KeychainWrapper.standard.string(forKey: .appleUserEmail) {
+            email = savedEmail
+        } else {
+            createEmailKeychain(email: email)
+        }
+    }
+    
+    private func createEmailKeychain(email: String?) {
+        if let email = email {
+            KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.appleUserEmail.rawValue)
         }
     }
 }
 
-
+// MARK: - ASAuthorizationCOntrollerPresentationContextProviding
 @available(iOS 13.0, *)
 extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
