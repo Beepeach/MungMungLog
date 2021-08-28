@@ -169,6 +169,7 @@
 		46E1BA352616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46E1BA362616CB4400AAC75A /* EmailJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */; };
 		46EA827126CF9B0200536175 /* IntoViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA827026CF9B0200536175 /* IntoViewControllerTests.swift */; };
+		46EA827426DA0C3600536175 /* IntroViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EA827326DA0C3600536175 /* IntroViewControllerUITests.swift */; };
 		46F0A3DF25ACA6C0007A71EA /* RoundedStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */; };
 		46F450BB2625EDCE0025B915 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450BA2625EDCE0025B915 /* FamilyModel.swift */; };
 		46F450BC2625EDCE0025B915 /* FamilyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F450BA2625EDCE0025B915 /* FamilyModel.swift */; };
@@ -318,6 +319,7 @@
 		46DBEA8E262896EE00B07EC1 /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		46E1BA342616CB4400AAC75A /* EmailJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailJoinViewController.swift; sourceTree = "<group>"; };
 		46EA827026CF9B0200536175 /* IntoViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntoViewControllerTests.swift; sourceTree = "<group>"; };
+		46EA827326DA0C3600536175 /* IntroViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewControllerUITests.swift; sourceTree = "<group>"; };
 		46F0A3DE25ACA6C0007A71EA /* RoundedStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedStackView.swift; sourceTree = "<group>"; };
 		46F450BA2625EDCE0025B915 /* FamilyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyModel.swift; sourceTree = "<group>"; };
 		46F450C12625F1BC0025B915 /* FamilyMemberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyMemberModel.swift; sourceTree = "<group>"; };
@@ -747,6 +749,7 @@
 		46DA901E264BFDAF00CCFB6A /* TestCases */ = {
 			isa = PBXGroup;
 			children = (
+				46EA827226DA0C0F00536175 /* Intro */,
 				46A06A4526B92ADA009FD195 /* Login */,
 				46DA901F264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift */,
 			);
@@ -787,6 +790,14 @@
 			isa = PBXGroup;
 			children = (
 				46EA827026CF9B0200536175 /* IntoViewControllerTests.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
+		46EA827226DA0C0F00536175 /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				46EA827326DA0C3600536175 /* IntroViewControllerUITests.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -1307,6 +1318,7 @@
 			files = (
 				46A06A4726B92AF5009FD195 /* LoginViewControllerUITests.swift in Sources */,
 				46DA9020264BFDDD00CCFB6A /* WalkRecordStartingVCUITests.swift in Sources */,
+				46EA827426DA0C3600536175 /* IntroViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
