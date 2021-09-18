@@ -9,11 +9,11 @@ import UIKit
 import SwiftKeychainWrapper
 
 class MembershipRegistrationViewController: UIViewController {
-    
+    // MARK: Properties
     let imagePicker = UIImagePickerController()
-    
     var userIsMale: Bool?
     
+    // MARK: @IBOutlet
     @IBOutlet weak var welcomeTextTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var membershipRegistrationScrollView: UIScrollView!
     @IBOutlet weak var welcomeTextLabel: UILabel!
@@ -31,7 +31,7 @@ class MembershipRegistrationViewController: UIViewController {
     @IBOutlet weak var membershipImageAddbutton: UIButton!
     @IBOutlet weak var continueContainerView: RoundedView!
     
-    
+    // MARK: @IBAction
     @IBAction func logout(_ sender: Any) {
         KeychainWrapper.standard.remove(forKey: .apiToken)
         KeychainWrapper.standard.remove(forKey: .apiUserId)
