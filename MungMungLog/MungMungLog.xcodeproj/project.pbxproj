@@ -233,7 +233,6 @@
 		460EB0132557F76B00027376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		460EB0152557F76B00027376 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		460EB0182557F76B00027376 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		460EB01A2557F76B00027376 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		460EB02825582EEF00027376 /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		4615F41D263C17100099E8CF /* MungMungLog.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MungMungLog.xcdatamodel; sourceTree = "<group>"; };
 		4615F422263C2F310099E8CF /* MockSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSession.swift; sourceTree = "<group>"; };
@@ -340,6 +339,7 @@
 		557617E33042023773289A79 /* Pods-MungMungLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog.release.xcconfig"; path = "Target Support Files/Pods-MungMungLog/Pods-MungMungLog.release.xcconfig"; sourceTree = "<group>"; };
 		928DE05854C954558A46EA97 /* Pods-MungMungLog Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog Dev.release.xcconfig"; path = "Target Support Files/Pods-MungMungLog Dev/Pods-MungMungLog Dev.release.xcconfig"; sourceTree = "<group>"; };
 		D0198980636E322777EB820F /* Pods-MungMungLog Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog Dev.debug.xcconfig"; path = "Target Support Files/Pods-MungMungLog Dev/Pods-MungMungLog Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		EEC7B243276E2CBD00D7853E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -455,12 +455,7 @@
 		460EB00B2557F76B00027376 /* MungMungLog */ = {
 			isa = PBXGroup;
 			children = (
-				466E3AE3261B13AC0077B3F2 /* MungMungLog Dev.entitlements */,
-				46D0EFFF2619B3A200F117B2 /* MungMungLog.entitlements */,
-				460EB01A2557F76B00027376 /* Info.plist */,
-				460EB0152557F76B00027376 /* Assets.xcassets */,
-				460EB0172557F76B00027376 /* LaunchScreen.storyboard */,
-				460EB0122557F76B00027376 /* Main.storyboard */,
+				EEC7B242276E2AB600D7853E /* Predefined */,
 				46D7CE062597840400134271 /* Extension */,
 				469497A026186A000049D7FE /* Common */,
 				4694977426184F3E0049D7FE /* Model */,
@@ -670,8 +665,6 @@
 			isa = PBXGroup;
 			children = (
 				460C4EAD25F4B8FC00D4E58D /* IntroViewController.swift */,
-				460EB00C2557F76B00027376 /* AppDelegate.swift */,
-				460EB00E2557F76B00027376 /* SceneDelegate.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -870,6 +863,21 @@
 				3D045616CAF89FB8A27647A8 /* Pods_MungMungLog_Dev.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEC7B242276E2AB600D7853E /* Predefined */ = {
+			isa = PBXGroup;
+			children = (
+				466E3AE3261B13AC0077B3F2 /* MungMungLog Dev.entitlements */,
+				46D0EFFF2619B3A200F117B2 /* MungMungLog.entitlements */,
+				460EB0152557F76B00027376 /* Assets.xcassets */,
+				460EB0172557F76B00027376 /* LaunchScreen.storyboard */,
+				460EB0122557F76B00027376 /* Main.storyboard */,
+				EEC7B243276E2CBD00D7853E /* Info.plist */,
+				460EB00C2557F76B00027376 /* AppDelegate.swift */,
+				460EB00E2557F76B00027376 /* SceneDelegate.swift */,
+			);
+			path = Predefined;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1482,7 +1490,7 @@
 				CODE_SIGN_ENTITLEMENTS = MungMungLog/MungMungLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
-				INFOPLIST_FILE = MungMungLog/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MungMungLog/Predefined/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1505,7 +1513,7 @@
 				CODE_SIGN_ENTITLEMENTS = MungMungLog/MungMungLog.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
-				INFOPLIST_FILE = MungMungLog/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MungMungLog/Predefined/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1573,7 +1581,7 @@
 				CODE_SIGN_ENTITLEMENTS = "MungMungLog/MungMungLog Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
-				INFOPLIST_FILE = MungMungLog/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MungMungLog/Predefined/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1596,7 +1604,7 @@
 				CODE_SIGN_ENTITLEMENTS = "MungMungLog/MungMungLog Dev.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5RH9MF273;
-				INFOPLIST_FILE = MungMungLog/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/MungMungLog/Predefined/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
