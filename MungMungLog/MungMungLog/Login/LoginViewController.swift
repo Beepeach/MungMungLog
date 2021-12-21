@@ -117,71 +117,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    private func getUserInfoFromKakao() {
-        UserApi.shared.me { (user, error) in
-            if let error = error {
-                print(error)
-            }
-            
-            guard let id = user?.id else { return }
-            
-            // TODO: - 카카오 email을 받을수 있을때부터는 UUID로 변경
-            let email = user?.kakaoAccount?.email ?? "Test100@test.com" //"\(UUID().uuidString)@empty.com"
-            
-            self.requestKaKaoLogin(id: id, email: email)
-        }
-    }
-    
-    private func requestKaKaoLogin(id: Int64, email: String) {
-        let model = SNSLoginRequestModel(provider: "Kakao", id: "\(id)", email: email)
-        
-        self.login(model: model)
-    }
-    
-    // TODO: - 이걸 그대로 emailLogin에서 이용할 방법은?? Codable로 하면 encode가 안된다.
-    private func login(model: SNSLoginRequestModel) {
-        KeychainWrapper.standard.remove(forKey: .apiToken)
-        
-        var data: Data? = nil
-        let encoder = JSONEncoder()
-        
-        do {
-            data = try encoder.encode(model)
-        } catch {
-            print(error)
-        }
-        
-        ApiManager.shared.fetch(urlStr: ApiManager.snsLogin, httpMethod: "Post", body: data) { (result: Result<LoginResponseModel, Error>) in
-            switch result {
-            case .success(let responseData):
-                if responseData.code == Statuscode.ok.rawValue {
-                    self.saveUserDataInKeychainAndCoreData(with: responseData)
-                    
-                    print("=======로그인 성공========")
-                    print(#function, responseData)
-                    
-                    self.goToCorrectSceneForKeychain()
-                    
-                } else {
-                    print("========로그인실패===========")
-                    print(#function, responseData)
-                    
-                    DispatchQueue.main.async {
-                        self.presentOneButtonAlert(alertTitle: "알림", message: "SNS 로그인에 실패했습니다.", actionTitle: "확인")
-                    }
-                }
-            case .failure(let error):
-                print(error)
-                
-                DispatchQueue.main.async {
-                    self.presentOneButtonAlert(alertTitle: "알림", message: "SNS 로그인에 실패했습니다.", actionTitle: "확인")
-                }
-            }
-            
-        }
-    }
-    
-    private func goToCorrectSceneForKeychain() {
+    func goToCorrectSceneForKeychain() {
         DispatchQueue.main.async {
             if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
                nickname.count > 0 {
