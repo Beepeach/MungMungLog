@@ -11,6 +11,7 @@ import KakaoSDKCommon
 import KakaoSDKUser
 import AuthenticationServices
 import SwiftKeychainWrapper
+import AVFAudio
 
 class LoginViewController: UIViewController {
     // MARK: Properties
@@ -97,23 +98,9 @@ class LoginViewController: UIViewController {
     @IBAction func loginWithKakao(_ sender: Any) {
         // 카카오톡 설치 여부 확인
         if UserApi.isKakaoTalkLoginAvailable() {
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                }
-                
-                print("loginWithKakaoTalk Success.")
-                self.getUserInfoFromKakao()
-            }
+            loginWithKaKaoTalk()
         } else {
-            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                }
-                
-                print("loginWithKakaoAccount Success.")
-                self.getUserInfoFromKakao()
-            }
+            loginWithKakaoAccount()
         }
     }
     

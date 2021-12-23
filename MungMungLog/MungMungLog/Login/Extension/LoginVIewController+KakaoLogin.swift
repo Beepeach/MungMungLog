@@ -10,6 +10,28 @@ import KakaoSDKUser
 import SwiftKeychainWrapper
 
 extension LoginViewController {
+    func  loginWithKaKaoTalk() {
+        UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            print("loginWithKakaoTalk Success.")
+            self.getUserInfoFromKakao()
+        }
+    }
+    
+    func loginWithKakaoAccount() {
+        UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            print("loginWithKakaoAccount Success.")
+            self.getUserInfoFromKakao()
+        }
+    }
+    
     func getUserInfoFromKakao() {
         UserApi.shared.me { (user, error) in
             if let error = error {
