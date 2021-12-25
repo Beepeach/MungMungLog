@@ -19,7 +19,6 @@ class LoginViewController: UIViewController {
     private var isAccessiblePassword = false
     private let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     
-    
     // MARK: @IBOutlet
     @IBOutlet weak var loginScrollView: UIScrollView!
     @IBOutlet weak var logoImageView: UIImageView!
@@ -31,7 +30,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButtonContainerView: RoundedView!
     @IBOutlet weak var passwordFindingView: UIView!
     @IBOutlet weak var loginWithSnsStackView: UIStackView!
-    
     
     // MARK: @IBAction
     @IBAction func loginWithEmail(_ sender: Any) {
@@ -173,13 +171,13 @@ class LoginViewController: UIViewController {
         loginContainerView.alpha = 0
         passwordFindingView.alpha = 0
         loginWithSnsStackView.alpha = 0
+        
         incorrectIdFormatLabel.alpha = 0
         incorrectPasswordFormatLabel.alpha = 0
     }
     
     private func presentLoginView() {
         loginContainerView.alpha = 1.0
-        passwordFindingView.alpha = 1.0
         passwordFindingView.alpha = 1.0
         loginWithSnsStackView.alpha = 1.0
     }
@@ -196,6 +194,7 @@ class LoginViewController: UIViewController {
     }
 }
 
+
 // MARK: - UIScrollViewDelegate
 extension LoginViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -204,6 +203,7 @@ extension LoginViewController: UIScrollViewDelegate {
         logoImageView.alpha = min(max(1.0 - (y / (view.frame.height / 10)), 0.0), 1.0)
     }
 }
+
 
 // MARK: - UITextFieldDelegate
 extension LoginViewController: UITextFieldDelegate {
@@ -233,7 +233,6 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
         guard let currentText = textField.text as NSString? else {
             return true
         }
@@ -242,31 +241,35 @@ extension LoginViewController: UITextFieldDelegate {
         
         switch textField {
         case idInputField:
+            if string == " " {
+                return false
+            }
+            
             guard let range = finalText.range(of: emailRegEx,
                                               options: .regularExpression),
                   range.lowerBound == finalText.startIndex && range.upperBound == finalText.endIndex else {
                 isAccessibleId = false
                 incorrectIdFormatLabel.alpha = 1
-                checkLoginButtonEnable()
+                checkLoginButtonEnabled()
                 return true
             }
             
             isAccessibleId = true
             incorrectIdFormatLabel.alpha = 0
-            checkLoginButtonEnable()
+            checkLoginButtonEnabled()
             
         case passwordInputField:
             guard finalText.count >= 4,
                   finalText.count <= 20 else {
                 isAccessiblePassword = false
                 incorrectPasswordFormatLabel.alpha = 1
-                checkLoginButtonEnable()
+                checkLoginButtonEnabled()
                 return true
             }
             
             isAccessiblePassword = true
             incorrectPasswordFormatLabel.alpha = 0
-            checkLoginButtonEnable()
+            checkLoginButtonEnabled()
             
         default:
             return true
@@ -275,7 +278,7 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     
-    private func checkLoginButtonEnable() {
+    private func checkLoginButtonEnabled() {
         if isAccessibleId == true && isAccessiblePassword == true {
             loginButtonContainerView.isUserInteractionEnabled = true
             loginButtonContainerView.backgroundColor = .systemTeal
@@ -291,51 +294,5 @@ extension LoginViewController: UITextFieldDelegate {
         } else {
             loginButtonContainerView.backgroundColor = .lightGray
         }
-    }
-}
-
-// MARK: - ASAuthorizationControllerDelegate
-@available(iOS 13.0, *)
-extension LoginViewController: ASAuthorizationControllerDelegate {
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        print(#function, "\(error.localizedDescription)")
-    }
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        if let appleIdCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
-            let userId = appleIdCredential.user
-            
-            // email과 name은 첫번째 이후부터 nil을 주므로 따로 저장하는게 좋지만 name은 사용하지 않으므로 저장하지 않았다.
-            var email = appleIdCredential.email
-            checkEmailKeychain(email: &email)
-            
-            let appleLoginModel = SNSLoginRequestModel(provider: "Apple", id: userId, email: email ?? "")
-            
-            self.login(model: appleLoginModel)
-        } else {
-            AlertCreator().createOneButtonAlert(vc: self, title: "실패", message: "Apple 인증서 오류", actionTitle: "확인")
-        }
-    }
-    
-    private func checkEmailKeychain(email: inout String?) {
-        if let savedEmail = KeychainWrapper.standard.string(forKey: .appleUserEmail) {
-            email = savedEmail
-        } else {
-            createEmailKeychain(email: email)
-        }
-    }
-    
-    private func createEmailKeychain(email: String?) {
-        if let email = email {
-            KeychainWrapper.standard.set(email, forKey: KeychainWrapper.Key.appleUserEmail.rawValue)
-        }
-    }
-}
-
-// MARK: - ASAuthorizationCOntrollerPresentationContextProviding
-@available(iOS 13.0, *)
-extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return view.window ?? ASPresentationAnchor()
     }
 }

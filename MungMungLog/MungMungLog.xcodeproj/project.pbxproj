@@ -202,6 +202,8 @@
 		EED614AF2771C486006B9CC0 /* LoginViewController+SNSLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED614AD2771C486006B9CC0 /* LoginViewController+SNSLogin.swift */; };
 		EED88C5C2777672E0044CFC4 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED88C5B2777672E0044CFC4 /* UIViewController+Keyboard.swift */; };
 		EED88C5D2777672E0044CFC4 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED88C5B2777672E0044CFC4 /* UIViewController+Keyboard.swift */; };
+		EED88C5F2777716E0044CFC4 /* LoginViewController+AppleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED88C5E2777716E0044CFC4 /* LoginViewController+AppleLogin.swift */; };
+		EED88C602777716E0044CFC4 /* LoginViewController+AppleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED88C5E2777716E0044CFC4 /* LoginViewController+AppleLogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -349,6 +351,7 @@
 		EED614AA2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVIewController+KakaoLogin.swift"; sourceTree = "<group>"; };
 		EED614AD2771C486006B9CC0 /* LoginViewController+SNSLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+SNSLogin.swift"; sourceTree = "<group>"; };
 		EED88C5B2777672E0044CFC4 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
+		EED88C5E2777716E0044CFC4 /* LoginViewController+AppleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+AppleLogin.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -896,6 +899,7 @@
 			children = (
 				EED614AD2771C486006B9CC0 /* LoginViewController+SNSLogin.swift */,
 				EED614AA2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift */,
+				EED88C5E2777716E0044CFC4 /* LoginViewController+AppleLogin.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1185,6 +1189,7 @@
 				468D19C026539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */,
 				46A574A025729B6200B7ADF5 /* WalkRecordStartingViewController.swift in Sources */,
 				464092CB258DC7D400C85524 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
+				EED88C5F2777716E0044CFC4 /* LoginViewController+AppleLogin.swift in Sources */,
 				469E015626A05B9D00DFD6C7 /* DetailDateViewController.swift in Sources */,
 				468D19C32653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */,
 				468EEF14263854D9003A7FF0 /* QnaViewController.swift in Sources */,
@@ -1299,6 +1304,7 @@
 				468D19C126539B23008281BF /* Measurement+MesurementFomatter.swift in Sources */,
 				466492C325F372FC00903265 /* WalkTimeAndDistanceDataCollectionViewCell.swift in Sources */,
 				466492C425F372FC00903265 /* SceneDelegate.swift in Sources */,
+				EED88C602777716E0044CFC4 /* LoginViewController+AppleLogin.swift in Sources */,
 				469E015726A05B9D00DFD6C7 /* DetailDateViewController.swift in Sources */,
 				468D19C42653E5B2008281BF /* WalkRecordEditViewController.swift in Sources */,
 				468EEF15263854D9003A7FF0 /* QnaViewController.swift in Sources */,
