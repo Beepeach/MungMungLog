@@ -95,15 +95,6 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func loginWithKakao(_ sender: Any) {
-        // 카카오톡 설치 여부 확인
-        if UserApi.isKakaoTalkLoginAvailable() {
-            loginWithKaKaoTalk()
-        } else {
-            loginWithKakaoAccount()
-        }
-    }
-    
     func goToCorrectSceneForKeychain() {
         DispatchQueue.main.async {
             if let nickname = KeychainWrapper.standard.string(forKey: .apiNickname),
@@ -120,6 +111,15 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: MovetoView.home.rawValue, sender: nil)
         } else {
             self.performSegue(withIdentifier: MovetoView.registrationGuide.rawValue, sender: nil)
+        }
+    }
+    
+    @IBAction func loginWithKakao(_ sender: Any) {
+        // 카카오톡 설치 여부 확인
+        if UserApi.isKakaoTalkLoginAvailable() {
+            loginWithKaKaoTalk()
+        } else {
+            loginWithKakaoAccount()
         }
     }
     
@@ -140,8 +140,13 @@ class LoginViewController: UIViewController {
             }
         }
         
-        configureScreenWhenKeyboardAppear()
-        configureScreenWhenKeyboardHide()
+        configureScreenWhenKeyboardAppear { bounds in
+            self.loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bounds.height, right: 0)
+            self.moveScreenToFirstResponder()
+        }
+        configureScreenWhenKeyboardHide {
+            self.loginScrollView.contentInset = .zero
+        }
     }
     
     @available(iOS 13.0, *)
@@ -179,30 +184,9 @@ class LoginViewController: UIViewController {
         loginWithSnsStackView.alpha = 1.0
     }
     
-    private func configureScreenWhenKeyboardAppear() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
-            guard let userInfo = noti.userInfo else {
-                return
-            }
-            
-            guard let bounds = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
-                return
-            }
-            
-            self.loginScrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bounds.height, right: 0)
-            self.moveScreenToFirstResponder()
-        }
-    }
-    
     private func moveScreenToFirstResponder() {
         if self.idInputField.isFirstResponder == true || self.passwordInputField.isFirstResponder == true {
             self.loginScrollView.scrollRectToVisible(self.loginWithSnsStackView.frame  , animated: true)
-        }
-    }
-    
-    private func configureScreenWhenKeyboardHide() {
-        NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (_) in
-            self.loginScrollView.contentInset = .zero
         }
     }
     

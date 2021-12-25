@@ -200,6 +200,8 @@
 		EED614AC2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED614AA2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift */; };
 		EED614AE2771C486006B9CC0 /* LoginViewController+SNSLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED614AD2771C486006B9CC0 /* LoginViewController+SNSLogin.swift */; };
 		EED614AF2771C486006B9CC0 /* LoginViewController+SNSLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED614AD2771C486006B9CC0 /* LoginViewController+SNSLogin.swift */; };
+		EED88C5C2777672E0044CFC4 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED88C5B2777672E0044CFC4 /* UIViewController+Keyboard.swift */; };
+		EED88C5D2777672E0044CFC4 /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED88C5B2777672E0044CFC4 /* UIViewController+Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -346,6 +348,7 @@
 		EEC7B243276E2CBD00D7853E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED614AA2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVIewController+KakaoLogin.swift"; sourceTree = "<group>"; };
 		EED614AD2771C486006B9CC0 /* LoginViewController+SNSLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+SNSLogin.swift"; sourceTree = "<group>"; };
+		EED88C5B2777672E0044CFC4 /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -721,6 +724,7 @@
 			children = (
 				460EB02825582EEF00027376 /* UIViewController+alert.swift */,
 				46042BF3264800F5008E65FE /* UIViewController+KeychainWrapper.swift */,
+				EED88C5B2777672E0044CFC4 /* UIViewController+Keyboard.swift */,
 				465A57E3264E7CC4006683D5 /* NotificationName.swift */,
 				468D19BF26539B23008281BF /* Measurement+MesurementFomatter.swift */,
 				46F7BB722654EEB100134059 /* Date+DateFormatter.swift */,
@@ -1148,6 +1152,7 @@
 				EED614AE2771C486006B9CC0 /* LoginViewController+SNSLogin.swift in Sources */,
 				460C4EB825F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
 				4694977626184F520049D7FE /* ApiModel.swift in Sources */,
+				EED88C5C2777672E0044CFC4 /* UIViewController+Keyboard.swift in Sources */,
 				464092CE258DC86A00C85524 /* ContentRecodeCollectionViewCell.swift in Sources */,
 				EED614AB2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift in Sources */,
 				461A1206263FE24F00AC0F69 /* CoreDataManager.swift in Sources */,
@@ -1261,6 +1266,7 @@
 				EED614AF2771C486006B9CC0 /* LoginViewController+SNSLogin.swift in Sources */,
 				460C4EB925F4C5B900D4E58D /* ReplaceRootViewSegue.swift in Sources */,
 				4694977726184F520049D7FE /* ApiModel.swift in Sources */,
+				EED88C5D2777672E0044CFC4 /* UIViewController+Keyboard.swift in Sources */,
 				466492B625F372FC00903265 /* ContentRecodeCollectionViewCell.swift in Sources */,
 				EED614AC2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift in Sources */,
 				461A1207263FE25000AC0F69 /* CoreDataManager.swift in Sources */,
