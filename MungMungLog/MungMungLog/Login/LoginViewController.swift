@@ -241,31 +241,22 @@ extension LoginViewController: UITextFieldDelegate {
                 return false
             }
             
-            guard let range = finalText.range(of: emailRegEx,
-                                              options: .regularExpression),
+            guard let range = finalText.range(of: emailRegEx, options: .regularExpression),
                   range.lowerBound == finalText.startIndex && range.upperBound == finalText.endIndex else {
-                      isAccessibleId = false
-                      incorrectIdFormatLabel.alpha = 1
-                      checkLoginButtonEnabled()
+                      checkID(isValid: false, alpha: finalText.isEmpty ? 0.0 : 1.0)
                       return true
                   }
             
-            isAccessibleId = true
-            incorrectIdFormatLabel.alpha = 0
-            checkLoginButtonEnabled()
+            checkID(isValid: true, alpha: 0.0)
             
         case passwordInputField:
             guard finalText.count >= 4,
                   finalText.count <= 20 else {
-                      isAccessiblePassword = false
-                      incorrectPasswordFormatLabel.alpha = 1
-                      checkLoginButtonEnabled()
+                      checkPassword(isValid: false, alpha: finalText.isEmpty ? 0.0 : 1.0)
                       return true
                   }
             
-            isAccessiblePassword = true
-            incorrectPasswordFormatLabel.alpha = 0
-            checkLoginButtonEnabled()
+            checkPassword(isValid: true, alpha: 0.0)
             
         default:
             return true
@@ -274,7 +265,19 @@ extension LoginViewController: UITextFieldDelegate {
         return true
     }
     
-    private func checkLoginButtonEnabled() {
+    private func checkID(isValid: Bool, alpha: CGFloat) {
+        isAccessibleId = isValid
+        incorrectIdFormatLabel.alpha = alpha
+        activateLoginButton()
+    }
+    
+    private func checkPassword(isValid: Bool, alpha: CGFloat) {
+        isAccessiblePassword = isValid
+        incorrectPasswordFormatLabel.alpha = alpha
+        activateLoginButton()
+    }
+    
+    private func activateLoginButton() {
         if isAccessibleId == true && isAccessiblePassword == true {
             loginButtonContainerView.isUserInteractionEnabled = true
             loginButtonContainerView.backgroundColor = .systemTeal
