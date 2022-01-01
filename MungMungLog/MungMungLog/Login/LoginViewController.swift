@@ -37,8 +37,8 @@ class LoginViewController: UIViewController {
         
         guard let email = idInputField.text,
               let password = passwordInputField.text else {
-            return
-        }
+                  return
+              }
         
         var data: Data? = nil
         let encoder = JSONEncoder()
@@ -125,11 +125,9 @@ class LoginViewController: UIViewController {
     // MARK: - ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-            setupApppleLogin()
-        }
+        overrideUserInterfaceStyle = .light
         
+        setupApppleLogin()
         hideLoginContents()
         
         DispatchQueue.main.async {
@@ -147,14 +145,12 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @available(iOS 13.0, *)
     private func setupApppleLogin() {
         let appleLoginButton = ASAuthorizationAppleIDButton()
         appleLoginButton.addTarget(self, action: #selector(handleAppleLogin), for: .touchUpInside)
         loginWithSnsStackView.addArrangedSubview(appleLoginButton)
     }
     
-    @available(iOS 13.0, *)
     @objc private func handleAppleLogin() {
         let appleIdProvider = ASAuthorizationAppleIDProvider()
         let request = appleIdProvider.createRequest()
@@ -248,11 +244,11 @@ extension LoginViewController: UITextFieldDelegate {
             guard let range = finalText.range(of: emailRegEx,
                                               options: .regularExpression),
                   range.lowerBound == finalText.startIndex && range.upperBound == finalText.endIndex else {
-                isAccessibleId = false
-                incorrectIdFormatLabel.alpha = 1
-                checkLoginButtonEnabled()
-                return true
-            }
+                      isAccessibleId = false
+                      incorrectIdFormatLabel.alpha = 1
+                      checkLoginButtonEnabled()
+                      return true
+                  }
             
             isAccessibleId = true
             incorrectIdFormatLabel.alpha = 0
@@ -261,11 +257,11 @@ extension LoginViewController: UITextFieldDelegate {
         case passwordInputField:
             guard finalText.count >= 4,
                   finalText.count <= 20 else {
-                isAccessiblePassword = false
-                incorrectPasswordFormatLabel.alpha = 1
-                checkLoginButtonEnabled()
-                return true
-            }
+                      isAccessiblePassword = false
+                      incorrectPasswordFormatLabel.alpha = 1
+                      checkLoginButtonEnabled()
+                      return true
+                  }
             
             isAccessiblePassword = true
             incorrectPasswordFormatLabel.alpha = 0
@@ -284,15 +280,7 @@ extension LoginViewController: UITextFieldDelegate {
             loginButtonContainerView.backgroundColor = .systemTeal
         } else {
             loginButtonContainerView.isUserInteractionEnabled = false
-            changeLoginButtonBackgroundColorToGray()
-        }
-    }
-    
-    private func changeLoginButtonBackgroundColorToGray() {
-        if #available(iOS 13.0, *) {
             loginButtonContainerView.backgroundColor = .systemGray4
-        } else {
-            loginButtonContainerView.backgroundColor = .lightGray
         }
     }
 }
