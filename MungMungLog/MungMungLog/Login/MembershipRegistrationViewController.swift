@@ -40,21 +40,13 @@ class MembershipRegistrationViewController: UIViewController {
     }
     
     @IBAction func selectMale(_ sender: Any) {
-        if #available(iOS 13.0, *) {
-            maleContainerView.backgroundColor = .systemGray4
-        } else {
-            maleContainerView.backgroundColor = .lightGray
-        }
+        maleContainerView.backgroundColor = .systemGray4
         femaleContainerView.backgroundColor = .none
         userIsMale = true
     }
     
     @IBAction func selectFemale(_ sender: Any) {
-        if #available(iOS 13.0, *) {
-            femaleContainerView.backgroundColor = .systemGray4
-        } else {
-            femaleContainerView.backgroundColor = .lightGray
-        }
+        femaleContainerView.backgroundColor = .systemGray4
         maleContainerView.backgroundColor = .none
         userIsMale = false
     }
@@ -111,7 +103,6 @@ class MembershipRegistrationViewController: UIViewController {
     
     @IBAction func RegisterUserInfo(_ sender: Any) {
         guard let email = emailField.text else {
-            
             presentOneButtonAlert(alertTitle: "알림", message: "잘못된 이메일 회원정보입니다.\n로그인화면으로 돌아갑니다.", actionTitle: "확인") { (_) in
                 self.performSegue(withIdentifier: MovetoView.login.rawValue, sender: nil)
             }
@@ -139,6 +130,14 @@ class MembershipRegistrationViewController: UIViewController {
             requestJoinWithImage(email: email, nickname: nickname, relationship: relationship, gender: gender, img: img)
         } else {
             requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender)
+        }
+    }
+    
+    func requestJoinWithImage(email: String, nickname: String, relationship: String, gender: Bool, img: UIImage) {
+        BlobManager.shared.upload(image: img) { (reutrnUrl) in
+            if let imageUrl = reutrnUrl {
+                self.requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender, fileUrl: imageUrl)
+            }
         }
     }
     
@@ -199,14 +198,6 @@ class MembershipRegistrationViewController: UIViewController {
         }
         
         task.resume()
-    }
-    
-    func requestJoinWithImage(email: String, nickname: String, relationship: String, gender: Bool, img: UIImage) {
-        BlobManager.shared.upload(image: img) { (reutrnUrl) in
-            if let imageUrl = reutrnUrl {
-                self.requestJoin(email: email, nickname: nickname, relationship: relationship, gender: gender, fileUrl: imageUrl)
-            }
-        }
     }
     
     func setScreenWhenShowKeyboard() {
