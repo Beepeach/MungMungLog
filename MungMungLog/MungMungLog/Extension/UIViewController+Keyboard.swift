@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func configureScreenWhenKeyboardAppear(_ completion: @escaping (_ bounds: CGRect) -> ()) {
+    func configureScreenWhenKeyboardAppear(_ completion: @escaping (_ bounds: CGRect) -> Void) {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
             guard let userInfo = noti.userInfo else {
                 return
@@ -23,7 +23,7 @@ extension UIViewController {
         }
     }
     
-    func configureScreenWhenKeyboardHide(_ completion: @escaping () -> ()) {
+    func configureScreenWhenKeyboardHide(_ completion: @escaping () -> Void) {
         NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { _ in
             completion()
         }
