@@ -474,7 +474,7 @@
 				4605D1D425CECC4F001C6815 /* Data */,
 				4694976C26184E560049D7FE /* API */,
 				460C4EB625F4C58700D4E58D /* UI */,
-				4656860925766C8900088513 /* ViewShapeClass */,
+				4656860925766C8900088513 /* View */,
 				469E016026A4210000DFD6C7 /* Intro */,
 				464A6B7C25AAED4000E56ED9 /* Login */,
 				46E1BA332616CB2300AAC75A /* Join */,
@@ -554,13 +554,13 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		4656860925766C8900088513 /* ViewShapeClass */ = {
+		4656860925766C8900088513 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				46FC5B7F25EBE69700D161F5 /* StackView */,
 				46FC5B7E25EBE68100D161F5 /* View */,
 			);
-			path = ViewShapeClass;
+			path = View;
 			sourceTree = "<group>";
 		};
 		467EF92C25F3C47B00AC8F88 /* Configuration */ = {
