@@ -20,9 +20,7 @@ class IntroViewController: UIViewController {
     // MARK: ViewLifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .light
-        }
+        overrideUserInterfaceStyle = .light
         
         placeLogoAtCenterY(isActive: true)
 
