@@ -16,7 +16,7 @@ struct BlobManager {
     private let container: AZSCloudBlobContainer?
     
     private init() {
-        account = try? AZSCloudStorageAccount(fromConnectionString: "DefaultEndpointsProtocol=https;AccountName=mungmunglogstorage;AccountKey=sHVj01H5c6bd4JCeyCAPZGn4/TI/kOa03DKmUuKC40kv1U167Uaew9RhuxTuDjNXE6ChF53TNthKQCElDYucsQ==;EndpointSuffix=core.windows.net")
+        account = try? AZSCloudStorageAccount(fromConnectionString: aZSCloudStorageAccountKey)
         client = account?.getBlobClient()
         container = client?.containerReference(fromName: "main")
     }
