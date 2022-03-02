@@ -196,6 +196,8 @@
 		46FC5B8125EBE70500D161F5 /* PartialRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FC5B8025EBE70500D161F5 /* PartialRoundedView.swift */; };
 		51BA6FA398E44EF3577A32A0 /* Pods_MungMungLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38085EC03A53F738CFD5C466 /* Pods_MungMungLog.framework */; };
 		5FAA6723E27BEC8C6BC68A6C /* Pods_MungMungLog_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D045616CAF89FB8A27647A8 /* Pods_MungMungLog_Dev.framework */; };
+		EEBFC25A27CFA9DE008E1649 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBFC25927CFA9DE008E1649 /* Keys.swift */; };
+		EEBFC25B27CFAA79008E1649 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEBFC25927CFA9DE008E1649 /* Keys.swift */; };
 		EED614AB2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED614AA2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift */; };
 		EED614AC2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED614AA2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift */; };
 		EED614AE2771C486006B9CC0 /* LoginViewController+SNSLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED614AD2771C486006B9CC0 /* LoginViewController+SNSLogin.swift */; };
@@ -347,6 +349,7 @@
 		557617E33042023773289A79 /* Pods-MungMungLog.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog.release.xcconfig"; path = "Target Support Files/Pods-MungMungLog/Pods-MungMungLog.release.xcconfig"; sourceTree = "<group>"; };
 		928DE05854C954558A46EA97 /* Pods-MungMungLog Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog Dev.release.xcconfig"; path = "Target Support Files/Pods-MungMungLog Dev/Pods-MungMungLog Dev.release.xcconfig"; sourceTree = "<group>"; };
 		D0198980636E322777EB820F /* Pods-MungMungLog Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MungMungLog Dev.debug.xcconfig"; path = "Target Support Files/Pods-MungMungLog Dev/Pods-MungMungLog Dev.debug.xcconfig"; sourceTree = "<group>"; };
+		EEBFC25927CFA9DE008E1649 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		EEC7B243276E2CBD00D7853E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED614AA2771C2B5006B9CC0 /* LoginVIewController+KakaoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginVIewController+KakaoLogin.swift"; sourceTree = "<group>"; };
 		EED614AD2771C486006B9CC0 /* LoginViewController+SNSLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+SNSLogin.swift"; sourceTree = "<group>"; };
@@ -420,6 +423,7 @@
 				466686752638017C00F77084 /* CoreDataManager.swift */,
 				461A11DE263ED1CC00AC0F69 /* FileManager.swift */,
 				4615F41C263C17100099E8CF /* MungMungLog.xcdatamodeld */,
+				EEBFC25927CFA9DE008E1649 /* Keys.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1225,6 +1229,7 @@
 				46DBEA8826288B2200B07EC1 /* UserDefault.swift in Sources */,
 				4652F75526773605009FC105 /* PickerImageCollectionViewCell.swift in Sources */,
 				46A025B22577D9760022BDBF /* RoundedView.swift in Sources */,
+				EEBFC25A27CFA9DE008E1649 /* Keys.swift in Sources */,
 				464092DC258E2EF700C85524 /* RecordItemTableViewCell.swift in Sources */,
 				460EB02925582EEF00027376 /* UIViewController+alert.swift in Sources */,
 				464B574A25860EFF00D2774B /* DateSelectCollectionViewCell.swift in Sources */,
@@ -1340,6 +1345,7 @@
 				46DBEA8926288B2200B07EC1 /* UserDefault.swift in Sources */,
 				4652F75626773605009FC105 /* PickerImageCollectionViewCell.swift in Sources */,
 				460C4EDC25F5292700D4E58D /* PetProfileConfigViewController.swift in Sources */,
+				EEBFC25B27CFAA79008E1649 /* Keys.swift in Sources */,
 				466492CF25F372FC00903265 /* RoundedView.swift in Sources */,
 				466492D025F372FC00903265 /* RecordItemTableViewCell.swift in Sources */,
 				466492D125F372FC00903265 /* UIViewController+alert.swift in Sources */,

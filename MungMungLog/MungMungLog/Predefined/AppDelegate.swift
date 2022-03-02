@@ -14,7 +14,7 @@ import SwiftKeychainWrapper
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        KakaoSDKCommon.initSDK(appKey: "c21b7a3b3d287e24904b0f47c9c233f5")
+        KakaoSDKCommon.initSDK(appKey: kakaoAppKey)
         
         checkIsFirstlaunch()
         
